@@ -1,0 +1,16 @@
+# CodingPlan.org
+
+> CodingPlan.org compares AI coding subscriptions and token plans for developers in Chinese and English.
+
+## Core Pages
+
+- [Chinese comparison](https://codingplan.org): Nine AI coding platforms with pricing, models, quotas and tools.
+- [English comparison](https://codingplan.org/en): Claude Code, GLM, MiniMax, Kimi and Qwen plans.
+- [Zhipu GLM](https://codingplan.org/plans/zhipu): GLM models, tiers, rolling quotas and MCP tools.
+- [MiniMax](https://codingplan.org/plans/minimax): M3 token plans, concurrency and multimodal quotas.
+- [Kimi](https://codingplan.org/plans/kimi): K2.6 plans, member benefits and Agent clusters.
+- [Volcengine Ark](https://codingplan.org/plans/volcengine): Multi-model plans and Auto routing.
+- [Alibaba Cloud Bailian](https://codingplan.org/plans/aliyun): Qwen and third-party model plan availability.
+- [Xiaomi MiMo](https://codingplan.org/plans/xiaomi): Credit-based MiMo token plans.
+
+Prices and quotas can change. Verify current information on each provider's official website.

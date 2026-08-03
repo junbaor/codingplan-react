@@ -1,0 +1,98 @@
+/**
+ * [INPUT]: 依赖 Tailwind CSS 4 的 PostCSS 编译链与 HTML data-theme 属性
+ * [OUTPUT]: 对外提供语义色 token、全局排版、主题、滚动条与动效样式
+ * [POS]: styles 的全局入口，被中英文 Next.js 根布局引入
+ * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
+ */
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Noto Sans SC", "Manrope", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-page: var(--site-page);
+  --color-surface: var(--site-surface);
+  --color-surface-raised: var(--site-surface-raised);
+  --color-surface-hover: var(--site-surface-hover);
+  --color-border: var(--site-border);
+  --color-border-strong: var(--site-border-strong);
+  --color-ink: var(--site-ink);
+  --color-ink-soft: var(--site-ink-soft);
+  --color-ink-muted: var(--site-ink-muted);
+  --color-brand-cyan: var(--site-cyan);
+  --color-brand-green: var(--site-green);
+  --color-brand-orange: var(--site-orange);
+  --color-brand-purple: var(--site-purple);
+  --color-brand-blue: var(--site-blue);
+  --color-brand-red: var(--site-red);
+}
+
+:root {
+  --site-page: #f5f7fa;
+  --site-surface: #ffffff;
+  --site-surface-raised: #eef1f5;
+  --site-surface-hover: #e7ebf0;
+  --site-border: #dce2ea;
+  --site-border-strong: #bdc7d4;
+  --site-ink: #172033;
+  --site-ink-soft: #556278;
+  --site-ink-muted: #7d899b;
+  --site-cyan: #008bb7;
+  --site-green: #008a4a;
+  --site-orange: #c85d09;
+  --site-purple: #7550bd;
+  --site-blue: #4164de;
+  --site-red: #b65f49;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --site-page: #06080d;
+  --site-surface: #0c1017;
+  --site-surface-raised: #151c28;
+  --site-surface-hover: #111822;
+  --site-border: #1a2332;
+  --site-border-strong: #2a3a52;
+  --site-ink: #e8edf5;
+  --site-ink-soft: #a8b5c7;
+  --site-ink-muted: #8191a7;
+  --site-cyan: #00d4ff;
+  --site-green: #00e881;
+  --site-orange: #ff8a00;
+  --site-purple: #b86df8;
+  --site-blue: #6681ff;
+  --site-red: #e88a70;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { margin: 0; overflow-x: hidden; background: var(--site-page); color: var(--site-ink); font-family: var(--font-sans); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0; z-index: 100; pointer-events: none; opacity: .18; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E"); }
+a { text-decoration: none; }
+button, a, summary { -webkit-tap-highlight-color: transparent; }
+::selection { background: color-mix(in srgb, var(--site-cyan) 30%, transparent); }
+
+.page-shell { width: min(100% - 2rem, 76rem); margin-inline: auto; }
+.text-gradient { background: linear-gradient(135deg, var(--site-cyan), var(--site-green)); background-clip: text; color: transparent; }
+.focus-ring:focus-visible { outline: 2px solid var(--site-cyan); outline-offset: 3px; }
+.soft-grid { background-image: linear-gradient(var(--site-border) 1px, transparent 1px), linear-gradient(90deg, var(--site-border) 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(to bottom, black, transparent 82%); }
+.accent-cyan { --accent: var(--site-cyan); }
+.accent-green { --accent: var(--site-green); }
+.accent-orange { --accent: var(--site-orange); }
+.accent-purple { --accent: var(--site-purple); }
+.accent-blue { --accent: var(--site-blue); }
+.accent-red { --accent: var(--site-red); }
+.accent-slate { --accent: var(--site-ink-soft); }
+.accent-text { color: var(--accent); }
+.accent-border { border-color: color-mix(in srgb, var(--accent) 45%, var(--site-border)); }
+.accent-bg { background: color-mix(in srgb, var(--accent) 10%, var(--site-surface)); }
+.accent-button { background: var(--accent); color: var(--site-page); }
+.accent-button:hover { filter: brightness(1.08); box-shadow: 0 10px 30px color-mix(in srgb, var(--accent) 22%, transparent); }
+.card-enter { animation: card-enter .45s ease both; }
+
+@keyframes card-enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
