@@ -27,4 +27,13 @@ README.md - 开发命令、App Router 架构与内容维护入口
 - Title、H 标题、keywords 缺失状态、canonical、统计 Key 与推广参数以原站 HTML 为兼容基线。
 - 主题通过语义色 token 和 `data-theme` 切换，不在组件中硬编码颜色。
 
+## 当前数据要点（最近一次更新 2026-08-03）
+
+- 智谱 GLM Coding Plan 改版：连续包月价 ¥118/¥538/¥1078（年付 7 折后约 ¥94.4/¥430.4/¥862.4/月），每周 Credits 制度（Lite 10K / Pro 60K / Max 140K），GLM-5.2 LMArena 代码榜开源第一。
+- MiniMax Token Plan 新增 M2.5 / H3 / Speech 2.8 / Music 3.0，M3 + 全模态共享额度。
+- Kimi Code Plan K3 已正式上线（2026/7/17 发布，2.8T 参数，1M 上下文），5 档套餐。
+- 火山引擎方舟 Coding Plan 新接入 Doubao-Seed-2.1-turbo / Kimi-K2.7 / MiniMax-M3 / Deepseek-V4，限时首购 9.9 元起，加量不加价，Pro 价格官网待更新。
+- 小米 MiMo Token Plan 5/26 起全档 Credits 升级 5-8 倍（492-9,840 亿/年），MiMo Claw 正式版上线（加购 ¥233.80/年）。
+- 阿里云百炼 Lite 已停售，Pro ¥200/月每日限量补货。
+
 [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md

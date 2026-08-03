@@ -8,12 +8,13 @@ import type { FaqItem, HomePageData, PlatformSummary } from '../types'
 import { buildFaqJsonLd, buildHomeJsonLd } from './seo'
 
 const zhFaqs: FaqItem[] = [
-  { question: 'GLM Coding Plan 支持哪些模型？', answer: '智谱 GLM Coding Plan 支持 GLM-5.2（6月13日全量开放，2月12日起取消首购优惠，保留包季9折 / 包年7折订阅优惠）、GLM-5.1、GLM-5-Turbo、GLM-5 和 GLM-4.7。GLM-5.2 支持 1M 上下文，在 Code V3 私有评测中跃居第三。' },
-  { question: '什么是 Coding Plan？', answer: 'Coding Plan 是面向 AI 编程工具的订阅套餐。订阅后可在 Claude Code、Cursor、Cline 等工具中使用模型，通常按月、季或年付费，并按滚动窗口或月度 token 管理额度。' },
-  { question: 'Coding Plan 支持哪些编程工具？', answer: '大多数平台支持 Claude Code、Cursor、Cline、Roo Code、Kilo Code 和 OpenCode。具体支持范围因平台而异。' },
-  { question: '5小时限额是什么意思？', answer: '部分平台采用滚动 5 小时窗口。旧请求随时间移出窗口后额度会恢复；另一些新套餐已经改为月度 token 或 Credits 总量。' },
-  { question: '一次提问会消耗多少额度？', answer: '一次用户提问通常会触发分析、搜索、生成和验证等多个模型调用，常见约 5 至 30 次，实际消耗取决于工具、模型和上下文。' },
-  { question: '哪个平台性价比最高？', answer: '入门体验推荐 MiniMax Plus（¥49/月，6 亿+ token）或火山引擎方舟（首两月 2.5 折）。看重模型多样性选火山引擎方舟，看重 MCP 工具选智谱 GLM（含在套餐内，有月度额度限制）。注意阿里云 Lite 已停售、腾讯云 Coding Plan 已下线。' },
+  { question: 'GLM Coding Plan 支持哪些模型？', answer: '智谱 GLM Coding Plan 支持 GLM-5.2（6月13日全量开放，发布即获 LMArena 代码榜开源模型第一、全球第二）、GLM-5.1、GLM-5-Turbo、GLM-5 和 GLM-4.7 等旗舰型号。GLM-5.2 支持 1M 上下文，面向长程任务。套餐使用每周积分（Credits）制度，逐步开放最新旗舰模型与功能。' },
+  { question: 'GLM Coding Plan 现在的价格是多少？', answer: 'GLM Coding Plan 已改版为连续包月价：Lite ¥118/月（年付 ¥94.4/月）、Pro ¥538/月（年付 ¥430.4/月）、Max ¥1078/月（年付 ¥862.4/月）；连续包季 8 折、包年 7 折。Lite 每周 10,000 积分，Pro 6 倍 Lite 用量，Max 14 倍 Lite 用量。' },
+  { question: '什么是 Coding Plan？', answer: 'Coding Plan 是面向 AI 编程工具的订阅套餐。订阅后可在 Claude Code、Cursor、Cline 等工具中使用模型，通常按月、季或年付费，并按滚动窗口、周积分、月度 token 或 Credits 总量管理额度。' },
+  { question: 'Coding Plan 支持哪些编程工具？', answer: '大多数平台支持 Claude Code、Cursor、Cline、Roo Code、Kilo Code、OpenCode、OpenClaw、ZCode 等。具体支持范围因平台而异。' },
+  { question: '5小时限额 / 每周积分是什么意思？', answer: '早期 Coding Plan 多采用滚动 5 小时窗口（如 GLM Pro/Max）。新版 GLM Coding Plan 改为每周积分（Credits）制，额度按周刷新；其他平台仍采用 5 小时窗口（如 Kimi Code、MiniMax M2.7）。' },
+  { question: '一次提问会消耗多少额度？', answer: '一次用户提问通常会触发分析、搜索、生成和验证等多个模型调用，常见约 5 至 30 次，实际消耗取决于工具、模型和上下文长度。' },
+  { question: '哪个平台性价比最高？', answer: '入门体验推荐 MiniMax Plus（¥49/月，6 亿+ token）或火山引擎方舟 Lite（首购 ¥9.9，刊例 ¥40）。看重模型多样性选火山引擎方舟，看重 MCP 工具选智谱 GLM（视觉理解 / 联网搜索 / 网页读取 / 开源仓库 MCP 已包含）。注意阿里云 Lite 已停售。' },
   { question: 'Kimi Code Plan 新版有哪些变化？', answer: 'Kimi 已上线 K3 旗舰（2.8T 参数 / 1M 上下文，2026/7/17 发布），套餐从 3 档扩展为 5 档：Adagio 免费、Andante ¥49、Moderato ¥99（K3 可用）、Allegretto ¥199（K3 + 集群 4 子任务）、Allegro ¥699（K3 解锁 1M 超长对话）。' },
   { question: '可以退款吗？', answer: '各平台政策不同，大部分已激活订阅不支持退款。建议先从低档套餐开始体验，并在购买前确认自动续费和退款条款。' },
 ]
@@ -50,25 +51,25 @@ const zhPlatforms: PlatformSummary[] = [
     cta: { label: '查看详情', href: 'https://www.aliyun.com/benefit/scene/codingplan?source=5176.29345612&userCode=j0hv8tuh', detailHref: '/plans/aliyun' },
   },
   {
-    id: 'zhipu', name: '智谱 GLM', heading: '智谱 GLM Coding Plan GLM-5.2 (2/12 取消首购优惠)', subtitle: 'GLM-5.2 全量开放 1M 上下文；保留包季9折 / 包年7折订阅优惠', accent: 'blue',
-    models: ['GLM-5.2', 'GLM-5.1', 'GLM-5-Turbo', 'GLM-5', 'GLM-4.7'], entryPrice: '¥49/月', quota: '80-1,600 prompts/5h',
+    id: 'zhipu', name: '智谱 GLM', heading: '智谱 GLM Coding Plan 连续包月 ¥118 起', subtitle: 'GLM-5.2 全量开放 1M 上下文，连续包季 8 折 / 包年 7 折；GLM-5.2 发布即获 LMArena 代码榜开源第一', accent: 'blue',
+    models: ['GLM-5.2', 'GLM-5.1', 'GLM-5-Turbo', 'GLM-5', 'GLM-4.7'], entryPrice: '¥118/月', quota: '10,000-140,000 Credits/周',
     plans: [
-      { name: 'Lite', price: '¥49', unit: '/月', details: ['约 80 prompts/5h', '约 400 prompts/周', 'MCP 100 次/月'] },
-      { name: 'Pro', badge: '推荐', price: '¥149', unit: '/月', details: ['约 400 prompts/5h', '约 2,000 prompts/周', 'MCP 1,000 次/月'], featured: true },
-      { name: 'Max', price: '¥469', unit: '/月', details: ['约 1,600 prompts/5h', '约 8,000 prompts/周', 'MCP 4,000 次/月'] },
+      { name: 'Lite', price: '¥118', unit: '/月', note: '年付 ¥94.4/月', details: ['每周 10,000 Credits', '逐步开放最新旗舰模型', '支持 ZCode / Claude Code 等 20+ 工具'] },
+      { name: 'Pro', badge: '推荐', price: '¥538', unit: '/月', note: '年付 ¥430.4/月', details: ['6× Lite 用量', '优先体验最新旗舰模型', '覆盖多款精选 MCP 工具', '更快生成速度'], featured: true },
+      { name: 'Max', price: '¥1,078', unit: '/月', note: '年付 ¥862.4/月', details: ['14× Lite 用量', '首发接入最新旗舰模型', '高峰期专属资源优先保障'] },
     ],
-    tools: ['Claude Code', 'Cursor', 'Roo Code', 'OpenCode'], features: ['1M 上下文', '4 类 MCP', '20+ 工具'],
+    tools: ['ZCode', 'Claude Code', 'Cursor', 'OpenClaw', 'OpenCode', 'Cline', 'Roo Code', 'Kilo Code'], features: ['1M 上下文', '4 类 MCP', '20+ 工具', '每周 Credits'],
     cta: { label: '查看详情', href: 'https://www.bigmodel.cn/glm-coding?ic=TOFGVCLIVG', detailHref: '/plans/zhipu' },
   },
   {
-    id: 'minimax', name: 'MiniMax', heading: 'MiniMax Token Plan M3 新模型', subtitle: 'M3 旗舰 5/31 上线，月度 token 用量制；7/22 起 API-vlm 调价至 ¥0.025/次', accent: 'orange',
-    models: ['MiniMax M3', 'M2.7', 'M2.7-highspeed'], entryPrice: '¥49/月', quota: '6亿-71亿+ token/月',
+    id: 'minimax', name: 'MiniMax', heading: 'MiniMax Token Plan M3 旗舰 + 全模态共享', subtitle: 'M3 旗舰 5/31 上线，月度 token 用量制；新增 M2.5 / H3 / Speech 2.8 / Music 3.0，老用户权益完整保留', accent: 'orange',
+    models: ['MiniMax M3', 'M2.7', 'M2.7-highspeed', 'M2.5', 'H3', 'Speech 2.8', 'Music 3.0'], entryPrice: '¥49/月', quota: '6亿-71亿+ token/月',
     plans: [
-      { name: 'Plus', price: '¥49', unit: '/月', details: ['6亿+ token/月', '3-4 Agent 并发', '1M 上下文'] },
-      { name: 'Max', badge: '推荐', price: '¥119', unit: '/月', details: ['18亿+ token/月', '4-5 Agent 并发', '视频 3 条/日'], featured: true },
-      { name: 'Ultra', price: '¥469', unit: '/月', details: ['71亿+ token/月', '6-7 Agent 并发', '视频 5 条/日'] },
+      { name: 'Plus', price: '¥49', unit: '/月', note: '年付 ¥490', details: ['6亿+ token/月', '3-4 Agent 并发', '全模态共享额度'] },
+      { name: 'Max', badge: '推荐', price: '¥119', unit: '/月', note: '年付 ¥1,190', details: ['18亿+ token/月', '4-5 Agent 并发', '视频 3 条/日'], featured: true },
+      { name: 'Ultra', price: '¥469', unit: '/月', note: '年付 ¥4,690', details: ['71亿+ token/月', '6-7 Agent 并发', '视频 5 条/日'] },
     ],
-    tools: ['Claude Code', 'Cursor', 'OpenCode', 'TRAE'], features: ['全模态', '1M 上下文', 'Agent 并发'],
+    tools: ['Claude Code', 'Cursor', 'OpenCode', 'TRAE', 'OpenClaw', 'Cline'], features: ['全模态', '1M 上下文', 'Agent 并发', 'M3 + M2.7 共享'],
     cta: { label: '查看详情', href: 'https://platform.minimaxi.com/subscribe/token-plan?code=GhZIakShS0&source=link', detailHref: '/plans/minimax' },
   },
   {
@@ -85,45 +86,36 @@ const zhPlatforms: PlatformSummary[] = [
     cta: { label: '查看详情', href: 'https://www.kimi.com/code', detailHref: '/plans/kimi' },
   },
   {
-    id: 'tencentcloud', name: '腾讯云', heading: '腾讯云 Coding Plan 已下线', subtitle: 'Coding Plan 历史归档', accent: 'blue',
-    models: ['HY 2.0', 'GLM-5', 'Kimi-K2.5', 'MiniMax-M2.5'], entryPrice: '已下线', quota: '历史数据', availability: 'archived',
+    id: 'volcengine', name: '火山引擎方舟', heading: '火山引擎 方舟 Coding Plan 限时 9.9 元起 · 加量不加价', subtitle: '模型最丰富，新接入 GLM-5.2 / Doubao-Seed-2.1-turbo / Kimi-K2.7 / MiniMax-M3 / Deepseek-V4', accent: 'cyan',
+    models: ['Doubao-Seed-2.1-turbo', 'Doubao-Seed-2.0-Code', 'Kimi-K2.7', 'Kimi-K2.5', 'GLM-5.2', 'DeepSeek-V4', 'MiniMax-M3', 'Auto 模式'], entryPrice: '¥9.9/月起', quota: 'GLM-5.2 等热门模型限时加量 4 倍', availability: 'limited',
     plans: [
-      { name: 'Lite', price: '¥40', unit: '/月', details: ['历史套餐', '约 1,200 次/5h', '已下架'], disabled: true },
-      { name: 'Pro', price: '¥200', unit: '/月', details: ['历史套餐', '约 6,000 次/5h', '已下架'], disabled: true },
+      { name: 'Lite', badge: '限时首购 ¥9.9', price: '¥40', unit: '/月', note: '刊例价 ¥40/月 · 受邀再 9.5 折', details: ['Doubao / GLM / DeepSeek / Kimi / MiniMax', '支持 Auto 模式', 'GLM-5.2 限时加量 4 倍', 'Lite 满足个人开发者轻量需求'] },
+      { name: 'Pro', badge: '推荐 · 价格查询中', price: '价格查询中', unit: '', note: '官网价格待更新 · 5 倍于 Lite 用量', details: ['5 倍于 Lite 套餐用量', 'Claude Max 数倍', '支持 Auto 模式', '满足高阶用户大规模编程需求'], featured: true },
     ],
-    tools: ['CodeBuddy', 'Claude Code', 'Cursor'], features: ['2026-04-22 下线', '仅供历史参考'],
-    cta: { label: '已下架', href: 'https://curl.qcloud.com/kRhUF1xN', detailHref: '/plans/tencentcloud', disabled: true },
-  },
-  {
-    id: 'volcengine', name: '火山引擎方舟', heading: '火山引擎 方舟 Coding Plan 限时 9.9 元起', subtitle: '模型最丰富，新接入 GLM-5.2 / Doubao-Seed-2.1-turbo', accent: 'cyan',
-    models: ['Doubao-Seed-2.1-turbo', 'Doubao-Seed-2.0-Code', 'Kimi-K2.6', 'Kimi-K2.5', 'GLM-5.2', 'GLM-5', 'DeepSeek-V3.2'], entryPrice: '¥10/月起', quota: 'Lite 数倍 Claude Pro', availability: 'limited',
-    plans: [
-      { name: 'Lite', badge: '首两月 2.5 折', price: '¥40', unit: '/月', note: '首两月 ¥10/月', details: ['7+ 款模型', 'Auto 模式', '限时 9.9 元起', '已限购'] },
-      { name: 'Pro', badge: '推荐', price: '¥200', unit: '/月', note: '首两月 ¥50/月', details: ['5 倍 Lite 用量', '7+ 款模型', 'Auto 模式', '已限购'], featured: true },
-    ],
-    tools: ['Claude Code', 'Cursor', 'Cline', 'Codex CLI'], features: ['7+ 模型', 'Auto 模式', '限时 9.9 元'],
+    tools: ['Claude Code', 'Cursor', 'Cline', 'Codex CLI', 'Kilo Code', 'OpenCode'], features: ['8+ 模型', 'Auto 模式', '限时 9.9 元', '受邀 9.5 折'],
     cta: { label: '查看详情', href: 'https://volcengine.com/L/3sD5Ne_yUyk/', detailHref: '/plans/volcengine' },
   },
   {
-    id: 'xiaomi', name: '小米 MiMo', heading: '小米 MiMo Coding Plan 首购¥34.32/月', subtitle: 'MiMo-V2.5-Pro 旗舰，6 款模型，5/27 API 永久降价最高 99%', accent: 'orange',
-    models: ['MiMo-V2.5-Pro', 'MiMo-V2.5', 'MiMo TTS'], entryPrice: '¥39/月', quota: '6,000万-16亿 Credits/月',
+    id: 'xiaomi', name: '小米 MiMo', heading: '小米 MiMo Coding Plan 5/26 全档 Credits 升级 5-8 倍', subtitle: 'MiMo-V2.5-Pro 旗舰 · MiMo Claw 正式版上线 · 加购 ¥233.80/年 · V2 系列已下线', accent: 'orange',
+    models: ['MiMo-V2.5-Pro', 'MiMo-V2.5', 'MiMo 全模态', 'MiMo TTS'], entryPrice: '¥39/月', quota: '492-9,840 亿 Credits/年',
     plans: [
-      { name: 'Lite', price: '¥39', unit: '/月', details: ['6,000万 Credits/月', '首购 ¥34.32', '夜间 0.8x'] },
-      { name: 'Standard', price: '¥99', unit: '/月', details: ['2亿 Credits/月', '首购 ¥87.12', 'TTS 限免'] },
-      { name: 'Pro', badge: '推荐', price: '¥329', unit: '/月', details: ['7亿 Credits/月', '首购 ¥289.52', '高频用户'], featured: true },
-      { name: 'Max', price: '¥659', unit: '/月', details: ['16亿 Credits/月', '首购 ¥579.92', '团队重度使用'] },
+      { name: 'Lite', price: '¥39', unit: '/月', note: '年付 ¥411.84（88折）', details: ['492 亿 Credits/年', 'V2.5 全系列模型', '夜间 0.8x 消耗', 'TTS 限时免费'] },
+      { name: 'Standard', price: '¥99', unit: '/月', note: '年付 ¥1,045.44', details: ['1,320 亿 Credits/年', '2.7× Lite 用量', '夜间 0.8x 消耗'] },
+      { name: 'Pro', badge: '推荐', price: '¥329', unit: '/月', note: '年付 ¥3,474.24', details: ['4,560 亿 Credits/年', '9.3× Lite 用量', 'MiMo Claw 加购可选'], featured: true },
+      { name: 'Max', price: '¥659', unit: '/月', note: '年付 ¥6,959.04', details: ['9,840 亿 Credits/年', '20× Lite 用量', '团队/发烧友首选'] },
     ],
-    tools: ['Claude Code', 'Cursor', 'OpenCode', 'TRAE'], features: ['6 款模型', '5/27 API 永久降价', '夜间 0.8x'],
+    tools: ['OpenClaw', 'Codex', 'Claude Code', 'MiMo Code', 'OpenCode', 'Kilo Code', 'Cline', 'Cherry Studio', 'Qwen Code'], features: ['6 款模型', '5/26 升级 5-8 倍', '夜间 0.8x', 'MiMo Claw 可加购'],
     cta: { label: '查看详情', href: 'https://platform.xiaomimimo.com/token-plan', detailHref: '/plans/xiaomi' },
   },
 ]
 
 const enFaqs: FaqItem[] = [
-  { question: 'What is a Coding Plan?', answer: 'A Coding Plan is a subscription that gives developers access to AI models in tools such as Claude Code, Cursor and Cline. Plans use rolling quotas, monthly tokens or credits instead of simple pay-per-token billing.' },
-  { question: 'Which coding tools are supported?', answer: 'Most plans support Claude Code, Cursor, Cline, Roo Code, Kilo Code and OpenCode. Exact integrations vary by provider.' },
-  { question: 'What does the 5-hour rolling limit mean?', answer: 'Usage is counted in a moving five-hour window. Older calls leave the window over time and quota becomes available again. Some newer plans use monthly token totals instead.' },
+  { question: 'What is a Coding Plan?', answer: 'A Coding Plan is a subscription that gives developers access to AI models in tools such as Claude Code, Cursor and Cline. Plans use rolling quotas, weekly credits, monthly tokens or credits instead of simple pay-per-token billing.' },
+  { question: 'Which coding tools are supported?', answer: 'Most plans support Claude Code, Cursor, Cline, Roo Code, Kilo Code, OpenCode, OpenClaw and ZCode. Exact integrations vary by provider.' },
+  { question: 'What does the 5-hour rolling limit mean?', answer: 'Older plans used a rolling 5-hour window. The new GLM Coding Plan now uses weekly Credits that refresh every 7 days. Other providers (Kimi Code, MiniMax M2.7) still enforce a 5-hour window.' },
   { question: 'How many model calls does one prompt use?', answer: 'A single developer prompt may trigger 5 to 30 model calls for planning, search, tool use, generation and validation. Providers count this activity differently.' },
-  { question: 'Which plan offers the best value?', answer: 'For budget-conscious developers, GLM Lite at $3/month or MiniMax Plus at $20/month are excellent entry points. For heavy usage, MiniMax Max or GLM Pro offer strong value. Claude Code Pro at $20/month remains the gold standard for model quality with Claude Opus 4.7.' },
+  { question: 'Which plan offers the best value?', answer: 'For budget-conscious developers, GLM Lite at $18/month or MiniMax Plus at $49/month (~$8 annual equivalent) are excellent entry points. For heavy usage, MiniMax Max or GLM Pro offer strong value. Claude Code Pro at $20/month remains the gold standard for model quality with Claude Opus 4.7.' },
+  { question: 'What is the latest GLM Coding Plan pricing?', answer: 'GLM Coding Plan now charges Lite $18/mo ($12.6/mo yearly), Pro $80/mo ($56/mo yearly), Max $168/mo ($117.6/mo yearly). Quarterly billing gives a 20% discount and yearly billing 30% off. Lite ships with 10,000 weekly Credits, Pro is 6× Lite and Max is 14× Lite.' },
   { question: 'What is new in Kimi Code Plan?', answer: 'Kimi launched the K3 flagship (2.8T parameters, released 2026/7/17) and expanded the plan from 3 to 5 tiers: Adagio free, Andante ¥49, Moderato ¥99 (K3 unlocked), Allegretto ¥199 (K3 + 4 cluster subtasks), Allegro ¥699 (K3 with 1M-token conversations).' },
   { question: 'Can I get a refund?', answer: 'Refund policies vary. Most activated subscriptions are non-refundable, so start with a lower tier and check renewal terms before purchase.' },
 ]
@@ -140,13 +132,13 @@ const enPlatforms: PlatformSummary[] = [
     cta: { label: 'View Claude plans', href: 'https://claude.com/pricing' },
   },
   {
-    id: 'glm', name: 'GLM Coding Plan', heading: 'GLM Coding Plan GLM-5.2', subtitle: 'Z.ai global plans with strong MCP support', accent: 'blue',
-    models: ['GLM-5.2', 'GLM-5.1', 'GLM-5', 'GLM-4.7'], entryPrice: '$3/mo', quota: '80-1,600 prompts/5h',
+    id: 'glm', name: 'GLM Coding Plan', heading: 'GLM Coding Plan GLM-5.2 from $18/mo', subtitle: 'Z.ai global plans with strong MCP support · Quarterly -20% · Yearly -30%', accent: 'blue',
+    models: ['GLM-5.2', 'GLM-5.1', 'GLM-5-Turbo', 'GLM-5', 'GLM-4.7'], entryPrice: '$18/mo', quota: '10,000-140,000 Credits/week',
     plans: [
-      { name: 'Lite', price: '$3', unit: '/mo', details: ['~80 prompts/5h', '~400 prompts/week', 'Vision and search MCP'] },
-      { name: 'Pro', badge: 'Best value', price: '$15', unit: '/mo', details: ['~400 prompts/5h', '~2,000 prompts/week', 'Complex projects'], featured: true },
-      { name: 'Max', price: '$49', unit: '/mo', note: 'Estimated pricing', details: ['~1,600 prompts/5h', '~8,000 prompts/week', 'Priority access'] },
-    ], tools: ['Claude Code', 'Cursor', 'Cline', 'OpenCode'], features: ['Low entry price', 'MCP', '20+ tools'],
+      { name: 'Lite', price: '$18', unit: '/mo', note: 'Yearly $12.6/mo (-30%)', details: ['10,000 Credits / week', 'Gradual access to latest flagship', 'ZCode / Claude Code / 20+ tools'] },
+      { name: 'Pro', badge: 'Best value', price: '$80', unit: '/mo', note: 'Yearly $56/mo (-30%)', details: ['6× Lite usage', 'Priority flagship access', 'Curated MCP tools', 'Faster generation'], featured: true },
+      { name: 'Max', price: '$168', unit: '/mo', note: 'Yearly $117.6/mo (-30%)', details: ['14× Lite usage', 'First access to new models', 'Peak-hour priority'] },
+    ], tools: ['ZCode', 'Claude Code', 'Cursor', 'OpenClaw', 'OpenCode', 'Cline', 'Roo Code', 'Kilo Code'], features: ['1M context', '4 MCP tools', '20+ integrations', 'Weekly Credits'],
     cta: { label: 'Subscribe to GLM', href: 'https://z.ai/subscribe?ic=Q2I4GGSKVU' },
   },
   {
@@ -210,7 +202,7 @@ function makeHome(locale: 'zh-CN' | 'en', platforms: PlatformSummary[], faqs: Fa
       : { compare: '快速对比', platforms: '套餐详情', faq: '常见问题', language: 'EN', languageHref: '/en' },
     hero: isEn
       ? { badge: '2026 AI CODING SUBSCRIPTIONS', title: 'AI Coding Plans', highlight: 'Compared Side by Side', description: 'A practical comparison of price, model access, quotas and tool support, built from provider plan details.', stats: [{ value: '5', label: 'Platforms' }, { value: '$3', label: 'Lowest entry' }, { value: '20+', label: 'Coding tools' }] }
-      : { badge: '2026 AI 编程订阅指南', title: 'AI Coding Plan', highlight: '全面对比', description: '把价格、模型、额度口径和工具支持放到同一张地图里，减少在不同官网之间反复核对的时间。', stats: [{ value: '9', label: '平台横评' }, { value: '¥10', label: '活动最低月付' }, { value: '20+', label: '支持工具' }] },
+      : { badge: '2026 AI 编程订阅指南', title: 'AI Coding Plan', highlight: '全面对比', description: '把价格、模型、额度口径和工具支持放到同一张地图里，减少在不同官网之间反复核对的时间。', stats: [{ value: '8', label: '平台横评' }, { value: '¥10', label: '活动最低月付' }, { value: '20+', label: '支持工具' }] },
     comparison: isEn
       ? { title: 'Quick Comparison', description: 'Current entry points and quota models at a glance.', columns: ['Platform', 'Entry price', 'Models', 'Usage', 'Status'] }
       : { title: '快速对比', description: '先看起步价、核心模型和额度口径，再进入详情页核对限制。', columns: ['平台', '起步价', '核心模型', '额度口径', '状态'] },

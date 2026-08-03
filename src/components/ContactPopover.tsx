@@ -61,7 +61,7 @@ export function ContactPopover({ label, locale }: Props) {
         <span
           role="dialog"
           aria-label={isEn ? 'WeCom contact QR code' : '企业微信二维码'}
-          className="absolute right-0 top-full z-20 mt-3 w-60 rounded-2xl border border-border bg-surface p-4 text-center shadow-2xl"
+          className="absolute bottom-full left-0 z-50 mb-3 w-60 rounded-2xl border border-border bg-surface p-4 text-center shadow-2xl sm:left-auto sm:right-0"
         >
           <span className="block text-sm font-bold text-ink">
             {isEn ? 'Scan to add WeCom' : '扫码添加企业微信'}

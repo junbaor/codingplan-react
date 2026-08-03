@@ -38,7 +38,7 @@ export function buildHomeJsonLd(
     description,
     url,
     inLanguage: language,
-    dateModified: '2026-08-01',
+    dateModified: '2026-08-03',
     publisher: organization,
     mainEntity: {
       '@type': 'ItemList',
