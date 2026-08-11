@@ -52,3 +52,59 @@ npm run indexnow
 ```
 
 旧 key 在删除前可继续提交，但请尽快替换。
+
+## 高权重外链（1-3 天见效）
+
+### 技术社区（高优先级）
+- [ ] **V2EX**: https://v2ex.com/new/share - "分享创造" 节点
+  标题：「CodingPlan.org - 国内 AI 编程套餐价格对比」
+- [ ] **GitHub**: 创建 GitHub Topic `#coding-plan` `#ai-coding`，README 添加网站徽章，提交到 awesome-list
+- [ ] **掘金**: https://juejin.cn/editor/drafts/new
+  标题：「2026 年国内 AI 编程套餐全面对比」
+- [ ] **SegmentFault**: https://segmentfault.com/write
+
+### 社交媒体
+- [ ] **Twitter/X**: 带 hashtag #AI #Coding #开发工具
+- [ ] **小红书**: 发布测评笔记（带链接）
+- [ ] **知乎**: 回答相关问题并附带链接（"有哪些好用的 AI 编程工具？"、"Claude Code 怎么在国内用？"）
+
+### 外国社区（英文版）
+- [ ] **Hacker News**: https://news.ycombinator.com/submit
+- [ ] **Reddit**: r/coding, r/programming
+- [ ] **Product Hunt**: 产品发布
+
+## 被动索引优化
+
+- [ ] 每周更新一次价格/套餐信息，添加"最后更新时间"显示
+- [ ] 定期发布新闻/公告
+- [ ] 各平台卡片内部互链（首页锚点 + 详情页 Footer 导航）
+
+## 监控与分析
+
+- [x] Google Analytics（已安装）
+- [x] Microsoft Clarity（已安装）
+- [ ] Bing Webmaster Tools
+- [ ] 百度统计
+
+监控索引状态：`site:codingplan.org`
+检查关键词排名："coding plan 对比"、"AI 编程套餐"、"Claude Code 国内"
+
+## 时间线参考
+
+| 方法 | 预计索引时间 | 难度 | 效果 |
+|-----|------------|------|------|
+| IndexNow | 几小时 | 低 | ⭐⭐⭐ |
+| Search Console 主动提交 | 1-3天 | 低 | ⭐⭐⭐⭐ |
+| V2EX/掘金发帖 | 1-7天 | 低 | ⭐⭐⭐⭐⭐ |
+| 社交媒体分享 | 3-7天 | 低 | ⭐⭐⭐ |
+| 高权重外链 | 1-2周 | 中 | ⭐⭐⭐⭐⭐ |
+
+## 快速行动清单
+
+1. ✅ sitemap.xml + robots.txt（Next.js 自动生成）
+2. [ ] 注册 Google Search Console 并提交
+3. [ ] 注册 Bing Webmaster Tools
+4. [ ] 运行 `npm run indexnow` 提交当前全部 URL
+5. [ ] V2EX 发帖分享
+6. [ ] 小红书发笔记
+7. [ ] 掘金发文章

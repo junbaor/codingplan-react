@@ -25,10 +25,11 @@ npm run start
 ## 内容维护
 
 - 首页平台、套餐摘要和 FAQ：`src/data/home.ts`
-- 八个平台详情内容：`src/data/plans.ts`
+- 九个平台详情内容：`src/data/plans.ts`
 - JSON-LD 生成规则：`src/data/seo.ts`
 - Next.js Metadata 转换：`src/data/metadata.ts`
 - 页面视觉组件：`src/components/`
 - 主题与设计 token：`src/styles/global.css`
+- 从原站迁移的运维文档（分析后端方案、代码审查记录、Gist 推广内容）：`docs/`
 
 更新套餐时优先修改数据文件，不要在组件中复制业务文案。

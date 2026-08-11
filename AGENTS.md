@@ -6,6 +6,7 @@ app/ - Next.js App Router、静态页面、Metadata 与爬虫入口（2路由组
 src/ - 共享组件、类型化业务数据和全局样式（3子目录: components, data, styles）
 scripts/ - IndexNow 索引提交与验证文件生成脚本
 public/ - Bing 验证、LLM 说明与企业微信二维码等静态资源
+docs/ - 从原站迁移的运维文档（分析后端方案、代码审查记录、Gist 推广内容）
 </directory>
 
 <config>
@@ -27,8 +28,9 @@ README.md - 开发命令、App Router 架构与内容维护入口
 - Title、H 标题、keywords 缺失状态、canonical、统计 Key 与推广参数以原站 HTML 为兼容基线。
 - 主题通过语义色 token 和 `data-theme` 切换，不在组件中硬编码颜色。
 
-## 当前数据要点（最近一次更新 2026-08-03）
+## 当前数据要点（最近一次更新 2026-08-11）
 
+- OpenCode Go 新增（2026/8/11）：首月 $5，之后 $10/月，18 款开源模型 6 倍用量（5h $12 / 周 $30 / 月 $60），OpenAI / Anthropic 兼容 API，详情页 /plans/opencode-go，推广链接带 ref=JBT5KJRCD4。
 - 智谱 GLM Coding Plan 改版：连续包月价 ¥118/¥538/¥1078（年付 7 折后约 ¥94.4/¥430.4/¥862.4/月），每周 Credits 制度（Lite 10K / Pro 60K / Max 140K），GLM-5.2 LMArena 代码榜开源第一。
 - MiniMax Token Plan 新增 M2.5 / H3 / Speech 2.8 / Music 3.0，M3 + 全模态共享额度。
 - Kimi Code Plan K3 已正式上线（2026/7/17 发布，2.8T 参数，1M 上下文），5 档套餐。

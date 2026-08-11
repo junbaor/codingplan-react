@@ -296,6 +296,62 @@ const baiyunzhisuan = definePlan({
   ],
 })
 
+const opencodeGo = definePlan({
+  slug: 'opencode-go', accent: 'slate', availability: 'active',
+  seo: { title: 'OpenCode Go 详解 - 首月 $5 起，18 款开源模型 6 倍用量', description: 'OpenCode Go 订阅详解：首月 $5，之后 $10/月；5 小时 $12 / 周 $30 / 月 $60 美元计价额度（6 倍用量）；Grok 4.5、GLM-5.2、Kimi K3、Qwen3.8 Max、DeepSeek V4、MiniMax M3 等 18 款开源模型；OpenAI / Anthropic 兼容 API，OpenCode 或任意 Agent 均可接入。', canonical: 'https://codingplan.org/plans/opencode-go', locale: 'zh-CN', ogType: 'article' },
+  hero: { badge: 'OpenCode · Anomaly', title: 'OpenCode', highlight: 'Go 订阅', description: '低成本开源编码模型订阅：首月 $5，之后 $10/月，可享受约 6 倍订阅金额的模型用量。精选 18 款经过 Agent 编程实测的开源模型，OpenCode 或任意兼容 Agent 均可接入。', stats: [{ value: '18', label: '款模型' }, { value: '$5', label: '首月价' }, { value: '6x', label: '用量倍率' }, { value: '31,650', label: '5h 最高请求' }] },
+  modelsTitle: '模型阵容', modelsDescription: '18 款开源/开放模型全部经过 Agent 编程实测与基准验证，新模型持续加入。',
+  models: [
+    { icon: '🐙', name: 'Grok 4.5', description: 'xAI 旗舰模型，编程能力最强的开源模型之一；5 小时约 120 次请求，月度 $15 额度。', badge: '旗舰' },
+    { icon: '🔷', name: 'GLM-5.2', description: '智谱旗舰，LMArena 代码榜开源第一；5 小时约 880 次请求，月度 $60 额度。', badge: '开源第一' },
+    { icon: '🌟', name: 'Kimi K3', description: 'Moonshot AI 旗舰（2.8T 参数，1M 上下文），Moderato 级体验；5 小时约 110 次请求。', badge: '1M 上下文' },
+    { icon: '☁️', name: 'Qwen3.8 Max', description: '阿里千问最新旗舰，5 小时约 160 次请求。' },
+    { icon: '🐋', name: 'DeepSeek V4 Pro', description: 'DeepSeek 旗舰开源模型，5 小时约 3,450 次请求；V4 Flash 限时 2 倍额度，5 小时约 63,300 次。', badge: '限时 2x 额度' },
+    { icon: '🔥', name: 'MiniMax M3', description: 'MiniMax 旗舰多模态模型，5 小时约 3,200 次请求。' },
+    { icon: '⚡', name: 'MiMo-V2.5', description: '小米开源模型，超低单价，5 小时约 30,100 次请求。', badge: '性价比之王' },
+    { icon: '🤖', name: 'Hy3', description: '高性能开源模型，5 小时约 4,300 次请求。' },
+    { icon: '🧠', name: 'GPT 5.6 Luna', description: 'OpenAI 开放模型，5 小时约 2,050 次请求。' },
+    { icon: '✨', name: 'Kimi K2.7 / K2.6', description: 'Moonshot 开放模型组合，5 小时约 1,150-1,350 次请求。' },
+  ],
+  plansTitle: '套餐详情', plansDescription: '单档订阅，$10/月享受约 6 倍用量；首月 $5，可随时取消，用量不足可充值补足。', purchaseUrl: 'https://opencode.ai/go?ref=JBT5KJRCD4',
+  plans: [
+    { name: 'Go', badge: '首月 $5', price: '$10', unit: '/月', discount: '首月 $5 · 订阅即送 $5 额度 · 邀请好友双方各得 $5', features: ['5 小时 $12 / 周 $30 / 月 $60 美元计价额度', '18 款精选开源模型（Grok 4.5 / GLM-5.2 / Kimi K3 等）', 'OpenAI / Anthropic 兼容 API，任意 Agent 可接入', '额度用尽后可使用 Zen 余额兜底（可开关）', '不用于模型训练，多数模型 0 天数据保留', '随时取消，无锁定'], audience: '想以低成本使用最强开源模型的开发者、需要大额度跑 Agent 任务的重度用户', featured: true, ctaLabel: '立即订阅 Go →' },
+  ],
+  comparison: { title: '模型用量对比', description: '按典型请求模式估算（5h / 周 / 月），实际取决于上下文长度与模型单价。', columns: ['模型', '5 小时', '每周', '每月'], featuredColumn: 1, rows: [
+    ['DeepSeek V4 Flash', '31,650', '79,050', '158,150'],
+    ['MiMo-V2.5', '30,100', '75,200', '150,400'],
+    ['Qwen3.7 Plus', '4,300', '10,800', '21,600'],
+    ['Hy3', '4,300', '10,750', '21,500'],
+    ['DeepSeek V4 Pro', '3,450', '8,550', '17,150'],
+    ['MiniMax M3', '3,200', '8,000', '16,000'],
+    ['GLM-5.2', '880', '2,150', '4,300'],
+    ['Qwen3.8 Max', '160', '400', '810'],
+    ['Grok 4.5', '120', '300', '600'],
+    ['Kimi K3', '110', '250', '490'],
+  ] },
+  sections: [
+    { title: '额度制度', warning: '额度以美元计价：5 小时 $12 / 周 $30 / 月 $60，越贵的模型消耗越快。额度达到上限后仍可使用免费模型。', cards: [
+      { icon: '⏱️', title: '5 小时滚动窗口', description: '$12 用量，按滚动窗口恢复，适合日常持续编码。' },
+      { icon: '📅', title: '每周限制', description: '$30 用量，按周重置，未用完不累积。' },
+      { icon: '🗓️', title: '每月限制', description: '$60 用量，约为订阅费的 6 倍，是套餐的核心价值。' },
+      { icon: '💳', title: '余额兜底', description: '控制台开启 Use balance 后，超额自动从 Zen 余额扣费，不会中断请求。' },
+    ] },
+    { title: '接入方式', headingLevel: 3, highlights: ['在 opencode.ai 登录并订阅 Go，复制 API Key', 'OpenCode TUI 中运行 /connect 选择 OpenCode Go 并粘贴 Key', '模型 ID 格式 opencode-go/<model-id>（如 opencode-go/kimi-k3）', 'API 端点兼容 OpenAI / Anthropic / Responses 协议，Claude Code、Cursor 等工具同样可接入'] },
+    { title: '隐私与数据', headingLevel: 3, highlights: ['全部模型不用于模型训练', '多数模型 0 天数据保留（GLM / Kimi / Qwen / DeepSeek / MiniMax / MiMo 等）', 'Grok 4.5 与 GPT 5.6 Luna 保留 30 天（滥用监控）', 'DeepSeek V4 Flash 零数据保留协议按月续期'] },
+  ],
+  tools: ['OpenCode', 'Claude Code', 'Cursor', 'Cline', 'Roo Code', 'Kilo Code', 'Cherry Studio'],
+  contentOrder: ['models', 'plans', 'comparison', 'tools', 'section:0', 'section:1', 'section:2', 'faq', 'final-cta'],
+  finalCta: { title: '立即订阅 OpenCode Go', label: '前往 opencode.ai/go →', href: 'https://opencode.ai/go?ref=JBT5KJRCD4' },
+  faqs: [
+    { question: 'OpenCode Go 是什么？', answer: 'OpenCode Go 是 Anomaly 推出的低成本开源模型订阅：首月 $5，之后 $10/月，提供 18 款精选开源模型约 6 倍于订阅金额的用量，可在 OpenCode 或任意 OpenAI / Anthropic 兼容 Agent 中使用。' },
+    { question: 'Go 和 Zen 有什么区别？', answer: 'Go 是面向开源模型的低成本订阅（$10/月，6 倍用量）；Zen 是 OpenCode 的旗舰订阅，提供付费闭源模型额度与更多功能。两者独立订阅，Go 更像"开源模型月卡"。' },
+    { question: '用量额度怎么计算？', answer: '额度以美元计价：5 小时 $12、每周 $30、每月 $60。实际请求次数取决于模型单价，例如 DeepSeek V4 Flash 5 小时约 31,650 次，而 Kimi K3 约 110 次。超额后可在控制台开启余额兜底，或改用免费模型。' },
+    { question: '包含哪些模型？', answer: '18 款：Grok 4.5、GLM-5.2/5.1、GPT 5.6 Luna、Kimi K3/K2.7 Code/K2.6、MiMo-V2.5/-Pro、MiniMax M3/M2.7、Qwen3.8 Max/Qwen3.7 Max/Plus/Qwen3.6 Plus、DeepSeek V4 Pro/V4 Flash、Hy3。模型列表持续更新。' },
+    { question: '邀请好友有什么优惠？', answer: '通过邀请链接（https://opencode.ai/go?ref=JBT5KJRCD4）加入的好友订阅 Go 后，好友与你各获得 $5 使用额度。' },
+    { question: '数据隐私如何保证？', answer: '所有模型均不用于训练，多数模型 0 天数据保留；Grok 4.5 与 GPT 5.6 Luna 因平台滥用监控保留 30 天日志。DeepSeek V4 Flash 零数据保留协议按月续期。' },
+  ],
+})
+
 export const plansBySlug: Record<string, PlanPageData> = {
   zhipu,
   minimax,
@@ -305,6 +361,7 @@ export const plansBySlug: Record<string, PlanPageData> = {
   tencentcloud,
   xiaomi,
   baiyunzhisuan,
+  'opencode-go': opencodeGo,
 }
 
 export const planSlugs = Object.keys(plansBySlug)

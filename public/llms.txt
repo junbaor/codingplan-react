@@ -1,16 +1,45 @@
 # CodingPlan.org
 
-> CodingPlan.org compares AI coding subscriptions and token plans for developers in Chinese and English.
+> Compare AI coding subscriptions side by side — pricing, models, usage limits, and supported tools.
 
-## Core Pages
+CodingPlan.org is an independent comparison site for AI coding plan subscriptions. We track pricing and features across major platforms so developers can find the best plan for their workflow.
 
-- [Chinese comparison](https://codingplan.org): Nine AI coding platforms with pricing, models, quotas and tools.
-- [English comparison](https://codingplan.org/en): Claude Code, GLM, MiniMax, Kimi and Qwen plans.
-- [Zhipu GLM](https://codingplan.org/plans/zhipu): GLM models, tiers, rolling quotas and MCP tools.
-- [MiniMax](https://codingplan.org/plans/minimax): M3 token plans, concurrency and multimodal quotas.
-- [Kimi](https://codingplan.org/plans/kimi): K2.6 plans, member benefits and Agent clusters.
-- [Volcengine Ark](https://codingplan.org/plans/volcengine): Multi-model plans and Auto routing.
-- [Alibaba Cloud Bailian](https://codingplan.org/plans/aliyun): Qwen and third-party model plan availability.
-- [Xiaomi MiMo](https://codingplan.org/plans/xiaomi): Credit-based MiMo token plans.
+## Pages
+
+- [Chinese Homepage](https://codingplan.org): 国内 AI 编程套餐对比 — 智谱 GLM、MiniMax、Kimi、火山引擎方舟、阿里云百炼、小米 MiMo、OpenCode Go
+- [English Homepage](https://codingplan.org/en): International AI coding plan comparison — Claude Code, GLM, MiniMax, Kimi, Qwen
+- [OpenCode Go](https://codingplan.org/plans/opencode-go): 18 open-source models, $5 first month, then $10/mo, 6x usage value
+- [Zhipu GLM](https://codingplan.org/plans/zhipu): GLM models, tiers, weekly Credits and MCP tools
+- [MiniMax](https://codingplan.org/plans/minimax): M3 token plans, concurrency and multimodal quotas
+- [Kimi](https://codingplan.org/plans/kimi): K3 plans, member benefits and Agent clusters
+- [Volcengine Ark](https://codingplan.org/plans/volcengine): Multi-model plans and Auto routing
+- [Alibaba Cloud Bailian](https://codingplan.org/plans/aliyun): Qwen and third-party model plan availability
+- [Xiaomi MiMo](https://codingplan.org/plans/xiaomi): Credit-based MiMo token plans
+- [Baiyun Zhisuan](https://codingplan.org/plans/baiyunzhisuan): Pay-as-you-go API with referral coupons
+
+## Platforms Covered
+
+### International (English page)
+
+- **Claude Code** by Anthropic: $20–$200/mo. Models: Opus 4.7, Sonnet 4.6, Sonnet 4.5, Haiku 4.5. The gold standard for AI coding.
+- **GLM Coding Plan** by Zhipu AI (Z.ai): $18–$168/mo (yearly $12.6–$117.6/mo, -30%). Models: GLM-5.2, GLM-5.1, GLM-5-Turbo, GLM-5, GLM-4.7. Weekly Credits (Lite 10K / Pro 60K / Max 140K). 4 MCP tools included. GLM-5.2 is #1 open-source & #2 global on LMArena Code.
+- **MiniMax Token Plan**: $10–$80/mo. Models: M3, M2.7, M2.7-highspeed. Up to 100+ TPS inference speed. 4 tiers (Starter / Plus / Max / Max HS).
+- **Kimi Code Plan** by Moonshot AI: $0–$99/mo (5 tiers). Model: Kimi K3 (2.8T params, 1M context, launched 2026/7/17) + K2.6. 100 TPS, weekly quota refresh.
+- **Qwen Coding Plan** by Alibaba Cloud: $10–$50/mo. Models: Qwen3.5-Plus, Qwen3-Max, Qwen3-Coder, GLM-5, Kimi-K2.5, MiniMax-M2.5. Multi-model switching.
+
+### OpenCode Go
+
+- **OpenCode Go** by Anomaly: $5 first month, then $10/mo with 6x usage value. 18 open-source models: Grok 4.5, GLM-5.2, GLM-5.1, GPT 5.6 Luna, Kimi K3/K2.7 Code/K2.6, MiMo-V2.5/-Pro, MiniMax M3/M2.7, Qwen3.8 Max/Qwen3.7 Max/Plus/Qwen3.6 Plus, DeepSeek V4 Pro/V4 Flash, Hy3. Dollar-based limits ($12/5h, $30/week, $60/month). OpenAI / Anthropic compatible APIs work with OpenCode or any agent.
+
+### China (Chinese page)
+
+- **智谱 GLM**: ¥118–¥1078/月（连包年 7 折后约 ¥94.4–¥862.4/月）. Models: GLM-5.2, GLM-5.1, GLM-5-Turbo, GLM-5, GLM-4.7. 4 类 MCP 工具内置，每周 Credits 制度.
+- **MiniMax**: ¥49–¥469/月. Models: M3, M2.7, M2.7-highspeed, M2.5, H3, Speech 2.8, Music 3.0. 全模态共享额度，1M 上下文.
+- **Kimi**: ¥49–¥699/月（5 档 Adagio/Andante/Moderato/Allegretto/Allegro）. Model: Kimi K3 (2026/7/17 发布) + K2.6. Moderato 起 K3 可用，Allegro 解锁 1M 超长对话.
+- **火山引擎方舟**: 限时 9.9 元起（刊例 ¥40/月，受邀再 9.5 折）. 8+ 款模型自由切换，Auto 模式，GLM-5.2 等热门模型限时加量 4 倍.
+- **小米 MiMo**: ¥39–¥659/月（包年 88 折）。V2.5 全系列模型 + MiMo Claw 正式版（加购 ¥233.80/年）。5/26 起全档 Credits 升级 5-8 倍（492-9,840 亿/年）.
+- **阿里云百炼**: ¥40–¥200/月. 千问系列 + 第三方模型，Lite 已停售，Pro 每日限量抢购.
+- **腾讯云 Coding Plan**: 已下线（2026/4/22），仅历史参考.
+- **白云智算**: 按量 API，无固定月费；注册实名 ¥150 + 首调 ¥300 代金券.
 
 Prices and quotas can change. Verify current information on each provider's official website.

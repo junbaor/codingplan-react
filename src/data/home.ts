@@ -107,6 +107,15 @@ const zhPlatforms: PlatformSummary[] = [
     tools: ['OpenClaw', 'Codex', 'Claude Code', 'MiMo Code', 'OpenCode', 'Kilo Code', 'Cline', 'Cherry Studio', 'Qwen Code'], features: ['6 款模型', '5/26 升级 5-8 倍', '夜间 0.8x', 'MiMo Claw 可加购'],
     cta: { label: '查看详情', href: 'https://platform.xiaomimimo.com/token-plan', detailHref: '/plans/xiaomi' },
   },
+  {
+    id: 'opencode-go', name: 'OpenCode Go', heading: 'OpenCode Go 首月 $5 起 · 18 款开源模型 6 倍用量', subtitle: 'Grok 4.5 / GLM-5.2 / Kimi K3 / Qwen3.8 Max / DeepSeek V4 / MiniMax M3 全包含，OpenAI / Anthropic 兼容接口可接任意 Agent', accent: 'slate',
+    models: ['Grok 4.5', 'GLM-5.2', 'Kimi K3', 'Qwen3.8 Max', 'DeepSeek V4', 'MiniMax M3', 'MiMo-V2.5', 'Hy3'], entryPrice: '$5/首月', quota: '5h $12 / 周 $30 / 月 $60',
+    plans: [
+      { name: 'Go', badge: '首月 $5', price: '$10', unit: '/月', note: '6 倍用量 · 随时取消', details: ['18 款开源模型', '5h $12 / 周 $30 / 月 $60 额度', 'OpenAI / Anthropic 兼容 API', '邀请好友双方各得 $5'], featured: true },
+    ],
+    tools: ['OpenCode', 'Claude Code', 'Cursor', 'Cline', 'Roo Code'], features: ['18 款模型', '6x 用量', '$5 首月', '0 天数据保留'],
+    cta: { label: '查看详情', href: 'https://opencode.ai/go?ref=JBT5KJRCD4', detailHref: '/plans/opencode-go' },
+  },
 ]
 
 const enFaqs: FaqItem[] = [
@@ -202,7 +211,7 @@ function makeHome(locale: 'zh-CN' | 'en', platforms: PlatformSummary[], faqs: Fa
       : { compare: '快速对比', platforms: '套餐详情', faq: '常见问题', language: 'EN', languageHref: '/en' },
     hero: isEn
       ? { badge: '2026 AI CODING SUBSCRIPTIONS', title: 'AI Coding Plans', highlight: 'Compared Side by Side', description: 'A practical comparison of price, model access, quotas and tool support, built from provider plan details.', stats: [{ value: '5', label: 'Platforms' }, { value: '$3', label: 'Lowest entry' }, { value: '20+', label: 'Coding tools' }] }
-      : { badge: '2026 AI 编程订阅指南', title: 'AI Coding Plan', highlight: '全面对比', description: '把价格、模型、额度口径和工具支持放到同一张地图里，减少在不同官网之间反复核对的时间。', stats: [{ value: '8', label: '平台横评' }, { value: '¥10', label: '活动最低月付' }, { value: '20+', label: '支持工具' }] },
+      : { badge: '2026 AI 编程订阅指南', title: 'AI Coding Plan', highlight: '全面对比', description: '把价格、模型、额度口径和工具支持放到同一张地图里，减少在不同官网之间反复核对的时间。', stats: [{ value: '9', label: '平台横评' }, { value: '¥10', label: '活动最低月付' }, { value: '20+', label: '支持工具' }] },
     comparison: isEn
       ? { title: 'Quick Comparison', description: 'Current entry points and quota models at a glance.', columns: ['Platform', 'Entry price', 'Models', 'Usage', 'Status'] }
       : { title: '快速对比', description: '先看起步价、核心模型和额度口径，再进入详情页核对限制。', columns: ['平台', '起步价', '核心模型', '额度口径', '状态'] },
