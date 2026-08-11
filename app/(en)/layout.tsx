@@ -28,7 +28,7 @@ export default function EnglishRootLayout({ children }: Readonly<{ children: Rea
         <div className="sticky top-16 z-40 border-b border-brand-cyan/20 bg-brand-cyan/10 py-2">
           <p className="page-shell text-center text-xs text-ink-soft sm:text-sm">
             Need a China coding plan (GLM / MiniMax / Kimi / Volcengine / Xiaomi)? Email me at{' '}
-            <a className="focus-ring font-bold text-brand-cyan underline underline-offset-2 hover:text-ink" href="http://support.codingplan.org/" target="_blank" rel="noopener noreferrer">support.codingplan.org</a>
+            <a className="focus-ring font-bold text-brand-cyan underline underline-offset-2 hover:text-ink" href="mailto:support@codingplan.org">support@codingplan.org</a>
           </p>
         </div>
         {children}
