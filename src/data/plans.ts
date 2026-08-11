@@ -315,7 +315,7 @@ const opencodeGo = definePlan({
   ],
   plansTitle: '套餐详情', plansDescription: '单档订阅，$10/月享受约 6 倍用量；首月 $5，可随时取消，用量不足可充值补足。', purchaseUrl: 'https://opencode.ai/go?ref=JBT5KJRCD4',
   plans: [
-    { name: 'Go', badge: '首月 $5', price: '$10', unit: '/月', discount: '首月 $5 · 订阅即送 $5 额度 · 邀请好友双方各得 $5', features: ['5 小时 $12 / 周 $30 / 月 $60 美元计价额度', '18 款精选开源模型（Grok 4.5 / GLM-5.2 / Kimi K3 等）', 'OpenAI / Anthropic 兼容 API，任意 Agent 可接入', '额度用尽后可使用 Zen 余额兜底（可开关）', '不用于模型训练，多数模型 0 天数据保留', '随时取消，无锁定'], audience: '想以低成本使用最强开源模型的开发者、需要大额度跑 Agent 任务的重度用户', featured: true, ctaLabel: '立即订阅 Go →' },
+    { name: 'Go', badge: '首月 $5', price: '$10', unit: '/月', discount: '首月 $5 · 订阅即送 $5 额度 · 邀请好友双方各得 $5', features: ['5 小时 $12 / 周 $30 / 月 $60 美元计价额度', '18 款精选开源模型（Grok 4.5 / GLM-5.2 / Kimi K3 等）', 'OpenAI / Anthropic 兼容 API，任意 Agent 可接入', '额度用尽后可使用 Zen 余额兜底（可开关）', '不用于模型训练，多数模型 0 天数据保留', '随时取消，无锁定'], audience: '想以低成本使用最强开源模型的开发者、需要大额度跑 Agent 任务的重度用户', featured: true, recommended: true, ctaLabel: '立即订阅 Go →' },
   ],
   comparison: { title: '模型用量对比', description: '按典型请求模式估算（5h / 周 / 月），实际取决于上下文长度与模型单价。', columns: ['模型', '5 小时', '每周', '每月'], featuredColumn: 1, rows: [
     ['DeepSeek V4 Flash', '31,650', '79,050', '158,150'],

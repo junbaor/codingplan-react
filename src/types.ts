@@ -53,6 +53,7 @@ export interface PlatformSummary {
   features: string[]
   cta: { label: string; href?: string; detailHref?: string; contact?: boolean; disabled?: boolean }
   availability?: Availability
+  recommended?: boolean
 }
 
 export interface HomePageData {
@@ -88,6 +89,7 @@ export interface DetailPlan {
   ctaLabel?: string
   featured?: boolean
   disabled?: boolean
+  recommended?: boolean
 }
 
 export interface FeatureCard {

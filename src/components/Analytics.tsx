@@ -12,6 +12,7 @@ const domains: Record<string, string> = {
   'bigmodel.cn': '智谱GLM', 'minimaxi.com': 'MiniMax', 'minimax.io': 'MiniMax', 'kimi.com': 'Kimi',
   'volcengine.com': '火山引擎', 'aliyun.com': '阿里云', 'baishan.com': '白云智算',
   'tencent.com': '腾讯云', 'claude.com': 'Claude', 'z.ai': 'GLM国际版', 'kkcode.app': 'kkcode.app',
+  'opencode.ai': 'OpenCodeGo', 'xiaomimimo.com': '小米MiMo',
 }
 
 export function Analytics() {

@@ -62,8 +62,8 @@ export function HomePage({ data }: { data: HomePageData }) {
                 </thead>
                 <tbody>
                   {data.platforms.map((platform) => (
-                    <tr key={platform.id} className="border-b border-border last:border-0 hover:bg-surface-hover/60">
-                      <td className="px-5 py-4"><a className="focus-ring font-bold hover:text-brand-cyan" href={`#${platform.id}`}>{platform.name}</a></td>
+                    <tr key={platform.id} className="relative border-b border-border last:border-0 hover:bg-surface-hover/60">
+                      <td className="px-5 py-4"><a className="focus-ring font-bold hover:text-brand-cyan" href={`#${platform.id}`} aria-label={platform.name}>{platform.name}<span className="absolute inset-0" aria-hidden="true" /></a></td>
                       <td className="px-5 py-4 font-mono font-bold text-brand-green">{platform.entryPrice}</td>
                       <td className="max-w-64 px-5 py-4 font-mono text-xs text-ink-soft">{platform.models.join(' · ')}</td>
                       <td className="px-5 py-4 text-ink-soft">{platform.quota}</td>
@@ -84,7 +84,7 @@ export function HomePage({ data }: { data: HomePageData }) {
                 <article id={platform.id} key={platform.id} className={`${accentClass[platform.accent]} scroll-mt-24 overflow-hidden rounded-3xl border bg-surface ${platform.availability === 'archived' ? 'border-dashed border-border-strong' : 'border-border'}`}>
                   <div className="accent-border border-l-4 px-5 py-6 sm:px-8">
                     <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-start">
-                      <div>{isEn ? <h3 className="text-2xl font-black tracking-tight sm:text-3xl">{platform.heading}</h3> : <h2 className="text-2xl font-black tracking-tight sm:text-3xl">{platform.heading}</h2>}<p className="mt-1 text-sm text-ink-soft sm:text-base">{platform.subtitle}</p></div>
+                      <div>{platform.recommended && <span className="mb-2 inline-flex items-center gap-1 rounded-full bg-brand-orange/15 px-3 py-1 text-xs font-bold text-brand-orange"><span className="size-1.5 animate-pulse rounded-full bg-brand-orange" aria-hidden="true" />{isEn ? 'STRONGLY RECOMMENDED' : '强烈推荐'}</span>}{isEn ? <h3 className="text-2xl font-black tracking-tight sm:text-3xl">{platform.heading}</h3> : <h2 className="text-2xl font-black tracking-tight sm:text-3xl">{platform.heading}</h2>}<p className="mt-1 text-sm text-ink-soft sm:text-base">{platform.subtitle}</p></div>
                       <div className="sm:text-right"><span className="font-mono text-xs uppercase tracking-wider text-ink-muted">Models</span><p className="mt-1 max-w-lg font-mono text-xs text-ink-soft">{platform.models.join(' · ')}</p></div>
                     </div>
                   </div>

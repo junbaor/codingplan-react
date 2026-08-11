@@ -57,9 +57,11 @@ export function buildHomeJsonLd(
 }
 
 export function buildPlanJsonLd(plan: PlanPageData) {
+  const isEn = plan.seo.locale === 'en'
   const providers: Record<string, string> = {
     zhipu: '智谱 AI', minimax: 'MiniMax', kimi: 'Moonshot AI', volcengine: '火山引擎',
     aliyun: '阿里云', tencentcloud: '腾讯云', xiaomi: '小米', baiyunzhisuan: '白云智算',
+    'opencode-go': 'Anomaly', claude: 'Anthropic', glm: 'Zhipu AI (Z.ai)', qwen: 'Alibaba Cloud',
   }
   const primaryEntity = plan.slug === 'baiyunzhisuan'
     ? {
@@ -69,7 +71,7 @@ export function buildPlanJsonLd(plan: PlanPageData) {
         description: plan.seo.description,
         url: plan.seo.canonical,
         provider: { '@type': 'Organization', name: providers[plan.slug] },
-        serviceType: '按量计费大模型 API',
+        serviceType: isEn ? 'Pay-as-you-go LLM API' : '按量计费大模型 API',
       }
     : {
         '@context': 'https://schema.org',
@@ -82,7 +84,7 @@ export function buildPlanJsonLd(plan: PlanPageData) {
           '@type': 'Offer',
           name: item.name,
           url: plan.purchaseUrl,
-          priceCurrency: 'CNY',
+          priceCurrency: isEn ? 'USD' : 'CNY',
           price: item.price.replace(/[^\d.]/g, '') || '0',
           availability:
             item.disabled || plan.availability === 'discontinued' || plan.availability === 'archived'
