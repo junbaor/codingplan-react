@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node --experimental-strip-types scripts/inject-anti-piracy.ts",
     "start": "next start",
     "preview": "next start",
     "typecheck": "tsc --noEmit",

@@ -7,6 +7,7 @@
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 import { Analytics } from '@/src/components/Analytics'
+import { AntiPiracy } from '@/src/components/AntiPiracy'
 import { SiteScripts } from '@/src/components/SiteScripts'
 import { baseMetadata, baseViewport } from '@/src/data/metadata'
 import '@/src/styles/global.css'
@@ -23,6 +24,7 @@ export default function EnglishRootLayout({ children }: Readonly<{ children: Rea
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
       </head>
       <body>
+        <AntiPiracy />
         <SiteScripts />
         <Analytics />
         <div className="sticky top-16 z-40 border-b border-brand-cyan/20 bg-brand-cyan/10 py-2">
