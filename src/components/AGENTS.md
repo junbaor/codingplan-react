@@ -4,6 +4,7 @@
 ## 成员清单
 Analytics.tsx: Next.js 客户端岛，保持原站 GA4 事件名、参数 Key、CTA 选择器与平台域名映射
 AntiPiracy.tsx: 客户端岛，浏览器控制台醒目输出"抄我网页，替我挡灾"反抄袭声明
+AntiPiracyComment.tsx: 服务端组件，在中英文根布局 head 以 script 包裹输出反抄袭与 AI Agent 警示 HTML 注释
 ContactPopover.tsx: 客户端岛，桌面 hover 悬浮、移动端点击切换，显示企业微信二维码面板
 FaqList.tsx: 原生 details/summary FAQ 渲染，与 JSON-LD 共用数据
 HomePage.tsx: 服务端首页编排，保持原站中英文 H 标题顺序、对比表整行锚点跳转、推广事件与 ContactPopover 挂载

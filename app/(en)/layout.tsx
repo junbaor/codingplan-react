@@ -8,6 +8,7 @@ import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 import { Analytics } from '@/src/components/Analytics'
 import { AntiPiracy } from '@/src/components/AntiPiracy'
+import { AntiPiracyComment } from '@/src/components/AntiPiracyComment'
 import { SiteScripts } from '@/src/components/SiteScripts'
 import { baseMetadata, baseViewport } from '@/src/data/metadata'
 import '@/src/styles/global.css'
@@ -22,6 +23,7 @@ export default function EnglishRootLayout({ children }: Readonly<{ children: Rea
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+        <AntiPiracyComment />
       </head>
       <body>
         <AntiPiracy />

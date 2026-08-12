@@ -16,6 +16,7 @@ next.config.ts - Next.js 严格模式、TypeScript 7 CLI、响应头和旧静态
 next-env.d.ts - Next.js 自动生成的框架与类型化路由声明，禁止手工编辑
 postcss.config.mjs - Tailwind CSS 4 PostCSS 编译配置
 tsconfig.json - Next.js 严格 TypeScript 编译配置与路径别名
+vercel.json - Vercel 构建命令覆盖，强制执行 npm run build 以触发 postbuild 反抄袭注入
 README.md - 开发命令、App Router 架构与内容维护入口
 </config>
 
