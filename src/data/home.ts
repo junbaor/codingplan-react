@@ -51,7 +51,7 @@ const zhPlatforms: PlatformSummary[] = [
     cta: { label: '查看详情', href: 'https://www.aliyun.com/benefit/scene/codingplan?source=5176.29345612&userCode=j0hv8tuh', detailHref: '/plans/aliyun' },
   },
   {
-    id: 'opencode-go', name: 'OpenCode Go', heading: 'OpenCode Go 首月 $5 起 · 18 款开源模型 6 倍用量', subtitle: 'Grok 4.5 / GLM-5.2 / Kimi K3 / Qwen3.8 Max / DeepSeek V4 / MiniMax M3 全包含，OpenAI / Anthropic 兼容接口可接任意 Agent', accent: 'slate', recommended: true,
+    id: 'opencode-go', name: 'OpenCode Go', heading: 'OpenCode Go 首月 $5 起 · 18 款开源模型 6 倍用量', subtitle: 'Grok 4.5 / GLM-5.2 / Kimi K3 / Qwen3.8 Max / DeepSeek V4 / MiniMax M3 全包含，OpenAI / Anthropic 兼容接口可接任意 Agent', accent: 'slate', specialBadge: '性价比之王',
     models: ['Grok 4.5', 'GLM-5.2', 'Kimi K3', 'Qwen3.8 Max', 'DeepSeek V4', 'MiniMax M3', 'MiMo-V2.5', 'Hy3'], entryPrice: '$5/首月', quota: '5h $12 / 周 $30 / 月 $60',
     plans: [
       { name: 'Go', badge: '首月 $5', price: '$10', unit: '/月', note: '6 倍用量 · 随时取消', details: ['18 款开源模型', '5h $12 / 周 $30 / 月 $60 额度', 'OpenAI / Anthropic 兼容 API', '邀请好友双方各得 $5'], featured: true },
@@ -151,7 +151,7 @@ const enPlatforms: PlatformSummary[] = [
     cta: { label: 'Subscribe to GLM', href: 'https://z.ai/subscribe?ic=Q2I4GGSKVU', detailHref: '/en/plans/glm' },
   },
   {
-    id: 'opencode-go', name: 'OpenCode Go', heading: 'OpenCode Go from $5/mo', subtitle: '18 open models (Grok 4.5, GLM-5.2, Kimi K3, DeepSeek V4, MiniMax M3) with 6x usage value, OpenAI / Anthropic compatible', accent: 'slate', recommended: true,
+    id: 'opencode-go', name: 'OpenCode Go', heading: 'OpenCode Go from $5/mo', subtitle: '18 open models (Grok 4.5, GLM-5.2, Kimi K3, DeepSeek V4, MiniMax M3) with 6x usage value, OpenAI / Anthropic compatible', accent: 'slate', specialBadge: 'BEST VALUE',
     models: ['Grok 4.5', 'GLM-5.2', 'Kimi K3', 'Qwen3.8 Max', 'DeepSeek V4', 'MiniMax M3', 'MiMo-V2.5', 'Hy3'], entryPrice: '$5 first mo', quota: '$12/5h · $30/wk · $60/mo',
     plans: [
       { name: 'Go', badge: '$5 first month', price: '$10', unit: '/mo', note: '6x usage value · Cancel anytime', details: ['18 open-source models', '$12/5h · $30/week · $60/month', 'OpenAI / Anthropic compatible APIs', 'Invite friends - both get $5'], featured: true },

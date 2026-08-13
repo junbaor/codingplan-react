@@ -54,6 +54,7 @@ export interface PlatformSummary {
   cta: { label: string; href?: string; detailHref?: string; contact?: boolean; disabled?: boolean }
   availability?: Availability
   recommended?: boolean
+  specialBadge?: string
 }
 
 export interface HomePageData {
