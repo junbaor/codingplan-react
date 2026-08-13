@@ -10,7 +10,8 @@ FaqList.tsx: 原生 details/summary FAQ 渲染，与 JSON-LD 共用数据
 HomePage.tsx: 服务端首页编排，保持原站中英文 H 标题顺序、对比表整行锚点跳转、推广事件与 ContactPopover 挂载
 JsonLd.tsx: 安全序列化 Schema.org 数据的服务端结构化数据组件
 PlanPage.tsx: 中英文共享详情模板，按数据顺序恢复原站 H 层级、locale 文案、强烈推荐标记与详情 CTA 统计选择器
-DshHermesPage.tsx: DeepSeek Hermes Plugin 独立专题页编排器，不归属于 PlanPage 套餐模板体系
+DshHermesPage.tsx: DeepSeek Hermes Plugin 插件合集页编排器（含插件收录、分类、验证与开发指南）
+DshHermesIntroPage.tsx: DeepSeek Hermes 框架介绍页编排器（架构、核心包、Turn 流程、事件系统与快速上手）
 SiteChrome.tsx: 全站 Header/Footer、导航与语言入口
 SiteScripts.tsx: Next.js Script 调度的主题、GA4 与 Clarity 全站脚本
 ThemeToggle.tsx: auto/dark/light 三态主题控制与持久化

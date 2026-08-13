@@ -4,7 +4,7 @@
  * [POS]: components 的独立专题页编排器，不归属于 PlanPage 套餐模板体系
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
-import { ArrowLeft, Check, CircleAlert, Terminal } from 'lucide-react'
+import { ArrowLeft, Check, CircleAlert, Lightbulb, Terminal } from 'lucide-react'
 import type { DshHermesData } from '../data/topic-dsh-hermes'
 import { FaqList } from './FaqList'
 import { SiteFooter, SiteHeader } from './SiteChrome'
@@ -17,7 +17,7 @@ export function DshHermesPage({ data }: { data: DshHermesData }) {
         links={[
           { label: '收录插件', href: '#plugins' },
           { label: '分类', href: '#categories' },
-          { label: '验证流程', href: '#verify' },
+          { label: '开发指南', href: '#dev-guide' },
           { label: '常见问题', href: '#faq' },
         ]}
       />
@@ -139,6 +139,48 @@ export function DshHermesPage({ data }: { data: DshHermesData }) {
           </div>
         </section>
 
+        {/* Dev Guide */}
+        <section id="dev-guide" className="scroll-mt-20 border-y border-border bg-surface py-16 sm:py-24">
+          <div className="page-shell">
+            <SectionHeading title={data.devGuideTitle} description={data.devGuideDescription} />
+            <div className="mx-auto max-w-3xl space-y-12">
+              {data.devGuides.map((guide) => (
+                <div key={guide.title}>
+                  <h3 className="text-[clamp(1.3rem,3vw,1.8rem)] font-black tracking-tight">{guide.title}</h3>
+                  <p className="mt-2 text-ink-soft">{guide.description}</p>
+                  {guide.highlights && (
+                    <ul className="mt-4 grid gap-2">
+                      {guide.highlights.map((h) => (
+                        <li key={h} className="flex gap-2 text-sm text-ink-soft">
+                          <Lightbulb className="accent-text mt-0.5 shrink-0" size={15} aria-hidden="true" />
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <div className="mt-4 space-y-4">
+                    {guide.codeBlocks.map((block) => (
+                      <div key={block.title}>
+                        <p className="mb-2 font-bold text-sm">{block.title}</p>
+                        <div className="overflow-hidden rounded-2xl border border-border bg-page">
+                          <div className="flex items-center gap-2 border-b border-border bg-surface-raised px-4 py-2">
+                            <span className="size-3 rounded-full bg-brand-red/60" />
+                            <span className="size-3 rounded-full bg-brand-orange/60" />
+                            <span className="size-3 rounded-full bg-brand-green/60" />
+                            <span className="ml-2 font-mono text-xs text-ink-muted">{block.language}</span>
+                          </div>
+                          <pre className="overflow-x-auto p-4 font-mono text-sm text-ink-soft"><code>{block.code}</code></pre>
+                        </div>
+                        {block.description && <p className="mt-2 text-sm text-ink-muted">{block.description}</p>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section id="faq" className="scroll-mt-20 py-16 sm:py-24">
           <div className="page-shell">
@@ -150,6 +192,7 @@ export function DshHermesPage({ data }: { data: DshHermesData }) {
       <SiteFooter disclaimer="本页收录的插件来源于 DeepSeek 开源社区和 GitHub 公开仓库，可能随时变化或下线。请以各插件仓库页面为准，使用前自行评估安全性。">
         <div className="mt-5 flex flex-wrap justify-center gap-x-5 text-sm text-ink-soft">
           <a className="min-h-11 py-2 hover:text-brand-cyan" href="/">返回首页</a>
+          <a className="min-h-11 py-2 hover:text-brand-cyan" href="/deepseek-hermes">DSH 介绍</a>
           <a className="min-h-11 py-2 hover:text-brand-cyan" href="/plans/zhipu">智谱</a>
           <a className="min-h-11 py-2 hover:text-brand-cyan" href="/plans/minimax">MiniMax</a>
           <a className="min-h-11 py-2 hover:text-brand-cyan" href="/plans/kimi">Kimi</a>
