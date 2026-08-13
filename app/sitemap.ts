@@ -9,7 +9,7 @@ import { planSlugs } from '@/src/data/plans'
 import { enPlanSlugs } from '@/src/data/plans-en'
 
 const siteUrl = 'https://codingplan.org'
-const lastModified = new Date('2026-08-11')
+const lastModified = new Date('2026-08-14')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -39,5 +39,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     })),
+    {
+      url: `${siteUrl}/dsh-hermes`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
   ]
 }
