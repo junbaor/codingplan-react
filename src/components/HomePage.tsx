@@ -123,13 +123,13 @@ export function HomePage({ data }: { data: HomePageData }) {
               <div className="absolute -right-8 -top-16 h-56 w-56 rounded-full bg-brand-cyan/10 blur-3xl" aria-hidden="true" />
               <div className="relative grid items-center gap-8 md:grid-cols-[1fr_auto]">
                 <div><p className="font-mono text-xs font-bold uppercase tracking-widest text-brand-green">{data.promotion.eyebrow}</p><h3 className="mt-3 text-3xl font-black sm:text-4xl">{data.promotion.title}</h3><p className="mt-4 max-w-2xl text-ink-soft">{data.promotion.description}</p><div className="mt-5 flex flex-wrap gap-2">{data.promotion.features.map((feature) => <span className="rounded-full border border-border px-3 py-1 text-xs text-ink-soft" key={feature}>{feature}</span>)}</div></div>
-                <div className="flex flex-col items-center gap-4"><img src="https://kkcode.app/icon.png" alt="kkcode.app" width={96} height={96} loading="lazy" decoding="async" className="size-24 rounded-3xl border border-border-strong bg-surface object-contain" /><a aria-label={`kkcode.app ${data.promotion.cta}`} className="promotion-cta focus-ring inline-flex min-h-11 items-center gap-2 rounded-xl bg-ink px-5 text-sm font-bold text-page" href="https://kkcode.app" target="_blank" rel="noopener noreferrer">{data.promotion.cta}<ArrowUpRight size={16} /></a></div>
+                <div className="flex flex-col items-center gap-4"><img src="https://kkcode.app/icon.png" alt="kkcode.app" width={96} height={96} loading="lazy" decoding="async" className="size-24 rounded-3xl border border-border-strong bg-surface object-contain" /><a aria-label={`kkcode.app ${data.promotion.cta}`} className="promotion-cta focus-ring inline-flex min-h-11 items-center gap-2 rounded-xl bg-ink px-5 text-sm font-bold text-page" href={isEn ? 'https://kkcode.app' : 'https://kkcode.app/zh'} target="_blank" rel="noopener noreferrer">{data.promotion.cta}<ArrowUpRight size={16} /></a></div>
               </div>
             </div>
           </div>
         </section>
       </main>
-      <SiteFooter disclaimer={data.footerDisclaimer} />
+      <SiteFooter disclaimer={data.footerDisclaimer} locale={data.locale} />
     </>
   )
 }

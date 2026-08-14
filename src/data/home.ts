@@ -1,6 +1,6 @@
 /**
  * [INPUT]: 依赖 types 的首页领域类型与 seo 的结构化数据构造函数
- * [OUTPUT]: 对外提供中文、英文首页的原站兼容标题、推广参数与全部类型化内容
+ * [OUTPUT]: 对外提供中文、英文首页的原站兼容标题、推广参数与全部类型化内容（含 kkcode 移动端 FAQ）
  * [POS]: data 的首页唯一数据源，同时驱动可见内容、标题结构与 JSON-LD
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
@@ -17,6 +17,7 @@ const zhFaqs: FaqItem[] = [
   { question: '哪个平台性价比最高？', answer: '入门体验推荐 MiniMax Plus（¥49/月，6 亿+ token）或火山引擎方舟 Lite（首购 ¥9.9，刊例 ¥40）。看重模型多样性选火山引擎方舟，看重 MCP 工具选智谱 GLM（视觉理解 / 联网搜索 / 网页读取 / 开源仓库 MCP 已包含）。注意阿里云 Lite 已停售。' },
   { question: 'Kimi Code Plan 新版有哪些变化？', answer: 'Kimi 已上线 K3 旗舰（2.8T 参数 / 1M 上下文，2026/7/17 发布），套餐从 3 档扩展为 5 档：Adagio 免费、Andante ¥49、Moderato ¥99（K3 可用）、Allegretto ¥199（K3 + 集群 4 子任务）、Allegro ¥699（K3 解锁 1M 超长对话）。' },
   { question: '可以退款吗？', answer: '各平台政策不同，大部分已激活订阅不支持退款。建议先从低档套餐开始体验，并在购买前确认自动续费和退款条款。' },
+  { question: 'Coding Plan 能在手机上用吗？', answer: '可以。kkcode.app 是一款开源的 OpenCode 兼容移动客户端，支持 iOS 与 Android。订阅任意 Coding Plan 后，在 kkcode 里粘贴对应平台的 API Key 即可继续开发会话，支持会话历史、多模型切换，并兼容各平台 Coding Plan 的额度规则。' },
 ]
 
 const zhPlatforms: PlatformSummary[] = [
@@ -127,6 +128,7 @@ const enFaqs: FaqItem[] = [
   { question: 'What is the latest GLM Coding Plan pricing?', answer: 'GLM Coding Plan now charges Lite $18/mo ($12.6/mo yearly), Pro $80/mo ($56/mo yearly), Max $168/mo ($117.6/mo yearly). Quarterly billing gives a 20% discount and yearly billing 30% off. Lite ships with 10,000 weekly Credits, Pro is 6× Lite and Max is 14× Lite.' },
   { question: 'What is new in Kimi Code Plan?', answer: 'Kimi launched the K3 flagship (2.8T parameters, released 2026/7/17) and expanded the plan from 3 to 5 tiers: Adagio free, Andante ¥49, Moderato ¥99 (K3 unlocked), Allegretto ¥199 (K3 + 4 cluster subtasks), Allegro ¥699 (K3 with 1M-token conversations).' },
   { question: 'Can I get a refund?', answer: 'Refund policies vary. Most activated subscriptions are non-refundable, so start with a lower tier and check renewal terms before purchase.' },
+  { question: 'Can I use a Coding Plan on my phone?', answer: 'Yes. kkcode.app is an open-source mobile client for OpenCode-compatible providers, available on iOS and Android. After subscribing to any Coding Plan, paste the provider API Key into kkcode and continue coding on your phone with session history, multi-model switching, and the same quota rules as your desktop plan.' },
 ]
 
 const enPlatforms: PlatformSummary[] = [

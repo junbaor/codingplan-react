@@ -47,7 +47,8 @@ export function PlanPage({ plan }: { plan: PlanPageData }) {
       </main>
       <SiteFooter disclaimer={isEn
         ? 'Prices and quotas come from provider websites and change frequently. Always verify on the official billing page. Some links on this site are referral links.'
-        : '价格和额度信息来源于各平台官网，可能随时变化，请以官网结算页为准。本站部分链接为推广链接。'}>
+        : '价格和额度信息来源于各平台官网，可能随时变化，请以官网结算页为准。本站部分链接为推广链接。'}
+        locale={isEn ? 'en' : 'zh-CN'}>
         <div className="mt-5 flex flex-wrap justify-center gap-x-5 text-sm text-ink-soft">
           <a className="min-h-11 py-2 hover:text-brand-cyan" href={isEn ? '/en' : '/'}>{isEn ? 'Back to home' : '返回首页'}</a>
           {isEn ? (

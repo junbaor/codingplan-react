@@ -1,6 +1,6 @@
 /**
  * [INPUT]: 依赖 ThemeToggle、lucide-react 与页面语言/导航配置
- * [OUTPUT]: 对外提供 SiteHeader 与 SiteFooter 共享站点框架
+ * [OUTPUT]: 对外提供 SiteHeader 与 SiteFooter 共享站点框架；footer 的 kkcode.app 外链按 locale 切分（中文页 https://kkcode.app/zh，英文页 https://kkcode.app）
  * [POS]: components 的全站导航层，被首页和详情页复用
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
@@ -35,14 +35,15 @@ export function SiteHeader({ locale, links = [], language }: HeaderProps) {
   )
 }
 
-export function SiteFooter({ disclaimer, children }: { disclaimer: string; children?: ReactNode }) {
+export function SiteFooter({ disclaimer, locale = 'zh-CN', children }: { disclaimer: string; locale?: 'zh-CN' | 'en'; children?: ReactNode }) {
+  const kkcodeHref = locale === 'zh-CN' ? 'https://kkcode.app/zh' : 'https://kkcode.app'
   return (
     <footer className="border-t border-border py-10">
       <div className="page-shell text-center">
         <p className="mx-auto max-w-3xl text-sm text-ink-muted">{disclaimer}</p>
         {children}
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-ink-soft">
-          <a className="focus-ring inline-flex min-h-11 items-center gap-1 hover:text-brand-cyan" href="https://kkcode.app" target="_blank" rel="noopener noreferrer">kkcode.app <ArrowUpRight size={14} /></a>
+          <a className="focus-ring inline-flex min-h-11 items-center gap-1 hover:text-brand-cyan" href={kkcodeHref} target="_blank" rel="noopener noreferrer">kkcode.app <ArrowUpRight size={14} /></a>
           <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/sitemap.xml">Sitemap</a>
         </div>
         <p className="mt-3 font-mono text-xs text-ink-muted">© 2026 codingplan.org</p>
