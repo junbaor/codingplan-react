@@ -22,11 +22,11 @@ const zhFaqs: FaqItem[] = [
 
 const zhPlatforms: PlatformSummary[] = [
   {
-    id: 'chatgpt', name: 'ChatGPT', heading: 'ChatGPT OpenAI 官方 GPT-5.3', subtitle: 'OpenAI 官方旗舰 AI 助手', accent: 'green',
-    models: ['GPT-5.3', 'o4-mini', 'GPT-4o'], entryPrice: '$10/月', quota: '按套餐用量限制',
+    id: 'chatgpt', name: 'ChatGPT', heading: 'ChatGPT OpenAI 官方 GPT-5.6 Sol', subtitle: 'OpenAI 官方旗舰 AI 助手', accent: 'green',
+    models: ['GPT-5.6', 'o4-mini', 'GPT-4o'], entryPrice: '$8/月', quota: '按套餐用量限制',
     plans: [
-      { name: 'Go', badge: '轻度首选', price: '$10', unit: '/月', details: ['GPT-5.3 mini', '浏览与文件上传', '高于免费版的用量'] },
-      { name: 'Plus', badge: '最受欢迎', price: '$20', unit: '/月', note: '年付 $200', details: ['GPT-5.3 / o4-mini / GPT-4o', '高级语音与 DALL-E 3', '深度研究与自定义 GPTs'], featured: true },
+      { name: 'Go', badge: '轻度首选', price: '$8', unit: '/月', details: ['GPT-5.6 Luna', '高于免费版 10 倍消息额度', '文件上传与图像生成'] },
+      { name: 'Plus', badge: '最受欢迎', price: '$20', unit: '/月', note: 'Pro $200/月', details: ['GPT-5.6 Sol / o4-mini / GPT-4o', '高级语音与 ChatGPT Images 2.0', '深度研究与自定义 GPTs'], featured: true },
     ],
     tools: ['ChatGPT Web', 'Desktop', 'Mobile'], features: ['官方渠道', '网页浏览', '多模态'],
     cta: { label: '加企业微信咨询', contact: true },

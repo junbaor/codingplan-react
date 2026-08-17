@@ -29,8 +29,9 @@ README.md - 开发命令、App Router 架构与内容维护入口
 - Title、H 标题、keywords 缺失状态、canonical、统计 Key 与推广参数以原站 HTML 为兼容基线。
 - 主题通过语义色 token 和 `data-theme` 切换，不在组件中硬编码颜色。
 
-## 当前数据要点（最近一次更新 2026-08-11）
+## 当前数据要点（最近一次更新 2026-08-17）
 
+- ChatGPT 渠道模型与定价同步官方最新（2026/8/17）：heading 改 GPT-5.6 Sol（Plus/Pro 主推，2026/8/7），models 由虚构的 GPT-5.3 更新为 ['GPT-5.6', 'o4-mini', 'GPT-4o']；Go 套餐价格 $10→$8（2026/1 全球推广实际价），Go details 由 GPT-5.3 mini 改为 GPT-5.6 Luna（免费版默认，2026/8/6）；Plus details 中 DALL-E 3 替换为 ChatGPT Images 2.0（2026/4 发布，基于 gpt-image-2），note 由过时的"年付 $200"改为"Pro $200/月"。
 - 英文站新增六个渠道详情页（/en/plans/claude|glm|minimax|kimi|qwen|opencode-go），英文首页平台 5→6，OpenCode Go 在中英文首页渠道卡片与快速对比表格行内使用专属特殊推荐标识（specialBadge：性价比之王 / BEST VALUE，渐变绿样式 + 行淡绿高亮，区别于通用"强烈推荐"）。
 - 英文站全站顶部提示：订购中国套餐（GLM/MiniMax/Kimi/火山/小米）可邮件 support.codingplan.org。
 - OpenCode Go（2026/8/11 新增）：首月 $5，之后 $10/月，18 款开源模型 6 倍用量（5h $12 / 周 $30 / 月 $60），OpenAI / Anthropic 兼容 API，详情页 /plans/opencode-go 与 /en/plans/opencode-go，推广链接带 ref=JBT5KJRCD4。
