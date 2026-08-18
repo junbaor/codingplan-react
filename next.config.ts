@@ -17,10 +17,14 @@ const nextConfig: NextConfig = {
       { source: '/index.html', destination: '/', permanent: true },
       { source: '/en/index.html', destination: '/en', permanent: true },
       { source: '/plans/:slug.html', destination: '/plans/:slug', permanent: true },
-      { source: '/compare/:slug', destination: '/articles/:slug', permanent: true },
-      { source: '/guides/:slug', destination: '/articles/:slug', permanent: true },
-      { source: '/questions/:slug', destination: '/articles/:slug', permanent: true },
-      { source: '/en/compare/:slug', destination: '/en/articles/:slug', permanent: true },
+      { source: '/compare/:slug', destination: '/blogs/:slug', permanent: true },
+      { source: '/guides/:slug', destination: '/blogs/:slug', permanent: true },
+      { source: '/questions/:slug', destination: '/blogs/:slug', permanent: true },
+      { source: '/articles', destination: '/blogs', permanent: true },
+      { source: '/articles/:slug', destination: '/blogs/:slug', permanent: true },
+      { source: '/en/articles', destination: '/en/blogs', permanent: true },
+      { source: '/en/articles/:slug', destination: '/en/blogs/:slug', permanent: true },
+      { source: '/en/compare/:slug', destination: '/en/blogs/:slug', permanent: true },
     ]
   },
 }

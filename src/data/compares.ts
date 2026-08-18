@@ -1,6 +1,6 @@
 /**
  * [INPUT]: 依赖 content-page 的 defineContentPage 装配器与 plans/plans-en 的口径参照
- * [OUTPUT]: 对外提供 /articles/glm-vs-kimi 与 /en/articles/claude-vs-glm 双语对比文章数据
+ * [OUTPUT]: 对外提供 /blogs/glm-vs-kimi 与 /en/blogs/claude-vs-glm 双语对比文章数据
  * [POS]: data 的商业调研意图承接页，承接「A vs B / A 和 B 哪个好」类查询
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
@@ -12,7 +12,7 @@ export const glmVsKimi = defineContentPage({
   seo: {
     title: 'GLM vs Kimi Coding Plan 对比 2026 - 智谱 ¥118 起 vs Kimi ¥49 起，怎么选？',
     description: '智谱 GLM Coding Plan 与 Kimi Code Plan 逐项对比：入门价（¥118/¥94.4 年付 vs ¥49/¥39 年付）、模型（GLM-5.2 vs K3/K2.6）、额度口径（每周 Credits vs 5h+7 天）、MCP 工具与年付折扣，附按人群的选购结论。',
-    canonical: 'https://codingplan.org/articles/glm-vs-kimi',
+    canonical: 'https://codingplan.org/blogs/glm-vs-kimi',
     locale: 'zh-CN',
     ogType: 'article',
   },
@@ -91,7 +91,7 @@ export const glmVsKimi = defineContentPage({
   related: [
     { kind: '详情', title: '智谱 GLM Coding Plan 详解', description: '三档价格、每周 Credits 与 MCP 工具全解。', href: '/plans/zhipu' },
     { kind: '详情', title: 'Kimi Code Plan 详解', description: '五档套餐、K3 使用规则与会员权益。', href: '/plans/kimi' },
-    { kind: '教程', title: 'Claude Code 配置智谱 GLM', description: '环境变量与端点配置指南。', href: '/articles/claude-code-with-glm' },
+    { kind: '教程', title: 'Claude Code 配置智谱 GLM', description: '环境变量与端点配置指南。', href: '/blogs/claude-code-with-glm' },
     { kind: '优惠', title: '邀请码与优惠汇总', description: '智谱包年 7 折、Kimi 年付入口。', href: '/deals' },
   ],
 })
@@ -102,7 +102,7 @@ export const claudeVsGlm = defineContentPage({
   seo: {
     title: 'Claude Code vs GLM Coding Plan 2026 - $20 vs $18: Which to Choose?',
     description: 'Claude Code (Anthropic) vs GLM Coding Plan (Z.ai) compared: Pro $20 vs Lite $18, Opus 4.7 vs GLM-5.2, usage multipliers vs weekly Credits, MCP support and annual discounts — with clear recommendations per use case.',
-    canonical: 'https://codingplan.org/en/articles/claude-vs-glm',
+    canonical: 'https://codingplan.org/en/blogs/claude-vs-glm',
     locale: 'en',
     ogType: 'article',
   },

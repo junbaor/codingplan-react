@@ -61,7 +61,7 @@ export interface PlatformSummary {
 export interface HomePageData {
   locale: Locale
   seo: SeoData
-  nav: { compare: string; platforms: string; deals?: string; faq: string; language: string; languageHref: string }
+  nav: { language: string; languageHref: string }
   hero: { badge: string; title: string; highlight: string; description: string; stats: StatItem[] }
   comparison: { title: string; description: string; columns: string[] }
   platformsTitle: string

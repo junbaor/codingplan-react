@@ -160,7 +160,7 @@ export function buildPlanJsonLd(plan: PlanPageData) {
 }
 
 const contentHubNames: Record<string, string> = {
-  articles: '文章',
+  blogs: '博客',
   plans: '全部套餐',
   tools: '工具',
   models: '模型',
@@ -207,7 +207,7 @@ export function buildContentJsonLd(page: ContentPageData) {
 }
 
 const enContentHubNames: Record<string, string> = {
-  articles: 'Articles',
+  blogs: 'Blog',
   plans: 'Coding Plans',
   tools: 'Tools',
   models: 'Models',

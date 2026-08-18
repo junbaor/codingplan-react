@@ -1,13 +1,13 @@
 /**
- * [INPUT]: 依赖 Next.js MetadataRoute 类型、hubs/articles/plans/models/tools 集合清单与 DATA_UPDATED_AT
+ * [INPUT]: 依赖 Next.js MetadataRoute 类型、hubs/blogs/plans/models/tools 集合清单与 DATA_UPDATED_AT
  * [OUTPUT]: 对外提供全站 50 个 URL 的 /sitemap.xml，lastmod 与全站数据更新日期同源
  * [POS]: app 的站点地图入口，与静态生成路由共用各集合 slug 数据源
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import type { MetadataRoute } from 'next'
-import { articleSlugs, enArticleSlugs } from '@/src/data/articles'
+import { blogSlugs, enBlogSlugs } from '@/src/data/blogs'
 import { dealsPage } from '@/src/data/deals'
-import { articlesHub, enArticlesHub, modelsHub, plansHub, toolsHub } from '@/src/data/hubs'
+import { blogsHub, enBlogsHub, modelsHub, plansHub, toolsHub } from '@/src/data/hubs'
 import { leaderboardPage } from '@/src/data/leaderboard'
 import { modelSlugs } from '@/src/data/models'
 import { planSlugs, plansBySlug } from '@/src/data/plans'
@@ -71,13 +71,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${siteUrl}/articles`,
+      url: `${siteUrl}/blogs`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
-    ...articleSlugs.map((slug) => ({
-      url: `${siteUrl}/articles/${slug}`,
+    ...blogSlugs.map((slug) => ({
+      url: `${siteUrl}/blogs/${slug}`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
@@ -113,13 +113,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     })),
     {
-      url: `${siteUrl}/en/articles`,
+      url: `${siteUrl}/en/blogs`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
-    ...enArticleSlugs.map((slug) => ({
-      url: `${siteUrl}/en/articles/${slug}`,
+    ...enBlogSlugs.map((slug) => ({
+      url: `${siteUrl}/en/blogs/${slug}`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.8,

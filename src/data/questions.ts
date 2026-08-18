@@ -12,7 +12,7 @@ export const whatIsCodingPlan = defineContentPage({
   seo: {
     title: 'Coding Plan 是什么？和 Token API 有什么区别 - 概念/额度口径/适用人群详解',
     description: 'Coding Plan（AI 编程订阅套餐）详解：定义、与按量 Token API 的核心区别（订阅制 vs 后付费）、三种计费方式（Coding Plan / Token Plan / 按量 API）、5 小时限额与周/月额度口径解读、适合人群与选购建议。',
-    canonical: 'https://codingplan.org/articles/what-is-coding-plan',
+    canonical: 'https://codingplan.org/blogs/what-is-coding-plan',
     locale: 'zh-CN',
     ogType: 'article',
   },
@@ -81,9 +81,9 @@ export const whatIsCodingPlan = defineContentPage({
     { question: '不同平台的「额度」能直接比大小吗？', answer: '不能。请求次数、token 数量、Credits 积分三种口径互不通用，且各平台单次请求消耗差异大。应按「自己一个月实际用几成额度」来比较。' },
   ],
   related: [
-    { kind: '选型', title: '哪家 Coding Plan 最便宜？', description: '按起步价与单位成本排序。', href: '/articles/cheapest-coding-plan' },
-    { kind: '选型', title: 'Coding Plan 哪个好？怎么选', description: '按场景的推荐结论。', href: '/articles/best-coding-plan' },
-    { kind: '对比', title: 'GLM vs Kimi 怎么选', description: '两家额度口径差异详解。', href: '/articles/glm-vs-kimi' },
+    { kind: '选型', title: '哪家 Coding Plan 最便宜？', description: '按起步价与单位成本排序。', href: '/blogs/cheapest-coding-plan' },
+    { kind: '选型', title: 'Coding Plan 哪个好？怎么选', description: '按场景的推荐结论。', href: '/blogs/best-coding-plan' },
+    { kind: '对比', title: 'GLM vs Kimi 怎么选', description: '两家额度口径差异详解。', href: '/blogs/glm-vs-kimi' },
   ],
 })
 
@@ -93,7 +93,7 @@ export const cheapestCodingPlan = defineContentPage({
   seo: {
     title: '哪家 Coding Plan 最便宜？2026 入门价排行 - ¥9.9 起 / 免费档 / 单位成本分析',
     description: '2026 年国内 Coding Plan 便宜程度排行：火山方舟首购 ¥9.9、Kimi 免费档 + 年付 ¥39/月、小米 MiMo ¥39/月、OpenCode Go 首月 $5、MiniMax ¥49/月、智谱 ¥94.4/月（年付）。含单位额度成本分析与省钱组合建议。',
-    canonical: 'https://codingplan.org/articles/cheapest-coding-plan',
+    canonical: 'https://codingplan.org/blogs/cheapest-coding-plan',
     locale: 'zh-CN',
     ogType: 'article',
   },
@@ -166,8 +166,8 @@ export const cheapestCodingPlan = defineContentPage({
   ],
   related: [
     { kind: '优惠', title: '邀请码与优惠汇总', description: '各平台首购/邀请入口集中页。', href: '/deals' },
-    { kind: '选型', title: 'Coding Plan 哪个好？怎么选', description: '不差钱视角的推荐排行。', href: '/articles/best-coding-plan' },
-    { kind: '百科', title: 'Coding Plan 是什么？', description: '先弄懂额度口径再比价。', href: '/articles/what-is-coding-plan' },
+    { kind: '选型', title: 'Coding Plan 哪个好？怎么选', description: '不差钱视角的推荐排行。', href: '/blogs/best-coding-plan' },
+    { kind: '百科', title: 'Coding Plan 是什么？', description: '先弄懂额度口径再比价。', href: '/blogs/what-is-coding-plan' },
   ],
 })
 
@@ -177,7 +177,7 @@ export const bestCodingPlan = defineContentPage({
   seo: {
     title: 'Coding Plan 哪个好？2026 按场景推荐 - 模型/性价比/多模型/重度使用怎么选',
     description: '2026 年 Coding Plan 怎么选：要最强模型选智谱 GLM-5.2 或 Kimi K3；性价比选 OpenCode Go / MiniMax；多模型轮换选火山方舟；重度使用选阿里云 Pro / GLM Max；工具生态选 Claude。按场景给出明确推荐与理由。',
-    canonical: 'https://codingplan.org/articles/best-coding-plan',
+    canonical: 'https://codingplan.org/blogs/best-coding-plan',
     locale: 'zh-CN',
     ogType: 'article',
   },
@@ -245,9 +245,9 @@ export const bestCodingPlan = defineContentPage({
     { question: '为什么没有唯一答案？', answer: '各平台额度口径（次数/积分/token）、模型分布、工具支持差异大，「最好」必然分场景。本页速查表按 8 个场景给出了明确推荐，可按需对号入座。' },
   ],
   related: [
-    { kind: '对比', title: 'GLM vs Kimi 怎么选', description: '两大热门的正面对比。', href: '/articles/glm-vs-kimi' },
-    { kind: '选型', title: '哪家 Coding Plan 最便宜？', description: '价格优先视角的排行。', href: '/articles/cheapest-coding-plan' },
+    { kind: '对比', title: 'GLM vs Kimi 怎么选', description: '两大热门的正面对比。', href: '/blogs/glm-vs-kimi' },
+    { kind: '选型', title: '哪家 Coding Plan 最便宜？', description: '价格优先视角的排行。', href: '/blogs/cheapest-coding-plan' },
     { kind: '详情', title: '智谱 GLM Coding Plan 详解', description: '综合推荐第一名的完整依据。', href: '/plans/zhipu' },
-    { kind: '教程', title: 'Claude Code 配置智谱 GLM', description: '五分钟接入教程。', href: '/articles/claude-code-with-glm' },
+    { kind: '教程', title: 'Claude Code 配置智谱 GLM', description: '五分钟接入教程。', href: '/blogs/claude-code-with-glm' },
   ],
 })

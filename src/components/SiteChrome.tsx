@@ -15,6 +15,23 @@ interface HeaderProps {
   language?: { label: string; href: string }
 }
 
+/** 全站统一主导航：每个集合 hub 都有头部入口（zh 五项 / en 三项） */
+export function defaultHeaderLinks(locale: 'zh-CN' | 'en'): Array<{ label: string; href: string }> {
+  return locale === 'en'
+    ? [
+        { label: 'Compare', href: '/en#compare' },
+        { label: 'Plans', href: '/en#platforms' },
+        { label: 'Blog', href: '/en/blogs' },
+      ]
+    : [
+        { label: '全部套餐', href: '/plans' },
+        { label: '工具', href: '/tools' },
+        { label: '模型', href: '/models' },
+        { label: '博客', href: '/blogs' },
+        { label: '优惠', href: '/deals' },
+      ]
+}
+
 export function SiteHeader({ locale, links = [], language }: HeaderProps) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-page/85 backdrop-blur-xl">
@@ -46,17 +63,15 @@ export function SiteFooter({ disclaimer, locale = 'zh-CN', children }: { disclai
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-ink-soft">
           {locale === 'zh-CN' ? (
             <>
-              <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/deals">优惠与邀请码</a>
+              <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/blogs/what-is-coding-plan">Coding Plan 是什么</a>
+              <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/tools/claude-code">Claude Code 指南</a>
               <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/leaderboard">性价比榜</a>
               <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/changelog">变更记录</a>
-              <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/tools/claude-code">Claude Code 指南</a>
-              <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/articles/what-is-coding-plan">Coding Plan 是什么</a>
             </>
           ) : (
-            <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/en/articles/claude-vs-glm">Claude vs GLM</a>
+            <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/en/blogs/claude-vs-glm">Claude vs GLM</a>
           )}
           <a className="focus-ring inline-flex min-h-11 items-center gap-1 hover:text-brand-cyan" href={kkcodeHref} target="_blank" rel="noopener noreferrer">kkcode.app <ArrowUpRight size={14} /></a>
-          <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/sitemap.xml">Sitemap</a>
         </div>
         <p className="mt-3 font-mono text-xs text-ink-muted">
           {locale === 'en' ? 'Data updated on ' : '数据更新于 '}

@@ -6,11 +6,11 @@ home.ts: 中文 9 平台与英文 6 平台首页数据、原站标题基线、�
 metadata.ts: 将 SeoData 转换为 Next.js Metadata（含 og:image 大卡与 twitter summary_large_image），并提供全站 Metadata/Viewport
 plans.ts: 九个中文平台详情数据、原站标题顺序、推广参数、套餐、模型、区块、FAQ 与 slug（definePlan 统一注入 zh 侧 hreflang）
 plans-en.ts: 六个英文平台详情数据（Claude/GLM/MiniMax/Kimi/Qwen/OpenCode Go），与中文共用 PlanPage 模板（definePlan 统一注入 en 侧 hreflang）
-compares.ts: 双语对比文章数据（glm-vs-kimi / claude-vs-glm），挂载于 /articles 与 /en/articles
-guides.ts: Claude Code × 国产 Coding Plan 配置教程文章数据（GLM/Kimi/火山方舟，挂载于 /articles）
-questions.ts: 问题型长文数据（是什么/最便宜/哪个好，挂载于 /articles）
-articles.ts: 文章集合索引（articleSlugs/articlesBySlug 与英文索引），把对比/教程/问答三类文章归一到 /articles 命名空间
-hubs.ts: 5 个集合首页数据（/articles、/plans、/tools、/models、/en/articles），保证每个二级路径都有 200 列表页
+compares.ts: 双语对比文章数据（glm-vs-kimi / claude-vs-glm），挂载于 /blogs 与 /en/blogs
+guides.ts: Claude Code × 国产 Coding Plan 配置教程文章数据（GLM/Kimi/火山方舟，挂载于 /blogs）
+questions.ts: 问题型长文数据（是什么/最便宜/哪个好，挂载于 /blogs）
+blogs.ts: 博客集合索引（blogSlugs/blogsBySlug 与英文索引），把对比/教程/问答三类文章归一到 /blogs 命名空间
+hubs.ts: 5 个集合首页数据（/blogs、/plans、/tools、/models、/en/blogs），保证每个二级路径都有 200 列表页
 deals.ts: /deals 邀请码与优惠汇总页数据，聚合各平台首购/邀请/年付优惠
 changelog.ts: /changelog 变更记录页数据，按月倒序的时间线表格
 leaderboard.ts: /leaderboard 性价比榜单页数据（入门价排行 + 分项冠军），服务端直出全量表格

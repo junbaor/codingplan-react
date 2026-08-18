@@ -8,7 +8,7 @@ import { ArrowLeft, ArrowUpRight, Check, CircleAlert } from 'lucide-react'
 import type { Accent, PlanPageData } from '../types'
 import { getRelatedLinks } from '../data/content-links'
 import { FaqList } from './FaqList'
-import { SiteFooter, SiteHeader } from './SiteChrome'
+import { defaultHeaderLinks, SiteFooter, SiteHeader } from './SiteChrome'
 
 const accentClass: Record<Accent, string> = {
   cyan: 'accent-cyan', green: 'accent-green', orange: 'accent-orange', purple: 'accent-purple', blue: 'accent-blue', red: 'accent-red', slate: 'accent-slate',
@@ -31,9 +31,7 @@ export function PlanPage({ plan }: { plan: PlanPageData }) {
 
   return (
     <div className={accentClass[plan.accent]}>
-      <SiteHeader locale={plan.seo.locale} links={isEn
-        ? [{ label: 'Compare', href: '/en#compare' }, { label: 'Plans', href: '/en#platforms' }, { label: 'FAQ', href: '#faq' }]
-        : [{ label: '快速对比', href: '/#compare' }, { label: '全部套餐', href: '/#platforms' }, { label: '常见问题', href: '#faq' }]} />
+      <SiteHeader locale={plan.seo.locale} links={defaultHeaderLinks(plan.seo.locale)} />
       <main>
         {archived && <div className="mt-16 border-b border-brand-orange/30 bg-brand-orange/10 py-3"><div className="page-shell flex items-center justify-center gap-2 text-center text-sm text-brand-orange"><CircleAlert size={17} />{isEn ? 'This product has been discontinued. This page is an archive for reference only.' : '该产品已下线，本页为历史归档，不提供购买入口。'}</div></div>}
         <nav aria-label={isEn ? 'Breadcrumb' : '面包屑'} className={`page-shell ${archived ? 'pt-6' : 'pt-24 sm:pt-28'}`}>

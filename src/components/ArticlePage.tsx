@@ -7,7 +7,7 @@
 import { ArrowUpRight, Check, CircleAlert, Code2 } from 'lucide-react'
 import type { Accent, ContentBlock, ContentPageData } from '../types'
 import { FaqList } from './FaqList'
-import { SiteFooter, SiteHeader } from './SiteChrome'
+import { defaultHeaderLinks, SiteFooter, SiteHeader } from './SiteChrome'
 
 const accentClass: Record<Accent, string> = {
   cyan: 'accent-cyan', green: 'accent-green', orange: 'accent-orange', purple: 'accent-purple', blue: 'accent-blue', red: 'accent-red', slate: 'accent-slate',
@@ -25,9 +25,7 @@ export function ArticlePage({ page }: { page: ContentPageData }) {
 
   return (
     <div className={accentClass[page.accent]}>
-      <SiteHeader locale={page.seo.locale} links={isEn
-        ? [{ label: 'Compare', href: '/en#compare' }, { label: 'Plans', href: '/en#platforms' }, { label: 'Articles', href: '/en/articles' }, { label: 'FAQ', href: '#faq' }]
-        : [{ label: '快速对比', href: '/#compare' }, { label: '全部套餐', href: '/plans' }, { label: '文章', href: '/articles' }, { label: '优惠', href: '/deals' }, { label: '常见问题', href: '#faq' }]} />
+      <SiteHeader locale={page.seo.locale} links={defaultHeaderLinks(page.seo.locale)} />
       <main>
         <nav aria-label={isEn ? 'Breadcrumb' : '面包屑'} className="page-shell pt-24 sm:pt-28">
           <ol className="flex flex-wrap items-center gap-2 text-xs text-ink-muted">
@@ -122,7 +120,7 @@ export function ArticlePage({ page }: { page: ContentPageData }) {
 }
 
 const zhHubLabels: Record<string, string> = {
-  articles: '文章',
+  blogs: '博客',
   plans: '全部套餐',
   tools: '工具',
   models: '模型',
@@ -132,7 +130,7 @@ const zhHubLabels: Record<string, string> = {
 }
 
 const enHubLabels: Record<string, string> = {
-  articles: 'Articles',
+  blogs: 'Blog',
   plans: 'Coding Plans',
   tools: 'Tools',
   models: 'Models',

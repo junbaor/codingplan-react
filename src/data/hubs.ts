@@ -1,10 +1,10 @@
 /**
- * [INPUT]: 依赖 content-page 的 defineContentPage、articles/tools/models/plans 的集合清单
- * [OUTPUT]: 对外提供 5 个集合首页数据：/articles、/plans、/tools、/models（zh）与 /en/articles（en）
+ * [INPUT]: 依赖 content-page 的 defineContentPage、blogs/tools/models/plans 的集合清单
+ * [OUTPUT]: 对外提供 5 个集合首页数据：/blogs、/plans、/tools、/models（zh）与 /en/blogs（en）
  * [POS]: data 的集合层，保证每个二级路径都有 200 的列表页作为面包屑父级与权重汇聚点
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
-import { articleSlugs, getArticle } from './articles'
+import { blogSlugs, getBlog } from './blogs'
 import { defineContentPage } from './content-page'
 import { modelSlugs } from './models'
 import { planSlugs } from './plans'
@@ -52,32 +52,32 @@ const modelNameBySlug: Record<string, { name: string; vendor: string }> = {
   'glm-5-turbo': { name: 'GLM-5-Turbo', vendor: '智谱' },
 }
 
-export const articlesHub = defineContentPage({
-  slug: 'articles',
+export const blogsHub = defineContentPage({
+  slug: 'blogs',
   accent: 'green',
   seo: {
-    title: 'Coding Plan 文章中心 - 对比 / 教程 / 选型指南全目录',
-    description: 'CodingPlan.org 文章中心：GLM vs Kimi 对比、Claude Code 配置国产套餐教程（GLM/Kimi/火山）、哪家最便宜、哪个好怎么选、Coding Plan 是什么等深度文章全目录，持续更新。',
-    canonical: 'https://codingplan.org/articles',
+    title: 'Coding Plan 博客 - 对比 / 教程 / 选型指南全目录',
+    description: 'CodingPlan.org 博客：GLM vs Kimi 对比、Claude Code 配置国产套餐教程（GLM/Kimi/火山）、哪家最便宜、哪个好怎么选、Coding Plan 是什么等深度文章全目录，持续更新。',
+    canonical: 'https://codingplan.org/blogs',
     locale: 'zh-CN',
     ogType: 'website',
   },
   hero: {
-    badge: '文章中心 · 持续更新',
+    badge: '博客 · 持续更新',
     title: 'Coding Plan',
-    highlight: '文章中心',
+    highlight: '博客',
     description: '对比、教程与选型指南统一收录于此。每篇文章都与平台详情页、工具页、模型页互链，可从任意入口进入同一张知识网络。',
     stats: [
-      { value: String(articleSlugs.length), label: '篇深度文章' },
+      { value: String(blogSlugs.length), label: '篇深度文章' },
       { value: '3 类', label: '对比/教程/选型' },
       { value: '同源', label: '与详情页数据一致' },
     ],
   },
   hubTitle: '全部文章',
-  hubItems: articleSlugs.map((slug) => ({
-    href: `/articles/${slug}`,
+  hubItems: blogSlugs.map((slug) => ({
+    href: `/blogs/${slug}`,
     kind: articleKindBySlug[slug] ?? '文章',
-    title: `${getArticle(slug).hero.title}${getArticle(slug).hero.highlight ? ` ${getArticle(slug).hero.highlight}` : ''}`,
+    title: `${getBlog(slug).hero.title}${getBlog(slug).hero.highlight ? ` ${getBlog(slug).hero.highlight}` : ''}`,
   })),
   sections: [
     {
@@ -162,7 +162,7 @@ export const plansHub = defineContentPage({
   related: [
     { kind: '榜单', title: '性价比排行榜', description: '全部平台的入门价排序。', href: '/leaderboard' },
     { kind: '优惠', title: '邀请码与优惠汇总', description: '各平台首购与邀请入口。', href: '/deals' },
-    { kind: '文章', title: '哪个好怎么选', description: '按场景的推荐结论。', href: '/articles/best-coding-plan' },
+    { kind: '文章', title: '哪个好怎么选', description: '按场景的推荐结论。', href: '/blogs/best-coding-plan' },
   ],
 })
 
@@ -216,7 +216,7 @@ export const toolsHub = defineContentPage({
     { question: '哪个工具对国产套餐适配最好？', answer: 'Claude Code 的官方适配面最广（7+ 平台点名支持）；VS Code 用户则普遍选 Cline/Roo Code。' },
   ],
   related: [
-    { kind: '文章', title: 'Claude Code 配置教程合集', description: 'GLM/Kimi/方舟三篇教程。', href: '/articles/claude-code-with-glm' },
+    { kind: '文章', title: 'Claude Code 配置教程合集', description: 'GLM/Kimi/方舟三篇教程。', href: '/blogs/claude-code-with-glm' },
     { kind: '集合', title: '全部套餐', description: '工具页引用的平台详情。', href: '/plans' },
     { kind: '模型', title: 'GLM-5.2 评测', description: '工具背后的模型选型。', href: '/models/glm-5.2' },
   ],
@@ -279,28 +279,28 @@ export const modelsHub = defineContentPage({
   ],
 })
 
-export const enArticlesHub = defineContentPage({
-  slug: 'en-articles',
+export const enBlogsHub = defineContentPage({
+  slug: 'en-blogs',
   accent: 'red',
   seo: {
-    title: 'Coding Plan Articles - Comparisons, Guides & Buying Advice',
-    description: 'All CodingPlan.org articles in one place: Claude Code vs GLM comparison, setup guides and buying advice for AI coding subscriptions, cross-linked with plan, tool and model pages.',
-    canonical: 'https://codingplan.org/en/articles',
+    title: 'Coding Plan Blog - Comparisons, Guides & Buying Advice',
+    description: 'All CodingPlan.org blog posts in one place: Claude Code vs GLM comparison, setup guides and buying advice for AI coding subscriptions, cross-linked with plan, tool and model pages.',
+    canonical: 'https://codingplan.org/en/blogs',
     locale: 'en',
     ogType: 'website',
   },
   hero: {
-    badge: 'Articles · Growing library',
+    badge: 'Blog · Growing library',
     title: 'Coding Plan',
-    highlight: 'Articles',
+    highlight: 'Blog',
     description: 'Comparisons, setup guides and buying advice for AI coding subscriptions. Every article is cross-linked with the English plan guides so you can go from verdict to pricing in one click.',
     stats: [
       { value: 'Comparison', label: 'Claude vs GLM' },
       { value: 'More', label: 'Guides coming' },
     ],
   },
-  hubTitle: 'All articles',
-  hubItems: [{ href: '/en/articles/claude-vs-glm', kind: 'Comparison', title: 'Claude Code vs GLM Coding Plan' }],
+  hubTitle: 'All posts',
+  hubItems: [{ href: '/en/blogs/claude-vs-glm', kind: 'Comparison', title: 'Claude Code vs GLM Coding Plan' }],
   sections: [
     {
       title: 'Start here',
@@ -312,8 +312,8 @@ export const enArticlesHub = defineContentPage({
     },
   ],
   faqs: [
-    { question: 'Are more English articles coming?', answer: 'Yes — English setup guides and platform comparisons are added incrementally; Chinese readers get the full library at codingplan.org/articles.' },
-    { question: 'How current are the prices cited?', answer: 'Articles share the same data source as the plan pages; the footer date marks the last verification.' },
+    { question: 'Are more English posts coming?', answer: 'Yes — English setup guides and platform comparisons are added incrementally; Chinese readers get the full library at codingplan.org/blogs.' },
+    { question: 'How current are the prices cited?', answer: 'Blog posts share the same data source as the plan pages; the footer date marks the last verification.' },
   ],
   related: [
     { kind: 'Hub', title: 'English homepage', description: 'Six-provider comparison table.', href: '/en' },

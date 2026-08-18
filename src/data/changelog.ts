@@ -93,7 +93,7 @@ export const changelogPage = defineContentPage({
   ],
   related: [
     { kind: '优惠', title: 'Coding Plan 邀请码与优惠汇总', description: '当前可用的首购折扣与邀请返利入口。', href: '/deals' },
-    { kind: '选型', title: '哪家 Coding Plan 最便宜？', description: '涨价潮之后的最新入门价排序。', href: '/articles/cheapest-coding-plan' },
-    { kind: '对比', title: 'GLM vs Kimi 怎么选', description: '两家调价后的价格与额度口径对比。', href: '/articles/glm-vs-kimi' },
+    { kind: '选型', title: '哪家 Coding Plan 最便宜？', description: '涨价潮之后的最新入门价排序。', href: '/blogs/cheapest-coding-plan' },
+    { kind: '对比', title: 'GLM vs Kimi 怎么选', description: '两家调价后的价格与额度口径对比。', href: '/blogs/glm-vs-kimi' },
   ],
 })

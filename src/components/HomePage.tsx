@@ -8,7 +8,7 @@ import { ArrowRight, ArrowUpRight, Check, Code2, ExternalLink, Sparkles } from '
 import type { Accent, HomePageData, PlatformSummary } from '../types'
 import { ContactPopover } from './ContactPopover'
 import { FaqList } from './FaqList'
-import { SiteFooter, SiteHeader } from './SiteChrome'
+import { defaultHeaderLinks, SiteFooter, SiteHeader } from './SiteChrome'
 
 const accentClass: Record<Accent, string> = {
   cyan: 'accent-cyan', green: 'accent-green', orange: 'accent-orange', purple: 'accent-purple', blue: 'accent-blue', red: 'accent-red', slate: 'accent-slate',
@@ -28,12 +28,7 @@ export function HomePage({ data }: { data: HomePageData }) {
     <>
       <SiteHeader
         locale={data.locale}
-        links={[
-          { label: data.nav.compare, href: '#compare' },
-          { label: data.nav.platforms, href: '#platforms' },
-          ...(data.nav.deals ? [{ label: data.nav.deals, href: '/deals' }] : []),
-          { label: data.nav.faq, href: '#faq' },
-        ]}
+        links={defaultHeaderLinks(data.locale)}
         language={{ label: data.nav.language, href: data.nav.languageHref }}
       />
       <main>

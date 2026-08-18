@@ -218,8 +218,8 @@ function makeHome(locale: 'zh-CN' | 'en', platforms: PlatformSummary[], faqs: Fa
   return {
     locale, seo,
     nav: isEn
-      ? { compare: 'Compare', platforms: 'Plans', faq: 'FAQ', language: '中文', languageHref: '/' }
-      : { compare: '快速对比', platforms: '套餐详情', deals: '优惠', faq: '常见问题', language: 'EN', languageHref: '/en' },
+      ? { language: '中文', languageHref: '/' }
+      : { language: 'EN', languageHref: '/en' },
     hero: isEn
       ? { badge: '2026 AI CODING SUBSCRIPTIONS', title: 'AI Coding Plans', highlight: 'Compared Side by Side', description: 'A practical comparison of price, model access, quotas and tool support, built from provider plan details.', stats: [{ value: '6', label: 'Platforms' }, { value: '$5', label: 'Lowest entry' }, { value: '20+', label: 'Coding tools' }] }
       : { badge: '2026 AI 编程订阅指南', title: 'AI Coding Plan', highlight: '全面对比', description: '把价格、模型、额度口径和工具支持放到同一张地图里，减少在不同官网之间反复核对的时间。', stats: [{ value: '9', label: '平台横评' }, { value: '¥10', label: '活动最低月付' }, { value: '20+', label: '支持工具' }] },
