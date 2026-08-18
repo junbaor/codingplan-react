@@ -11,7 +11,7 @@ export const claudeCodeWithGlm = defineContentPage({
   accent: 'blue',
   seo: {
     title: 'Claude Code 配置智谱 GLM Coding Plan 教程 2026 - 环境变量 / 端点 / 常见报错',
-    description: 'Claude Code 接入智谱 GLM Coding Plan 完整教程：开通套餐、获取 API Key、配置 ANTHROPIC_BASE_URL 指向 bigmodel.cn Anthropic 兼容端点、模型选择（GLM-5.2/5.1/5-Turbo）、每周 Credits 口径说明与常见报错排查。',
+    description: 'Claude Code 接入智谱 GLM Coding Plan 完整教程：开通套餐、获取 API Key、配置 ANTHROPIC_BASE_URL 指向 bigmodel.cn Anthropic 兼容端点、模型选择（GLM-5.3/5.2/5.1）、每周 Credits 口径说明与常见报错排查。',
     canonical: 'https://codingplan.org/blogs/claude-code-with-glm',
     locale: 'zh-CN',
     ogType: 'article',
@@ -20,7 +20,7 @@ export const claudeCodeWithGlm = defineContentPage({
     badge: '教程 · Claude Code × 智谱 GLM',
     title: 'Claude Code',
     highlight: '接入 GLM Coding Plan',
-    description: '智谱提供 Anthropic 兼容端点，Claude Code 无需改代码即可切换到 GLM-5.2（LMArena 代码榜开源第一），并用套餐的每周 Credits 计费，而非按 token 付费。',
+    description: '智谱提供 Anthropic 兼容端点，Claude Code 无需改代码即可切换到 GLM-5.3（8/14 新旗舰）或 GLM-5.2（LMArena 代码榜开源第一），并用套餐的每周 Credits 计费，而非按 token 付费。',
     stats: [
       { value: '5 分钟', label: '配置耗时' },
       { value: '¥94.4/月起', label: '年付入门价' },
@@ -88,7 +88,7 @@ claude
   ],
   faqs: [
     { question: 'Claude Code 用 GLM Coding Plan 还收费吗？', answer: 'Claude Code 工具本身免费，消耗的是智谱套餐的每周 Credits，不再按 token 另行计费。请确认 Key 来自已订阅 Coding Plan 的智谱账号。' },
-    { question: '能用到 GLM-5.2 吗？', answer: '可以。GLM-5.2 已全量开放，1M 上下文；各档位逐步开放策略为 Pro 优先体验、Max 首发接入，Lite 逐步开放。' },
+    { question: '能用到 GLM-5.3 吗？', answer: '可以。GLM-5.3 已于 8/14 上线全量用户（Terminal-Bench 3.0 开源第一），GLM-5.2 同样在售；新旗舰按 Max 首发接入、Pro 优先体验、Lite 逐步开放的节奏放量。' },
     { question: '端点地址以哪里为准？', answer: '以智谱开放平台官方文档的「Anthropic 兼容」章节为准，本教程写的是 open.bigmodel.cn/api/anthropic；如官方调整路径请同步更新环境变量。' },
     { question: '和直接买 Claude 订阅冲突吗？', answer: '不冲突。环境变量决定 Claude Code 连哪个后端；想切回官方订阅时注释掉 ANTHROPIC_BASE_URL 即可。' },
   ],
@@ -190,7 +190,7 @@ export const claudeCodeWithVolcengine = defineContentPage({
   accent: 'cyan',
   seo: {
     title: 'Claude Code 接入火山引擎方舟 Coding Plan 教程 2026 - 多模型切换 / Auto 模式 / ¥9.9 首购',
-    description: 'Claude Code 接入火山引擎方舟 Coding Plan 教程：方舟 Anthropic 兼容端点配置、Doubao/GLM-5.2/Kimi/MiniMax/DeepSeek 多模型切换、Auto 智能调度、Lite/Pro 套餐额度规则与常见问题。',
+    description: 'Claude Code 接入火山引擎方舟 Coding Plan 教程：方舟 Anthropic 兼容端点配置、Doubao/GLM-5.2/Kimi-K3/MiniMax/DeepSeek 多模型切换、Auto 智能调度、Lite/Pro 套餐额度规则与常见问题。',
     canonical: 'https://codingplan.org/blogs/claude-code-with-volcengine',
     locale: 'zh-CN',
     ogType: 'article',
@@ -199,7 +199,7 @@ export const claudeCodeWithVolcengine = defineContentPage({
     badge: '教程 · Claude Code × 火山方舟',
     title: 'Claude Code',
     highlight: '接入方舟 Coding Plan',
-    description: '方舟 Coding Plan 一份额度覆盖 8+ 款模型（Doubao-Seed-2.1-turbo、GLM-5.2、Kimi-K2.7、MiniMax-M3、Deepseek-V4 等），Claude Code 通过 Anthropic 兼容端点接入后可随时换模型，或交给 Auto 模式自动调度。',
+    description: '方舟 Coding Plan 一份额度覆盖 8+ 款模型（Doubao-Seed-2.1-turbo、GLM-5.2、Kimi-K3、Kimi-K2.7-Code、MiniMax-M3、Deepseek-V4 等），Claude Code 通过 Anthropic 兼容端点接入后可随时换模型，或交给 Auto 模式自动调度。',
     stats: [
       { value: '¥9.9', label: '首购起价' },
       { value: '8+', label: '可用模型' },

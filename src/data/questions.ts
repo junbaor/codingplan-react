@@ -59,7 +59,7 @@ export const whatIsCodingPlan = defineContentPage({
       title: '适合谁、不适合谁',
       cards: [
         { icon: '✅', title: '适合：每日出码的开发者', description: '每天高频使用 Claude Code / Cursor，月账单轻松超过套餐价，订阅制立刻回本。' },
-        { icon: '✅', title: '适合：想要旗舰模型的人', description: '套餐内旗舰模型（GLM-5.2、K3、M3）的等效单价远低于按量 API。' },
+        { icon: '✅', title: '适合：想要旗舰模型的人', description: '套餐内旗舰模型（GLM-5.3、K3、M3）的等效单价远低于按量 API。' },
         { icon: '❌', title: '不适合：轻度/突发用户', description: '一个月几十次调用的用户，按量 API 或免费档（如 Kimi Adagio）成本更低。' },
         { icon: '❌', title: '不适合：需要 API 编程接入', description: '自动化脚本、服务端集成等场景仍需标准 API；白云智算等按量平台更合适。' },
       ],
@@ -161,7 +161,7 @@ export const cheapestCodingPlan = defineContentPage({
   faqs: [
     { question: '2026 年最便宜的 Coding Plan 是哪家？', answer: '入门价最低是火山方舟首购 ¥9.9（限前两月）；可持续的最低月费是 Kimi 年付 Andante ¥39/月与小米 MiMo ¥39/月；算单位额度成本则是 OpenCode Go（$10/月享 6 倍用量）最低。' },
     { question: '有完全免费的 Coding Plan 吗？', answer: '有。Kimi Adagio 免费档可用 K2.6（1 Agent 并行、5h+7 天额度）；OpenCode Go 额度耗尽后仍可用免费模型。但免费档都有限制，重度使用需付费。' },
-    { question: '为什么智谱比别家贵？', answer: '智谱定位偏重度：三档起步 ¥118（年付 ¥94.4），但包含 GLM-5.2 旗舰、4 类内置 MCP 工具与更可预测的每周 Credits。轻度用户确实不必从智谱起步。' },
+    { question: '为什么智谱比别家贵？', answer: '智谱定位偏重度：三档起步 ¥118（年付 ¥94.4），但包含 GLM-5.3/5.2 旗舰、4 类内置 MCP 工具与更可预测的每周 Credits。轻度用户确实不必从智谱起步。' },
     { question: '便宜套餐够用吗？', answer: '取决于使用强度。每天 1-2 小时的轻中度使用，¥39-49 档基本够；全天候 Agent 重度任务普遍需要 ¥100+ 档位。先用低价档跑一周，观察触顶频率再决定。' },
   ],
   related: [
@@ -176,7 +176,7 @@ export const bestCodingPlan = defineContentPage({
   accent: 'purple',
   seo: {
     title: 'Coding Plan 哪个好？2026 按场景推荐 - 模型/性价比/多模型/重度使用怎么选',
-    description: '2026 年 Coding Plan 怎么选：要最强模型选智谱 GLM-5.2 或 Kimi K3；性价比选 OpenCode Go / MiniMax；多模型轮换选火山方舟；重度使用选阿里云 Pro / GLM Max；工具生态选 Claude。按场景给出明确推荐与理由。',
+    description: '2026 年 Coding Plan 怎么选：要最强模型选智谱 GLM-5.3 或 Kimi K3；性价比选 OpenCode Go / MiniMax / 百炼 Token Plan；多模型轮换选火山方舟；重度使用选百炼 Pro / GLM Max；工具生态选 Claude。按场景给出明确推荐与理由。',
     canonical: 'https://codingplan.org/blogs/best-coding-plan',
     locale: 'zh-CN',
     ogType: 'article',
@@ -200,8 +200,8 @@ export const bestCodingPlan = defineContentPage({
         columns: ['你的场景', '推荐', '理由'],
         featuredColumn: 1,
         rows: [
-          ['要最强开源模型', '智谱 GLM Pro', 'GLM-5.2 LMArena 代码榜开源第一，年付 ¥430.4/月含 60K Credits/周 + MCP'],
-          ['要 1M 超长上下文', 'Kimi Allegro 或 GLM Max', 'K3 2.8T 参数 1M 上下文；GLM-5.2 同样 1M'],
+          ['要最强开源模型', '智谱 GLM Pro', 'GLM-5.3（Terminal-Bench 开源第一）/5.2（LMArena 开源第一），年付 ¥430.4/月含 60K Credits/周 + MCP'],
+          ['要 1M 超长上下文', 'Kimi Allegro 或 GLM Max', 'K3 2.8T 参数 1M 上下文；GLM-5.3/5.2 同样 1M'],
           ['性价比优先', 'OpenCode Go', '$10/月 6 倍用量，18 款开源模型（Grok 4.5/GLM-5.2/K3 等）'],
           ['多模型轮换', '火山引擎方舟', '一份额度 8+ 款模型 + Auto 自动调度，¥9.9 起'],
           ['全模态（图/语音/音乐）', 'MiniMax Token Plan', 'M3 + 全系模型共享月度 token，¥49 起'],
@@ -215,7 +215,7 @@ export const bestCodingPlan = defineContentPage({
     {
       title: '按模型质量选',
       paragraphs: [
-        '2026 年 8 月的模型格局：Claude Opus 4.7 综合最强；开源阵营 GLM-5.2（LMArena 代码榜开源第一、全球第二）与 Kimi K3（2.8T 参数、1M 上下文）紧随其后；MiniMax M3 与 Deepseek-V4 组成第二梯队；Doubao-Seed-2.1-turbo 胜在速度。',
+        '2026 年 8 月的模型格局：Claude Opus 4.7 综合最强；开源阵营 GLM-5.3（8/14 发布，Terminal-Bench 3.0 开源第一）/5.2（LMArena 代码榜开源第一）与 Kimi K3（2.8T 参数、1M 上下文）紧随其后；MiniMax M3 与 Deepseek-V4 组成第二梯队；Doubao-Seed-2.1-turbo 胜在速度。',
         '如果你主要看重「出码质量上限」，在国产里选 GLM（Pro 起步才能优先用到旗舰）；看重「超长上下文分析」选 Kimi K3（Moderato 起可用，Allegro 解锁 1M）；两条路线也可并行订阅，月成本约 ¥500。',
       ],
     },
@@ -239,7 +239,7 @@ export const bestCodingPlan = defineContentPage({
     },
   ],
   faqs: [
-    { question: '2026 年综合最好的 Coding Plan 是哪个？', answer: '中文场景综合推荐智谱 GLM Pro（年付 ¥430.4/月）：GLM-5.2 开源第一、每周 Credits 口径可预测、MCP 内置。预算有限则 OpenCode Go 是性价比答案。' },
+    { question: '2026 年综合最好的 Coding Plan 是哪个？', answer: '中文场景综合推荐智谱 GLM Pro（年付 ¥430.4/月）：GLM-5.3 新旗舰 + 5.2 开源第一、每周 Credits 口径可预测、MCP 内置。预算有限则 OpenCode Go 是性价比答案。' },
     { question: 'Kimi 和 GLM 哪个更好？', answer: '看场景：预算敏感、前端/UI 还原、1M 上下文选 Kimi；模型质量上限、MCP 工具链、稳定重度出码选 GLM。详见本站 GLM vs Kimi 对比页。' },
     { question: '只写前端选哪家？', answer: 'Kimi K3 的视觉与 UI 还原能力突出，Moderato ¥99/月起；搭配 Claude Code 使用效果更好。' },
     { question: '为什么没有唯一答案？', answer: '各平台额度口径（次数/积分/token）、模型分布、工具支持差异大，「最好」必然分场景。本页速查表按 8 个场景给出了明确推荐，可按需对号入座。' },

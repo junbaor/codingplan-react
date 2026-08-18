@@ -25,12 +25,13 @@ const zhCommon: Record<string, RelatedLink> = {
   guideKimi: { kind: '教程', title: 'Claude Code 配置 Kimi Code Plan', description: '从开通到鉴权的完整配置流程。', href: '/blogs/claude-code-with-kimi' },
   guideVolc: { kind: '教程', title: 'Claude Code 接入火山引擎方舟 Coding Plan', description: '多模型切换与 Auto 模式配置指南。', href: '/blogs/claude-code-with-volcengine' },
   toolClaudeCode: { kind: '工具', title: 'Claude Code 用哪个 Coding Plan', description: '官方订阅与 8 家国内套餐接入路径。', href: '/agents/claude-code' },
+  modelGlm53: { kind: '模型', title: 'GLM-5.3 模型评测', description: 'Terminal-Bench 开源第一新旗舰的可用套餐与成本。', href: '/models/glm-5.3' },
   modelGlm52: { kind: '模型', title: 'GLM-5.2 模型评测', description: 'LMArena 开源第一旗舰的可用套餐与成本。', href: '/models/glm-5.2' },
   modelK3: { kind: '模型', title: 'Kimi K3 模型评测', description: '2.8T 参数 1M 上下文旗舰详解。', href: '/models/kimi-k3' },
 }
 
 const zhBySlug: Record<string, RelatedLink[]> = {
-  zhipu: [zhCommon.guideGlm, zhCommon.modelGlm52, zhCommon.glmVsKimi],
+  zhipu: [zhCommon.guideGlm, zhCommon.modelGlm53, zhCommon.glmVsKimi],
   kimi: [zhCommon.guideKimi, zhCommon.modelK3, zhCommon.glmVsKimi],
   minimax: [zhCommon.glmVsKimi, zhCommon.cheapest, zhCommon.leaderboard],
   volcengine: [zhCommon.guideVolc, zhCommon.cheapest, zhCommon.deals],
@@ -38,7 +39,7 @@ const zhBySlug: Record<string, RelatedLink[]> = {
   xiaomi: [zhCommon.cheapest, zhCommon.leaderboard, zhCommon.deals],
   baiyunzhisuan: [zhCommon.whatIs, zhCommon.cheapest, zhCommon.changelog],
   tencentcloud: [zhCommon.changelog, zhCommon.whatIs],
-  'opencode-go': [zhCommon.cheapest, zhCommon.modelGlm52, zhCommon.best],
+  'opencode-go': [zhCommon.cheapest, zhCommon.modelGlm52, zhCommon.modelGlm53],
 }
 
 const enClaudeVsGlm: RelatedLink = { kind: 'Comparison', title: 'Claude Code vs GLM Coding Plan', description: 'Pricing, models and usage compared side by side.', href: '/en/blogs/claude-vs-glm' }

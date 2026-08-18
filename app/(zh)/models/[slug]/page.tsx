@@ -1,6 +1,6 @@
 /**
  * [INPUT]: 依赖 Next.js 静态参数/404 能力、ArticlePage、JsonLd 与 modelSlugs 模型页数据索引
- * [OUTPUT]: 对外提供 /models/[slug] 静态模型评测页（8 个旗舰模型）及逐页 Metadata
+ * [OUTPUT]: 对外提供 /models/[slug] 静态模型评测页（9 个旗舰模型）及逐页 Metadata
  * [POS]: app/(zh)/models 的参数化入口，承接「模型名 + 怎么样/价格」长尾查询
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
@@ -9,7 +9,7 @@ import { notFound } from 'next/navigation'
 import { ArticlePage } from '@/src/components/ArticlePage'
 import { JsonLd } from '@/src/components/JsonLd'
 import { buildMetadata } from '@/src/data/metadata'
-import { deepseekV4, doubaoSeed21Turbo, glm52, glm5Turbo, kimiK27, kimiK3, minimaxM3, modelSlugs, qwen35Plus } from '@/src/data/models'
+import { deepseekV4, doubaoSeed21Turbo, glm52, glm53, glm5Turbo, kimiK27, kimiK3, minimaxM3, modelSlugs, qwen35Plus } from '@/src/data/models'
 
 interface ModelRouteProps {
   params: Promise<{ slug: string }>
@@ -22,6 +22,7 @@ export function generateStaticParams() {
 }
 
 function getModel(slug: string) {
+  if (slug === 'glm-5.3') return glm53
   if (slug === 'glm-5.2') return glm52
   if (slug === 'kimi-k3') return kimiK3
   if (slug === 'minimax-m3') return minimaxM3

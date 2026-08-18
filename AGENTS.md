@@ -31,6 +31,8 @@ README.md - 开发命令、App Router 架构与内容维护入口
 
 ## 当前数据要点（最近一次更新 2026-08-18）
 
+- 全站模型与套餐大同步（2026/8/18）：智谱 GLM-5.3（8/14 发布，Terminal-Bench 3.0 开源第一 28.3、编程体感较 5.2 +50%、全员额度重置）上线全量用户，新增 /models/glm-5.3 评测页（模型集合 8→9）；Kimi K2.6 全站更新为 K2.7/K2.7-Code（CLI 默认、GitHub Copilot 已接入）并补充 7/19 起暂停 C 端新订阅、逐步恢复的状态提示；火山方舟模型池补 Kimi-K3；阿里云百炼 Coding Plan 全面升级为 Credits 制 Token Plan（个人版早鸟 ¥39/¥139/¥499，Qwen3.8-Max 2.4T 首发尝鲜 + DeepSeek-V4-Pro 新增，双窗口 Credits，团队版席位 ¥150 起），中英文详情页/首页/Qwen3.5 模型页同步改写；changelog 补 8/14 GLM-5.3、7/20 百炼 Token Plan、7/19 Kimi 暂停订阅事件。
+
 - 移除「全部套餐」集合页 /plans（2026/8/18）：首页已承载平台对比，/plans hub 页删除并在 next.config.ts 301 至 /#platforms，头部导航改为 工具/模型/博客/优惠 四项（SiteChrome defaultHeaderLinks），详情页面包屑与 blogs/tools/models 相关内链、BreadcrumbList JSON-LD 同步改指 /#platforms，sitemap 移除该 URL（49→48）。
 - SEO P0 + 内容矩阵（2026/8/18）：新增 DATA_UPDATED_AT 新鲜度信号（src/data/site-version.ts，贯通 JSON-LD/lastmod/页脚）、og:image 大卡（public/og/default.png）、WebSite/Organization/Article schema、详情页 zh↔en hreflang（src/data/plan-alternates.ts）、可见面包屑与相关内链、robots 放行 AI 爬虫、next/font 自托管字体；内容矩阵 25 篇 + 4 个集合 hub（/blogs、/tools、/models、/en/blogs；套餐集合由首页 #platforms 承接），URL 规范统一为「二级路径=集合列表页 + [slug] 详情页」（plans 仅保留 [slug] 详情页），文章类（对比/教程/问答）三合一进 /blogs，旧 compare/guides/questions/articles 路径 301，站点 19→48 URL。方案依据见 docs/seo-research/09-codingplan-org-seo-plan.md。
 - ChatGPT 渠道模型与定价同步官方最新（2026/8/17）：heading 改 GPT-5.6 Sol（Plus/Pro 主推，2026/8/7），models 由虚构的 GPT-5.3 更新为 ['GPT-5.6', 'o4-mini', 'GPT-4o']；Go 套餐价格 $10→$8（2026/1 全球推广实际价），Go details 由 GPT-5.3 mini 改为 GPT-5.6 Luna（免费版默认，2026/8/6）；Plus details 中 DALL-E 3 替换为 ChatGPT Images 2.0（2026/4 发布，基于 gpt-image-2），note 由过时的"年付 $200"改为"Pro $200/月"。

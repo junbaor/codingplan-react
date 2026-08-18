@@ -8,6 +8,7 @@ import { defineContentPage } from './content-page'
 import { modelSlugs } from './models'
 
 const modelNameBySlug: Record<string, { name: string; vendor: string }> = {
+  'glm-5.3': { name: 'GLM-5.3', vendor: '智谱' },
   'glm-5.2': { name: 'GLM-5.2', vendor: '智谱' },
   'kimi-k3': { name: 'Kimi K3', vendor: 'Moonshot' },
   'minimax-m3': { name: 'MiniMax M3', vendor: 'MiniMax' },
@@ -106,7 +107,7 @@ export const agentsHub = defineContentPage({
   related: [
     { kind: '文章', title: 'Claude Code 配置教程合集', description: 'GLM/Kimi/方舟三篇教程。', href: '/blogs/claude-code-with-glm' },
     { kind: '集合', title: '全部套餐', description: '智能体页引用的平台详情。', href: '/plans' },
-    { kind: '模型', title: 'GLM-5.2 评测', description: '工具背后的模型选型。', href: '/models/glm-5.2' },
+    { kind: '模型', title: 'GLM-5.3 评测', description: '工具背后的模型选型。', href: '/models/glm-5.3' },
   ],
 })
 
@@ -114,20 +115,20 @@ export const modelsHub = defineContentPage({
   slug: 'models',
   accent: 'purple',
   seo: {
-    title: '编程大模型评测集合 - GLM-5.2 / Kimi K3 / MiniMax M3 / DeepSeek V4 等 8 款',
-    description: 'CodingPlan.org 模型集合页：八个主流编程大模型（GLM-5.2、Kimi K3、MiniMax M3、Doubao-Seed-2.1-turbo、DeepSeek V4、Qwen3.5-Plus、Kimi K2.7、GLM-5-Turbo）的能力定位与可用套餐速查。',
+    title: '编程大模型评测集合 - GLM-5.3 / Kimi K3 / MiniMax M3 / DeepSeek V4 等 9 款',
+    description: 'CodingPlan.org 模型集合页：九个主流编程大模型（GLM-5.3、GLM-5.2、Kimi K3、MiniMax M3、Doubao-Seed-2.1-turbo、DeepSeek V4、Qwen3.5-Plus、Kimi K2.7、GLM-5-Turbo）的能力定位与可用套餐速查。',
     canonical: 'https://codingplan.org/models',
     locale: 'zh-CN',
     ogType: 'website',
   },
   hero: {
-    badge: '模型集合 · 8 模型',
+    badge: '模型集合 · 9 模型',
     title: '编程大模型',
     highlight: '评测集合',
     description: '每个模型一页：能力定位、哪些套餐能用、每月成本与搭配建议。模型页与套餐详情页互链，选模型即选套餐。',
     stats: [
-      { value: '8', label: '热门模型' },
-      { value: '4 家', label: '覆盖厂商' },
+      { value: '9', label: '热门模型' },
+      { value: '5 家', label: '覆盖厂商' },
       { value: '1M', label: '旗舰上下文' },
     ],
   },
@@ -141,10 +142,10 @@ export const modelsHub = defineContentPage({
     {
       title: '按能力选模型',
       cards: [
-        { icon: '🏆', title: '代码上限', description: 'GLM-5.2（LMArena 开源第一）与 Kimi K3（2.8T）。' },
+        { icon: '🏆', title: '代码上限', description: 'GLM-5.3（Terminal-Bench 3.0 开源第一）/5.2（LMArena 开源第一）与 Kimi K3（2.8T）。' },
         { icon: '⚡', title: '速度与成本', description: 'GLM-5-Turbo、Doubao-2.1-turbo、DeepSeek V4 Flash。' },
         { icon: '🎥', title: '多模态', description: 'MiniMax M3（图像/视频输入）、Kimi K3（视觉）。' },
-        { icon: '🧠', title: '推理与 Agent', description: 'DeepSeek V4 Pro、Kimi K3 长链路任务。' },
+        { icon: '🧠', title: '推理与 Agent', description: 'GLM-5.3、DeepSeek V4 Pro、Kimi K3 长链路任务。' },
       ],
     },
     {

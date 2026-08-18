@@ -49,8 +49,8 @@ export const claudeCodeTool = defineContentPage({
           ['MiniMax Token Plan', '¥49/月', 'M3 / M2.7', '6亿+ token/月'],
           ['小米 MiMo', '¥39/月', 'MiMo-V2.5-Pro', 'Credits 年度制'],
           ['OpenCode Go', '$10/月', '18 款开源模型', '5h $12 / 月 $60'],
-          ['智谱 GLM', '¥118/月', 'GLM-5.2', '10K-140K Credits/周'],
-          ['阿里云百炼', '¥200/月', 'qwen3.5 系列', '6,000 次/5h'],
+          ['智谱 GLM', '¥118/月', 'GLM-5.3', '10K-140K Credits/周'],
+          ['阿里云百炼', '¥39/月起', 'Qwen3.8-Max', '700-12,000 Credits/5h'],
           ['白云智算', '按量 API', '多模型', 'token 后付费'],
         ],
         rowLinks: ['/plans/volcengine', '/plans/kimi', '/plans/minimax', '/plans/xiaomi', '/plans/opencode-go', '/plans/zhipu', '/plans/aliyun', '/plans/baiyunzhisuan'],
@@ -60,7 +60,7 @@ export const claudeCodeTool = defineContentPage({
       title: '怎么选',
       highlights: [
         '要 Opus 4.7 原生体验：官方 Pro $20/月起，年付约 ¥146/月',
-        '要最强国产旗舰：智谱 GLM-5.2（年付 ¥94.4/月），LMArena 代码榜开源第一',
+        '要最强国产旗舰：智谱 GLM-5.3/5.2（年付 ¥94.4/月），Terminal-Bench / LMArena 代码榜开源第一',
         '最便宜跑起来：火山 ¥9.9 首购或 Kimi Andante 年付 ¥39/月',
         '要 1M 上下文：Kimi Moderato ¥99/月起（K3），或 GLM 全系',
         '多模型轮换：火山方舟一份额度切 8+ 款模型',
@@ -76,7 +76,7 @@ export const claudeCodeTool = defineContentPage({
   faqs: [
     { question: 'Claude Code 本身收费吗？', answer: '工具免费，消耗的是背后订阅额度：官方订阅消耗 Claude 额度，接入国内套餐则消耗对应 Coding Plan 额度。' },
     { question: '国内套餐接 Claude Code 违反条款吗？', answer: '不违反。智谱、Kimi、火山、MiniMax 等均官方列明支持 Claude Code 并提供兼容端点，属于厂商主动兼容。' },
-    { question: '用国产套餐和官方订阅体验差在哪？', answer: '模型不同：官方是 Opus 4.7，国产是 GLM-5.2/K3/M3 等。工具功能（终端、IDE 插件、MCP）基本一致；官方的 extended thinking 与跨会话记忆部分依赖模型能力。' },
+    { question: '用国产套餐和官方订阅体验差在哪？', answer: '模型不同：官方是 Opus 4.7，国产是 GLM-5.3/5.2/K3/M3 等。工具功能（终端、IDE 插件、MCP）基本一致；官方的 extended thinking 与跨会话记忆部分依赖模型能力。' },
     { question: '可以多个套餐随时切换吗？', answer: '可以，切换只是改环境变量；配合 ccswitch 等工具可一键切换多套配置。' },
   ],
   related: [
@@ -278,7 +278,7 @@ export const cursorTool = defineContentPage({
     {
       title: '怎么选',
       highlights: [
-        'GLM-5.2 写码主力：智谱 Lite 年付 ¥94.4/月，Cursor + Claude Code 共享额度',
+        'GLM-5.3/5.2 写码主力：智谱 Lite 年付 ¥94.4/月，Cursor + Claude Code 共享额度',
         '多模型轮换：火山方舟一份额度切 8+ 款模型，¥9.9 起试',
         '全模态补图：MiniMax M3 原生多模态，UI 截图理解',
         '国际开源模型：OpenCode Go（Grok 4.5 / K3 / GLM-5.2）$10/月',
@@ -354,7 +354,7 @@ export const clineTool = defineContentPage({
       title: '背景与生态',
       paragraphs: [
         'Cline 起源于 VS Code 插件市场，靠「计划-执行」两段式工作流与完全透明的操作审批赢得口碑，后来衍生出 Roo Code 等分支，形成事实上的开源 Agent 小生态。对国产厂商而言，适配 Cline 的成本低（标准 OpenAI/Anthropic 兼容端点即可），因此它出现在几乎所有平台的官方工具清单里。',
-        '与 IDE 自带助手相比，Cline 的优势是不锁定厂商：你可以今天用 GLM-5.2，明天把同一个插件指向 Kimi 或方舟，配置只改一行。缺点是重度 Agent 任务多轮调用多，5h 窗口消耗比交互式问答快得多，选档位时要留出余量。',
+        '与 IDE 自带助手相比，Cline 的优势是不锁定厂商：你可以今天用 GLM-5.3，明天把同一个插件指向 Kimi 或方舟，配置只改一行。缺点是重度 Agent 任务多轮调用多，5h 窗口消耗比交互式问答快得多，选档位时要留出余量。',
       ],
     },
   ],

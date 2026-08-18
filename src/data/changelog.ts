@@ -11,7 +11,7 @@ export const changelogPage = defineContentPage({
   accent: 'cyan',
   seo: {
     title: 'Coding Plan 变更记录 2026 - 涨价 / 上新 / 上下线时间线（持续更新）',
-    description: '国内 AI Coding Plan 变更时间线：智谱订阅回归 ¥118 起、Kimi K3 发布、GLM-5.2 全量开放、MiniMax M3 上线、腾讯云下线、火山方舟新接入模型等事件倒序记录，点击查看对应平台最新套餐。',
+    description: '国内 AI Coding Plan 变更时间线：GLM-5.3 发布、智谱订阅回归 ¥118 起、Kimi K3 发布与暂停订阅、百炼升级 Token Plan、MiniMax M3 上线、腾讯云下线等事件倒序记录，点击查看对应平台最新套餐。',
     canonical: 'https://codingplan.org/changelog',
     locale: 'zh-CN',
     ogType: 'article',
@@ -34,6 +34,7 @@ export const changelogPage = defineContentPage({
         columns: ['日期', '平台', '事件'],
         rows: [
           ['08-17', 'ChatGPT', '渠道同步官方最新定价：Go 套餐 $10→$8（全球推广价），Plus 详情更新为 ChatGPT Images 2.0'],
+          ['08-14', '智谱 GLM', 'GLM-5.3 发布并上线 Coding Plan 全量用户（ZCode / AutoClaw 同步），全员额度重置；Terminal-Bench 3.0 开源第一，编程体感较 5.2 提升 50%，权重两周内开源'],
           ['08-11', 'OpenCode Go', '新收录：首月 $5 之后 $10/月，18 款开源模型 6 倍用量，OpenAI/Anthropic 兼容 API'],
           ['08-07', 'OpenAI', 'GPT-5.6 Sol 发布，成为 Plus/Pro 主推模型'],
           ['08-06', 'OpenAI', 'GPT-5.6 Luna 发布，成为免费版默认模型'],
@@ -46,7 +47,9 @@ export const changelogPage = defineContentPage({
         columns: ['日期', '平台', '事件'],
         rows: [
           ['07-31', '智谱 GLM', '订阅回归并改为透明积分制：连续包月 ¥118/¥538/¥1,078，每周 Credits 刷新（Lite 10K / Pro 60K / Max 140K）'],
+          ['07-20', '阿里云百炼', 'Token Plan 个人版发布：Qwen3.8-Max（2.4T）首发尝鲜，早鸟 Lite ¥39 / Standard ¥139 / Pro ¥499，Credits 双窗口；原次数制 Coding Plan 升级并入'],
           ['07-22', 'MiniMax', 'API-vlm 调价至 ¥0.025/次，Token Plan 套餐额度不受影响'],
+          ['07-19', 'Kimi', 'K3 发布后请求量暴涨，暂停 C 端新用户订阅，随扩容逐步恢复；后续将拆分 Kimi 主权益与 Kimi Code 权益'],
           ['07-17', 'Kimi', 'K3 旗舰正式上线：2.8T 参数、1M 上下文，Moderato 及以上可用，Allegro 解锁 1M 长对话'],
         ],
       },
