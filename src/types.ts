@@ -158,6 +158,8 @@ export interface HubItem {
   title: string
   description?: string
   kind?: string
+  mark?: string
+  color?: string
 }
 
 export interface ContentPageData {
@@ -171,4 +173,5 @@ export interface ContentPageData {
   related: Array<{ kind: string; title: string; description?: string; href: string }>
   hubTitle?: string
   hubItems?: HubItem[]
+  hubLayout?: 'cards' | 'cards-lg' | 'list'
 }

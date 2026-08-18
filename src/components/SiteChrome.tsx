@@ -15,7 +15,7 @@ interface HeaderProps {
   language?: { label: string; href: string }
 }
 
-/** 全站统一主导航：每个集合 hub 都有头部入口（zh 五项 / en 三项） */
+/** 全站统一主导航：每个集合 hub 都有头部入口（zh 四项 / en 三项）；套餐集合由首页 #platforms 承接 */
 export function defaultHeaderLinks(locale: 'zh-CN' | 'en'): Array<{ label: string; href: string }> {
   return locale === 'en'
     ? [
@@ -24,7 +24,6 @@ export function defaultHeaderLinks(locale: 'zh-CN' | 'en'): Array<{ label: strin
         { label: 'Blog', href: '/en/blogs' },
       ]
     : [
-        { label: '全部套餐', href: '/plans' },
         { label: '工具', href: '/tools' },
         { label: '模型', href: '/models' },
         { label: '博客', href: '/blogs' },

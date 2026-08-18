@@ -4,21 +4,9 @@
  * [POS]: data 的集合层，保证每个二级路径都有 200 的列表页作为面包屑父级与权重汇聚点
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
-import { blogSlugs, getBlog } from './blogs'
 import { defineContentPage } from './content-page'
 import { modelSlugs } from './models'
 import { planSlugs } from './plans'
-import { toolSlugs } from './tools'
-
-const articleKindBySlug: Record<string, string> = {
-  'what-is-coding-plan': '百科',
-  'cheapest-coding-plan': '选型',
-  'best-coding-plan': '选型',
-  'glm-vs-kimi': '对比',
-  'claude-code-with-glm': '教程',
-  'claude-code-with-kimi': '教程',
-  'claude-code-with-volcengine': '教程',
-}
 
 const planNameBySlug: Record<string, { name: string; price: string }> = {
   volcengine: { name: '火山引擎方舟', price: '¥9.9/月起' },
@@ -30,15 +18,6 @@ const planNameBySlug: Record<string, { name: string; price: string }> = {
   aliyun: { name: '阿里云百炼', price: '¥200/月' },
   baiyunzhisuan: { name: '白云智算', price: '按量 API' },
   tencentcloud: { name: '腾讯云 Coding Plan', price: '已下线' },
-}
-
-const toolNameBySlug: Record<string, { name: string; tag: string }> = {
-  'claude-code': { name: 'Claude Code', tag: '终端/IDE Agent' },
-  codex: { name: 'Codex', tag: 'OpenAI 官方' },
-  opencode: { name: 'OpenCode', tag: '开源中立' },
-  cursor: { name: 'Cursor', tag: 'AI IDE' },
-  cline: { name: 'Cline', tag: 'VS Code 插件' },
-  'roo-code': { name: 'Roo Code', tag: 'VS Code 插件' },
 }
 
 const modelNameBySlug: Record<string, { name: string; vendor: string }> = {
@@ -66,103 +45,28 @@ export const blogsHub = defineContentPage({
     badge: '博客 · 持续更新',
     title: 'Coding Plan',
     highlight: '博客',
-    description: '对比、教程与选型指南统一收录于此。每篇文章都与平台详情页、工具页、模型页互链，可从任意入口进入同一张知识网络。',
-    stats: [
-      { value: String(blogSlugs.length), label: '篇深度文章' },
-      { value: '3 类', label: '对比/教程/选型' },
-      { value: '同源', label: '与详情页数据一致' },
-    ],
+    description: '对比、教程与选型指南，与平台详情页、工具页、模型页数据同源。',
   },
   hubTitle: '全部文章',
-  hubItems: blogSlugs.map((slug) => ({
-    href: `/blogs/${slug}`,
-    kind: articleKindBySlug[slug] ?? '文章',
-    title: `${getBlog(slug).hero.title}${getBlog(slug).hero.highlight ? ` ${getBlog(slug).hero.highlight}` : ''}`,
-  })),
-  sections: [
-    {
-      title: '三类文章怎么用',
-      cards: [
-        { icon: '⚖️', title: '对比', description: '两家套餐逐项对照（价格/模型/额度口径），适合已经缩小到二选一的人。' },
-        { icon: '🛠️', title: '教程', description: 'Claude Code 等工具接入国产套餐的完整配置流程，含环境变量与报错排查。' },
-        { icon: '🧭', title: '选型与百科', description: '从「是什么」到「哪家便宜」「哪个好」，按问题找答案。' },
-      ],
-    },
-    {
-      title: '阅读路径建议',
-      highlights: [
-        '新手：先读「Coding Plan 是什么」，再看「哪家最便宜」或「哪个好」',
-        '已锁定两家：直接看对应对比文，再看两家的详情页核对价格',
-        '已买套餐：按工具找教程（Claude Code 配置 GLM/Kimi/方舟）',
-        '所有价格与额度口径和平台详情页同源，页脚标注最近核实日期',
-      ],
-    },
+  hubLayout: 'list',
+  hubItems: [
+    { href: '/blogs/what-is-coding-plan', kind: '百科', title: 'Coding Plan 是什么？', description: '从 Token API 到订阅制的概念、三种计费方式与 5 小时限额解读' },
+    { href: '/blogs/cheapest-coding-plan', kind: '选型', title: '哪家 Coding Plan 最便宜？', description: '入门价排行与单位额度成本分析，¥9.9 起的省钱组合' },
+    { href: '/blogs/best-coding-plan', kind: '选型', title: 'Coding Plan 哪个好？怎么选', description: '按模型质量、使用强度、工具生态的场景化推荐' },
+    { href: '/blogs/glm-vs-kimi', kind: '对比', title: 'GLM vs Kimi：两家 Coding Plan 怎么选', description: '旗舰模型、价格与额度口径逐项对比，附按人群结论' },
+    { href: '/blogs/claude-code-with-glm', kind: '教程', title: 'Claude Code 配置智谱 GLM Coding Plan', description: '环境变量、端点配置与常见报错排查，五分钟接入' },
+    { href: '/blogs/claude-code-with-kimi', kind: '教程', title: 'Claude Code 配置 Kimi Code Plan', description: '免费档即可试用的 Moonshot 端点配置教程' },
+    { href: '/blogs/claude-code-with-volcengine', kind: '教程', title: 'Claude Code 接入火山引擎方舟 Coding Plan', description: '多模型切换与 Auto 调度配置，¥9.9 首购起' },
   ],
+  sections: [],
   faqs: [
     { question: '文章和详情页是什么关系？', answer: '详情页（/plans、/tools、/models）是结构化的实体数据，文章是围绕它们的深度内容：对比、教程与选型结论。两者互链且数据同源。' },
     { question: '文章多久更新？', answer: '价格或模型变动触发对应文章与详情页同步更新；页脚「数据更新于」即最近核实时间。' },
-    { question: '以后会新增哪类文章？', answer: '按查询需求扩展：更多两两对比、更多工具配置教程、新模型评测导读，全部进入本目录。' },
   ],
   related: [
     { kind: '榜单', title: '性价比排行榜', description: '九平台入门价与量纲速查。', href: '/leaderboard' },
     { kind: '优惠', title: '邀请码与优惠汇总', description: '文章提到的低价入口集中在此。', href: '/deals' },
-    { kind: '集合', title: '全部套餐', description: '九个平台的结构化详情。', href: '/plans' },
-  ],
-})
-
-export const plansHub = defineContentPage({
-  slug: 'plans',
-  accent: 'blue',
-  seo: {
-    title: '全部 Coding Plan 套餐 - 9 个平台价格、模型与额度一览',
-    description: 'CodingPlan.org 套餐集合页：火山方舟 ¥9.9 起、小米 ¥39、Kimi ¥49、MiniMax ¥49、OpenCode Go $10、智谱 ¥118、阿里云 ¥200 等九个平台的详情入口，含已下线的腾讯云归档页。',
-    canonical: 'https://codingplan.org/plans',
-    locale: 'zh-CN',
-    ogType: 'website',
-  },
-  hero: {
-    badge: '套餐集合 · 9 平台',
-    title: '全部',
-    highlight: 'Coding Plan 套餐',
-    description: '每个平台一个结构化详情页：价格档位、模型阵容、额度口径、工具支持与常见问题。首页的快速对比表是本集合的浓缩视图。',
-    stats: [
-      { value: '9', label: '平台详情页' },
-      { value: '¥9.9', label: '最低入门' },
-      { value: '1 归档', label: '腾讯云已下线' },
-    ],
-  },
-  hubTitle: '全部平台',
-  hubItems: planSlugs.map((slug) => ({
-    href: `/plans/${slug}`,
-    kind: planNameBySlug[slug].price,
-    title: planNameBySlug[slug].name,
-  })),
-  sections: [
-    {
-      title: '按需求选平台',
-      cards: [
-        { icon: '💸', title: '最低成本试水', description: '火山方舟（¥9.9 首购）与 Kimi（免费档）。' },
-        { icon: '🏆', title: '模型质量优先', description: '智谱 GLM（GLM-5.2 开源第一）与 Kimi（K3）。' },
-        { icon: '🧩', title: '多模型轮换', description: '火山方舟 8+ 款一份额度；OpenCode Go 18 款开源模型。' },
-        { icon: '⚙️', title: '重度稳定出码', description: '阿里云 Pro 三重额度与智谱 Max 高峰保障。' },
-      ],
-    },
-    {
-      title: '与首页对比表的关系',
-      paragraphs: [
-        '首页「快速对比」给出一行一平台的浓缩视图；本集合的每个详情页展开该平台的完整信息：各档位功能差异、模型介绍、额度规则与优惠活动。两个视图数据同源，更新同步。',
-      ],
-    },
-  ],
-  faqs: [
-    { question: '为什么腾讯云还在列表里？', answer: '腾讯云 Coding Plan 已于 2026-04-22 下线，详情页保留为历史归档供老用户查阅，不提供购买入口。' },
-    { question: '详情页价格是最新的吗？', answer: '与首页同源，监测到平台调价即更新；页脚标注最近核实日期，支付前请以官网结算页为准。' },
-    { question: '白云智算为什么没有月费？', answer: '它是按量计费的模型 API 聚合平台，无订阅月费，作为订阅制的对照组收录。' },
-  ],
-  related: [
-    { kind: '榜单', title: '性价比排行榜', description: '全部平台的入门价排序。', href: '/leaderboard' },
-    { kind: '优惠', title: '邀请码与优惠汇总', description: '各平台首购与邀请入口。', href: '/deals' },
-    { kind: '文章', title: '哪个好怎么选', description: '按场景的推荐结论。', href: '/blogs/best-coding-plan' },
+    { kind: '集合', title: '全部套餐', description: '九个平台的结构化详情。', href: '/#platforms' },
   ],
 })
 
@@ -188,11 +92,15 @@ export const toolsHub = defineContentPage({
     ],
   },
   hubTitle: '全部工具',
-  hubItems: toolSlugs.map((slug) => ({
-    href: `/tools/${slug}`,
-    kind: toolNameBySlug[slug].tag,
-    title: toolNameBySlug[slug].name,
-  })),
+  hubLayout: 'cards-lg',
+  hubItems: [
+    { href: '/tools/claude-code', kind: '终端/IDE Agent', title: 'Claude Code', description: '生态最成熟的编程智能体，7+ 国内套餐可接', mark: 'CC', color: '#D97757' },
+    { href: '/tools/codex', kind: 'OpenAI 官方', title: 'Codex', description: 'ChatGPT 订阅内置的终端智能体，GPT-5.6 系列', mark: 'CD', color: '#10A37F' },
+    { href: '/tools/opencode', kind: '开源中立', title: 'OpenCode', description: '模型无关的开源 Agent，官方 Go 订阅 $10/月', mark: 'OC', color: '#06B6D4' },
+    { href: '/tools/cursor', kind: 'AI IDE', title: 'Cursor', description: '最流行的 AI IDE，BYOK 接入国内套餐', mark: 'CU', color: '#111827' },
+    { href: '/tools/cline', kind: 'VS Code 插件', title: 'Cline', description: 'VS Code 开源 Agent，自带 Key 零订阅', mark: 'CL', color: '#F59E0B' },
+    { href: '/tools/roo-code', kind: 'VS Code 插件', title: 'Roo Code', description: 'Cline 系多模式工作流，Kimi 官方点名支持', mark: 'RC', color: '#8B5CF6' },
+  ],
   sections: [
     {
       title: '按工作流选工具',
@@ -200,13 +108,6 @@ export const toolsHub = defineContentPage({
         { icon: '⌨️', title: '终端优先', description: 'Claude Code、OpenCode、Codex：CLI 为核心，配 IDE 插件。' },
         { icon: '🪟', title: 'IDE 一体化', description: 'Cursor（独立 IDE）或 Cline/Roo Code（VS Code 插件）。' },
         { icon: '🔓', title: '不想锁定厂商', description: 'OpenCode 模型无关；Cline/Roo Code 自带 Key。' },
-      ],
-    },
-    {
-      title: '工具页怎么用',
-      paragraphs: [
-        '每个工具页列出官方确认支持它的国内套餐（以各平台工具清单为准），并给出按入门价排序的表格。确定套餐后，从工具页的「配置入口」跳到对应的配置教程文章。',
-        '注意「支持」分两级：官方适配（厂商工具清单点名，如智谱/阿里云对 Claude Code）与兼容接入（提供 OpenAI/Anthropic 兼容端点自行配置）。工具页表格中已按平台口径标注。',
       ],
     },
   ],

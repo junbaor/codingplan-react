@@ -26,7 +26,7 @@ export function PlanPage({ plan }: { plan: PlanPageData }) {
     'faq',
   ]
   const planTitle = `${plan.hero.title} ${plan.hero.highlight}`
-  const hubHref = isEn ? '/en#platforms' : '/plans'
+  const hubHref = isEn ? '/en#platforms' : '/#platforms'
   const hubLabel = isEn ? 'Coding Plans' : '全部套餐'
 
   return (

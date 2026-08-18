@@ -142,7 +142,7 @@ export function buildPlanJsonLd(plan: PlanPageData) {
                 : 'https://schema.org/InStock',
         })),
       }
-  const hubUrl = isEn ? `${siteUrl}/en` : `${siteUrl}/plans`
+  const hubUrl = isEn ? `${siteUrl}/en` : `${siteUrl}/#platforms`
   return [
     primaryEntity,
     buildArticleJsonLd({ title: planTitle, description: plan.seo.description, url: plan.seo.canonical, locale: plan.seo.locale, datePublished: publishedAt }),

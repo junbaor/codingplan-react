@@ -65,15 +65,47 @@ export function ArticlePage({ page }: { page: ContentPageData }) {
           <section className="border-y border-border bg-surface py-14">
             <div className="page-shell">
               <h2 className="mb-8 text-center text-xl font-black tracking-tight sm:text-2xl">{page.hubTitle ?? (isEn ? 'All entries' : '全部条目')}</h2>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {page.hubItems.map((item) => (
-                  <a key={item.href} href={item.href} className="focus-ring group rounded-2xl border border-border bg-surface-raised p-5 transition hover:border-brand-cyan/40">
-                    {item.kind && <p className="font-mono text-xs uppercase tracking-wider text-ink-muted">{item.kind}</p>}
-                    <p className="mt-2 font-bold group-hover:text-brand-cyan">{item.title}</p>
-                    {item.description && <p className="mt-1 text-sm text-ink-soft">{item.description}</p>}
-                  </a>
-                ))}
-              </div>
+              {page.hubLayout === 'list' ? (
+                <ul className="divide-y divide-border rounded-2xl border border-border bg-surface-raised px-6">
+                  {page.hubItems.map((item) => (
+                    <li key={item.href}>
+                      <a href={item.href} className="focus-ring group flex min-h-11 items-center gap-4 py-5 transition">
+                        {item.kind && <span className="w-fit shrink-0 rounded-full border border-border px-3 py-1 font-mono text-xs text-ink-muted">{item.kind}</span>}
+                        <span className="min-w-0 flex-1">
+                          <span className="block text-lg font-bold group-hover:text-brand-cyan">{item.title}</span>
+                          {item.description && <span className="mt-0.5 block truncate text-sm text-ink-soft">{item.description}</span>}
+                        </span>
+                        <ArrowUpRight size={18} className="shrink-0 text-ink-muted transition group-hover:text-brand-cyan" aria-hidden="true" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              ) : page.hubLayout === 'cards-lg' ? (
+                <div className="grid gap-5 sm:grid-cols-2">
+                  {page.hubItems.map((item) => (
+                    <a key={item.href} href={item.href} className="focus-ring group flex items-center gap-5 rounded-2xl border border-border bg-surface-raised p-6 transition hover:border-brand-cyan/40">
+                      {item.mark && (
+                        <span className="flex size-14 shrink-0 items-center justify-center rounded-xl font-mono text-base font-black text-white" style={{ backgroundColor: item.color ?? '#334155' }} aria-hidden="true">{item.mark}</span>
+                      )}
+                      <span className="min-w-0">
+                        {item.kind && <span className="block font-mono text-xs uppercase tracking-wider text-ink-muted">{item.kind}</span>}
+                        <span className="mt-1 block text-xl font-black group-hover:text-brand-cyan">{item.title}</span>
+                        {item.description && <span className="mt-1 block text-sm leading-6 text-ink-soft">{item.description}</span>}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              ) : (
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {page.hubItems.map((item) => (
+                    <a key={item.href} href={item.href} className="focus-ring group rounded-2xl border border-border bg-surface-raised p-5 transition hover:border-brand-cyan/40">
+                      {item.kind && <p className="font-mono text-xs uppercase tracking-wider text-ink-muted">{item.kind}</p>}
+                      <p className="mt-2 font-bold group-hover:text-brand-cyan">{item.title}</p>
+                      {item.description && <p className="mt-1 text-sm text-ink-soft">{item.description}</p>}
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           </section>
         )}
