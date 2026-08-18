@@ -371,7 +371,7 @@ export const deepseekV4 = defineContentPage({
   related: [
     { kind: '详情', title: 'OpenCode Go 详解', description: 'V4 性价比最高的载体。', href: '/plans/opencode-go' },
     { kind: '模型', title: 'GLM-5.2 评测', description: '质量上限更高的选择。', href: '/models/glm-5.2' },
-    { kind: '工具', title: 'OpenCode 工具指南', description: '配 V4 的首选工具。', href: '/tools/opencode' },
+    { kind: '工具', title: 'OpenCode 工具指南', description: '配 V4 的首选工具。', href: '/agents/opencode' },
   ],
 })
 
@@ -441,7 +441,7 @@ export const qwen35Plus = defineContentPage({
   ],
   related: [
     { kind: '详情', title: '阿里云百炼详解', description: 'Qwen3.5 主场套餐。', href: '/plans/aliyun' },
-    { kind: '工具', title: 'Cursor 配置指南', description: '百炼官方支持 Cursor。', href: '/tools/cursor' },
+    { kind: '工具', title: 'Cursor 配置指南', description: '百炼官方支持 Cursor。', href: '/agents/cursor' },
     { kind: '榜单', title: '性价比排行榜', description: '百炼所处价位段。', href: '/leaderboard' },
   ],
 })

@@ -1,7 +1,7 @@
 /**
- * [INPUT]: 依赖 Next.js 静态参数/404 能力、ArticlePage、JsonLd 与 toolSlugs 工具页数据索引
- * [OUTPUT]: 对外提供 /tools/[slug] 静态工具页（Claude Code/Codex/OpenCode/Cursor/Cline/Roo Code）及逐页 Metadata
- * [POS]: app/(zh)/tools 的参数化入口，承接「工具名 + 价格/配置」查询并导向平台详情
+ * [INPUT]: 依赖 Next.js 静态参数/404 能力、ArticlePage、JsonLd 与 agentSlugs 工具页数据索引
+ * [OUTPUT]: 对外提供 /agents/[slug] 静态工具页（Claude Code/Codex/OpenCode/Cursor/Cline/Roo Code）及逐页 Metadata
+ * [POS]: app/(zh)/tools 的参数化入口，承接「智能体名 + 价格/配置」查询并导向平台详情
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import type { Metadata } from 'next'
@@ -9,7 +9,7 @@ import { notFound } from 'next/navigation'
 import { ArticlePage } from '@/src/components/ArticlePage'
 import { JsonLd } from '@/src/components/JsonLd'
 import { buildMetadata } from '@/src/data/metadata'
-import { claudeCodeTool, clineTool, codexTool, cursorTool, opencodeTool, rooCodeTool, toolSlugs } from '@/src/data/tools'
+import { claudeCodeTool, clineTool, codexTool, cursorTool, opencodeTool, rooCodeTool, agentSlugs } from '@/src/data/agents'
 
 interface ToolRouteProps {
   params: Promise<{ slug: string }>
@@ -18,7 +18,7 @@ interface ToolRouteProps {
 export const dynamicParams = false
 
 export function generateStaticParams() {
-  return toolSlugs.map((slug) => ({ slug }))
+  return agentSlugs.map((slug) => ({ slug }))
 }
 
 function getTool(slug: string) {

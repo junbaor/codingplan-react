@@ -13,12 +13,12 @@ CodingPlan.org is an independent comparison site for AI coding plan subscription
 - [Changelog](https://codingplan.org/changelog): Timeline of pricing, model and availability changes across platforms
 - [GLM vs Kimi](https://codingplan.org/blogs/glm-vs-kimi): Zhipu GLM Coding Plan vs Kimi Code Plan head-to-head comparison
 - [Claude vs GLM (EN)](https://codingplan.org/en/blogs/claude-vs-glm): Claude Code vs GLM Coding Plan comparison
-- [Tool: Claude Code](https://codingplan.org/tools/claude-code): Which coding plans work with Claude Code
-- [Tool: Codex](https://codingplan.org/tools/codex): Codex CLI supported plans and setup
-- [Tool: OpenCode](https://codingplan.org/tools/opencode): Open-source agent and the Go subscription
-- [Tool: Cursor](https://codingplan.org/tools/cursor): Cursor BYOK plans
-- [Tool: Cline](https://codingplan.org/tools/cline): VS Code agent supported plans
-- [Tool: Roo Code](https://codingplan.org/tools/roo-code): Roo Code supported plans
+-  [Agent: Claude Code](https://codingplan.org/agents/claude-code): Which coding plans work with Claude Code
+-  [Agent: Codex](https://codingplan.org/agents/codex): Codex CLI supported plans and setup
+-  [Agent: OpenCode](https://codingplan.org/agents/opencode): Open-source agent and the Go subscription
+-  [Agent: Cursor](https://codingplan.org/agents/cursor): Cursor BYOK plans
+-  [Agent: Cline](https://codingplan.org/agents/cline): VS Code agent supported plans
+-  [Agent: Roo Code](https://codingplan.org/agents/roo-code): Roo Code supported plans
 - [Model: GLM-5.2](https://codingplan.org/models/glm-5.2): #1 open-source coding model review
 - [Model: Kimi K3](https://codingplan.org/models/kimi-k3): 2.8T flagship review
 - [Model: MiniMax M3](https://codingplan.org/models/minimax-m3): Multimodal flagship review

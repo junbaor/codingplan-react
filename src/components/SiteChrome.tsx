@@ -24,7 +24,7 @@ export function defaultHeaderLinks(locale: 'zh-CN' | 'en'): Array<{ label: strin
         { label: 'Blog', href: '/en/blogs' },
       ]
     : [
-        { label: '工具', href: '/tools' },
+        { label: '工具', href: '/agents' },
         { label: '模型', href: '/models' },
         { label: '博客', href: '/blogs' },
         { label: '优惠', href: '/deals' },
@@ -63,7 +63,7 @@ export function SiteFooter({ disclaimer, locale = 'zh-CN', children }: { disclai
           {locale === 'zh-CN' ? (
             <>
               <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/blogs/what-is-coding-plan">Coding Plan 是什么</a>
-              <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/tools/claude-code">Claude Code 指南</a>
+              <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/agents/claude-code">Claude Code 指南</a>
               <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/leaderboard">性价比榜</a>
               <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/changelog">变更记录</a>
             </>

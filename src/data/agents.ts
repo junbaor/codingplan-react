@@ -1,12 +1,12 @@
 /**
  * [INPUT]: 依赖 content-page 的 defineContentPage 装配器与 plans.ts 各平台 tools 清单
- * [OUTPUT]: 对外提供 6 个编程工具页数据（Claude Code/Codex/OpenCode/Cursor/Cline/Roo Code）
+ * [OUTPUT]: 对外提供 6 个 AI 编程智能体页数据（Claude Code/Codex/OpenCode/Cursor/Cline/Roo Code）
  * [POS]: data 的工具意图承接层，承接「工具名 + 价格/配置/coding plan」查询并导向平台详情
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import { defineContentPage } from './content-page'
 
-export const toolSlugs = ['claude-code', 'codex', 'opencode', 'cursor', 'cline', 'roo-code'] as const
+export const agentSlugs = ['claude-code', 'codex', 'opencode', 'cursor', 'cline', 'roo-code'] as const
 
 export const claudeCodeTool = defineContentPage({
   slug: 'claude-code',
@@ -14,7 +14,7 @@ export const claudeCodeTool = defineContentPage({
   seo: {
     title: 'Claude Code 用哪个 Coding Plan？2026 价格 / 支持套餐 / 配置入口全解',
     description: 'Claude Code 支持的 Coding Plan 汇总：官方订阅 Pro $20 起，或接入智谱 GLM（年付 ¥94.4/月）、Kimi（¥49/月）、火山方舟（¥9.9 起）、MiniMax、阿里云、OpenCode Go 等国内套餐。含各平台配置教程入口与选购建议。',
-    canonical: 'https://codingplan.org/tools/claude-code',
+    canonical: 'https://codingplan.org/agents/claude-code',
     locale: 'zh-CN',
     ogType: 'article',
   },
@@ -93,7 +93,7 @@ export const codexTool = defineContentPage({
   seo: {
     title: 'Codex CLI 支持哪些 Coding Plan？2026 OpenAI Codex 配置与套餐选择',
     description: 'OpenAI Codex CLI 编程智能体的套餐选择：ChatGPT Plus $20 内置，或通过自定义模型服务商接入阿里云百炼、MiniMax、小米 MiMo 等国内 Coding Plan。含各平台支持清单与配置要点。',
-    canonical: 'https://codingplan.org/tools/codex',
+    canonical: 'https://codingplan.org/agents/codex',
     locale: 'zh-CN',
     ogType: 'article',
   },
@@ -158,9 +158,9 @@ export const opencodeTool = defineContentPage({
   slug: 'opencode',
   accent: 'slate',
   seo: {
-    title: 'OpenCode 编程工具详解 2026 - 免费开源 Agent + Go 订阅 $10/月怎么用',
+    title: 'OpenCode 智能体详解 2026 - 免费开源 Agent + Go 订阅 $10/月怎么用',
     description: 'OpenCode（opencode.ai）开源终端编程智能体详解：免费使用任意模型服务商、官方订阅 OpenCode Go $10/月享 6 倍用量（18 款开源模型）、支持的国内 Coding Plan 清单与配置方式。',
-    canonical: 'https://codingplan.org/tools/opencode',
+    canonical: 'https://codingplan.org/agents/opencode',
     locale: 'zh-CN',
     ogType: 'article',
   },
@@ -229,7 +229,7 @@ export const cursorTool = defineContentPage({
   seo: {
     title: 'Cursor 用哪个 Coding Plan？2026 支持 API 接入的国产套餐清单',
     description: 'AI IDE Cursor 接入国产 Coding Plan 指南：智谱 GLM、阿里云百炼、火山方舟、OpenCode Go 等官方列明支持 Cursor 的套餐清单、配置方式与模型选择建议。',
-    canonical: 'https://codingplan.org/tools/cursor',
+    canonical: 'https://codingplan.org/agents/cursor',
     locale: 'zh-CN',
     ogType: 'article',
   },
@@ -291,7 +291,7 @@ export const cursorTool = defineContentPage({
     { question: '哪个套餐对 Cursor 支持最好？', answer: '智谱、阿里云、火山、MiniMax 都在官方工具清单里点名 Cursor；阿里云支持的工具面最广（11+），火山胜在多模型。' },
   ],
   related: [
-    { kind: '工具', title: 'Claude Code 用哪个套餐', description: '终端党看这篇。', href: '/tools/claude-code' },
+    { kind: '工具', title: 'Claude Code 用哪个套餐', description: '终端党看这篇。', href: '/agents/claude-code' },
     { kind: '详情', title: '智谱 GLM 详解', description: 'Cursor 官方支持的主力套餐。', href: '/plans/zhipu' },
     { kind: '榜单', title: '性价比排行榜', description: '全部可接套餐价格对比。', href: '/leaderboard' },
   ],
@@ -303,7 +303,7 @@ export const clineTool = defineContentPage({
   seo: {
     title: 'Cline 支持哪些 Coding Plan？2026 VS Code 开源 Agent 配置指南',
     description: 'VS Code 开源编程智能体 Cline 的套餐选择：智谱、阿里云、火山方舟、MiniMax、OpenCode Go 等官方支持 Cline 的国产 Coding Plan 清单、API Key 配置与模型建议。',
-    canonical: 'https://codingplan.org/tools/cline',
+    canonical: 'https://codingplan.org/agents/cline',
     locale: 'zh-CN',
     ogType: 'article',
   },
@@ -364,7 +364,7 @@ export const clineTool = defineContentPage({
     { question: 'Cline 和 Cursor 怎么选？', answer: 'Cursor 是完整 IDE（自带订阅），Cline 是 VS Code 插件（BYOK）。已有 VS Code 工作流、想控制成本选 Cline；想要一体化体验选 Cursor。' },
   ],
   related: [
-    { kind: '工具', title: 'Roo Code 配置指南', description: '同源分支工具。', href: '/tools/roo-code' },
+    { kind: '工具', title: 'Roo Code 配置指南', description: '同源分支工具。', href: '/agents/roo-code' },
     { kind: '详情', title: '火山引擎方舟详解', description: 'Cline 支持的多模型套餐。', href: '/plans/volcengine' },
     { kind: '百科', title: 'Coding Plan 是什么？', description: 'BYOK 与订阅的关系。', href: '/blogs/what-is-coding-plan' },
   ],
@@ -376,7 +376,7 @@ export const rooCodeTool = defineContentPage({
   seo: {
     title: 'Roo Code 支持哪些 Coding Plan？2026 配置与套餐选择指南',
     description: 'VS Code 开源 Agent Roo Code 的套餐选择：Kimi、智谱、阿里云、火山方舟、MiniMax、OpenCode Go 等官方支持 Roo Code 的国产 Coding Plan 清单、多模式工作流与配置要点。',
-    canonical: 'https://codingplan.org/tools/roo-code',
+    canonical: 'https://codingplan.org/agents/roo-code',
     locale: 'zh-CN',
     ogType: 'article',
   },
@@ -437,7 +437,7 @@ export const rooCodeTool = defineContentPage({
     { question: 'Roo Code 消耗套餐额度快吗？', answer: 'Agent 类工具多轮调用较多，5h 窗口消耗明显；建议把重规划任务交给 Architect 模式一次性输出，减少反复迭代。' },
   ],
   related: [
-    { kind: '工具', title: 'Cline 配置指南', description: '同源工具对比。', href: '/tools/cline' },
+    { kind: '工具', title: 'Cline 配置指南', description: '同源工具对比。', href: '/agents/cline' },
     { kind: '详情', title: 'Kimi Code Plan 详解', description: '点名支持 Roo Code 的套餐。', href: '/plans/kimi' },
     { kind: '教程', title: 'Claude Code 配置 Kimi', description: 'Kimi 端点同样适用于 Roo Code。', href: '/blogs/claude-code-with-kimi' },
   ],

@@ -7,12 +7,12 @@
 import type { MetadataRoute } from 'next'
 import { blogSlugs, enBlogSlugs } from '@/src/data/blogs'
 import { dealsPage } from '@/src/data/deals'
-import { blogsHub, enBlogsHub, modelsHub, toolsHub } from '@/src/data/hubs'
+import { blogsHub, enBlogsHub, modelsHub, agentsHub } from '@/src/data/hubs'
 import { leaderboardPage } from '@/src/data/leaderboard'
 import { modelSlugs } from '@/src/data/models'
 import { planSlugs, plansBySlug } from '@/src/data/plans'
 import { enPlanSlugs, getEnPlan } from '@/src/data/plans-en'
-import { toolSlugs } from '@/src/data/tools'
+import { agentSlugs } from '@/src/data/agents'
 import { DATA_UPDATED_AT, siteUrl } from '@/src/data/site-version'
 
 const lastModified = new Date(DATA_UPDATED_AT)
@@ -83,13 +83,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${siteUrl}/tools`,
+      url: `${siteUrl}/agents`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
-    ...toolSlugs.map((slug) => ({
-      url: `${siteUrl}/tools/${slug}`,
+    ...agentSlugs.map((slug) => ({
+      url: `${siteUrl}/agents/${slug}`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.7,

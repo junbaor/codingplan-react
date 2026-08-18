@@ -154,7 +154,7 @@ export function ArticlePage({ page }: { page: ContentPageData }) {
 const zhHubLabels: Record<string, string> = {
   blogs: '博客',
   plans: '全部套餐',
-  tools: '工具',
+  agents: '智能体',
   models: '模型',
   deals: '优惠与邀请码',
   changelog: '变更记录',

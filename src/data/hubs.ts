@@ -32,7 +32,7 @@ export const blogsHub = defineContentPage({
     badge: '博客 · 持续更新',
     title: 'Coding Plan',
     highlight: '博客',
-    description: '对比、教程与选型指南，与平台详情页、工具页、模型页数据同源。',
+    description: '对比、教程与选型指南，与平台详情页、智能体页、模型页数据同源。',
   },
   hubTitle: '全部文章',
   hubLayout: 'list',
@@ -57,36 +57,36 @@ export const blogsHub = defineContentPage({
   ],
 })
 
-export const toolsHub = defineContentPage({
-  slug: 'tools',
+export const agentsHub = defineContentPage({
+  slug: 'agents',
   accent: 'orange',
   seo: {
-    title: '编程工具 × Coding Plan - Claude Code / Codex / OpenCode / Cursor / Cline / Roo Code',
-    description: 'CodingPlan.org 工具集合页：六个主流 AI 编程工具各配哪个国产 Coding Plan 最划算，含 Claude Code、Codex、OpenCode、Cursor、Cline、Roo Code 的支持套餐清单与配置教程入口。',
+    title: 'AI 编程智能体指南 - Claude Code / Codex / OpenCode / Cursor / Cline / Roo Code',
+    description: 'CodingPlan.org 智能体集合页：六个主流 AI 编程智能体（Agent）各配哪个国产 Coding Plan 最划算，含 Claude Code、Codex、OpenCode、Cursor、Cline、Roo Code 的支持套餐清单与配置教程入口。',
     canonical: 'https://codingplan.org/tools',
     locale: 'zh-CN',
     ogType: 'website',
   },
   hero: {
-    badge: '工具集合 · 6 工具',
-    title: '编程工具',
+    badge: '智能体集合 · 6 Agents',
+    title: 'AI 编程智能体',
     highlight: '× Coding Plan',
-    description: '每个工具一页：它是什么、支持哪些国内套餐、怎么选最省钱。工具页与平台详情页双向互链，配好套餐后可从工具页直达对应教程。',
+    description: '每个智能体一页：它是什么、支持哪些国内套餐、怎么选最省钱。智能体页与平台详情页双向互链，配好套餐后可直达对应教程。',
     stats: [
-      { value: '6', label: '主流工具' },
+      { value: '6', label: '主流 Agent' },
       { value: '8+', label: '可接国内套餐' },
       { value: 'BYOK', label: '多数支持自带 Key' },
     ],
   },
-  hubTitle: '全部工具',
+  hubTitle: '全部智能体',
   hubLayout: 'cards-lg',
   hubItems: [
-    { href: '/tools/claude-code', kind: '终端/IDE Agent', title: 'Claude Code', description: '生态最成熟的编程智能体，7+ 国内套餐可接', mark: 'CC', color: '#D97757' },
-    { href: '/tools/codex', kind: 'OpenAI 官方', title: 'Codex', description: 'ChatGPT 订阅内置的终端智能体，GPT-5.6 系列', mark: 'CD', color: '#10A37F' },
-    { href: '/tools/opencode', kind: '开源中立', title: 'OpenCode', description: '模型无关的开源 Agent，官方 Go 订阅 $10/月', mark: 'OC', color: '#06B6D4' },
-    { href: '/tools/cursor', kind: 'AI IDE', title: 'Cursor', description: '最流行的 AI IDE，BYOK 接入国内套餐', mark: 'CU', color: '#111827' },
-    { href: '/tools/cline', kind: 'VS Code 插件', title: 'Cline', description: 'VS Code 开源 Agent，自带 Key 零订阅', mark: 'CL', color: '#F59E0B' },
-    { href: '/tools/roo-code', kind: 'VS Code 插件', title: 'Roo Code', description: 'Cline 系多模式工作流，Kimi 官方点名支持', mark: 'RC', color: '#8B5CF6' },
+    { href: '/agents/claude-code', kind: '终端/IDE Agent', title: 'Claude Code', description: '生态最成熟的编程智能体，7+ 国内套餐可接', mark: 'CC', color: '#D97757' },
+    { href: '/agents/codex', kind: 'OpenAI 官方', title: 'Codex', description: 'ChatGPT 订阅内置的终端智能体，GPT-5.6 系列', mark: 'CD', color: '#10A37F' },
+    { href: '/agents/opencode', kind: '开源中立', title: 'OpenCode', description: '模型无关的开源 Agent，官方 Go 订阅 $10/月', mark: 'OC', color: '#06B6D4' },
+    { href: '/agents/cursor', kind: 'AI IDE', title: 'Cursor', description: '最流行的 AI IDE，BYOK 接入国内套餐', mark: 'CU', color: '#111827' },
+    { href: '/agents/cline', kind: 'VS Code 插件', title: 'Cline', description: 'VS Code 开源 Agent，自带 Key 零订阅', mark: 'CL', color: '#F59E0B' },
+    { href: '/agents/roo-code', kind: 'VS Code 插件', title: 'Roo Code', description: 'Cline 系多模式工作流，Kimi 官方点名支持', mark: 'RC', color: '#8B5CF6' },
   ],
   sections: [
     {
@@ -105,7 +105,7 @@ export const toolsHub = defineContentPage({
   ],
   related: [
     { kind: '文章', title: 'Claude Code 配置教程合集', description: 'GLM/Kimi/方舟三篇教程。', href: '/blogs/claude-code-with-glm' },
-    { kind: '集合', title: '全部套餐', description: '工具页引用的平台详情。', href: '/#platforms' },
+    { kind: '集合', title: '全部套餐', description: '智能体页引用的平台详情。', href: '/plans' },
     { kind: '模型', title: 'GLM-5.2 评测', description: '工具背后的模型选型。', href: '/models/glm-5.2' },
   ],
 })
