@@ -7,8 +7,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: "Noto Sans SC", "Manrope", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: var(--font-noto-sans-sc), var(--font-manrope), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
   --color-page: var(--site-page);
   --color-surface: var(--site-surface);
   --color-surface-raised: var(--site-surface-raised);

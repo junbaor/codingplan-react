@@ -6,6 +6,7 @@
  */
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
+import { JetBrains_Mono, Manrope, Noto_Sans_SC } from 'next/font/google'
 import { Analytics } from '@/src/components/Analytics'
 import { AntiPiracy } from '@/src/components/AntiPiracy'
 import { AntiPiracyComment } from '@/src/components/AntiPiracyComment'
@@ -15,16 +16,17 @@ import { baseMetadata, baseViewport } from '@/src/data/metadata'
 import { buildSiteJsonLd } from '@/src/data/seo'
 import '@/src/styles/global.css'
 
+const manrope = Manrope({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800'], variable: '--font-manrope' })
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], weight: ['400', '600', '700'], variable: '--font-jetbrains-mono' })
+const notoSansSC = Noto_Sans_SC({ weight: ['400', '500', '700', '900'], variable: '--font-noto-sans-sc', preload: false })
+
 export const metadata: Metadata = baseMetadata
 export const viewport: Viewport = baseViewport
 
 export default function EnglishRootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${manrope.variable} ${jetbrainsMono.variable} ${notoSansSC.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
         <AntiPiracyComment />
       </head>
       <body>
