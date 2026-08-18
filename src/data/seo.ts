@@ -161,7 +161,6 @@ export function buildPlanJsonLd(plan: PlanPageData) {
 
 const contentHubNames: Record<string, string> = {
   blogs: '博客',
-  plans: '全部套餐',
   tools: '工具',
   models: '模型',
   deals: '优惠与邀请码',

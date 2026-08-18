@@ -1,24 +1,11 @@
 /**
- * [INPUT]: 依赖 content-page 的 defineContentPage、blogs/tools/models/plans 的集合清单
- * [OUTPUT]: 对外提供 5 个集合首页数据：/blogs、/plans、/tools、/models（zh）与 /en/blogs（en）
+ * [INPUT]: 依赖 content-page 的 defineContentPage、models 的集合清单
+ * [OUTPUT]: 对外提供 4 个集合首页数据：/blogs、/tools、/models（zh）与 /en/blogs（en）；套餐集合由首页 #platforms 承接
  * [POS]: data 的集合层，保证每个二级路径都有 200 的列表页作为面包屑父级与权重汇聚点
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import { defineContentPage } from './content-page'
 import { modelSlugs } from './models'
-import { planSlugs } from './plans'
-
-const planNameBySlug: Record<string, { name: string; price: string }> = {
-  volcengine: { name: '火山引擎方舟', price: '¥9.9/月起' },
-  xiaomi: { name: '小米 MiMo', price: '¥39/月' },
-  kimi: { name: 'Kimi Code Plan', price: '¥49/月' },
-  minimax: { name: 'MiniMax Token Plan', price: '¥49/月' },
-  'opencode-go': { name: 'OpenCode Go', price: '$10/月' },
-  zhipu: { name: '智谱 GLM Coding Plan', price: '¥118/月' },
-  aliyun: { name: '阿里云百炼', price: '¥200/月' },
-  baiyunzhisuan: { name: '白云智算', price: '按量 API' },
-  tencentcloud: { name: '腾讯云 Coding Plan', price: '已下线' },
-}
 
 const modelNameBySlug: Record<string, { name: string; vendor: string }> = {
   'glm-5.2': { name: 'GLM-5.2', vendor: '智谱' },
@@ -60,7 +47,7 @@ export const blogsHub = defineContentPage({
   ],
   sections: [],
   faqs: [
-    { question: '文章和详情页是什么关系？', answer: '详情页（/plans、/tools、/models）是结构化的实体数据，文章是围绕它们的深度内容：对比、教程与选型结论。两者互链且数据同源。' },
+    { question: '文章和详情页是什么关系？', answer: '详情页（套餐、工具、模型）是结构化的实体数据，文章是围绕它们的深度内容：对比、教程与选型结论。两者互链且数据同源。' },
     { question: '文章多久更新？', answer: '价格或模型变动触发对应文章与详情页同步更新；页脚「数据更新于」即最近核实时间。' },
   ],
   related: [
@@ -118,7 +105,7 @@ export const toolsHub = defineContentPage({
   ],
   related: [
     { kind: '文章', title: 'Claude Code 配置教程合集', description: 'GLM/Kimi/方舟三篇教程。', href: '/blogs/claude-code-with-glm' },
-    { kind: '集合', title: '全部套餐', description: '工具页引用的平台详情。', href: '/plans' },
+    { kind: '集合', title: '全部套餐', description: '工具页引用的平台详情。', href: '/#platforms' },
     { kind: '模型', title: 'GLM-5.2 评测', description: '工具背后的模型选型。', href: '/models/glm-5.2' },
   ],
 })
@@ -175,7 +162,7 @@ export const modelsHub = defineContentPage({
   ],
   related: [
     { kind: '榜单', title: '性价比排行榜', description: '模型所在套餐的价格对比。', href: '/leaderboard' },
-    { kind: '集合', title: '全部套餐', description: '模型的承载套餐。', href: '/plans' },
+    { kind: '集合', title: '全部套餐', description: '模型的承载套餐。', href: '/#platforms' },
     { kind: '动态', title: '变更记录', description: '新模型上线时间线。', href: '/changelog' },
   ],
 })

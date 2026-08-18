@@ -1,13 +1,13 @@
 /**
  * [INPUT]: 依赖 Next.js MetadataRoute 类型、hubs/blogs/plans/models/tools 集合清单与 DATA_UPDATED_AT
- * [OUTPUT]: 对外提供全站 50 个 URL 的 /sitemap.xml，lastmod 与全站数据更新日期同源
+ * [OUTPUT]: 对外提供全站 48 个 URL 的 /sitemap.xml，lastmod 与全站数据更新日期同源
  * [POS]: app 的站点地图入口，与静态生成路由共用各集合 slug 数据源
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import type { MetadataRoute } from 'next'
 import { blogSlugs, enBlogSlugs } from '@/src/data/blogs'
 import { dealsPage } from '@/src/data/deals'
-import { blogsHub, enBlogsHub, modelsHub, plansHub, toolsHub } from '@/src/data/hubs'
+import { blogsHub, enBlogsHub, modelsHub, toolsHub } from '@/src/data/hubs'
 import { leaderboardPage } from '@/src/data/leaderboard'
 import { modelSlugs } from '@/src/data/models'
 import { planSlugs, plansBySlug } from '@/src/data/plans'
@@ -45,12 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: slug === 'tencentcloud' ? 0.4 : slug === 'baiyunzhisuan' ? 0.7 : 0.8,
       alternates: { languages: languagesOf(plansBySlug[slug].seo.alternates) },
     })),
-    {
-      url: `${siteUrl}/plans`,
-      lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
     ...enPlanSlugs.map((slug) => ({
       url: `${siteUrl}/en/plans/${slug}`,
       lastModified,
