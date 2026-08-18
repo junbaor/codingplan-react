@@ -1,6 +1,6 @@
 /**
  * [INPUT]: 无运行时依赖，承载原站内容抽取后的领域约束
- * [OUTPUT]: 对外提供首页、平台详情、内容顺序、标题层级、套餐、FAQ 与 SEO 类型
+ * [OUTPUT]: 对外提供首页、平台详情、内容页（教程/对比/问题/优惠/变更）、内容顺序、标题层级、套餐、FAQ 与 SEO 类型
  * [POS]: src 的领域模型，被 data、components 和 app 共同依赖
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
@@ -61,7 +61,7 @@ export interface PlatformSummary {
 export interface HomePageData {
   locale: Locale
   seo: SeoData
-  nav: { compare: string; platforms: string; faq: string; language: string; languageHref: string }
+  nav: { compare: string; platforms: string; deals?: string; faq: string; language: string; languageHref: string }
   hero: { badge: string; title: string; highlight: string; description: string; stats: StatItem[] }
   comparison: { title: string; description: string; columns: string[] }
   platformsTitle: string
@@ -138,4 +138,28 @@ export interface PlanPageData {
   contentOrder?: Array<'models' | 'plans' | 'comparison' | 'tools' | 'faq' | 'final-cta' | `section:${number}`>
   finalCta?: { title: string; label: string; href: string }
   faqs: FaqItem[]
+}
+
+export interface ContentBlock {
+  title?: string
+  headingLevel?: 2 | 3
+  description?: string
+  paragraphs?: string[]
+  cards?: FeatureCard[]
+  highlights?: string[]
+  table?: { columns: string[]; rows: string[][]; featuredColumn?: number; rowLinks?: string[] }
+  steps?: Array<{ name: string; description: string; code?: string }>
+  code?: { label?: string; content: string }
+  warning?: string
+}
+
+export interface ContentPageData {
+  slug: string
+  seo: SeoData
+  accent: Accent
+  hero: { badge: string; title: string; highlight: string; description: string; stats?: StatItem[] }
+  sections: ContentBlock[]
+  faqs: FaqItem[]
+  cta?: { title: string; label: string; href: string }
+  related: Array<{ kind: string; title: string; description?: string; href: string }>
 }

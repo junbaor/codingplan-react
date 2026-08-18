@@ -44,6 +44,15 @@ export function SiteFooter({ disclaimer, locale = 'zh-CN', children }: { disclai
         <p className="mx-auto max-w-3xl text-sm text-ink-muted">{disclaimer}</p>
         {children}
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-ink-soft">
+          {locale === 'zh-CN' ? (
+            <>
+              <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/deals">优惠与邀请码</a>
+              <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/changelog">变更记录</a>
+              <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/questions/what-is-coding-plan">Coding Plan 是什么</a>
+            </>
+          ) : (
+            <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/en/compare/claude-vs-glm">Claude vs GLM</a>
+          )}
           <a className="focus-ring inline-flex min-h-11 items-center gap-1 hover:text-brand-cyan" href={kkcodeHref} target="_blank" rel="noopener noreferrer">kkcode.app <ArrowUpRight size={14} /></a>
           <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/sitemap.xml">Sitemap</a>
         </div>

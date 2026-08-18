@@ -4,7 +4,7 @@
  * [POS]: data 的 SEO 适配层，让可见内容与结构化数据使用同一数据源，日期信号统一取自 site-version
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
-import type { FaqItem, PlatformSummary, PlanPageData } from '../types'
+import type { ContentPageData, FaqItem, PlatformSummary, PlanPageData } from '../types'
 import { DATA_UPDATED_AT, siteUrl } from './site-version'
 
 const organization = {
@@ -156,5 +156,35 @@ export function buildPlanJsonLd(plan: PlanPageData) {
       ],
     },
     buildFaqJsonLd(plan.faqs),
+  ]
+}
+
+const contentHubNames: Record<string, string> = {
+  deals: '优惠与邀请码',
+  changelog: '变更记录',
+  compare: '套餐对比',
+  guides: '配置教程',
+  questions: '常见问题',
+}
+
+export function buildContentJsonLd(page: ContentPageData) {
+  const isEn = page.seo.locale === 'en'
+  const pageUrl = page.seo.canonical
+  const path = new URL(pageUrl).pathname
+  const hub = isEn ? 'compare' : (path.split('/')[1] || '')
+  const hubName = contentHubNames[hub] ?? '内容'
+  const hubPath = isEn ? '/en' : `/${hub}`
+  return [
+    buildArticleJsonLd({ title: `${page.hero.title}${page.hero.highlight ? ` ${page.hero.highlight}` : ''}`, description: page.seo.description, url: pageUrl, locale: page.seo.locale, datePublished: DATA_UPDATED_AT }),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'CodingPlan.org', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: isEn ? 'Comparisons' : hubName, item: `${siteUrl}${hubPath}` },
+        { '@type': 'ListItem', position: 3, name: `${page.hero.title}${page.hero.highlight ? ` ${page.hero.highlight}` : ''}`, item: pageUrl },
+      ],
+    },
+    buildFaqJsonLd(page.faqs),
   ]
 }

@@ -31,6 +31,7 @@ export function HomePage({ data }: { data: HomePageData }) {
         links={[
           { label: data.nav.compare, href: '#compare' },
           { label: data.nav.platforms, href: '#platforms' },
+          ...(data.nav.deals ? [{ label: data.nav.deals, href: '/deals' }] : []),
           { label: data.nav.faq, href: '#faq' },
         ]}
         language={{ label: data.nav.language, href: data.nav.languageHref }}

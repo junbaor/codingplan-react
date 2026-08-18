@@ -8,6 +8,16 @@ CodingPlan.org is an independent comparison site for AI coding plan subscription
 
 - [Chinese Homepage](https://codingplan.org): 国内 AI 编程套餐对比 — 智谱 GLM、MiniMax、Kimi、火山引擎方舟、阿里云百炼、小米 MiMo、OpenCode Go
 - [English Homepage](https://codingplan.org/en): International AI coding plan comparison — Claude Code, GLM, MiniMax, Kimi, Qwen
+- [Deals & Invite Codes](https://codingplan.org/deals): Current discounts, invite codes and first-purchase offers across platforms
+- [Changelog](https://codingplan.org/changelog): Timeline of pricing, model and availability changes across platforms
+- [GLM vs Kimi](https://codingplan.org/compare/glm-vs-kimi): Zhipu GLM Coding Plan vs Kimi Code Plan head-to-head comparison
+- [Claude vs GLM (EN)](https://codingplan.org/en/compare/claude-vs-glm): Claude Code vs GLM Coding Plan comparison
+- [What is a Coding Plan](https://codingplan.org/questions/what-is-coding-plan): Concept explainer, billing models and quota mechanics
+- [Cheapest Coding Plan](https://codingplan.org/questions/cheapest-coding-plan): Entry price ranking with unit-cost analysis
+- [Best Coding Plan](https://codingplan.org/questions/best-coding-plan): Scenario-based recommendations
+- [Guide: Claude Code with GLM](https://codingplan.org/guides/claude-code-with-glm): Setup tutorial for Zhipu GLM endpoints
+- [Guide: Claude Code with Kimi](https://codingplan.org/guides/claude-code-with-kimi): Setup tutorial for Moonshot endpoints
+- [Guide: Claude Code with Volcengine](https://codingplan.org/guides/claude-code-with-volcengine): Setup tutorial for Ark multi-model endpoints
 - [OpenCode Go](https://codingplan.org/plans/opencode-go): 18 open-source models, $5 first month, then $10/mo, 6x usage value
 - [Zhipu GLM](https://codingplan.org/plans/zhipu): GLM models, tiers, weekly Credits and MCP tools
 - [MiniMax](https://codingplan.org/plans/minimax): M3 token plans, concurrency and multimodal quotas

@@ -5,8 +5,11 @@
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import type { MetadataRoute } from 'next'
+import { compareSlugs, enCompareSlugs } from '@/src/data/compares'
+import { guideSlugs } from '@/src/data/guides'
 import { planSlugs, plansBySlug } from '@/src/data/plans'
 import { enPlanSlugs, getEnPlan } from '@/src/data/plans-en'
+import { questionSlugs } from '@/src/data/questions'
 import { DATA_UPDATED_AT, siteUrl } from '@/src/data/site-version'
 
 const lastModified = new Date(DATA_UPDATED_AT)
@@ -45,6 +48,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.8,
       alternates: { languages: languagesOf(getEnPlan(slug)?.seo.alternates) },
+    })),
+    {
+      url: `${siteUrl}/deals`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/changelog`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    ...compareSlugs.map((slug) => ({
+      url: `${siteUrl}/compare/${slug}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })),
+    ...guideSlugs.map((slug) => ({
+      url: `${siteUrl}/guides/${slug}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })),
+    ...questionSlugs.map((slug) => ({
+      url: `${siteUrl}/questions/${slug}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })),
+    ...enCompareSlugs.map((slug) => ({
+      url: `${siteUrl}/en/compare/${slug}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
     })),
     {
       url: `${siteUrl}/deepseek-harness-plgins`,
