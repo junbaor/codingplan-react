@@ -1,16 +1,17 @@
 /**
- * [INPUT]: 依赖 types 的详情页领域类型与 seo 的结构化数据构造函数
+ * [INPUT]: 依赖 types 的详情页领域类型、seo 的结构化数据构造函数与 plan-alternates 的 zh 侧 hreflang 映射
  * [OUTPUT]: 对外提供八个平台原站兼容标题顺序、推广参数、详情数据、slug 与查询函数
  * [POS]: data 的详情页唯一数据源，以内容顺序配置替代原站八份重复 HTML
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import type { PlanPageData, SeoData } from '../types'
+import { zhPlanAlternates } from './plan-alternates'
 import { buildPlanJsonLd } from './seo'
 
 type PlanInput = Omit<PlanPageData, 'seo'> & { seo: Omit<SeoData, 'jsonLd'> }
 
 function definePlan(input: PlanInput): PlanPageData {
-  const plan = { ...input, seo: { ...input.seo, jsonLd: [] } } as PlanPageData
+  const plan = { ...input, seo: { ...input.seo, alternates: input.seo.alternates ?? zhPlanAlternates(input.slug), jsonLd: [] } } as PlanPageData
   plan.seo.jsonLd = buildPlanJsonLd(plan)
   return plan
 }

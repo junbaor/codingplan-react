@@ -1,16 +1,17 @@
 /**
- * [INPUT]: 依赖 types 的详情页领域类型与 seo 的结构化数据构造函数
+ * [INPUT]: 依赖 types 的详情页领域类型、seo 的结构化数据构造函数与 plan-alternates 的 en 侧 hreflang 映射
  * [OUTPUT]: 对外提供英文站六个平台（Claude/GLM/MiniMax/Kimi/Qwen/OpenCode Go）的详情页数据
  * [POS]: data 的英文详情页唯一数据源，与中文 plans 通过相同 PlanPage 模板渲染
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import type { PlanPageData, SeoData } from '../types'
+import { enPlanAlternates } from './plan-alternates'
 import { buildPlanJsonLd } from './seo'
 
 type PlanInput = Omit<PlanPageData, 'seo'> & { seo: Omit<SeoData, 'jsonLd'> }
 
 function definePlan(input: PlanInput): PlanPageData {
-  const plan = { ...input, seo: { ...input.seo, jsonLd: [] } } as PlanPageData
+  const plan = { ...input, seo: { ...input.seo, alternates: input.seo.alternates ?? enPlanAlternates(input.slug), jsonLd: [] } } as PlanPageData
   plan.seo.jsonLd = buildPlanJsonLd(plan)
   return plan
 }

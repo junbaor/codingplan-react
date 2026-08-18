@@ -1,15 +1,61 @@
 /**
- * [INPUT]: 依赖 types 的 FAQ、平台和详情页领域类型
- * [OUTPUT]: 对外提供首页与详情页 JSON-LD 构造函数
- * [POS]: data 的 SEO 适配层，让可见内容与结构化数据使用同一数据源
+ * [INPUT]: 依赖 types 的 FAQ、平台和详情页领域类型，依赖 site-version 的 DATA_UPDATED_AT/siteUrl
+ * [OUTPUT]: 对外提供首页与详情页 JSON-LD 构造函数，以及 WebSite/Organization 站点级与 Article 文章级 schema
+ * [POS]: data 的 SEO 适配层，让可见内容与结构化数据使用同一数据源，日期信号统一取自 site-version
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import type { FaqItem, PlatformSummary, PlanPageData } from '../types'
+import { DATA_UPDATED_AT, siteUrl } from './site-version'
 
 const organization = {
   '@type': 'Organization',
   name: 'CodingPlan.org',
-  url: 'https://codingplan.org',
+  url: siteUrl,
+}
+
+export function buildSiteJsonLd(locale: 'zh-CN' | 'en') {
+  const isEn = locale === 'en'
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'CodingPlan.org',
+      alternateName: isEn ? 'AI Coding Plan Comparison' : 'AI 编程套餐对比',
+      url: isEn ? `${siteUrl}/en` : siteUrl,
+      inLanguage: locale,
+      publisher: organization,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'CodingPlan.org',
+      url: siteUrl,
+      logo: `${siteUrl}/og/default.png`,
+    },
+  ]
+}
+
+export function buildArticleJsonLd(options: {
+  title: string
+  description: string
+  url: string
+  locale: string
+  datePublished: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: options.title,
+    description: options.description,
+    mainEntityOfPage: options.url,
+    url: options.url,
+    inLanguage: options.locale,
+    image: `${siteUrl}/og/default.png`,
+    datePublished: options.datePublished,
+    dateModified: DATA_UPDATED_AT,
+    author: organization,
+    publisher: organization,
+  }
 }
 
 export function buildFaqJsonLd(faqs: FaqItem[]) {
@@ -38,7 +84,7 @@ export function buildHomeJsonLd(
     description,
     url,
     inLanguage: language,
-    dateModified: '2026-08-03',
+    dateModified: DATA_UPDATED_AT,
     publisher: organization,
     mainEntity: {
       '@type': 'ItemList',
@@ -58,6 +104,8 @@ export function buildHomeJsonLd(
 
 export function buildPlanJsonLd(plan: PlanPageData) {
   const isEn = plan.seo.locale === 'en'
+  const planTitle = `${plan.hero.title} ${plan.hero.highlight}`
+  const publishedAt = plan.seo.publishedAt ?? (isEn ? '2026-08-11' : '2026-08-03')
   const providers: Record<string, string> = {
     zhipu: '智谱 AI', minimax: 'MiniMax', kimi: 'Moonshot AI', volcengine: '火山引擎',
     aliyun: '阿里云', tencentcloud: '腾讯云', xiaomi: '小米', baiyunzhisuan: '白云智算',
@@ -67,7 +115,7 @@ export function buildPlanJsonLd(plan: PlanPageData) {
     ? {
         '@context': 'https://schema.org',
         '@type': 'Service',
-        name: `${plan.hero.title} ${plan.hero.highlight}`,
+        name: planTitle,
         description: plan.seo.description,
         url: plan.seo.canonical,
         provider: { '@type': 'Organization', name: providers[plan.slug] },
@@ -76,7 +124,7 @@ export function buildPlanJsonLd(plan: PlanPageData) {
     : {
         '@context': 'https://schema.org',
         '@type': 'Product',
-        name: `${plan.hero.title} ${plan.hero.highlight}`,
+        name: planTitle,
         description: plan.seo.description,
         url: plan.seo.canonical,
         brand: { '@type': 'Brand', name: providers[plan.slug] },
@@ -94,14 +142,17 @@ export function buildPlanJsonLd(plan: PlanPageData) {
                 : 'https://schema.org/InStock',
         })),
       }
+  const hubUrl = isEn ? `${siteUrl}/en#platforms` : `${siteUrl}/#platforms`
   return [
     primaryEntity,
+    buildArticleJsonLd({ title: planTitle, description: plan.seo.description, url: plan.seo.canonical, locale: plan.seo.locale, datePublished: publishedAt }),
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'CodingPlan.org', item: 'https://codingplan.org' },
-        { '@type': 'ListItem', position: 2, name: `${plan.hero.title} ${plan.hero.highlight}`, item: plan.seo.canonical },
+        { '@type': 'ListItem', position: 1, name: 'CodingPlan.org', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: isEn ? 'Coding Plans' : '套餐详情', item: hubUrl },
+        { '@type': 'ListItem', position: 3, name: planTitle, item: plan.seo.canonical },
       ],
     },
     buildFaqJsonLd(plan.faqs),

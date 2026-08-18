@@ -1,11 +1,12 @@
 /**
- * [INPUT]: 依赖 PlanPageData 的内容顺序/标题层级、SiteChrome 与 FaqList
- * [OUTPUT]: 对外提供八个平台共享且兼容原站标题与 CTA 统计选择器的 PlanPage
+ * [INPUT]: 依赖 PlanPageData 的内容顺序/标题层级、SiteChrome、FaqList 与 breadcrumb 相关文案
+ * [OUTPUT]: 对外提供全部平台共享的 PlanPage 组件（含可见面包屑与相关套餐内链模块）
  * [POS]: components 的详情页编排器，按数据顺序组合模型、套餐、表格和多态区块
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import { ArrowLeft, ArrowUpRight, Check, CircleAlert } from 'lucide-react'
 import type { Accent, PlanPageData } from '../types'
+import { getRelatedLinks } from '../data/content-links'
 import { FaqList } from './FaqList'
 import { SiteFooter, SiteHeader } from './SiteChrome'
 
@@ -16,6 +17,7 @@ const accentClass: Record<Accent, string> = {
 export function PlanPage({ plan }: { plan: PlanPageData }) {
   const archived = plan.availability === 'archived' || plan.availability === 'discontinued'
   const isEn = plan.seo.locale === 'en'
+  const hubUrl = isEn ? '/en#platforms' : '/#platforms'
   const contentOrder = plan.contentOrder ?? [
     'models',
     'plans',
@@ -24,6 +26,7 @@ export function PlanPage({ plan }: { plan: PlanPageData }) {
     'tools',
     'faq',
   ]
+  const planTitle = `${plan.hero.title} ${plan.hero.highlight}`
 
   return (
     <div className={accentClass[plan.accent]}>
@@ -32,7 +35,16 @@ export function PlanPage({ plan }: { plan: PlanPageData }) {
         : [{ label: '快速对比', href: '/#compare' }, { label: '全部套餐', href: '/#platforms' }, { label: '常见问题', href: '#faq' }]} />
       <main>
         {archived && <div className="mt-16 border-b border-brand-orange/30 bg-brand-orange/10 py-3"><div className="page-shell flex items-center justify-center gap-2 text-center text-sm text-brand-orange"><CircleAlert size={17} />{isEn ? 'This product has been discontinued. This page is an archive for reference only.' : '该产品已下线，本页为历史归档，不提供购买入口。'}</div></div>}
-        <section className={`relative overflow-hidden pb-16 ${archived ? 'pt-20' : 'pt-32'} sm:pb-24 sm:pt-40`}>
+        <nav aria-label={isEn ? 'Breadcrumb' : '面包屑'} className={`page-shell ${archived ? 'pt-6' : 'pt-24 sm:pt-28'}`}>
+          <ol className="flex flex-wrap items-center gap-2 text-xs text-ink-muted">
+            <li><a className="focus-ring min-h-11 py-2 hover:text-brand-cyan" href={isEn ? '/en' : '/'}>CodingPlan.org</a></li>
+            <li aria-hidden="true">/</li>
+            <li><a className="focus-ring min-h-11 py-2 hover:text-brand-cyan" href={hubUrl}>{isEn ? 'Coding Plans' : '套餐详情'}</a></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" className="py-2 text-ink-soft">{planTitle}</li>
+          </ol>
+        </nav>
+        <section className={`relative overflow-hidden pb-16 pt-4 sm:pb-24 sm:pt-6`}>
           <div className="soft-grid absolute inset-0 -z-10 opacity-30" aria-hidden="true" />
           <div className="page-shell text-center">
             <a href={isEn ? '/en' : '/'} className="focus-ring mb-7 inline-flex min-h-11 items-center gap-2 text-sm text-ink-soft hover:text-ink"><ArrowLeft size={16} />{isEn ? 'Back to comparison' : '返回全部对比'}</a>
@@ -44,6 +56,7 @@ export function PlanPage({ plan }: { plan: PlanPageData }) {
         </section>
 
         {contentOrder.map((block) => <PlanContentBlock key={block} block={block} plan={plan} />)}
+        <RelatedLinks slug={plan.slug} isEn={isEn} />
       </main>
       <SiteFooter disclaimer={isEn
         ? 'Prices and quotas come from provider websites and change frequently. Always verify on the official billing page. Some links on this site are referral links.'
@@ -127,6 +140,27 @@ function PlanContentBlock({ plan, block }: { plan: PlanPageData; block: NonNulla
 
 function ContentSection({ title, description, headingLevel = 2, surface = false, children }: { title: string; description?: string; headingLevel?: 2 | 3; surface?: boolean; children: React.ReactNode }) {
   return <section className={`py-16 sm:py-24 ${surface ? 'border-y border-border bg-surface' : ''}`}><div className="page-shell"><SectionHeading title={title} description={description} level={headingLevel} />{children}</div></section>
+}
+
+function RelatedLinks({ slug, isEn }: { slug: string; isEn: boolean }) {
+  const related = getRelatedLinks(slug, isEn ? 'en' : 'zh-CN')
+  if (!related.length) return null
+  return (
+    <section className="border-t border-border bg-surface py-14">
+      <div className="page-shell">
+        <h2 className="mb-8 text-center text-xl font-black tracking-tight sm:text-2xl">{isEn ? 'Related guides & comparisons' : '相关教程与对比'}</h2>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {related.map((link) => (
+            <a key={link.href} href={link.href} className="focus-ring group rounded-2xl border border-border bg-surface-raised p-5 transition hover:border-brand-cyan/40">
+              <p className="font-mono text-xs uppercase tracking-wider text-ink-muted">{link.kind}</p>
+              <p className="mt-2 font-bold group-hover:text-brand-cyan">{link.title}</p>
+              {link.description && <p className="mt-1 text-sm text-ink-soft">{link.description}</p>}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }
 
 function SectionHeading({ title, description, level = 2 }: { title: string; description?: string; level?: 2 | 3 }) {

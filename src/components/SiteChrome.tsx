@@ -6,6 +6,7 @@
  */
 import { ArrowUpRight, Languages } from 'lucide-react'
 import type { ReactNode } from 'react'
+import { DATA_UPDATED_AT } from '../data/site-version'
 import { ThemeToggle } from './ThemeToggle'
 
 interface HeaderProps {
@@ -46,7 +47,11 @@ export function SiteFooter({ disclaimer, locale = 'zh-CN', children }: { disclai
           <a className="focus-ring inline-flex min-h-11 items-center gap-1 hover:text-brand-cyan" href={kkcodeHref} target="_blank" rel="noopener noreferrer">kkcode.app <ArrowUpRight size={14} /></a>
           <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/sitemap.xml">Sitemap</a>
         </div>
-        <p className="mt-3 font-mono text-xs text-ink-muted">© 2026 codingplan.org</p>
+        <p className="mt-3 font-mono text-xs text-ink-muted">
+          {locale === 'en' ? 'Data updated on ' : '数据更新于 '}
+          <time dateTime={DATA_UPDATED_AT}>{DATA_UPDATED_AT}</time>
+          <span aria-hidden="true"> · © 2026 codingplan.org</span>
+        </p>
       </div>
     </footer>
   )

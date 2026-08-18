@@ -15,6 +15,7 @@ export interface SeoData {
   locale: Locale
   ogType?: 'website' | 'article'
   alternates?: Array<{ lang: string; href: string }>
+  publishedAt?: string
   jsonLd: Record<string, unknown>[]
 }
 

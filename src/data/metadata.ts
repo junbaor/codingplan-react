@@ -1,13 +1,19 @@
 /**
- * [INPUT]: 依赖 Next.js Metadata/Viewport 类型与 types.SeoData 页面元数据
- * [OUTPUT]: 对外提供全站基础 Metadata、Viewport 与页面 Metadata 转换函数
+ * [INPUT]: 依赖 Next.js Metadata/Viewport 类型、types.SeoData 页面元数据与 site-version 的 siteUrl
+ * [OUTPUT]: 对外提供全站基础 Metadata（含 og:image/twitter 大卡）、Viewport 与页面 Metadata 转换函数
  * [POS]: data 的 Next.js SEO 适配层，将框架无关 SEO 数据投影到 App Router
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import type { Metadata, Viewport } from 'next'
 import type { SeoData } from '../types'
+import { siteUrl } from './site-version'
 
-const siteUrl = 'https://codingplan.org'
+const ogImage = {
+  url: '/og/default.png',
+  width: 1200,
+  height: 630,
+  alt: 'CodingPlan.org — AI Coding Plan 对比',
+}
 
 export const baseMetadata = {
   metadataBase: new URL(siteUrl),
@@ -42,11 +48,13 @@ export function buildMetadata(seo: SeoData): Metadata {
       url: seo.canonical,
       siteName: 'CodingPlan.org',
       locale: seo.locale === 'en' ? 'en_US' : 'zh_CN',
+      images: [ogImage],
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title: seo.title,
       description: seo.description,
+      images: ['/og/default.png'],
     },
   }
 }
