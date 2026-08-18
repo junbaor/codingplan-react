@@ -11,6 +11,9 @@ guides.ts: 三篇 Claude Code × 国产 Coding Plan 配置教程数据（GLM/Kim
 questions.ts: 三篇问题型长文数据（是什么/最便宜/哪个好），承接信息型查询
 deals.ts: /deals 邀请码与优惠汇总页数据，聚合各平台首购/邀请/年付优惠
 changelog.ts: /changelog 变更记录页数据，按月倒序的时间线表格
+leaderboard.ts: /leaderboard 性价比榜单页数据（入门价排行 + 分项冠军），服务端直出全量表格
+tools.ts: 6 个编程工具页数据（Claude Code/Codex/OpenCode/Cursor/Cline/Roo Code），承接工具×套餐查询
+models.ts: 8 个旗舰模型评测页数据（GLM-5.2/K3/M3/Doubao/DeepSeek-V4/Qwen3.5/K2.7/GLM-5-Turbo），承接模型长尾查询
 content-page.ts: defineContentPage 装配器，为内容页统一装配 Article/Breadcrumb/FAQ JSON-LD
 content-links.ts: 详情页→内容矩阵的相关内链关系（getRelatedLinks 按 slug 与 locale）
 plan-alternates.ts: zh↔en 跨语言等效套餐 slug 映射与 hreflang alternates 构造器

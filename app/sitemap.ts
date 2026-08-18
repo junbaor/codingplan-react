@@ -7,9 +7,12 @@
 import type { MetadataRoute } from 'next'
 import { compareSlugs, enCompareSlugs } from '@/src/data/compares'
 import { guideSlugs } from '@/src/data/guides'
+import { leaderboardPage } from '@/src/data/leaderboard'
+import { modelSlugs } from '@/src/data/models'
 import { planSlugs, plansBySlug } from '@/src/data/plans'
 import { enPlanSlugs, getEnPlan } from '@/src/data/plans-en'
 import { questionSlugs } from '@/src/data/questions'
+import { toolSlugs } from '@/src/data/tools'
 import { DATA_UPDATED_AT, siteUrl } from '@/src/data/site-version'
 
 const lastModified = new Date(DATA_UPDATED_AT)
@@ -78,6 +81,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
+    })),
+    {
+      url: `${siteUrl}/leaderboard`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    ...toolSlugs.map((slug) => ({
+      url: `${siteUrl}/tools/${slug}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    })),
+    ...modelSlugs.map((slug) => ({
+      url: `${siteUrl}/models/${slug}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
     })),
     ...enCompareSlugs.map((slug) => ({
       url: `${siteUrl}/en/compare/${slug}`,

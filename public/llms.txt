@@ -9,9 +9,24 @@ CodingPlan.org is an independent comparison site for AI coding plan subscription
 - [Chinese Homepage](https://codingplan.org): 国内 AI 编程套餐对比 — 智谱 GLM、MiniMax、Kimi、火山引擎方舟、阿里云百炼、小米 MiMo、OpenCode Go
 - [English Homepage](https://codingplan.org/en): International AI coding plan comparison — Claude Code, GLM, MiniMax, Kimi, Qwen
 - [Deals & Invite Codes](https://codingplan.org/deals): Current discounts, invite codes and first-purchase offers across platforms
+- [Leaderboard](https://codingplan.org/leaderboard): Price-performance ranking of all 9 platforms with entry price, quota scale and model lineup
 - [Changelog](https://codingplan.org/changelog): Timeline of pricing, model and availability changes across platforms
 - [GLM vs Kimi](https://codingplan.org/compare/glm-vs-kimi): Zhipu GLM Coding Plan vs Kimi Code Plan head-to-head comparison
 - [Claude vs GLM (EN)](https://codingplan.org/en/compare/claude-vs-glm): Claude Code vs GLM Coding Plan comparison
+- [Tool: Claude Code](https://codingplan.org/tools/claude-code): Which coding plans work with Claude Code
+- [Tool: Codex](https://codingplan.org/tools/codex): Codex CLI supported plans and setup
+- [Tool: OpenCode](https://codingplan.org/tools/opencode): Open-source agent and the Go subscription
+- [Tool: Cursor](https://codingplan.org/tools/cursor): Cursor BYOK plans
+- [Tool: Cline](https://codingplan.org/tools/cline): VS Code agent supported plans
+- [Tool: Roo Code](https://codingplan.org/tools/roo-code): Roo Code supported plans
+- [Model: GLM-5.2](https://codingplan.org/models/glm-5.2): #1 open-source coding model review
+- [Model: Kimi K3](https://codingplan.org/models/kimi-k3): 2.8T flagship review
+- [Model: MiniMax M3](https://codingplan.org/models/minimax-m3): Multimodal flagship review
+- [Model: Doubao-Seed-2.1-turbo](https://codingplan.org/models/doubao-seed-2.1-turbo): ByteDance high-speed coding model
+- [Model: DeepSeek V4](https://codingplan.org/models/deepseek-v4): Pro/Flash value review
+- [Model: Qwen3.5-Plus](https://codingplan.org/models/qwen3.5-plus): Alibaba Qwen3.5 series review
+- [Model: Kimi K2.7](https://codingplan.org/models/kimi-k2.7): Previous flagship value review
+- [Model: GLM-5-Turbo](https://codingplan.org/models/glm-5-turbo): Fast tier review
 - [What is a Coding Plan](https://codingplan.org/questions/what-is-coding-plan): Concept explainer, billing models and quota mechanics
 - [Cheapest Coding Plan](https://codingplan.org/questions/cheapest-coding-plan): Entry price ranking with unit-cost analysis
 - [Best Coding Plan](https://codingplan.org/questions/best-coding-plan): Scenario-based recommendations

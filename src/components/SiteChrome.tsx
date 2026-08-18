@@ -47,7 +47,9 @@ export function SiteFooter({ disclaimer, locale = 'zh-CN', children }: { disclai
           {locale === 'zh-CN' ? (
             <>
               <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/deals">优惠与邀请码</a>
+              <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/leaderboard">性价比榜</a>
               <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/changelog">变更记录</a>
+              <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/tools/claude-code">Claude Code 指南</a>
               <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/questions/what-is-coding-plan">Coding Plan 是什么</a>
             </>
           ) : (
