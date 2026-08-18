@@ -142,7 +142,7 @@ export function buildPlanJsonLd(plan: PlanPageData) {
                 : 'https://schema.org/InStock',
         })),
       }
-  const hubUrl = isEn ? `${siteUrl}/en#platforms` : `${siteUrl}/#platforms`
+  const hubUrl = isEn ? `${siteUrl}/en` : `${siteUrl}/plans`
   return [
     primaryEntity,
     buildArticleJsonLd({ title: planTitle, description: plan.seo.description, url: plan.seo.canonical, locale: plan.seo.locale, datePublished: publishedAt }),
@@ -151,7 +151,7 @@ export function buildPlanJsonLd(plan: PlanPageData) {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'CodingPlan.org', item: siteUrl },
-        { '@type': 'ListItem', position: 2, name: isEn ? 'Coding Plans' : '套餐详情', item: hubUrl },
+        { '@type': 'ListItem', position: 2, name: isEn ? 'Coding Plans' : '全部套餐', item: hubUrl },
         { '@type': 'ListItem', position: 3, name: planTitle, item: plan.seo.canonical },
       ],
     },
@@ -160,31 +160,55 @@ export function buildPlanJsonLd(plan: PlanPageData) {
 }
 
 const contentHubNames: Record<string, string> = {
+  articles: '文章',
+  plans: '全部套餐',
+  tools: '工具',
+  models: '模型',
   deals: '优惠与邀请码',
   changelog: '变更记录',
-  compare: '套餐对比',
-  guides: '配置教程',
-  questions: '常见问题',
+  leaderboard: '性价比榜',
 }
 
 export function buildContentJsonLd(page: ContentPageData) {
   const isEn = page.seo.locale === 'en'
-  const pageUrl = page.seo.canonical
-  const path = new URL(pageUrl).pathname
-  const hub = isEn ? 'compare' : (path.split('/')[1] || '')
-  const hubName = contentHubNames[hub] ?? '内容'
-  const hubPath = isEn ? '/en' : `/${hub}`
-  return [
-    buildArticleJsonLd({ title: `${page.hero.title}${page.hero.highlight ? ` ${page.hero.highlight}` : ''}`, description: page.seo.description, url: pageUrl, locale: page.seo.locale, datePublished: DATA_UPDATED_AT }),
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'CodingPlan.org', item: siteUrl },
-        { '@type': 'ListItem', position: 2, name: isEn ? 'Comparisons' : hubName, item: `${siteUrl}${hubPath}` },
-        { '@type': 'ListItem', position: 3, name: `${page.hero.title}${page.hero.highlight ? ` ${page.hero.highlight}` : ''}`, item: pageUrl },
-      ],
-    },
+  const title = `${page.hero.title}${page.hero.highlight ? ` ${page.hero.highlight}` : ''}`
+  const path = new URL(page.seo.canonical).pathname
+  const segments = path.split('/').filter(Boolean)
+  const isEnPath = segments[0] === 'en'
+  const hubSegment = (isEnPath ? segments[1] : segments[0]) ?? ''
+  const hubName = isEn ? enContentHubNames[hubSegment] : contentHubNames[hubSegment] ?? '内容'
+  const hubPath = isEnPath ? `/en/${hubSegment}` : `/${hubSegment}`
+  const isHubPage = segments.length === (isEnPath ? 2 : 1)
+  const breadcrumbItems = [
+    { '@type': 'ListItem', position: 1, name: 'CodingPlan.org', item: siteUrl },
+    ...(isHubPage ? [] : [{ '@type': 'ListItem', position: 2, name: hubName, item: `${siteUrl}${hubPath}` }]),
+    { '@type': 'ListItem', position: isHubPage ? 2 : 3, name: title, item: page.seo.canonical },
+  ]
+  const jsonLd: Record<string, unknown>[] = [
+    buildArticleJsonLd({ title, description: page.seo.description, url: page.seo.canonical, locale: page.seo.locale, datePublished: DATA_UPDATED_AT }),
+    { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: breadcrumbItems },
     buildFaqJsonLd(page.faqs),
   ]
+  if (page.hubItems?.length) {
+    jsonLd.push({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: page.hubTitle ?? title,
+      numberOfItems: page.hubItems.length,
+      itemListElement: page.hubItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.title,
+        url: item.href.startsWith('http') ? item.href : `${siteUrl}${item.href}`,
+      })),
+    })
+  }
+  return jsonLd
+}
+
+const enContentHubNames: Record<string, string> = {
+  articles: 'Articles',
+  plans: 'Coding Plans',
+  tools: 'Tools',
+  models: 'Models',
 }

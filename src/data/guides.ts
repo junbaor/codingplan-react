@@ -1,12 +1,10 @@
 /**
  * [INPUT]: 依赖 content-page 的 defineContentPage 装配器
- * [OUTPUT]: 对外提供 3 篇 Claude Code × 国产 Coding Plan 配置教程数据（GLM/Kimi/火山方舟）
+ * [OUTPUT]: 对外提供 Claude Code × 国产 Coding Plan 配置教程文章数据（GLM/Kimi/火山方舟，挂载于 /articles）
  * [POS]: data 的教程意图承接层，承接「claude code 配置 XX」高流量信息型查询
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import { defineContentPage } from './content-page'
-
-export const guideSlugs = ['claude-code-with-glm', 'claude-code-with-kimi', 'claude-code-with-volcengine'] as const
 
 export const claudeCodeWithGlm = defineContentPage({
   slug: 'claude-code-with-glm',
@@ -14,7 +12,7 @@ export const claudeCodeWithGlm = defineContentPage({
   seo: {
     title: 'Claude Code 配置智谱 GLM Coding Plan 教程 2026 - 环境变量 / 端点 / 常见报错',
     description: 'Claude Code 接入智谱 GLM Coding Plan 完整教程：开通套餐、获取 API Key、配置 ANTHROPIC_BASE_URL 指向 bigmodel.cn Anthropic 兼容端点、模型选择（GLM-5.2/5.1/5-Turbo）、每周 Credits 口径说明与常见报错排查。',
-    canonical: 'https://codingplan.org/guides/claude-code-with-glm',
+    canonical: 'https://codingplan.org/articles/claude-code-with-glm',
     locale: 'zh-CN',
     ogType: 'article',
   },
@@ -96,8 +94,8 @@ claude
   ],
   related: [
     { kind: '详情', title: '智谱 GLM Coding Plan 详解', description: '三档价格与每周 Credits 完整说明。', href: '/plans/zhipu' },
-    { kind: '对比', title: 'GLM vs Kimi 怎么选', description: '两家旗舰模型与额度口径对比。', href: '/compare/glm-vs-kimi' },
-    { kind: '教程', title: 'Claude Code 配置 Kimi Code Plan', description: '另一家低价套餐的接入教程。', href: '/guides/claude-code-with-kimi' },
+    { kind: '对比', title: 'GLM vs Kimi 怎么选', description: '两家旗舰模型与额度口径对比。', href: '/articles/glm-vs-kimi' },
+    { kind: '教程', title: 'Claude Code 配置 Kimi Code Plan', description: '另一家低价套餐的接入教程。', href: '/articles/claude-code-with-kimi' },
     { kind: '优惠', title: '智谱连续包年 7 折入口', description: '年付 ¥94.4/月起。', href: '/deals' },
   ],
 })
@@ -108,7 +106,7 @@ export const claudeCodeWithKimi = defineContentPage({
   seo: {
     title: 'Claude Code 配置 Kimi Code Plan 教程 2026 - 环境变量 / 免费档 / K3 模型',
     description: 'Claude Code 接入 Kimi Code Plan 完整教程：开通套餐（免费档 Adagio 可试用）、配置 Moonshot Anthropic 兼容端点、K3/K2.6 模型选择、5h+7 天额度口径与常见问题排查。',
-    canonical: 'https://codingplan.org/guides/claude-code-with-kimi',
+    canonical: 'https://codingplan.org/articles/claude-code-with-kimi',
     locale: 'zh-CN',
     ogType: 'article',
   },
@@ -182,8 +180,8 @@ claude
   ],
   related: [
     { kind: '详情', title: 'Kimi Code Plan 详解', description: '五档套餐与 K3 使用规则。', href: '/plans/kimi' },
-    { kind: '对比', title: 'GLM vs Kimi 怎么选', description: '两家价格与额度口径对比。', href: '/compare/glm-vs-kimi' },
-    { kind: '教程', title: 'Claude Code 配置智谱 GLM', description: '另一家热门套餐接入教程。', href: '/guides/claude-code-with-glm' },
+    { kind: '对比', title: 'GLM vs Kimi 怎么选', description: '两家价格与额度口径对比。', href: '/articles/glm-vs-kimi' },
+    { kind: '教程', title: 'Claude Code 配置智谱 GLM', description: '另一家热门套餐接入教程。', href: '/articles/claude-code-with-glm' },
   ],
 })
 
@@ -193,7 +191,7 @@ export const claudeCodeWithVolcengine = defineContentPage({
   seo: {
     title: 'Claude Code 接入火山引擎方舟 Coding Plan 教程 2026 - 多模型切换 / Auto 模式 / ¥9.9 首购',
     description: 'Claude Code 接入火山引擎方舟 Coding Plan 教程：方舟 Anthropic 兼容端点配置、Doubao/GLM-5.2/Kimi/MiniMax/DeepSeek 多模型切换、Auto 智能调度、Lite/Pro 套餐额度规则与常见问题。',
-    canonical: 'https://codingplan.org/guides/claude-code-with-volcengine',
+    canonical: 'https://codingplan.org/articles/claude-code-with-volcengine',
     locale: 'zh-CN',
     ogType: 'article',
   },
@@ -268,6 +266,6 @@ claude
   related: [
     { kind: '详情', title: '火山引擎方舟 Coding Plan 详解', description: '套餐规则、模型阵容与优惠活动。', href: '/plans/volcengine' },
     { kind: '优惠', title: '方舟 ¥9.9 首购入口', description: '限时首购与邀请 9.5 折。', href: '/deals' },
-    { kind: '教程', title: 'Claude Code 配置智谱 GLM', description: '单模型深度使用场景的替代方案。', href: '/guides/claude-code-with-glm' },
+    { kind: '教程', title: 'Claude Code 配置智谱 GLM', description: '单模型深度使用场景的替代方案。', href: '/articles/claude-code-with-glm' },
   ],
 })

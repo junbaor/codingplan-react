@@ -153,6 +153,13 @@ export interface ContentBlock {
   warning?: string
 }
 
+export interface HubItem {
+  href: string
+  title: string
+  description?: string
+  kind?: string
+}
+
 export interface ContentPageData {
   slug: string
   seo: SeoData
@@ -162,4 +169,6 @@ export interface ContentPageData {
   faqs: FaqItem[]
   cta?: { title: string; label: string; href: string }
   related: Array<{ kind: string; title: string; description?: string; href: string }>
+  hubTitle?: string
+  hubItems?: HubItem[]
 }

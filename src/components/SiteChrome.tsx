@@ -50,10 +50,10 @@ export function SiteFooter({ disclaimer, locale = 'zh-CN', children }: { disclai
               <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/leaderboard">性价比榜</a>
               <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/changelog">变更记录</a>
               <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/tools/claude-code">Claude Code 指南</a>
-              <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/questions/what-is-coding-plan">Coding Plan 是什么</a>
+              <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/articles/what-is-coding-plan">Coding Plan 是什么</a>
             </>
           ) : (
-            <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/en/compare/claude-vs-glm">Claude vs GLM</a>
+            <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/en/articles/claude-vs-glm">Claude vs GLM</a>
           )}
           <a className="focus-ring inline-flex min-h-11 items-center gap-1 hover:text-brand-cyan" href={kkcodeHref} target="_blank" rel="noopener noreferrer">kkcode.app <ArrowUpRight size={14} /></a>
           <a className="focus-ring inline-flex min-h-11 items-center hover:text-brand-cyan" href="/sitemap.xml">Sitemap</a>

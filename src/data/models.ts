@@ -80,7 +80,7 @@ export const glm52 = defineContentPage({
   ],
   related: [
     { kind: '详情', title: '智谱 GLM Coding Plan', description: 'GLM-5.2 的主场套餐。', href: '/plans/zhipu' },
-    { kind: '教程', title: 'Claude Code 配置智谱 GLM', description: '用 GLM-5.2 跑 Claude Code。', href: '/guides/claude-code-with-glm' },
+    { kind: '教程', title: 'Claude Code 配置智谱 GLM', description: '用 GLM-5.2 跑 Claude Code。', href: '/articles/claude-code-with-glm' },
     { kind: '模型', title: 'Kimi K3 评测', description: '另一个 1M 上下文旗舰。', href: '/models/kimi-k3' },
   ],
 })
@@ -156,7 +156,7 @@ export const kimiK3 = defineContentPage({
   related: [
     { kind: '详情', title: 'Kimi Code Plan 详解', description: '五档套餐与 K3 规则。', href: '/plans/kimi' },
     { kind: '模型', title: 'GLM-5.2 评测', description: '正面对比的另一个旗舰。', href: '/models/glm-5.2' },
-    { kind: '教程', title: 'Claude Code 配置 Kimi', description: '用 K3 跑 Claude Code。', href: '/guides/claude-code-with-kimi' },
+    { kind: '教程', title: 'Claude Code 配置 Kimi', description: '用 K3 跑 Claude Code。', href: '/articles/claude-code-with-kimi' },
   ],
 })
 
@@ -299,7 +299,7 @@ export const doubaoSeed21Turbo = defineContentPage({
   ],
   related: [
     { kind: '详情', title: '火山引擎方舟详解', description: 'Doubao 全系所在套餐。', href: '/plans/volcengine' },
-    { kind: '教程', title: 'Claude Code 接入方舟', description: '用 Doubao 跑 Claude Code。', href: '/guides/claude-code-with-volcengine' },
+    { kind: '教程', title: 'Claude Code 接入方舟', description: '用 Doubao 跑 Claude Code。', href: '/articles/claude-code-with-volcengine' },
     { kind: '模型', title: 'DeepSeek V4 评测', description: '同池的另一个新接入。', href: '/models/deepseek-v4' },
   ],
 })
@@ -585,7 +585,7 @@ export const glm5Turbo = defineContentPage({
   ],
   related: [
     { kind: '模型', title: 'GLM-5.2 评测', description: '同系旗舰对比。', href: '/models/glm-5.2' },
-    { kind: '教程', title: 'Claude Code 配置 GLM', description: '模型切换实操。', href: '/guides/claude-code-with-glm' },
+    { kind: '教程', title: 'Claude Code 配置 GLM', description: '模型切换实操。', href: '/articles/claude-code-with-glm' },
     { kind: '详情', title: '智谱 GLM 详解', description: 'Credits 制度说明。', href: '/plans/zhipu' },
   ],
 })

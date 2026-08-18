@@ -16,19 +16,28 @@ const accentClass: Record<Accent, string> = {
 export function ArticlePage({ page }: { page: ContentPageData }) {
   const isEn = page.seo.locale === 'en'
   const title = `${page.hero.title}${page.hero.highlight ? ` ${page.hero.highlight}` : ''}`
-  const hubLabel = isEn ? 'Comparisons' : hubNameOf(new URL(page.seo.canonical).pathname)
+  const segments = new URL(page.seo.canonical).pathname.split('/').filter(Boolean)
+  const isEnPath = segments[0] === 'en'
+  const hubSegment = (isEnPath ? segments[1] : segments[0]) ?? ''
+  const isHubPage = segments.length === (isEnPath ? 2 : 1)
+  const hubLabel = isEn ? (enHubLabels[hubSegment] ?? 'Articles') : (zhHubLabels[hubSegment] ?? '内容')
+  const hubHref = isEnPath ? `/en/${hubSegment}` : `/${hubSegment}`
 
   return (
     <div className={accentClass[page.accent]}>
       <SiteHeader locale={page.seo.locale} links={isEn
-        ? [{ label: 'Compare', href: '/en#compare' }, { label: 'Plans', href: '/en#platforms' }, { label: 'FAQ', href: '#faq' }]
-        : [{ label: '快速对比', href: '/#compare' }, { label: '全部套餐', href: '/#platforms' }, { label: '优惠', href: '/deals' }, { label: '常见问题', href: '#faq' }]} />
+        ? [{ label: 'Compare', href: '/en#compare' }, { label: 'Plans', href: '/en#platforms' }, { label: 'Articles', href: '/en/articles' }, { label: 'FAQ', href: '#faq' }]
+        : [{ label: '快速对比', href: '/#compare' }, { label: '全部套餐', href: '/plans' }, { label: '文章', href: '/articles' }, { label: '优惠', href: '/deals' }, { label: '常见问题', href: '#faq' }]} />
       <main>
         <nav aria-label={isEn ? 'Breadcrumb' : '面包屑'} className="page-shell pt-24 sm:pt-28">
           <ol className="flex flex-wrap items-center gap-2 text-xs text-ink-muted">
             <li><a className="focus-ring min-h-11 py-2 hover:text-brand-cyan" href={isEn ? '/en' : '/'}>CodingPlan.org</a></li>
-            <li aria-hidden="true">/</li>
-            <li><a className="focus-ring min-h-11 py-2 hover:text-brand-cyan" href={isEn ? '/en#platforms' : '/#platforms'}>{hubLabel}</a></li>
+            {!isHubPage && (
+              <>
+                <li aria-hidden="true">/</li>
+                <li><a className="focus-ring min-h-11 py-2 hover:text-brand-cyan" href={hubHref}>{hubLabel}</a></li>
+              </>
+            )}
             <li aria-hidden="true">/</li>
             <li aria-current="page" className="py-2 text-ink-soft">{title}</li>
           </ol>
@@ -53,6 +62,23 @@ export function ArticlePage({ page }: { page: ContentPageData }) {
         </section>
 
         {page.sections.map((block, index) => <ContentBlockSection key={index} block={block} index={index} />)}
+
+        {page.hubItems && page.hubItems.length > 0 && (
+          <section className="border-y border-border bg-surface py-14">
+            <div className="page-shell">
+              <h2 className="mb-8 text-center text-xl font-black tracking-tight sm:text-2xl">{page.hubTitle ?? (isEn ? 'All entries' : '全部条目')}</h2>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {page.hubItems.map((item) => (
+                  <a key={item.href} href={item.href} className="focus-ring group rounded-2xl border border-border bg-surface-raised p-5 transition hover:border-brand-cyan/40">
+                    {item.kind && <p className="font-mono text-xs uppercase tracking-wider text-ink-muted">{item.kind}</p>}
+                    <p className="mt-2 font-bold group-hover:text-brand-cyan">{item.title}</p>
+                    {item.description && <p className="mt-1 text-sm text-ink-soft">{item.description}</p>}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section id="faq" className="scroll-mt-20 py-16 sm:py-24">
           <div className="page-shell">
@@ -95,16 +121,21 @@ export function ArticlePage({ page }: { page: ContentPageData }) {
   )
 }
 
-const hubNames: Record<string, string> = {
+const zhHubLabels: Record<string, string> = {
+  articles: '文章',
+  plans: '全部套餐',
+  tools: '工具',
+  models: '模型',
   deals: '优惠与邀请码',
   changelog: '变更记录',
-  compare: '套餐对比',
-  guides: '配置教程',
-  questions: '常见问题',
+  leaderboard: '性价比榜',
 }
 
-function hubNameOf(path: string) {
-  return hubNames[path.split('/')[1] ?? ''] ?? '套餐详情'
+const enHubLabels: Record<string, string> = {
+  articles: 'Articles',
+  plans: 'Coding Plans',
+  tools: 'Tools',
+  models: 'Models',
 }
 
 function ContentBlockSection({ block, index }: { block: ContentBlock; index: number }) {

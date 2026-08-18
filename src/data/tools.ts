@@ -80,10 +80,10 @@ export const claudeCodeTool = defineContentPage({
     { question: '可以多个套餐随时切换吗？', answer: '可以，切换只是改环境变量；配合 ccswitch 等工具可一键切换多套配置。' },
   ],
   related: [
-    { kind: '教程', title: 'Claude Code 配置智谱 GLM', description: '五分钟接入教程。', href: '/guides/claude-code-with-glm' },
-    { kind: '教程', title: 'Claude Code 配置 Kimi', description: '免费档即可试用。', href: '/guides/claude-code-with-kimi' },
-    { kind: '教程', title: 'Claude Code 接入火山方舟', description: '多模型 + Auto 调度。', href: '/guides/claude-code-with-volcengine' },
-    { kind: '对比', title: 'Claude vs GLM（英文）', description: '官方订阅与 GLM 正面对比。', href: '/en/compare/claude-vs-glm' },
+    { kind: '教程', title: 'Claude Code 配置智谱 GLM', description: '五分钟接入教程。', href: '/articles/claude-code-with-glm' },
+    { kind: '教程', title: 'Claude Code 配置 Kimi', description: '免费档即可试用。', href: '/articles/claude-code-with-kimi' },
+    { kind: '教程', title: 'Claude Code 接入火山方舟', description: '多模型 + Auto 调度。', href: '/articles/claude-code-with-volcengine' },
+    { kind: '对比', title: 'Claude vs GLM（英文）', description: '官方订阅与 GLM 正面对比。', href: '/en/articles/claude-vs-glm' },
   ],
 })
 
@@ -150,7 +150,7 @@ export const codexTool = defineContentPage({
   related: [
     { kind: '详情', title: 'MiniMax Token Plan 详解', description: '官方支持 Codex CLI 的最低价套餐。', href: '/plans/minimax' },
     { kind: '详情', title: '阿里云百炼详解', description: 'Codex + Claude Code 双支持。', href: '/plans/aliyun' },
-    { kind: '百科', title: 'Coding Plan 是什么？', description: '订阅制与按量 API 的区别。', href: '/questions/what-is-coding-plan' },
+    { kind: '百科', title: 'Coding Plan 是什么？', description: '订阅制与按量 API 的区别。', href: '/articles/what-is-coding-plan' },
   ],
 })
 
@@ -366,7 +366,7 @@ export const clineTool = defineContentPage({
   related: [
     { kind: '工具', title: 'Roo Code 配置指南', description: '同源分支工具。', href: '/tools/roo-code' },
     { kind: '详情', title: '火山引擎方舟详解', description: 'Cline 支持的多模型套餐。', href: '/plans/volcengine' },
-    { kind: '百科', title: 'Coding Plan 是什么？', description: 'BYOK 与订阅的关系。', href: '/questions/what-is-coding-plan' },
+    { kind: '百科', title: 'Coding Plan 是什么？', description: 'BYOK 与订阅的关系。', href: '/articles/what-is-coding-plan' },
   ],
 })
 
@@ -439,6 +439,6 @@ export const rooCodeTool = defineContentPage({
   related: [
     { kind: '工具', title: 'Cline 配置指南', description: '同源工具对比。', href: '/tools/cline' },
     { kind: '详情', title: 'Kimi Code Plan 详解', description: '点名支持 Roo Code 的套餐。', href: '/plans/kimi' },
-    { kind: '教程', title: 'Claude Code 配置 Kimi', description: 'Kimi 端点同样适用于 Roo Code。', href: '/guides/claude-code-with-kimi' },
+    { kind: '教程', title: 'Claude Code 配置 Kimi', description: 'Kimi 端点同样适用于 Roo Code。', href: '/articles/claude-code-with-kimi' },
   ],
 })

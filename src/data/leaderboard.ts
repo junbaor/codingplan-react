@@ -85,8 +85,8 @@ export const leaderboardPage = defineContentPage({
     { question: '百度千帆、无问芯穹为什么不在榜上？', answer: '千帆 Coding Plan 2026 年 2 月刚上线、无问芯穹为聚合平台，两者公开口径尚不稳定，本站核实后才会纳入榜单，避免误导。' },
   ],
   related: [
-    { kind: '选型', title: '哪家 Coding Plan 最便宜？', description: '入门价与单位成本的完整分析。', href: '/questions/cheapest-coding-plan' },
-    { kind: '选型', title: 'Coding Plan 哪个好？怎么选', description: '按场景的明确推荐。', href: '/questions/best-coding-plan' },
+    { kind: '选型', title: '哪家 Coding Plan 最便宜？', description: '入门价与单位成本的完整分析。', href: '/articles/cheapest-coding-plan' },
+    { kind: '选型', title: 'Coding Plan 哪个好？怎么选', description: '按场景的明确推荐。', href: '/articles/best-coding-plan' },
     { kind: '动态', title: '价格与模型变更记录', description: '影响排名的调价事件时间线。', href: '/changelog' },
     { kind: '优惠', title: '邀请码与优惠汇总', description: '榜单低价对应的购买入口。', href: '/deals' },
   ],

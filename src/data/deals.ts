@@ -90,8 +90,8 @@ export const dealsPage = defineContentPage({
   ],
   cta: { title: '从最优惠的入口开始', label: '查看火山引擎方舟 ¥9.9 首购 →', href: 'https://volcengine.com/L/3sD5Ne_yUyk/' },
   related: [
-    { kind: '选型', title: '哪家 Coding Plan 最便宜？', description: '按起步价与单位额度成本排序的完整分析。', href: '/questions/cheapest-coding-plan' },
-    { kind: '选型', title: 'Coding Plan 哪个好？怎么选', description: '按使用强度与模型偏好给出推荐结论。', href: '/questions/best-coding-plan' },
+    { kind: '选型', title: '哪家 Coding Plan 最便宜？', description: '按起步价与单位额度成本排序的完整分析。', href: '/articles/cheapest-coding-plan' },
+    { kind: '选型', title: 'Coding Plan 哪个好？怎么选', description: '按使用强度与模型偏好给出推荐结论。', href: '/articles/best-coding-plan' },
     { kind: '动态', title: '价格与模型变更记录', description: '各平台涨价、上新与上下线事件时间线。', href: '/changelog' },
   ],
 })

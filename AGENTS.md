@@ -6,7 +6,7 @@ app/ - Next.js App Router、静态页面、Metadata 与爬虫入口（2路由组
 src/ - 共享组件、类型化业务数据和全局样式（3子目录: components, data, styles）
 scripts/ - IndexNow 索引提交与验证文件生成脚本
 public/ - Bing 验证、LLM 说明与企业微信二维码等静态资源
-docs/ - 从原站迁移的运维文档（分析后端方案、代码审查记录、Gist 推广内容）
+docs/ - 运维与内容文档（内容更新 SOP、SEO 调研、代码审查记录、Gist 推广内容）
 </directory>
 
 <config>
@@ -31,7 +31,7 @@ README.md - 开发命令、App Router 架构与内容维护入口
 
 ## 当前数据要点（最近一次更新 2026-08-18）
 
-- SEO P0 + 内容矩阵（2026/8/18）：新增 DATA_UPDATED_AT 新鲜度信号（src/data/site-version.ts，贯通 JSON-LD/lastmod/页脚）、og:image 大卡（public/og/default.png）、WebSite/Organization/Article schema、详情页 zh↔en hreflang（src/data/plan-alternates.ts）、可见面包屑与相关内链、robots 放行 AI 爬虫、next/font 自托管字体；新增 25 个内容页（/deals、/leaderboard、/changelog、/compare/glm-vs-kimi、/guides/claude-code-with-{glm,kimi,volcengine}、/questions/{what-is-coding-plan,cheapest-coding-plan,best-coding-plan}、/tools/{claude-code,codex,opencode,cursor,cline,roo-code}、/models/{glm-5.2,kimi-k3,minimax-m3,doubao-seed-2.1-turbo,deepseek-v4,qwen3.5-plus,kimi-k2.7,glm-5-turbo}、/en/compare/claude-vs-glm），共享 ArticlePage 模板，站点 19→44 URL。方案依据见 docs/seo-research/09-codingplan-org-seo-plan.md。
+- SEO P0 + 内容矩阵（2026/8/18）：新增 DATA_UPDATED_AT 新鲜度信号（src/data/site-version.ts，贯通 JSON-LD/lastmod/页脚）、og:image 大卡（public/og/default.png）、WebSite/Organization/Article schema、详情页 zh↔en hreflang（src/data/plan-alternates.ts）、可见面包屑与相关内链、robots 放行 AI 爬虫、next/font 自托管字体；内容矩阵 25 篇 + 5 个集合 hub（/articles、/plans、/tools、/models、/en/articles），URL 规范统一为「二级路径=集合列表页 + [slug] 详情页」，文章类（对比/教程/问答）三合一进 /articles，旧 compare/guides/questions 路径 301，站点 19→49 URL。方案依据见 docs/seo-research/09-codingplan-org-seo-plan.md。
 - ChatGPT 渠道模型与定价同步官方最新（2026/8/17）：heading 改 GPT-5.6 Sol（Plus/Pro 主推，2026/8/7），models 由虚构的 GPT-5.3 更新为 ['GPT-5.6', 'o4-mini', 'GPT-4o']；Go 套餐价格 $10→$8（2026/1 全球推广实际价），Go details 由 GPT-5.3 mini 改为 GPT-5.6 Luna（免费版默认，2026/8/6）；Plus details 中 DALL-E 3 替换为 ChatGPT Images 2.0（2026/4 发布，基于 gpt-image-2），note 由过时的"年付 $200"改为"Pro $200/月"。
 - 英文站新增六个渠道详情页（/en/plans/claude|glm|minimax|kimi|qwen|opencode-go），英文首页平台 5→6，OpenCode Go 在中英文首页渠道卡片与快速对比表格行内使用专属特殊推荐标识（specialBadge：性价比之王 / BEST VALUE，渐变绿样式 + 行淡绿高亮，区别于通用"强烈推荐"）。
 - 英文站全站顶部提示：订购中国套餐（GLM/MiniMax/Kimi/火山/小米）可邮件 support.codingplan.org。

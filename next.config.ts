@@ -17,6 +17,10 @@ const nextConfig: NextConfig = {
       { source: '/index.html', destination: '/', permanent: true },
       { source: '/en/index.html', destination: '/en', permanent: true },
       { source: '/plans/:slug.html', destination: '/plans/:slug', permanent: true },
+      { source: '/compare/:slug', destination: '/articles/:slug', permanent: true },
+      { source: '/guides/:slug', destination: '/articles/:slug', permanent: true },
+      { source: '/questions/:slug', destination: '/articles/:slug', permanent: true },
+      { source: '/en/compare/:slug', destination: '/en/articles/:slug', permanent: true },
     ]
   },
 }

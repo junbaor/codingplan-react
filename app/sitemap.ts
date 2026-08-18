@@ -1,17 +1,17 @@
 /**
- * [INPUT]: 依赖 Next.js MetadataRoute 类型、全部公开套餐 slug 与 site-version 的 DATA_UPDATED_AT
- * [OUTPUT]: 对外提供首页、英文页和套餐详情页的 /sitemap.xml，lastmod 与全站数据更新日期同源
- * [POS]: app 的站点地图入口，与静态生成路由共用 planSlugs 数据源
+ * [INPUT]: 依赖 Next.js MetadataRoute 类型、hubs/articles/plans/models/tools 集合清单与 DATA_UPDATED_AT
+ * [OUTPUT]: 对外提供全站 50 个 URL 的 /sitemap.xml，lastmod 与全站数据更新日期同源
+ * [POS]: app 的站点地图入口，与静态生成路由共用各集合 slug 数据源
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import type { MetadataRoute } from 'next'
-import { compareSlugs, enCompareSlugs } from '@/src/data/compares'
-import { guideSlugs } from '@/src/data/guides'
+import { articleSlugs, enArticleSlugs } from '@/src/data/articles'
+import { dealsPage } from '@/src/data/deals'
+import { articlesHub, enArticlesHub, modelsHub, plansHub, toolsHub } from '@/src/data/hubs'
 import { leaderboardPage } from '@/src/data/leaderboard'
 import { modelSlugs } from '@/src/data/models'
 import { planSlugs, plansBySlug } from '@/src/data/plans'
 import { enPlanSlugs, getEnPlan } from '@/src/data/plans-en'
-import { questionSlugs } from '@/src/data/questions'
 import { toolSlugs } from '@/src/data/tools'
 import { DATA_UPDATED_AT, siteUrl } from '@/src/data/site-version'
 
@@ -45,6 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: slug === 'tencentcloud' ? 0.4 : slug === 'baiyunzhisuan' ? 0.7 : 0.8,
       alternates: { languages: languagesOf(plansBySlug[slug].seo.alternates) },
     })),
+    {
+      url: `${siteUrl}/plans`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
     ...enPlanSlugs.map((slug) => ({
       url: `${siteUrl}/en/plans/${slug}`,
       lastModified,
@@ -64,20 +70,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
-    ...compareSlugs.map((slug) => ({
-      url: `${siteUrl}/compare/${slug}`,
+    {
+      url: `${siteUrl}/articles`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
-    })),
-    ...guideSlugs.map((slug) => ({
-      url: `${siteUrl}/guides/${slug}`,
-      lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    })),
-    ...questionSlugs.map((slug) => ({
-      url: `${siteUrl}/questions/${slug}`,
+    },
+    ...articleSlugs.map((slug) => ({
+      url: `${siteUrl}/articles/${slug}`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
@@ -88,20 +88,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
+    {
+      url: `${siteUrl}/tools`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    },
     ...toolSlugs.map((slug) => ({
       url: `${siteUrl}/tools/${slug}`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     })),
+    {
+      url: `${siteUrl}/models`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    },
     ...modelSlugs.map((slug) => ({
       url: `${siteUrl}/models/${slug}`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     })),
-    ...enCompareSlugs.map((slug) => ({
-      url: `${siteUrl}/en/compare/${slug}`,
+    {
+      url: `${siteUrl}/en/articles`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    },
+    ...enArticleSlugs.map((slug) => ({
+      url: `${siteUrl}/en/articles/${slug}`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.8,

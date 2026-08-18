@@ -17,7 +17,6 @@ const accentClass: Record<Accent, string> = {
 export function PlanPage({ plan }: { plan: PlanPageData }) {
   const archived = plan.availability === 'archived' || plan.availability === 'discontinued'
   const isEn = plan.seo.locale === 'en'
-  const hubUrl = isEn ? '/en#platforms' : '/#platforms'
   const contentOrder = plan.contentOrder ?? [
     'models',
     'plans',
@@ -27,6 +26,8 @@ export function PlanPage({ plan }: { plan: PlanPageData }) {
     'faq',
   ]
   const planTitle = `${plan.hero.title} ${plan.hero.highlight}`
+  const hubHref = isEn ? '/en#platforms' : '/plans'
+  const hubLabel = isEn ? 'Coding Plans' : '全部套餐'
 
   return (
     <div className={accentClass[plan.accent]}>
@@ -39,7 +40,7 @@ export function PlanPage({ plan }: { plan: PlanPageData }) {
           <ol className="flex flex-wrap items-center gap-2 text-xs text-ink-muted">
             <li><a className="focus-ring min-h-11 py-2 hover:text-brand-cyan" href={isEn ? '/en' : '/'}>CodingPlan.org</a></li>
             <li aria-hidden="true">/</li>
-            <li><a className="focus-ring min-h-11 py-2 hover:text-brand-cyan" href={hubUrl}>{isEn ? 'Coding Plans' : '套餐详情'}</a></li>
+            <li><a className="focus-ring min-h-11 py-2 hover:text-brand-cyan" href={hubHref}>{hubLabel}</a></li>
             <li aria-hidden="true">/</li>
             <li aria-current="page" className="py-2 text-ink-soft">{planTitle}</li>
           </ol>
