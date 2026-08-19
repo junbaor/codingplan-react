@@ -1,7 +1,7 @@
 /**
  * [INPUT]: 依赖 DshHermesIntroPage、JsonLd 与 topic-deepseek-hermes 专题数据
  * [OUTPUT]: 对外提供静态生成的 /deepseek-hermes 介绍页及完整 Metadata
- * [POS]: app/(zh) 的独立专题入口，介绍 DSH 框架本体，与 /dsh-hermes 插件合集页互为姊妹页
+ * [POS]: app/(zh) 的独立专题入口，介绍 DSH 框架本体，与 /en/deepseek-hermes 英文页互为跨语言姊妹页
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import type { Metadata } from 'next'

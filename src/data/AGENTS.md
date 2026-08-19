@@ -2,7 +2,7 @@
 > L2 | 父级: /src/AGENTS.md
 
 ## 成员清单
-home.ts: 中文 9 平台与英文 6 平台首页数据、原站标题基线、推广参数、FAQ 和 SEO（中文导航含优惠入口）
+home.ts: 中文 9 平台与英文 6 平台首页数据、SEO 优化标题（zh 57 字符含 5 品牌）、推广参数、FAQ 和 SEO（中文导航含优惠入口）
 metadata.ts: 将 SeoData 转换为 Next.js Metadata（含 og:image 大卡与 twitter summary_large_image），并提供全站 Metadata/Viewport
 plans.ts: 九个中文平台详情数据、原站标题顺序、推广参数、套餐、模型、区块、FAQ 与 slug（definePlan 统一注入 zh 侧 hreflang）
 plans-en.ts: 六个英文平台详情数据（Claude/GLM/MiniMax/Kimi/Qwen/OpenCode Go），与中文共用 PlanPage 模板（definePlan 统一注入 en 侧 hreflang）
@@ -20,8 +20,8 @@ content-page.ts: defineContentPage 装配器，为内容页统一装配 Article/
 content-links.ts: 详情页→内容矩阵的相关内链关系（getRelatedLinks 按 slug 与 locale）
 plan-alternates.ts: zh↔en 跨语言等效套餐 slug 映射与 hreflang alternates 构造器
 site-version.ts: DATA_UPDATED_AT 全站数据更新日期常量与 siteUrl，贯通 JSON-LD/lastmod/页脚时间戳
-topic-dsh-hermes.ts: DeepSeek Hermes Plugin 插件合集页数据（含收录插件、分类、验证流程与开发指南），由 /dsh-hermes 路由消费
-topic-deepseek-hermes.ts: DeepSeek Hermes 框架介绍页数据（架构、核心包、Turn 流程、事件系统与快速上手），由 /deepseek-hermes 路由消费
+topic-deepseek-hermes.ts: DeepSeek Hermes 框架中文介绍页数据（架构、核心包、Turn 流程、事件系统与快速上手，含 zh↔en hreflang），由 /deepseek-hermes 路由消费
+topic-deepseek-hermes-en.ts: DeepSeek Hermes 框架英文介绍页数据（与中文版同构，插件库外链指向英文版 deepseek-plugin.org/plugins），由 /en/deepseek-hermes 路由消费
 seo.ts: WebSite/Organization/Article、WebPage、ItemList、Product/Service、Breadcrumb、FAQ 与内容页 JSON-LD 构造器（支持中英双语，日期信号统一取自 site-version）
 
 [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md

@@ -1,7 +1,7 @@
 /**
- * [INPUT]: 依赖 topic-deepseek-hermes 的 DshHermesIntroData、SiteChrome、FaqList 与 lucide-react
- * [OUTPUT]: 对外提供 DeepSeek Hermes 介绍页的完整渲染组件
- * [POS]: components 的独立专题页编排器，介绍 DSH 框架本体，由 /deepseek-hermes 路由消费
+ * [INPUT]: 依赖 topic-deepseek-hermes 的 DshHermesIntroData（中英文数据同构）、SiteChrome、FaqList 与 lucide-react
+ * [OUTPUT]: 对外提供 DeepSeek Hermes 中英文介绍页的完整渲染组件（按 seo.locale 切换 UI 文案与插件库外链语言版本）
+ * [POS]: components 的独立专题页编排器，介绍 DSH 框架本体，由 /deepseek-hermes 与 /en/deepseek-hermes 路由消费
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import { ArrowLeft, ArrowUpRight, Layers } from 'lucide-react'
@@ -10,17 +10,32 @@ import { FaqList } from './FaqList'
 import { SiteFooter, SiteHeader } from './SiteChrome'
 
 export function DshHermesIntroPage({ data }: { data: DshHermesIntroData }) {
+  const isEn = data.seo.locale === 'en'
+  const pluginLibrary = isEn
+    ? { href: 'https://deepseek-plugin.org/plugins', label: 'DeepSeek Plugin Library' }
+    : { href: 'https://deepseek-plugin.org/zh/plugin', label: 'DeepSeek 插件库' }
   return (
     <div className="accent-purple">
       <SiteHeader
-        locale="zh-CN"
-        links={[
-          { label: '什么是 DSH', href: '#what-is' },
-          { label: '架构', href: '#architecture' },
-          { label: 'Turn 流程', href: '#turn-flow' },
-          { label: '快速开始', href: '#quickstart' },
-          { label: '常见问题', href: '#faq' },
-        ]}
+        locale={isEn ? 'en' : 'zh-CN'}
+        language={isEn ? { label: '中文', href: '/deepseek-hermes' } : { label: 'English', href: '/en/deepseek-hermes' }}
+        links={
+          isEn
+            ? [
+                { label: 'What is DSH', href: '#what-is' },
+                { label: 'Architecture', href: '#architecture' },
+                { label: 'Turn Flow', href: '#turn-flow' },
+                { label: 'Quickstart', href: '#quickstart' },
+                { label: 'FAQ', href: '#faq' },
+              ]
+            : [
+                { label: '什么是 DSH', href: '#what-is' },
+                { label: '架构', href: '#architecture' },
+                { label: 'Turn 流程', href: '#turn-flow' },
+                { label: '快速开始', href: '#quickstart' },
+                { label: '常见问题', href: '#faq' },
+              ]
+        }
       />
       <main>
         {/* Hero */}
@@ -28,7 +43,7 @@ export function DshHermesIntroPage({ data }: { data: DshHermesIntroData }) {
           <div className="soft-grid absolute inset-0 -z-10 opacity-30" aria-hidden="true" />
           <div className="absolute left-1/2 top-16 -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-brand-purple/10 blur-3xl sm:h-[32rem] sm:w-[32rem]" aria-hidden="true" />
           <div className="page-shell text-center">
-            <a href="/" className="focus-ring mb-7 inline-flex min-h-11 items-center gap-2 text-sm text-ink-soft hover:text-ink"><ArrowLeft size={16} />返回首页</a>
+            <a href={isEn ? '/en' : '/'} className="focus-ring mb-7 inline-flex min-h-11 items-center gap-2 text-sm text-ink-soft hover:text-ink"><ArrowLeft size={16} />{isEn ? 'Back to Home' : '返回首页'}</a>
             <p className="accent-text mx-auto mb-6 w-fit rounded-full border accent-border accent-bg px-4 py-2 font-mono text-xs font-bold">{data.hero.badge}</p>
             <h1 className="text-[clamp(2.4rem,6vw,5rem)] font-black leading-[1.08] tracking-[-0.045em]">DeepSeek Hermes</h1>
             <p className="mx-auto mt-6 max-w-3xl whitespace-pre-line text-[clamp(1rem,2vw,1.15rem)] leading-8 text-ink-soft">{data.hero.description}</p>
@@ -41,8 +56,8 @@ export function DshHermesIntroPage({ data }: { data: DshHermesIntroData }) {
               ))}
             </div>
             <div className="mt-10 flex flex-wrap justify-center gap-3">
-              <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener noreferrer" className="focus-ring inline-flex min-h-11 items-center gap-2 rounded-xl border border-border-strong px-5 text-sm font-bold hover:bg-surface-raised">GitHub 仓库<ArrowUpRight size={16} /></a>
-              <a href="/deepseek-harness-plgins" className="focus-ring accent-button inline-flex min-h-11 items-center gap-2 rounded-xl px-5 text-sm font-bold transition">浏览插件合集<ArrowUpRight size={16} /></a>
+              <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener" className="focus-ring inline-flex min-h-11 items-center gap-2 rounded-xl border border-border-strong px-5 text-sm font-bold hover:bg-surface-raised">{isEn ? 'GitHub Repository' : 'GitHub 仓库'}<ArrowUpRight size={16} /></a>
+              <a href={pluginLibrary.href} target="_blank" rel="noopener" className="focus-ring accent-button inline-flex min-h-11 items-center gap-2 rounded-xl px-5 text-sm font-bold transition">{pluginLibrary.label}<ArrowUpRight size={16} /></a>
             </div>
           </div>
         </section>
@@ -123,9 +138,9 @@ export function DshHermesIntroPage({ data }: { data: DshHermesIntroData }) {
               <table className="w-full min-w-[680px] border-collapse text-sm">
                 <thead className="bg-surface-raised">
                   <tr>
-                    <th className="border-b border-border px-5 py-4 text-left text-ink-soft">事件类型</th>
-                    <th className="border-b border-border px-5 py-4 text-left accent-text">分发模式</th>
-                    <th className="border-b border-border px-5 py-4 text-left text-ink-soft">说明</th>
+                    <th className="border-b border-border px-5 py-4 text-left text-ink-soft">{isEn ? 'Event Type' : '事件类型'}</th>
+                    <th className="border-b border-border px-5 py-4 text-left accent-text">{isEn ? 'Dispatch Mode' : '分发模式'}</th>
+                    <th className="border-b border-border px-5 py-4 text-left text-ink-soft">{isEn ? 'Description' : '说明'}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -187,19 +202,36 @@ export function DshHermesIntroPage({ data }: { data: DshHermesIntroData }) {
         {/* FAQ */}
         <section id="faq" className="scroll-mt-20 py-16 sm:py-24">
           <div className="page-shell">
-            <SectionHeading title="常见问题" />
+            <SectionHeading title={isEn ? 'FAQ' : '常见问题'} />
             <FaqList faqs={data.faqs} />
           </div>
         </section>
       </main>
-      <SiteFooter disclaimer="DeepSeek Harness 是 DeepSeek AI 的开源项目，采用 MIT 协议。本页内容基于官方仓库文档整理，可能随版本迭代而过时，请以官方文档为准。">
-        <div className="mt-5 flex flex-wrap justify-center gap-x-5 text-sm text-ink-soft">
-          <a className="min-h-11 py-2 hover:text-brand-cyan" href="/">返回首页</a>
-          <a className="min-h-11 py-2 hover:text-brand-cyan" href="/deepseek-harness-plgins">插件收录合集</a>
-          <a className="min-h-11 py-2 hover:text-brand-cyan" href="/plans/zhipu">智谱</a>
-          <a className="min-h-11 py-2 hover:text-brand-cyan" href="/plans/volcengine">火山引擎</a>
-          <a className="min-h-11 py-2 hover:text-brand-cyan" href="/plans/opencode-go">OpenCode Go</a>
-        </div>
+      <SiteFooter
+        locale={isEn ? 'en' : 'zh-CN'}
+        disclaimer={
+          isEn
+            ? 'DeepSeek Harness is an open-source project by DeepSeek AI, licensed under MIT. This page is based on the official repository documentation and may become outdated as the project iterates — please refer to the official docs for the latest information.'
+            : 'DeepSeek Harness 是 DeepSeek AI 的开源项目，采用 MIT 协议。本页内容基于官方仓库文档整理，可能随版本迭代而过时，请以官方文档为准。'
+        }
+      >
+        {isEn ? (
+          <div className="mt-5 flex flex-wrap justify-center gap-x-5 text-sm text-ink-soft">
+            <a className="min-h-11 py-2 hover:text-brand-cyan" href="/en">Back to Home</a>
+            <a className="min-h-11 py-2 hover:text-brand-cyan" href="https://deepseek-plugin.org/plugins" target="_blank" rel="noopener">DeepSeek Plugin Library</a>
+            <a className="min-h-11 py-2 hover:text-brand-cyan" href="/en/plans/glm">GLM</a>
+            <a className="min-h-11 py-2 hover:text-brand-cyan" href="/en/plans/kimi">Kimi</a>
+            <a className="min-h-11 py-2 hover:text-brand-cyan" href="/en/plans/opencode-go">OpenCode Go</a>
+          </div>
+        ) : (
+          <div className="mt-5 flex flex-wrap justify-center gap-x-5 text-sm text-ink-soft">
+            <a className="min-h-11 py-2 hover:text-brand-cyan" href="/">返回首页</a>
+            <a className="min-h-11 py-2 hover:text-brand-cyan" href="https://deepseek-plugin.org/zh/plugin" target="_blank" rel="noopener">DeepSeek 插件库</a>
+            <a className="min-h-11 py-2 hover:text-brand-cyan" href="/plans/zhipu">智谱</a>
+            <a className="min-h-11 py-2 hover:text-brand-cyan" href="/plans/volcengine">火山引擎</a>
+            <a className="min-h-11 py-2 hover:text-brand-cyan" href="/plans/opencode-go">OpenCode Go</a>
+          </div>
+        )}
       </SiteFooter>
     </div>
   )

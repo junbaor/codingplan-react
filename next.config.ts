@@ -28,6 +28,8 @@ const nextConfig: NextConfig = {
       { source: '/en/articles', destination: '/en/blogs', permanent: true },
       { source: '/en/articles/:slug', destination: '/en/blogs/:slug', permanent: true },
       { source: '/en/compare/:slug', destination: '/en/blogs/:slug', permanent: true },
+      { source: '/deepseek-harness-plgins', destination: 'https://deepseek-plugin.org/zh/plugin', permanent: true },
+      { source: '/deepseek-harness-plugins', destination: 'https://deepseek-plugin.org/zh/plugin', permanent: true },
     ]
   },
 }

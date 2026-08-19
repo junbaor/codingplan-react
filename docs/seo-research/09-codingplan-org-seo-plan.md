@@ -224,7 +224,7 @@
 /questions/[slug]                问题型长文（P1）
 /tools/[slug]                    工具页（P1）
 /models/[slug]                   模型评测（P2）
-/deepseek-hermes, /deepseek-harness-plgins   现有专题（保留，纳入导航）
+/deepseek-hermes                    现有专题（保留，纳入导航；插件合集页已删除，harness-plugins 新旧 URL 301 至 deepseek-plugin.org/plugins）
 ```
 
 内链规则：首页 ↔ 全部 hub 页；详情页 ↔ 相关 compare/guides/models（语境化链接）；changelog → 详情页（时效入口）；面包屑全站覆盖；hub 页互链形成 topic cluster（以 /plans/[slug] 为 pillar，compare/guides/models/tools 为 cluster）。

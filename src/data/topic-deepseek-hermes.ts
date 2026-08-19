@@ -66,7 +66,7 @@ const faqs: FaqItem[] = [
   { question: '什么是 Profile 和 Bundle？', answer: 'Profile 是 DSH 中命名的可启动组合，存储在 Harness home 目录下，列出它堆叠的 bundles 并持有用户自己的 cordis.patch.yml。Bundle 是 Cordis 配置行及其挂载代码的分发格式——声明在 package.json 的 dsh.bundle 字段中。web 和 headless 作为模板随 dsh 发行。' },
   { question: 'DSH 的事件系统是怎样的？', answer: 'DSH 有三组事件域：会话事件（session/event）是追加到日志的持久事实；Agent 事件（agent/*）携带活跃 Agent 实例；能力事件（fs/*、tools/*、telemetry/*）将策略和适配器挂载到 seam。事件分四种分发模式：emit（观察）、waterfall（环绕中间件）、parallel（并行）、serial（串行）。' },
   { question: 'DSH 目前稳定吗？', answer: 'DSH 目前处于开发者预览（developer preview）阶段，正在快速迭代。官方明确声明未来将出现破坏兼容性的变更。建议关注 GitHub Discussions 和版本更新。' },
-  { question: '在哪里可以找到 DSH 插件？', answer: '可以在 GitHub 上搜索 dsh-plugin 话题找到社区插件。我们也整理了一个 DSH 插件收录合集页面，可以在本站 /dsh-hermes 浏览精选插件和开发指南。' },
+  { question: '在哪里可以找到 DSH 插件？', answer: '可以在 GitHub 上搜索 dsh-plugin 话题找到社区插件。我们也整理了 [DeepSeek 插件库](https://deepseek-plugin.org/zh/plugin)，提供完整的 DSH 插件目录、分类浏览、安装命令与开发指南。' },
 ]
 
 export const dshHermesIntroData: DshHermesIntroData = {
@@ -76,6 +76,11 @@ export const dshHermesIntroData: DshHermesIntroData = {
     canonical: 'https://codingplan.org/deepseek-hermes',
     locale: 'zh-CN',
     ogType: 'article',
+    alternates: [
+      { lang: 'zh-CN', href: 'https://codingplan.org/deepseek-hermes' },
+      { lang: 'en', href: 'https://codingplan.org/en/deepseek-hermes' },
+      { lang: 'x-default', href: 'https://codingplan.org/deepseek-hermes' },
+    ],
     jsonLd: [buildFaqJsonLd(faqs)],
   },
   hero: {

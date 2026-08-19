@@ -65,7 +65,10 @@ export function buildFaqJsonLd(faqs: FaqItem[]) {
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
-      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '$1（$2）'),
+      },
     })),
   }
 }

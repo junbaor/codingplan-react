@@ -29,8 +29,11 @@ README.md - 开发命令、App Router 架构与内容维护入口
 - Title、H 标题、keywords 缺失状态、canonical、统计 Key 与推广参数以原站 HTML 为兼容基线。
 - 主题通过语义色 token 和 `data-theme` 切换，不在组件中硬编码颜色。
 
-## 当前数据要点（最近一次更新 2026-08-18）
+## 当前数据要点（最近一次更新 2026-08-19）
 
+- DSH 介绍页英文版上线（2026/8/19）：新增 /en/deepseek-hermes（app/(en)/en/deepseek-hermes + topic-deepseek-hermes-en.ts，站点 47→48 URL），与中文版 /deepseek-hermes 互为 hreflang 姊妹页（zh↔en↔x-default 三向 alternates），DshHermesIntroPage 组件按 seo.locale 切换全部 UI 文案、页脚内链（en 页页脚链 /en/plans/glm|kimi|opencode-go）与插件库外链语言版本（中文→deepseek-plugin.org/zh/plugin，英文→deepseek-plugin.org/plugins），并新增头部语言切换入口；301 目标同步修正为中文版 zh/plugin（旧页内容为中文，语言一致）。
+- 首页 SEO 体检修复（2026/8/19）：中文首页 title 由 70 字符压至 57 字符「AI Coding Plan 对比 2026：ChatGPT/Claude/GLM/MiniMax/Kimi 横评」（保留 5 品牌词，脱离原站 70 字符基线）；FaqList 问题由纯文本升级为 h3（原生 summary 内，全站 5 个使用方 FAQ 区标题均为 h2，层级正确，zh 首页 H3 由 1→11）；description 此前已在源码修至 151 字符（b51fc0e，线上仍为旧 101 字符版本，待部署生效）；DATA_UPDATED_AT 8/18→8/19。
+- DSH 插件合集页下线并外迁（2026/8/19）：删除 /deepseek-harness-plugins 页面（含 DshHermesPage.tsx 与 topic-dsh-hermes.ts），站点 48→47 URL；新旧两个旧 URL（含拼写错误变体 plgins）在 next.config.ts 301 至姊妹站 https://deepseek-plugin.org/zh/plugin 传递权重（该站区分中英文版本，zh/plugin 为中文版，plugins 为英文版；/deepseek-hermes 为纯中文页，故全站链接与 301 均指向中文版）；/deepseek-hermes 介绍页 Hero 主按钮与页脚均外链至 DeepSeek 插件库；FaqList 升级支持 [text](url) 链接语法（渲染为可点击外链，JSON-LD 中转纯文本），介绍页 FAQ「在哪里可以找到 DSH 插件」以可点击链接指向插件库。
 - 全站模型与套餐大同步（2026/8/18）：智谱 GLM-5.3（8/14 发布，Terminal-Bench 3.0 开源第一 28.3、编程体感较 5.2 +50%、全员额度重置）上线全量用户，新增 /models/glm-5.3 评测页（模型集合 8→9）；Kimi K2.6 全站更新为 K2.7/K2.7-Code（CLI 默认、GitHub Copilot 已接入）并补充 7/19 起暂停 C 端新订阅、逐步恢复的状态提示；火山方舟模型池补 Kimi-K3；阿里云百炼 Coding Plan 全面升级为 Credits 制 Token Plan（个人版早鸟 ¥39/¥139/¥499，Qwen3.8-Max 2.4T 首发尝鲜 + DeepSeek-V4-Pro 新增，双窗口 Credits，团队版席位 ¥150 起），中英文详情页/首页/Qwen3.5 模型页同步改写；changelog 补 8/14 GLM-5.3、7/20 百炼 Token Plan、7/19 Kimi 暂停订阅事件。
 
 - 移除「全部套餐」集合页 /plans（2026/8/18）：首页已承载平台对比，/plans hub 页删除并在 next.config.ts 301 至 /#platforms，头部导航改为 工具/模型/博客/优惠 四项（SiteChrome defaultHeaderLinks），详情页面包屑与 blogs/tools/models 相关内链、BreadcrumbList JSON-LD 同步改指 /#platforms，sitemap 移除该 URL（49→48）。

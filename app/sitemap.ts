@@ -119,13 +119,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
     {
-      url: `${siteUrl}/deepseek-harness-plgins`,
+      url: `${siteUrl}/deepseek-hermes`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
-      url: `${siteUrl}/deepseek-hermes`,
+      url: `${siteUrl}/en/deepseek-hermes`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.8,

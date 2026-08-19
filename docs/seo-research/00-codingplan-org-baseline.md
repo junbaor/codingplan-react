@@ -35,7 +35,7 @@
 /en/plans/qwen             Qwen（英文）
 /en/plans/opencode-go      OpenCode Go（英文）
 /deepseek-hermes           DeepSeek Hermes 框架专题
-/deepseek-harness-plgins   DSH 插件合集专题
+/deepseek-harness-plugins   DSH 插件合集专题（原站拼写 deepseek-harness-plgins；重写版已删除该页，新旧 URL 301 至 deepseek-plugin.org/plugins）
 ```
 
 - 页面模板：首页 1 套（HomePage）+ 详情页 1 套（PlanPage）+ 专题页 2 套（DshHermes 系列）。
