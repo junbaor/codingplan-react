@@ -212,7 +212,7 @@ const aliyun = definePlan({
 
 const tencentcloud = definePlan({
   slug: 'tencentcloud', accent: 'blue', availability: 'archived',
-  seo: { title: '腾讯云 Coding Plan [已下线] - 历史参考 - HY 2.0/GLM-5/Kimi-K2.5/MiniMax', description: '腾讯云 Coding Plan 已于 2026-04-22 下线。本页保留 Lite / Pro 历史套餐价格、HY 2.0、GLM-5、Kimi-K2.5、MiniMax 等支持模型清单与额度说明，仅供归档参考。', canonical: 'https://codingplan.org/plans/tencentcloud', locale: 'zh-CN', ogType: 'article' },
+  seo: { title: '腾讯云 Coding Plan [已下线] - 历史参考 - HY 2.0/GLM-5/Kimi-K2.5/MiniMax', description: '腾讯云 Coding Plan 已于 2026-04-22 下线并转向 Credits 计量的 Token Plan。本页归档 Lite ¥40 / Pro ¥200 历史价格、1,200-6,000 次/5h 额度、HY 2.0、GLM-5、Kimi-K2.5、MiniMax 支持模型与工具接入记录，仅供历史参考。', canonical: 'https://codingplan.org/plans/tencentcloud', locale: 'zh-CN', ogType: 'article' },
   hero: { badge: '已下线 · 历史归档', title: '腾讯云', highlight: 'Coding Plan', description: '2026-04-22 全面下线并转向 Credits 计量的 Token Plan，本页仅保留历史资料。', stats: [{ value: '2026-04-22', label: '下线日期' }, { value: '2', label: '历史档位' }, { value: '4', label: '历史模型' }] },
   modelsTitle: '模型阵容', modelsDescription: '下列信息不代表当前可购买产品。', models: [
     { icon: '☁️', name: 'Tencent HY 2.0 Instruct', description: '腾讯混元历史模型。' }, { icon: '🔷', name: 'GLM-5', description: '智谱旗舰模型。' }, { icon: '🌙', name: 'Kimi-K2.5', description: 'Moonshot AI 模型。' }, { icon: '🔥', name: 'MiniMax-M2.5', description: '详情页历史记录型号。' },
@@ -274,7 +274,7 @@ const xiaomi = definePlan({
 
 const baiyunzhisuan = definePlan({
   slug: 'baiyunzhisuan', accent: 'cyan', availability: 'active',
-  seo: { title: '白云智算 API 详解 - MiniMax/GLM/DeepSeek/Kimi/Qwen 注册送450元代金券', description: '白云智算按量 API 详解：注册与首调代金券领取步骤、MiniMax / GLM / DeepSeek / Kimi / Qwen 支持模型清单、调用计费与限制、以及与 AI 编程订阅套餐的差异。', canonical: 'https://codingplan.org/plans/baiyunzhisuan', locale: 'zh-CN', ogType: 'article' },
+  seo: { title: '白云智算 API 详解 - MiniMax/GLM/DeepSeek/Kimi/Qwen 注册送450元代金券', description: '白云智算按量 API 详解：注册实名领 ¥150、完成首调再领 ¥300 代金券（合计 ¥450）的步骤，MiniMax / GLM / DeepSeek / Kimi / Qwen 支持模型清单、按 token 计费规则与限制、OpenAI 兼容接口接入 Claude Code，以及与 AI 编程订阅套餐的差异。', canonical: 'https://codingplan.org/plans/baiyunzhisuan', locale: 'zh-CN', ogType: 'article' },
   hero: { badge: '白云智算 · 按量 API', title: '白云智算', highlight: '大模型 API', description: '按 token 用量付费，无月费门槛；通过推荐链接注册并完成首调，最高领取 ¥450 代金券。', stats: [{ value: '¥450', label: '最高代金券' }, { value: '0', label: '固定月费' }, { value: '5+', label: '模型系列' }, { value: 'OpenAI', label: '兼容 API' }] },
   modelsTitle: '支持的模型', modelsDescription: '多模型按量调用，具体型号和单价以控制台为准。', models: [
     { icon: '🔥', name: 'MiniMax-M2.5', description: 'MiniMax 模型 API。' }, { icon: '🔷', name: 'GLM-5 / GLM-4.7', description: '智谱模型 API。' }, { icon: '🐋', name: 'DeepSeek', description: 'DeepSeek 系列模型。' }, { icon: '🌙', name: 'Kimi', description: 'Kimi / Kimi-K2.5 系列。' }, { icon: '☁️', name: 'Qwen（千问）', description: '千问与 Qwen3-Coder 系列。' },

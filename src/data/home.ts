@@ -201,11 +201,11 @@ const enPlatforms: PlatformSummary[] = [
 function makeHome(locale: 'zh-CN' | 'en', platforms: PlatformSummary[], faqs: FaqItem[]): HomePageData {
   const isEn = locale === 'en'
   const title = isEn
-    ? 'AI Coding Plan Comparison 2026 — Claude, GLM, MiniMax & More | codingplan.org'
+    ? 'AI Coding Plan Comparison 2026 - Claude, GLM, MiniMax & More'
     : 'AI Coding Plan 对比 2026 - ChatGPT / Claude / GLM / MiniMax / Kimi 等套餐横评'
   const description = isEn
     ? 'Compare AI coding subscriptions: Claude Code, GLM, MiniMax, Kimi and Qwen. Pricing, models, usage limits and tools side by side.'
-    : '对比 ChatGPT、Claude、智谱 GLM、MiniMax、Kimi、Qwen 等 9 款 AI 编程订阅套餐。涵盖价格、模型阵容、用量额度与支持工具一站式横评，帮你选到最划算的 AI 编码订阅。'
+    : '对比 ChatGPT、Claude、智谱 GLM、MiniMax、Kimi、Qwen、火山方舟、阿里云百炼等 9 款 AI 编程订阅套餐：入门价格、模型阵容、5 小时/每周额度口径、Claude Code 等工具支持与首购优惠一站式横评，附快速对比表格与常见问题解答，帮你选到最划算的 AI 编码订阅。'
   const canonical = isEn ? 'https://codingplan.org/en' : 'https://codingplan.org'
   const seo = {
     title, description, canonical, locale,

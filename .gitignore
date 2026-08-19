@@ -8,3 +8,6 @@ out
 
 # IndexNow: 持久化 key 入仓以确保团队共享；仅忽略临时文件
 .indexnow-key.tmp
+
+.idea
+*.iml
