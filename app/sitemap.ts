@@ -1,6 +1,6 @@
 /**
  * [INPUT]: 依赖 Next.js MetadataRoute 类型、hubs/blogs/plans/models/tools 集合清单与 DATA_UPDATED_AT
- * [OUTPUT]: 对外提供全站 48 个 URL 的 /sitemap.xml，lastmod 与全站数据更新日期同源
+ * [OUTPUT]: 对外提供全站 49 个 URL 的 /sitemap.xml，lastmod 与全站数据更新日期同源
  * [POS]: app 的站点地图入口，与静态生成路由共用各集合 slug 数据源
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */

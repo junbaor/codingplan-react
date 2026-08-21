@@ -1,11 +1,15 @@
 /**
  * [INPUT]: 依赖 content-page 的 defineContentPage、models 的集合清单
- * [OUTPUT]: 对外提供 4 个集合首页数据：/blogs、/tools、/models（zh）与 /en/blogs（en）；套餐集合由首页 #platforms 承接
+ * [OUTPUT]: 对外提供 4 个集合首页数据：/blogs、/agents（含国产工具下载入口）、/models（zh）与 /en/blogs（en）；套餐集合由首页 #platforms 承接
  * [POS]: data 的集合层，保证每个二级路径都有 200 的列表页作为面包屑父级与权重汇聚点
  * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
  */
 import { defineContentPage } from './content-page'
 import { modelSlugs } from './models'
+
+const QODER_REFERRAL_URL = 'https://qoder.cn/referral?referral_code=eoGXJ3J7rC3r1faxoxVeoERBoXnbLCxl'
+const WORKBUDDY_INVITE_URL = 'https://www.workbuddy.cn/events/invite?inviteCode=boeaodw2co0'
+const TRAE_FISSION_URL = 'https://www.trae.cn/work-fission/VUPSYKYLX55Y?utm_source=copy_link&utm_medium=friends_invite'
 
 const modelNameBySlug: Record<string, { name: string; vendor: string }> = {
   'glm-5.3': { name: 'GLM-5.3', vendor: '智谱' },
@@ -62,19 +66,19 @@ export const agentsHub = defineContentPage({
   slug: 'agents',
   accent: 'orange',
   seo: {
-    title: 'AI 编程智能体指南 - Claude Code / Codex / OpenCode / Cursor / Cline / Roo Code',
-    description: 'CodingPlan.org 智能体集合页：六个主流 AI 编程智能体（Agent）各配哪个国产 Coding Plan 最划算，含 Claude Code、Codex、OpenCode、Cursor、Cline、Roo Code 的支持套餐清单与配置教程入口。',
-    canonical: 'https://codingplan.org/tools',
+    title: 'AI 编程工具指南 - Claude Code / Cursor / Qoder / Trae 等 9 款',
+    description: 'CodingPlan.org 工具集合页：六个主流 AI 编程智能体（Claude Code、Codex、OpenCode、Cursor、Cline、Roo Code）配哪个国产 Coding Plan 最划算，另有 Qoder、Trae、WorkBuddy 三款自带免费额度的国产工具下载入口。',
+    canonical: 'https://codingplan.org/agents',
     locale: 'zh-CN',
     ogType: 'website',
   },
   hero: {
-    badge: '智能体集合 · 6 Agents',
-    title: 'AI 编程智能体',
-    highlight: '× Coding Plan',
-    description: '每个智能体一页：它是什么、支持哪些国内套餐、怎么选最省钱。智能体页与平台详情页双向互链，配好套餐后可直达对应教程。',
+    badge: '工具集合 · 9 款',
+    title: 'AI 编程工具',
+    highlight: '怎么选 · 怎么省',
+    description: '两类工具一页看全：Claude Code 等智能体是「壳」，额度来自你订阅的 Coding Plan；Qoder、Trae 等国产工具自带免费额度，下载即用。每个智能体一页详解，配好套餐后可直达对应教程。',
     stats: [
-      { value: '6', label: '主流 Agent' },
+      { value: '9', label: '常用工具' },
       { value: '8+', label: '可接国内套餐' },
       { value: 'BYOK', label: '多数支持自带 Key' },
     ],
@@ -91,6 +95,20 @@ export const agentsHub = defineContentPage({
   ],
   sections: [
     {
+      title: '自带免费额量的国产工具',
+      description: '下载即用，免费额度够日常轻度使用，点击直达官网。',
+      table: {
+        columns: ['工具', '厂商', '形态', '获取入口'],
+        featuredColumn: 3,
+        rows: [
+          ['Qoder', '阿里巴巴', 'AI IDE（Quest 任务式）', '官网下载'],
+          ['Trae / TraeWork', '字节跳动', 'AI IDE + 办公端', '官网下载'],
+          ['WorkBuddy', '腾讯', 'AI 办公智能体工作台', '官网下载'],
+        ],
+        rowLinks: [QODER_REFERRAL_URL, TRAE_FISSION_URL, WORKBUDDY_INVITE_URL],
+      },
+    },
+    {
       title: '按工作流选工具',
       cards: [
         { icon: '⌨️', title: '终端优先', description: 'Claude Code、OpenCode、Codex：CLI 为核心，配 IDE 插件。' },
@@ -103,10 +121,11 @@ export const agentsHub = defineContentPage({
     { question: '工具本身要付费吗？', answer: 'Claude Code CLI、Codex CLI、OpenCode、Cline、Roo Code 均免费（OpenCode 开源）；Cursor 是商业产品（有免费档）。消耗的是你接入的套餐额度。' },
     { question: '一个套餐能同时接多个工具吗？', answer: '能。同一套餐额度在所有支持的工具间共享，例如智谱套餐同时供 Claude Code 与 Cursor 使用，不重复计费。' },
     { question: '哪个工具对国产套餐适配最好？', answer: 'Claude Code 的官方适配面最广（7+ 平台点名支持）；VS Code 用户则普遍选 Cline/Roo Code。' },
+    { question: 'Qoder、Trae 这些和 Claude Code 有什么区别？', answer: 'Claude Code 等六款是「壳」——额度来自你订阅的 Coding Plan；Qoder、Trae、WorkBuddy 自带积分体系，注册即有免费额度，可直接下载使用，重度使用再考虑付费或自带 API Key。' },
   ],
   related: [
     { kind: '文章', title: 'Claude Code 配置教程合集', description: 'GLM/Kimi/方舟三篇教程。', href: '/blogs/claude-code-with-glm' },
-    { kind: '集合', title: '全部套餐', description: '智能体页引用的平台详情。', href: '/plans' },
+    { kind: '集合', title: '全部套餐', description: '智能体页引用的平台详情。', href: '/#platforms' },
     { kind: '模型', title: 'GLM-5.3 评测', description: '工具背后的模型选型。', href: '/models/glm-5.3' },
   ],
 })

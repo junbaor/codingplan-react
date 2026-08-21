@@ -23,6 +23,7 @@ const nextConfig: NextConfig = {
       { source: '/questions/:slug', destination: '/blogs/:slug', permanent: true },
       { source: '/tools', destination: '/agents', permanent: true },
       { source: '/tools/:slug', destination: '/agents/:slug', permanent: true },
+      { source: '/ai-tools', destination: '/agents', permanent: true },
       { source: '/articles', destination: '/blogs', permanent: true },
       { source: '/articles/:slug', destination: '/blogs/:slug', permanent: true },
       { source: '/en/articles', destination: '/en/blogs', permanent: true },

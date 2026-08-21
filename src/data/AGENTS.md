@@ -10,7 +10,7 @@ compares.ts: 双语对比文章数据（glm-vs-kimi / claude-vs-glm），挂载�
 guides.ts: Claude Code × 国产 Coding Plan 配置教程文章数据（GLM/Kimi/火山方舟，挂载于 /blogs）
 questions.ts: 问题型长文数据（是什么/最便宜/哪个好，挂载于 /blogs）
 blogs.ts: 博客集合索引（blogSlugs/blogsBySlug 与英文索引），把对比/教程/问答三类文章归一到 /blogs 命名空间
-hubs.ts: 4 个集合首页数据（/blogs、/tools、/models、/en/blogs），保证每个二级路径都有 200 列表页（套餐集合由首页 #platforms 承接，/plans 已 301 至首页）
+hubs.ts: 4 个集合首页数据（/blogs、/agents 含四款国产工具下载入口、/models、/en/blogs），保证每个二级路径都有 200 列表页（套餐集合由首页 #platforms 承接，/plans 已 301 至首页）
 deals.ts: /deals 邀请码与优惠汇总页数据，聚合各平台首购/邀请/年付优惠
 changelog.ts: /changelog 变更记录页数据，按月倒序的时间线表格
 leaderboard.ts: /leaderboard 性价比榜单页数据（入门价排行 + 分项冠军），服务端直出全量表格

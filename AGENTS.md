@@ -29,8 +29,9 @@ README.md - 开发命令、App Router 架构与内容维护入口
 - Title、H 标题、keywords 缺失状态、canonical、统计 Key 与推广参数以原站 HTML 为兼容基线。
 - 主题通过语义色 token 和 `data-theme` 切换，不在组件中硬编码颜色。
 
-## 当前数据要点（最近一次更新 2026-08-19）
+## 当前数据要点（最近一次更新 2026-08-21）
 
+- 工具页合并（2026/8/21）：/ai-tools 独立页删除并在 next.config.ts 301 至 /agents（站点 50→49 URL），Qoder（本站邀请码 eoGXJ3J7rC3r1faxoxVeoERBoXnbLCxl）、Trae/TraeWork（本站邀请链接 work-fission/VUPSYKYLX55Y）、WorkBuddy（本站邀请码 boeaodw2co0）三款自带免费额度的国产工具以「自带免费额量的国产工具」表格低调并入 /agents 集合页，行链接直达官方下载页（带邀请参数，不展示活动规则文案），agentsHub 同步修复 canonical 误指 /tools 与 related 链已 301 的 /plans 两个遗留问题；页脚「工具新人礼」入口移除，deals.ts 撤销 /ai-tools 互链，hero 改为「9 款工具 · 怎么选怎么省」并新增两类工具差异 FAQ；CodeBuddy 曾短暂收录后按需求移除。
 - DSH 介绍页英文版上线（2026/8/19）：新增 /en/deepseek-hermes（app/(en)/en/deepseek-hermes + topic-deepseek-hermes-en.ts，站点 47→48 URL），与中文版 /deepseek-hermes 互为 hreflang 姊妹页（zh↔en↔x-default 三向 alternates），DshHermesIntroPage 组件按 seo.locale 切换全部 UI 文案、页脚内链（en 页页脚链 /en/plans/glm|kimi|opencode-go）与插件库外链语言版本（中文→deepseek-plugin.org/zh/plugin，英文→deepseek-plugin.org/plugins），并新增头部语言切换入口；301 目标同步修正为中文版 zh/plugin（旧页内容为中文，语言一致）。
 - 首页 SEO 体检修复（2026/8/19）：中文首页 title 由 70 字符压至 57 字符「AI Coding Plan 对比 2026：ChatGPT/Claude/GLM/MiniMax/Kimi 横评」（保留 5 品牌词，脱离原站 70 字符基线）；FaqList 问题由纯文本升级为 h3（原生 summary 内，全站 5 个使用方 FAQ 区标题均为 h2，层级正确，zh 首页 H3 由 1→11）；description 此前已在源码修至 151 字符（b51fc0e，线上仍为旧 101 字符版本，待部署生效）；DATA_UPDATED_AT 8/18→8/19。
 - DSH 插件合集页下线并外迁（2026/8/19）：删除 /deepseek-harness-plugins 页面（含 DshHermesPage.tsx 与 topic-dsh-hermes.ts），站点 48→47 URL；新旧两个旧 URL（含拼写错误变体 plgins）在 next.config.ts 301 至姊妹站 https://deepseek-plugin.org/zh/plugin 传递权重（该站区分中英文版本，zh/plugin 为中文版，plugins 为英文版；/deepseek-hermes 为纯中文页，故全站链接与 301 均指向中文版）；/deepseek-hermes 介绍页 Hero 主按钮与页脚均外链至 DeepSeek 插件库；FaqList 升级支持 [text](url) 链接语法（渲染为可点击外链，JSON-LD 中转纯文本），介绍页 FAQ「在哪里可以找到 DSH 插件」以可点击链接指向插件库。
