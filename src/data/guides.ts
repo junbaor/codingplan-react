@@ -105,7 +105,7 @@ export const claudeCodeWithKimi = defineContentPage({
   accent: 'purple',
   seo: {
     title: 'Claude Code 配置 Kimi Code Plan 教程 2026 - 环境变量 / 免费档 / K3 模型',
-    description: 'Claude Code 接入 Kimi Code Plan 完整教程：开通套餐（免费档 Adagio 可试用）、配置 Moonshot Anthropic 兼容端点、K3/K2.6 模型选择、5h+7 天额度口径与常见问题排查。',
+    description: 'Claude Code 接入 Kimi Code Plan 完整教程：开通套餐（免费档 Adagio 可试用）、配置 Moonshot Anthropic 兼容端点、K3/K2.7 模型选择、5h+7 天额度口径与常见问题排查。',
     canonical: 'https://codingplan.org/blogs/claude-code-with-kimi',
     locale: 'zh-CN',
     ogType: 'article',
@@ -114,7 +114,7 @@ export const claudeCodeWithKimi = defineContentPage({
     badge: '教程 · Claude Code × Kimi',
     title: 'Claude Code',
     highlight: '接入 Kimi Code Plan',
-    description: 'Moonshot 提供 Anthropic 兼容端点，Claude Code 可以直接跑在 Kimi Code Plan 上：免费档即可试用 K2.6，Moderato 起可用 K3 旗舰（2.8T 参数，1M 上下文）。',
+    description: 'Moonshot 提供 Anthropic 兼容端点，Claude Code 可以直接跑在 Kimi Code Plan 上：免费档即可试用 K2.7，Moderato 起可用 K3 旗舰（2.8T 参数，1M 上下文）。',
     stats: [
       { value: '¥0 起', label: '免费档试用' },
       { value: '¥39/月', label: '年付入门价' },
@@ -128,7 +128,7 @@ export const claudeCodeWithKimi = defineContentPage({
         '已安装 Node.js 18+ 与 Claude Code CLI',
         '在 kimi.com/code 订阅任意档位（Adagio 免费档即可完成本教程）',
         '在 Moonshot 开放平台控制台创建 API Key',
-        '注意：K3 仅 Moderato（¥99/月）及以上可用，免费档/Andante 只能用 K2.6',
+        '注意：K3 仅 Moderato（¥99/月）及以上可用，免费档/Andante 只能用 K2.7',
       ],
     },
     {
@@ -143,7 +143,7 @@ source ~/.zshrc`,
         },
         {
           name: '启动 Claude Code 并选模型',
-          description: '运行 claude 后用 /model 选择模型：K2.6 稳定主力（全档可用），K3 旗舰需 Moderato 及以上档位。',
+          description: '运行 claude 后用 /model 选择模型：K2.7 稳定主力（全档可用），K3 旗舰需 Moderato 及以上档位。',
           code: `cd your-project
 claude
 /model`,
@@ -165,7 +165,7 @@ claude
     {
       title: '常见报错排查',
       cards: [
-        { icon: '🚫', title: 'K3 提示不可用', description: 'K3 需要 Moderato 及以上档位；免费档与 Andante 只能访问 K2.6/K2。' },
+        { icon: '🚫', title: 'K3 提示不可用', description: 'K3 需要 Moderato 及以上档位；免费档与 Andante 只能访问 K2.7/K2。' },
         { icon: '🔑', title: '401 鉴权失败', description: '确认使用 Moonshot 开放平台的 API Key，且账号已开通 Code Plan。' },
         { icon: '🐌', title: '限流 429', description: '5h 窗口额度耗尽会触发限流，等待窗口滚动恢复或升级档位。' },
         { icon: '🧭', title: '端点不生效', description: '检查 ANTHROPIC_BASE_URL 是否为 api.moonshot.cn/anthropic，重启终端。' },
@@ -173,7 +173,7 @@ claude
     },
   ],
   faqs: [
-    { question: '免费档能用 Claude Code 吗？', answer: '可以。Adagio 免费档包含 K2.6/K2 访问与 1 个 Agent 任务并行，足以验证链路；日常开发建议 Andante 起步。' },
+    { question: '免费档能用 Claude Code 吗？', answer: '可以。Adagio 免费档包含 K2.7/K2 访问与 1 个 Agent 任务并行，足以验证链路；日常开发建议 Andante 起步。' },
     { question: 'K3 什么档位能用？', answer: 'Moderato（¥99/月）及以上。Allegro（¥699/月）独家解锁 1M token 超长上下文。' },
     { question: 'Kimi 端点地址以哪里为准？', answer: '以 Moonshot 开放平台官方文档为准，本教程写的是 api.moonshot.cn/anthropic；官方若调整请同步更新。' },
     { question: '额度和 GLM 一样吗？', answer: '不一样。Kimi 是 5h+7 天双窗口 token 配额，GLM 是每周 Credits；两者数值不可直接比较，建议各试一个月。' },
@@ -228,7 +228,7 @@ source ~/.zshrc`,
         },
         {
           name: '选择模型',
-          description: '通过 /model 或环境变量指定模型 ID：写代码推荐 Doubao-Seed-2.1-turbo（速度）或 GLM-5.2（质量，限时加量 4 倍）；也可以直接选 Auto 模式由平台按任务自动路由。',
+          description: '通过 /model 或环境变量指定模型 ID：写代码推荐 Doubao-Seed-2.1-turbo（速度）或 GLM-5.3（质量，1M 上下文）；也可以直接选 Auto 模式由平台按任务自动路由。',
           code: `cd your-project
 claude
 /model   # 选择 Doubao / GLM / Kimi / MiniMax / DeepSeek 或 Auto`,
@@ -261,7 +261,7 @@ claude
     { question: '方舟端点地址以哪里为准？', answer: '以火山引擎方舟官方文档的「Anthropic 兼容」章节为准，本教程写的是 ark.cn-beijing.volces.com/api/anthropic。' },
     { question: '¥9.9 能用多久？', answer: '首购促销价 ¥9.9/月起通常覆盖前两个月（2.5 折），第三个月起恢复刊例价 ¥40/月；以活动页规则为准。' },
     { question: 'Claude Code 里能随时换模型吗？', answer: '可以，/model 即可切换；额度跨模型共享，切换不产生额外费用。' },
-    { question: 'GLM-5.2 限时限量是怎么回事？', answer: '活动期间 GLM-5.2 等热门模型加量 4 倍（加量不加价），活动结束后恢复原额度，关注官方公告时间。' },
+    { question: 'GLM-5.2 还能在方舟用吗？', answer: '方舟侧 GLM-5.2 将于 2026/8/31 14:00 下线，到期未迁移的调用自动路由至 GLM-5.3；此前的限时加量 4 倍活动已于 8/8 结束。' },
   ],
   related: [
     { kind: '详情', title: '火山引擎方舟 Coding Plan 详解', description: '套餐规则、模型阵容与优惠活动。', href: '/plans/volcengine' },

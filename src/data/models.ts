@@ -13,7 +13,7 @@ export const glm53 = defineContentPage({
   accent: 'blue',
   seo: {
     title: 'GLM-5.3 模型评测 2026 - Terminal-Bench 3.0 开源第一，智谱 Coding Plan 全量可用',
-    description: '智谱 GLM-5.3 评测：8/14 发布并上线 GLM Coding Plan 全量用户，编程体感较 5.2 提升 50%，Terminal-Bench 3.0 开源第一（28.3）、DeepSWE v1.1 达 66.9，同基座后训练 Scaling 路线，权重两周内 MIT 开源。',
+    description: '智谱 GLM-5.3 评测：8/14 发布并上线 GLM Coding Plan 全量用户，编程体感较 5.2 提升 50%，Terminal-Bench 3.0 开源第一（28.3）、DeepSWE v1.1 达 66.9，同基座后训练 Scaling 路线，权重已于 8/28 在 HuggingFace 放出。',
     canonical: 'https://codingplan.org/models/glm-5.3',
     locale: 'zh-CN',
     ogType: 'article',
@@ -36,7 +36,7 @@ export const glm53 = defineContentPage({
         { icon: '🏆', title: 'Terminal-Bench 3.0', description: '得分从 5.2 的 4.6 跃升至 28.3，开源第一；Agents\' Last Exam (CLI) 同榜领先。' },
         { icon: '🛠️', title: 'DeepSWE v1.1', description: '长程软件工程得分 46.2 → 66.9，超过 DeepSeek-V4 Pro-0813。' },
         { icon: '🛡️', title: '安全能力涌现', description: 'CyberGym 漏洞发现 84.5 分居参评模型之首，ExploitBench 24.4 翻倍至 54.4。' },
-        { icon: '🔓', title: '两周内开源', description: '完成安全评估后以 MIT 协议放出完整权重，延续智谱开源节奏。' },
+        { icon: '🔓', title: '权重已开源', description: 'GLM-5.3 旗舰权重 8/28 在 HuggingFace 放出；GLM-5.3-Flash 已提前以 MIT 协议开源。' },
       ],
     },
     {
@@ -53,10 +53,10 @@ export const glm53 = defineContentPage({
         columns: ['平台', '入门价', 'GLM-5.3 可用性'],
         featuredColumn: 1,
         rows: [
-          ['智谱 GLM Coding Plan', '¥118/月（年付 ¥94.4）', '8/14 起全量用户可用，发布当天全员额度重置'],
-          ['Z.ai 国际版', '$18/月（年付 $12.6）', '同步上线全量档位，Token 计费'],
-          ['火山引擎方舟', '¥9.9/月起', '暂为 GLM-5.2（限时加量 4 倍），5.3 待官方接入'],
-          ['OpenCode Go', '$10/月', '暂为 GLM-5.2/5.1，模型列表持续更新'],
+          ['智谱 GLM Coding Plan', '¥118/月（年付 ¥94.4）', '8/14 起全量用户可用；另有 GLM-5.3-Flash（8/26 上线）'],
+          ['Z.ai 国际版', '$18/月（年付 $12.6）', '同步上线全量档位，积分制'],
+          ['火山引擎方舟', '¥9.9/月起', '已接入 GLM-5.3（1M 上下文）；GLM-5.2 将于 8/31 下线'],
+          ['OpenCode Go', '$10/月', 'GLM-5.3 与 5.3-Flash（限时 2 倍额度）均已收录'],
         ],
         rowLinks: ['/plans/zhipu', '/en/plans/glm', '/plans/volcengine', '/plans/opencode-go'],
       },
@@ -64,16 +64,16 @@ export const glm53 = defineContentPage({
     {
       title: '怎么选套餐',
       highlights: [
-        '首发尝鲜：智谱 Lite 年付 ¥94.4/月即可用上 5.3，发布期全员额度刚重置',
-        '重度主力：智谱 Pro 年付 ¥430.4/月（60K Credits/周），MCP 工具全配套',
+        '首发尝鲜：智谱 Lite 年付 ¥94.4/月即可用上 5.3 与 5.3-Flash，非高峰时段积分 5 折',
+        '重度主力：智谱 Pro 年付 ¥430.4/月（60K 积分/周），MCP 工具全配套',
         '国际付款场景：Z.ai 国际版年付 $12.6/月，与国内版同额度',
-        '非智谱渠道：火山 / OpenCode Go 目前仍是 GLM-5.2，追求 5.3 请走智谱或 Z.ai',
+        '多模型轮换：火山方舟或 OpenCode Go 也能用上 GLM-5.3（后者含 5.3-Flash 限时 2 倍额度）',
       ],
     },
   ],
   faqs: [
     { question: 'GLM-5.3 和 GLM-5.2 该用哪个？', answer: 'GLM-5.3 是 5.2 的同基座升级版，编程体感提升 50% 且已上线全量用户，新任务建议直接用 5.3；5.2 仍在各套餐可用，稳定性经过两个月大规模验证，两者共享套餐额度。' },
-    { question: 'GLM-5.3 开源吗？', answer: '官方宣布完整模型权重将在发布后两周内（完成安全评估与加固后）以 MIT 协议开源；API 已随发布同步上线。' },
+    { question: 'GLM-5.3 开源吗？', answer: '是。旗舰权重已于 8/28 在 HuggingFace 放出（兑现发布后两周内开源的承诺）；同系的 GLM-5.3-Flash（8/26 上线的原生多模态版）已提前以 MIT 协议开源。' },
     { question: 'GLM-5.3 上下文多长？', answer: '与 GLM-5.2 同基座，保持 1M token 上下文窗口，大型代码库整体分析能力不变。' },
     { question: '用 GLM-5.3 每月大概花多少？', answer: '走智谱套餐最低约 ¥94.4/月（年付 Lite）；发布当天全员额度重置，是低成本尝鲜的好时点。重度 Agent 使用建议 Pro 档起步。' },
   ],
@@ -89,7 +89,7 @@ export const glm52 = defineContentPage({
   accent: 'blue',
   seo: {
     title: 'GLM-5.2 模型评测 2026 - LMArena 代码榜开源第一，哪些套餐能用、多少钱',
-    description: '智谱 GLM-5.2 评测：LMArena 代码榜开源第一、全球第二（仅次于 Claude），1M 上下文全量开放；智谱 Coding Plan 年付 ¥94.4/月可用，火山方舟（¥9.9 起）限时加量 4 倍，OpenCode Go $10/月同享。8/14 新旗舰 GLM-5.3 发布后 5.2 仍可在各套餐使用。',
+    description: '智谱 GLM-5.2 评测：LMArena 代码榜开源第一、全球第二（仅次于 Claude），1M 上下文全量开放；智谱 Coding Plan 年付 ¥94.4/月可用（调用自动路由至 GLM-5.3），OpenCode Go $10/月同享。火山方舟侧 GLM-5.2 将于 8/31 下线并自动路由至 5.3。',
     canonical: 'https://codingplan.org/models/glm-5.2',
     locale: 'zh-CN',
     ogType: 'article',
@@ -117,15 +117,15 @@ export const glm52 = defineContentPage({
     },
     {
       title: '哪些套餐能用 GLM-5.2',
-      description: '按入门价排序，点击平台名查看套餐详情。',
+      description: '按入门价排序，点击平台名查看套餐详情。智谱侧调用 5.2 已自动路由至 GLM-5.3。',
       table: {
         columns: ['平台', '入门价', 'GLM-5.2 可用性'],
         featuredColumn: 1,
         rows: [
-          ['火山引擎方舟', '¥9.9/月起', '可用 · 限时加量 4 倍'],
+          ['火山引擎方舟', '¥9.9/月起', '可用至 8/31，届时自动路由至 GLM-5.3（加量 4 倍活动已于 8/8 结束）'],
           ['OpenCode Go', '$10/月', '可用 · 5h 约 880 次请求'],
-          ['智谱 GLM Coding Plan', '¥118/月（年付 ¥94.4）', '可用 · Pro 优先 / Max 首发，逐步向全档开放'],
-          ['Z.ai 国际版', '$18/月（年付 $12.6）', '可用 · Lite 起全部档位'],
+          ['智谱 GLM Coding Plan', '¥118/月（年付 ¥94.4）', '调用自动切换至 GLM-5.3（同基座更强）'],
+          ['Z.ai 国际版', '$18/月（年付 $12.6）', '调用自动切换至 GLM-5.3'],
         ],
         rowLinks: ['/plans/volcengine', '/plans/opencode-go', '/plans/zhipu', '/en/plans/glm'],
       },
@@ -133,9 +133,9 @@ export const glm52 = defineContentPage({
     {
       title: '怎么选套餐',
       highlights: [
-        '最便宜体验：火山方舟首购 ¥9.9，还附带 8+ 款模型轮换与 Auto 调度',
-        '重度主力使用：智谱 Pro 年付 ¥430.4/月（60K Credits/周），MCP 工具全配套',
-        '混合国际模型：OpenCode Go $10/月，GLM-5.2 与 Grok 4.5/K3/DeepSeek V4 同池',
+        '最便宜体验：火山方舟首购 ¥9.9，还附带 8+ 款模型轮换与 Auto 调度（GLM-5.2 至 8/31）',
+        '重度主力使用：智谱 Pro 年付 ¥430.4/月（60K 积分/周），MCP 工具全配套',
+        '混合国际模型：OpenCode Go $10/月，GLM-5.2 与 Grok 4.6/K3/DeepSeek V4 同池',
         '国际付款场景：Z.ai 国际版年付 $12.6/月',
       ],
     },
@@ -144,7 +144,7 @@ export const glm52 = defineContentPage({
       paragraphs: [
         '对 Kimi K3：GLM-5.2 在 LMArena 代码榜名次更高（开源第一 vs 接近 Anthropic 前沿），K3 胜在 2.8T 参数规模与 Allegro 档的 1M 长对话独占；两者上下文同规格。',
         '对 MiniMax M3：M3 主打开源多模态（图像/视频输入）与 100+ TPS 高速；纯代码工程 GLM-5.2 更强，多模态场景 M3 互补。',
-        '对 Claude Opus 4.7：全球榜上 GLM-5.2 位列第二仅次于 Claude，差距在复杂 Agent 长链路任务，日常出码已可互换。',
+        '对 Claude Opus 5：全球榜上 GLM-5.2 曾位列第二仅次于 Claude，差距在复杂 Agent 长链路任务，日常出码已可互换；智谱口径 GLM-5.3 编程体感已接近 Claude Fable 5。',
       ],
     },
   ],
@@ -152,7 +152,7 @@ export const glm52 = defineContentPage({
     { question: 'GLM-5.2 是开源模型吗？', answer: '是开源开放模型（MIT），也是 LMArena 代码榜排名最高的开源模型之一；智谱套餐与多家聚合平台（火山、OpenCode Go）均可调用。' },
     { question: 'GLM-5.3 发布后还该用 GLM-5.2 吗？', answer: 'GLM-5.3（8/14 发布）与 5.2 同基座，靠后训练 Scaling 将编程能力再提升 50%（Terminal-Bench 3.0 开源第一），追求最强编程能力直接用 5.3；5.2 仍在各套餐内可用且稳定性经过验证，重活也可按需切换。' },
     { question: 'GLM-5.2 和 GLM-5.1 差多少？', answer: 'GLM-5.2 是新一代旗舰（1M 上下文、榜单第一），GLM-5.1 定位均衡档；智谱套餐内两者均可选，重活交给 5.2/5.3、日常用 5.1 省 Credits。' },
-    { question: '火山方舟的「限时加量 4 倍」是什么？', answer: '活动期间 GLM-5.2 在方舟套餐内的等效额度提升 4 倍且不加价，活动结束后恢复；关注官方公告时间窗。' },
+    { question: '火山方舟的 GLM-5.2 还能用吗？', answer: '可以用到 2026/8/31 14:00：此前限时加量 4 倍的活动已于 8/8 结束，8/17 起停止对新用户提供，到期后未迁移的调用会自动路由至 GLM-5.3。' },
     { question: '用 GLM-5.2 每月大概花多少？', answer: '走套餐最低约 ¥94.4/月（智谱年付 Lite 或火山首购）；按量 API 另行计费。重度 Agent 使用建议 Pro 档起步。' },
   ],
   related: [
@@ -209,9 +209,9 @@ export const kimiK3 = defineContentPage({
     },
     {
       title: '使用规则要点',
-      warning: 'K3 仅 Moderato（¥99/月）及以上可用；免费档 Adagio 与 Andante 只能访问 K2.6/K2。1M 长对话为 Allegro 独占。',
+      warning: 'K3 仅 Moderato（¥99/月）及以上可用；免费档 Adagio 与 Andante 只能访问 K2.7/K2。1M 长对话为 Allegro 独占。',
       highlights: [
-        'K3 与 K2.6 共享 5h 配额与 7 天刷新周期',
+        'K3 与 K2.7 共享 5h 配额与 7 天刷新周期',
         'Moderato 起支持 Agent 集群（2 子任务）、梦境记忆与自进化技能',
         'Allegretto 增加 Agent 集群 40 次/月与目标模式',
         '前端/UI 还原场景优先选 K3，配合 Claude Code 或 Roo Code',
@@ -226,8 +226,8 @@ export const kimiK3 = defineContentPage({
     },
   ],
   faqs: [
-    { question: 'K3 免费能用吗？', answer: '不能。K3 需 Moderato（¥99/月）及以上；免费档 Adagio 可用 K2.6 验证工作流后再升级。' },
-    { question: 'K3 和 K2.6 差距大吗？', answer: 'K3 在参数规模（2.8T）、视觉能力与长上下文上限全面超越 K2.6；日常轻任务 K2.6 依然够用，且与 K3 共享额度。' },
+    { question: 'K3 免费能用吗？', answer: '不能。K3 需 Moderato（¥99/月）及以上；免费档 Adagio 可用 K2.7 验证工作流后再升级。' },
+    { question: 'K3 和 K2.7 差距大吗？', answer: 'K3 在参数规模（2.8T）、视觉能力与长上下文上限全面超越 K2.7；日常轻任务 K2.7 依然够用，且与 K3 共享额度。' },
     { question: '1M 上下文怎么才能用到？', answer: '需要 Allegro 档（¥699/月，年付 ¥559/月），该档还含 4 Agent 并行与集群 8 子任务。' },
     { question: 'OpenCode Go 里 K3 好用吗？', answer: '可用但单价较高（5h 约 110 次），适合把 K3 当「专家」按需调用，日常任务交给池内更便宜的 DeepSeek/MiMo。' },
   ],
@@ -458,7 +458,7 @@ export const qwen35Plus = defineContentPage({
   accent: 'orange',
   seo: {
     title: 'Qwen3.5-Plus 评测 2026 - 千问世代速查（3.5/3.7/3.8），百炼 Token Plan ¥39 起可用',
-    description: '阿里 Qwen3.5-Plus 评测与千问新一代动态：Qwen3.7-Plus 多模态升级、Qwen3.8-Max（2.4T）百炼 Token Plan 首发；个人版早鸟 ¥39/月起 Credits 制，支持 Qwen/DeepSeek/GLM/Wan 全系模型。',
+    description: '阿里 Qwen3.5-Plus 评测与千问新一代动态：Qwen3.8-Max（2.4T）已转正、新增 Qwen3.8-Flash 高速版，夜间 22:00-08:00 五折；个人版早鸟 ¥39/月起 Credits 制（7 天窗口），18 款模型共享额度。',
     canonical: 'https://codingplan.org/models/qwen3.5-plus',
     locale: 'zh-CN',
     ogType: 'article',
@@ -467,7 +467,7 @@ export const qwen35Plus = defineContentPage({
     badge: '模型 · 阿里 Qwen3.5-Plus',
     title: 'Qwen3.5-Plus',
     highlight: '千问均衡主力',
-    description: 'Qwen3.5 系列的通用旗舰型号，仍是日常主力档；2026 年中以来千问快速迭代：Qwen3.7-Plus（多模态）已上线百炼，Qwen3.8-Max（2.4T）在百炼 Token Plan 首发尝鲜，本页一并速查。',
+    description: 'Qwen3.5 系列的通用旗舰型号，仍是日常主力档；2026 年中以来千问快速迭代：Qwen3.7-Plus（多模态）、Qwen3.8-Max（2.4T，已转正）与新增的 Qwen3.8-Flash 均已上线百炼，本页一并速查。',
     stats: [
       { value: '¥39/月', label: 'Token Plan 早鸟起用' },
       { value: '2.4T', label: 'Qwen3.8-Max 参数' },
@@ -480,7 +480,8 @@ export const qwen35Plus = defineContentPage({
       cards: [
         { icon: '⚖️', title: 'Qwen3.5-Plus', description: '通用均衡主力：能力/成本平衡，日常补全与重构的默认档。' },
         { icon: '🧠', title: 'Qwen3.7-Plus / Max', description: '多模态混合智能体升级（6/2 上线），看懂图片视频并自主迭代；Max 为推理旗舰。' },
-        { icon: '🚀', title: 'Qwen3.8-Max', description: '2.4T 参数新一代旗舰（预览版），Token Plan 首发尝鲜，限时白天 Credits 1 折。' },
+        { icon: '🚀', title: 'Qwen3.8-Max（已转正）', description: '2.4T 参数新一代旗舰，预览版已转正（旧 ID 自动路由）；夜间 22:00-08:00 调用 Credits 五折。' },
+        { icon: '💨', title: 'Qwen3.8-Flash（新）', description: '3.8 系高速低成本档，8 月新增进模型池。' },
       ],
     },
     {
@@ -489,7 +490,7 @@ export const qwen35Plus = defineContentPage({
         columns: ['平台', '入门价', '说明'],
         featuredColumn: 1,
         rows: [
-          ['阿里云百炼 Token Plan', '¥39/月（早鸟）', 'Qwen3.8-Max 首发尝鲜 + 3.7/3.5 全系与第三方模型，Credits 制'],
+          ['阿里云百炼 Token Plan', '¥39/月（早鸟）', 'Qwen3.8-Max 已转正 + 3.8-Flash/3.7/3.5 全系与第三方模型，Credits 制'],
           ['Qwen 国际版', '¥139/月（Standard 早鸟）', '国际版同源 Token Plan，多模态共享额度'],
         ],
         rowLinks: ['/plans/aliyun', '/en/plans/qwen'],
@@ -499,22 +500,22 @@ export const qwen35Plus = defineContentPage({
       title: '使用建议',
       highlights: [
         '阿里生态（Qoder/Qwen Code CLI）用户首选百炼 Token Plan，早鸟 ¥39/月起',
-        '尝鲜新旗舰：Qwen3.8-Max 预览版限时白天 Credits 1 折，成本极低',
-        '重度全天候：Pro ¥499/月（12,000 Credits/5h，6-8 Agent 并发）',
-        '夜间跑批更省：Token Plan 夜间 Credits 抵扣更低',
+        '尝鲜新旗舰：Qwen3.8-Max 已转正，夜间 22:00-08:00 调用 Credits 五折',
+        '重度全天候：Pro ¥499/月（40,000 Credits/7天，6-8 Agent 并发）',
+        '夜间跑批更省：22:00-次日 08:00 调用 qwen3.8-max 与 deepseek-v4-pro-0813 享五折',
       ],
     },
     {
       title: '背景：从 Coding Plan 到 Token Plan',
       paragraphs: [
         'Qwen（通义千问）是国内最完整的开源模型家族之一，从 0.5B 到旗舰全尺寸开放权重。2026 年千问以「天」为单位快速迭代：Qwen3.5（2 月上新）→ Qwen3.7-Plus 多模态（6/2）→ Qwen3.8-Max 2.4T 预览（7/19），能力对标国际第一梯队。',
-        '承载方式也变了：原按次数计费的 Coding Plan（Pro ¥200 每日限量补货）已于 7 月全面升级为 Credits 计量的 Token Plan——不再需要每天 9:30 抢购，早鸟价 ¥39/月起，模型池扩展到 Qwen3.8-Max + DeepSeek-V4-Pro + HappyHorse/Wan 多模态。原来「抢到才用」的供货焦虑基本消除。',
+        '承载方式也变了：原按次数计费的 Coding Plan（Pro ¥200 每日限量补货）已于 7 月全面升级为 Credits 计量的 Token Plan——不再需要每天 9:30 抢购，早鸟价 ¥39/月起，模型池扩展到 Qwen3.8-Max（已转正）+ Qwen3.8-Flash + DeepSeek-V4-Pro-0813 + 图像/音频多模态共 18 款。原来「抢到才用」的供货焦虑基本消除。',
       ],
     },
   ],
   faqs: [
-    { question: 'Qwen3.5-Plus 还值得用吗？', answer: '值得。3.5-Plus 仍是均衡主力档，Credits 消耗低于 3.7/3.8 旗舰；日常补全用 3.5-Plus、难任务升级 3.7-Max、尝鲜用 3.8-Max（限时 1 折）是当前最省的组合。' },
-    { question: 'Qwen3.8-Max 正式版什么时候发布？', answer: '目前为预览版（Preview），官方口径「正式版即将发布并开源」，参数 2.4T、实力对标 Fable 5；预览版已在百炼 Token Plan / Qoder 上线。' },
+    { question: 'Qwen3.5-Plus 还值得用吗？', answer: '值得。3.5-Plus 仍是均衡主力档，Credits 消耗低于 3.7/3.8 旗舰；日常补全用 3.5-Plus 或 3.8-Flash、难任务升级 3.8-Max（夜间五折）是当前最省的组合。' },
+    { question: 'Qwen3.8-Max 转正了吗？', answer: '已转正。8 月下旬预览版结束并正式下线，原模型 ID 仍可调用（自动路由至正式版）；参数 2.4T、1M 上下文，官方称可自主编程十数天交付完整项目。' },
     { question: '原来的每日 9:30 补货还有吗？', answer: '没有了。Coding Plan 已升级为 Token Plan，可直接订阅，早鸟 Lite ¥39 / Standard ¥139 / Pro ¥499 三档。' },
     { question: '国际版和百炼内容一样吗？', answer: '同源 Token Plan（个人版三档 + 团队席位），国际版按对应币种计价；模型主线一致，均含 Qwen3.8-Max 首发尝鲜。' },
   ],
@@ -561,7 +562,7 @@ export const kimiK27 = defineContentPage({
         columns: ['平台', '入门价', '可用性'],
         featuredColumn: 1,
         rows: [
-          ['Kimi Code Plan', '¥0（Adagio 免费档）', 'K2.6/K2 可用 · Andante 起体验完整'],
+          ['Kimi Code Plan', '¥0（Adagio 免费档）', 'K2.7/K2 可用 · Andante 起体验完整'],
           ['OpenCode Go', '$10/月', 'K2.7/K2.6 · 5h 约 1,150-1,350 次'],
           ['火山引擎方舟', '¥9.9/月起', 'K2.7 新接入 · 与豆包/GLM 同池'],
         ],
@@ -571,7 +572,7 @@ export const kimiK27 = defineContentPage({
     {
       title: '使用建议',
       highlights: [
-        '零成本验证：Kimi 免费档先用 K2.6 跑通工作流',
+        '零成本验证：Kimi 免费档先用 K2.7 跑通工作流',
         '日常出码主力：K2.7 Code 优于标准版，无需为轻任务升 K3',
         '与 K3 共享额度：升级 Moderato 后两者按任务混用',
         '跨平台比价：OpenCode Go 内 K2.7 频次（1,150+/5h）远高于 K3（约 110）',
@@ -587,7 +588,7 @@ export const kimiK27 = defineContentPage({
   ],
   faqs: [
     { question: 'K2.7 还值得用吗？', answer: '值得。K3 面向重度与 1M 场景，K2.7 在日常出码上性价比更高，且免费档/低档位即可使用。' },
-    { question: 'K2.7 和 K2.6 什么关系？', answer: 'K2.7 是 K2.6 的迭代（含 Code 与高速形态）；Kimi 免费档当前访问 K2.6/K2 系，Andante 起用完整 K2.7 能力。' },
+    { question: 'K2.7 和 K2.6 什么关系？', answer: 'K2.7 是 K2.6 的迭代（含 Code 与高速形态）；Kimi 免费档当前访问 K2.7/K2 系，Andante 起用完整 K2.7 能力。' },
     { question: '火山方舟里的 K2.7 和 Kimi 官方的一样吗？', answer: '同一基础模型，由方舟侧部署与计量；额度走方舟套餐池（与豆包/GLM 等共享），价格口径与 Kimi 官方不同。' },
   ],
   related: [
@@ -602,7 +603,7 @@ export const glm5Turbo = defineContentPage({
   accent: 'green',
   seo: {
     title: 'GLM-5-Turbo 评测 2026 - 高速推理档，智谱全档与 Go $10/月可用',
-    description: '智谱 GLM-5-Turbo 评测：GLM 系高速推理版本，适合高频代码补全与快速问答，智谱 Coding Plan 全档位可用（Credits 消耗低于旗舰），OpenCode Go $10/月同享，省额度策略的首选。',
+    description: '智谱 GLM-5-Turbo 评测：GLM 系高速推理版本。8/26 起智谱套餐内调用 GLM-5-Turbo 已自动切换至新上线的 GLM-5.3-Flash（原生多模态、编码近 Opus 4.8），OpenCode Go $10/月仍可直接调用。',
     canonical: 'https://codingplan.org/models/glm-5-turbo',
     locale: 'zh-CN',
     ogType: 'article',
@@ -611,7 +612,7 @@ export const glm5Turbo = defineContentPage({
     badge: '模型 · 智谱 GLM-5-Turbo',
     title: 'GLM-5-Turbo',
     highlight: '高速省额档',
-    description: 'GLM 系列的高速推理版本：响应快、Credits 消耗低于旗舰，是智谱套餐内「把旗舰留给难任务」策略的搭档模型。',
+    description: 'GLM 系列的高速推理版本。8/26 智谱上线 GLM-5.3-Flash 后，套餐内调用 GLM-5-Turbo 会自动切换至 5.3-Flash——原生多模态、编码能力接近 Claude Opus 4.8，且用量仅为 GLM-5.3 的 3 倍口径（积分系数更低），高速省额的定位由新模型直接继承。',
     stats: [
       { value: '全档', label: '智谱套餐可用' },
       { value: '低消耗', label: 'Credits 计费' },
@@ -623,7 +624,7 @@ export const glm5Turbo = defineContentPage({
       title: '能力与定位',
       cards: [
         { icon: '⚡', title: '高频补全', description: '低延迟形态，代码补全与快速问答的主力。' },
-        { icon: '💰', title: '省 Credits', description: '单次调用消耗低于 GLM-5.2/5.1，让每周 Credits 更耐用。' },
+        { icon: '💰', title: '省 Credits', description: '继任者 GLM-5.3-Flash 积分系数显著低于旗舰，让 5h/每周双窗口积分更耐用。' },
         { icon: '🌐', title: '全平台覆盖', description: '智谱套餐全档可用；Z.ai 国际版与 OpenCode Go 同样在列。' },
       ],
     },
@@ -633,8 +634,8 @@ export const glm5Turbo = defineContentPage({
         columns: ['平台', '入门价', '可用性'],
         featuredColumn: 1,
         rows: [
-          ['OpenCode Go', '$10/月', '可用 · 与 GLM-5.2 同池'],
-          ['智谱 GLM Coding Plan', '¥118/月（年付 ¥94.4）', '全档可用 · 无档位限制'],
+          ['OpenCode Go', '$10/月', '可用 · 与 GLM-5.3/5.2 同池'],
+          ['智谱 GLM Coding Plan', '¥118/月（年付 ¥94.4）', '调用自动切换至 GLM-5.3-Flash'],
           ['Z.ai 国际版', '$18/月（年付 $12.6）', 'Lite 起可用'],
         ],
         rowLinks: ['/plans/opencode-go', '/plans/zhipu', '/en/plans/glm'],
@@ -643,23 +644,23 @@ export const glm5Turbo = defineContentPage({
     {
       title: '使用建议',
       highlights: [
-        '组合策略：日常补全用 5-Turbo，复杂改动切 GLM-5.2，每周 Credits 消耗可降一半以上',
+        '组合策略（智谱侧）：日常补全交给自动路由后的 GLM-5.3-Flash，复杂改动切 GLM-5.3，非高峰时段再省一半积分',
         'Claude Code 内 /model 预设默认 5-Turbo，重任务手动升级即可',
         '对延迟敏感的交互式重构优先 Turbo',
-        'Go 订阅内 GLM-5.2（880 次/5h）与 Turbo 形成快慢双档',
+        'Go 订阅内 GLM-5.3-Flash（限时 2 倍额度）与 5.3 形成快慢双档',
       ],
     },
     {
       title: '背景与档位逻辑',
       paragraphs: [
-        '智谱是国产厂商中较早把「多档位模型 + 差异化计量」做清晰的：同一套餐内旗舰（5.3/5.2/5.1）、均衡（5-Turbo）、稳定（4.7）并存，Credits 消耗随档位递减。这套设计在切换到每周 Credits 制后更有价值——用户可以自主在质量与用量之间做预算分配。',
-        '实操上建议把 5-Turbo 设为默认：Claude Code / Cursor 的日常补全、问答、小型改动对模型上限不敏感，Turbo 的低消耗能让 10K Credits（Lite 档）支撑完整的周度节奏；真正需要 5.3/5.2 的架构级改动再手动切换，Credits 花在刀刃上。',
+        '智谱是国产厂商中较早把「多档位模型 + 差异化计量」做清晰的：套餐在位模型已收敛为旗舰（GLM-5.3）与多模态均衡档（GLM-5.3-Flash）两款，历史模型（5.2/5.1/5-Turbo/4.7）作为自动路由入口保留。这套设计在切换到每周 Credits 制后更有价值——用户可以自主在质量与用量之间做预算分配。',
+        '实操上建议把 GLM-5.3-Flash 设为默认：日常补全、问答、小型改动对模型上限不敏感，其更低的积分系数能让 Lite 档的积分支撑完整周度节奏；真正需要 GLM-5.3 的架构级改动再手动切换，积分花在刀刃上。',
       ],
     },
   ],
   faqs: [
-    { question: 'GLM-5-Turbo 和 GLM-5.3/5.2 差多少？', answer: '5.3（Terminal-Bench 开源第一）与 5.2 是旗舰档（1M 上下文、榜单第一），5-Turbo 是高速均衡档；日常补全差距小，复杂工程旗舰明显更强。' },
-    { question: 'Turbo 消耗多少 Credits？', answer: '低于旗舰档位；智谱按调用与模型档计 Credits，官方未公布逐模型系数，可在控制台观察实际扣减。' },
+    { question: 'GLM-5-Turbo 现在还能调用吗？', answer: '可以，但智谱套餐内的调用会自动切换至 GLM-5.3-Flash（8/26 上线）：原生多模态、DeepSWE v1.1 63.4 超越 GLM-5.2、编码能力接近 Claude Opus 4.8，定位就是新一代「高速省额档」。OpenCode Go 内仍可直接调用 GLM 系列各版本。' },
+    { question: 'GLM-5.3-Flash 消耗多少积分？', answer: '用量为 GLM-5.3 的 3 倍口径（即积分系数更低，同样的积分能换更多次调用）；非高峰时段（周一至五 14:00-18:00 以外）再按 50% 抵扣。' },
     { question: '免费能用到 Turbo 吗？', answer: '智谱无免费档；最便宜路径是 OpenCode Go $10/月（池内含 Turbo 系）或等待智谱限售活动。' },
   ],
   related: [

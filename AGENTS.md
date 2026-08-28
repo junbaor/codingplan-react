@@ -29,8 +29,18 @@ README.md - 开发命令、App Router 架构与内容维护入口
 - Title、H 标题、keywords 缺失状态、canonical、统计 Key 与推广参数以原站 HTML 为兼容基线。
 - 主题通过语义色 token 和 `data-theme` 切换，不在组件中硬编码颜色。
 
-## 当前数据要点（最近一次更新 2026-08-21）
+## 当前数据要点（最近一次更新 2026-08-28）
 
+- 全站渠道大同步（2026/8/28，DATA_UPDATED_AT 8/19→8/28）：六个调研线索（智谱、Kimi、MiniMax、百炼+火山、小米+OpenCode Go、Claude+ChatGPT）当日官网核实后全站更新。
+- 智谱：GLM-5.3-Flash 8/26 上线全档（GLM-5 系首个原生多模态，320B/18B 激活，DeepSWE v1.1 63.4 超 5.2，编码近 Claude Opus 4.8，用量为 5.3 的 3 倍/积分系数更低，权重已 MIT 开源）；历史模型 5.2/5.1 调用自动路由至 5.3、5-Turbo/4.7 路由至 5.3-Flash；积分口径补 5h 档（2,000/12,000/28,000）+ 非高峰（周一至五 14:00-18:00 以外）5 折；GLM-5.3 旗舰权重 8/28 在 HF 放出；ZCode 1.5× 额度至 8/31；价格三档与海外 $18/$80/$168 不变。
+- 火山：Pro 刊例 ¥200/首购 ¥49.9 上线（原「价格查询中」补齐），2.5 折普惠活动期 2026/6/8-11/8（Lite ¥9.9/Pro ¥49.9 前两月）；模型池大改：新增 GLM-5.3（8/14）、Doubao-Seed-Evolving（8/21，统一 ID 周级升级）、DeepSeek-V4-Pro 正式版（8/26），Kimi-K3 改为 Auto 模式路由（夜间 00:00-08:00 路由比例提升），GLM-5.2 将于 8/31 14:00 下线（加量 4 倍活动 8/8 已结束），Doubao-Seed-2.0-Code/Doubao-Seed-Code 已移除；推广链接更换为 activity/codingplan 长链。
+- 百炼：Qwen3.8-Max 预览版转正（旧 ID 自动路由），新增 qwen3.8-flash、deepseek-v4-pro-0813、qwen-image-3.0-pro 与 qwen-audio-3.0 系（个人版 18 款/团队版 29 款）；官方文档口径仅 7 天 Credits 窗口（撤销站内 5h 档数字），优惠改为夜间 22:00-08:00 五折（qwen3.8-max + deepseek-v4-pro-0813）；早鸟价与团队席位不变。
+- Kimi：价格五档不变；官方公告「新会员体系即将上线」（Kimi 权益与 Kimi Code 权益拆分、按需购买，订阅中用户不受影响、上线前购买锁定合并权益），新用户购买按钮变为「预约订阅」；模型侧新增 k3-256k 省额度版（256K 内效果同 K3、消耗约省一半、不支持视频输入）与 K2.7 Code 高速版（Allegretto 起，5-6 倍速）；Kimi CLI 8 月密集迭代（远程 Web 会话、多 Agent 编排）。
+- MiniMax：国内三档不变；国际区重排为 Plus $22 / Max $55 / Ultra $132（Starter $10 与 Max HS $80 退役为遗留档，Ultra ~12.5B token/月）；Music 全系列 8/20 停止服务（开源版 MiniMax-Music3 在 HF/魔搭）；H3 8/3 开源；受邀 9 折/邀请返 10% 活动至 8/31；新增官方 Agent 应用 MiniMax Code。
+- OpenCode Go：首月 $5 优惠 8/24 官方移除（changelog v1.18.24），统一 $10/月，「邀请双方各得 $5」官方页已不可见（全站撤销）；模型 18→24 款：新增 GLM-5.3、GLM-5.3-Flash（限时 2×）、LongCat-2.0、Muse Spark 1.2 Contributor（限地区）、Qwen3.8 Flash、DeepSeek V4 Flash Vision Exp，Grok 4.5→4.6；DeepSeek V4 系改峰谷计价；Go 提供商 8/20 起启用网页搜索。
+- 小米：四档价格/Credits/夜间 0.8× 不变，无新模型；MiMo Claw 补首次 ¥14.9/月、限时 ¥19.9/月两档月付；新增邀请返利活动（好友首单 9 折、邀请人最高返 20%）。
+- Claude/ChatGPT（英文站+首页卡片）：Claude 旗舰更替为 Fable 5（顶级）/Opus 5（7/24）/Sonnet 5（6/30）/Haiku 4.5（Opus 4.8 进 Legacy），价格不变，免费档升级为无限聊天，8/25 Cowork 内置浏览器、Claude in Chrome GA；ChatGPT Pro 改为 5x $100/20x $200 两档（From $100），GPT-5.6 家族（Sol/Terra/Luna）实为 7/9 GA（站内 8/6、8/7 日期修正），o4-mini/GPT-4o 归 Legacy，Luna API 7/30 降价 80%。
+- 遗留修复：百炼旧价 ¥200/每日 9:30 补货在 leaderboard/deals/questions/agents 的残留全部改为 Token Plan 口径；Kimi「K2.6 可用」笔误全站改 K2.7；Grok 4.5/Opus 4.7/「18 款」引用同步更新；changelog 8 月段补 8/3、8/20、8/24、8/26、8/27、8/28 事件并修正 GPT-5.6 发布日期、7 月段补 Opus 5。
 - 工具页合并（2026/8/21）：/ai-tools 独立页删除并在 next.config.ts 301 至 /agents（站点 50→49 URL），Qoder（本站邀请码 eoGXJ3J7rC3r1faxoxVeoERBoXnbLCxl）、Trae/TraeWork（本站邀请链接 work-fission/VUPSYKYLX55Y）、WorkBuddy（本站邀请码 boeaodw2co0）三款自带免费额度的国产工具以「自带免费额量的国产工具」表格低调并入 /agents 集合页，行链接直达官方下载页（带邀请参数，不展示活动规则文案），agentsHub 同步修复 canonical 误指 /tools 与 related 链已 301 的 /plans 两个遗留问题；页脚「工具新人礼」入口移除，deals.ts 撤销 /ai-tools 互链，hero 改为「9 款工具 · 怎么选怎么省」并新增两类工具差异 FAQ；CodeBuddy 曾短暂收录后按需求移除。
 - DSH 介绍页英文版上线（2026/8/19）：新增 /en/deepseek-hermes（app/(en)/en/deepseek-hermes + topic-deepseek-hermes-en.ts，站点 47→48 URL），与中文版 /deepseek-hermes 互为 hreflang 姊妹页（zh↔en↔x-default 三向 alternates），DshHermesIntroPage 组件按 seo.locale 切换全部 UI 文案、页脚内链（en 页页脚链 /en/plans/glm|kimi|opencode-go）与插件库外链语言版本（中文→deepseek-plugin.org/zh/plugin，英文→deepseek-plugin.org/plugins），并新增头部语言切换入口；301 目标同步修正为中文版 zh/plugin（旧页内容为中文，语言一致）。
 - 首页 SEO 体检修复（2026/8/19）：中文首页 title 由 70 字符压至 57 字符「AI Coding Plan 对比 2026：ChatGPT/Claude/GLM/MiniMax/Kimi 横评」（保留 5 品牌词，脱离原站 70 字符基线）；FaqList 问题由纯文本升级为 h3（原生 summary 内，全站 5 个使用方 FAQ 区标题均为 h2，层级正确，zh 首页 H3 由 1→11）；description 此前已在源码修至 151 字符（b51fc0e，线上仍为旧 101 字符版本，待部署生效）；DATA_UPDATED_AT 8/18→8/19。

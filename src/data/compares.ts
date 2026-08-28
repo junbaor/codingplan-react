@@ -101,7 +101,7 @@ export const claudeVsGlm = defineContentPage({
   accent: 'red',
   seo: {
     title: 'Claude Code vs GLM Coding Plan 2026 - $20 vs $18: Which to Choose?',
-    description: 'Claude Code (Anthropic) vs GLM Coding Plan (Z.ai) compared: Pro $20 vs Lite $18, Opus 4.7 vs GLM-5.3, usage multipliers vs weekly Credits, MCP support and annual discounts — with clear recommendations per use case.',
+    description: 'Claude Code (Anthropic) vs GLM Coding Plan (Z.ai) compared: Pro $20 vs Lite $18, Opus 5 vs GLM-5.3, usage multipliers vs dual-window Credits, MCP support and annual discounts — with clear recommendations per use case.',
     canonical: 'https://codingplan.org/en/blogs/claude-vs-glm',
     locale: 'en',
     ogType: 'article',
@@ -113,7 +113,7 @@ export const claudeVsGlm = defineContentPage({
     description: 'Claude Code is the gold standard for AI coding; GLM undercuts it by 10% at entry level with GLM-5.3 (new flagship since Aug 14, #1 open-source on Terminal-Bench 3.0) and GLM-5.2 (#1 on LMArena Code). Here is how they stack up in 2026.',
     stats: [
       { value: '$20 vs $18', label: 'Entry price / month' },
-      { value: 'Opus 4.7 vs GLM-5.3', label: 'Flagship models' },
+      { value: 'Opus 5 vs GLM-5.3', label: 'Flagship models' },
       { value: 'Multipliers vs Credits', label: 'Usage model' },
     ],
   },
@@ -126,7 +126,7 @@ export const claudeVsGlm = defineContentPage({
         featuredColumn: 1,
         rows: [
           ['Entry price', 'Pro $20/mo ($17 annual)', 'Lite $18/mo ($12.6 annual, -30%)'],
-          ['Flagship model', 'Claude Opus 4.7', 'GLM-5.3 (Terminal-Bench 3.0 #1 open-source; 5.2 topped LMArena Code)'],
+          ['Flagship model', 'Claude Opus 5 (Fable 5 above it)', 'GLM-5.3 (Terminal-Bench 3.0 #1 open-source) + 5.3-Flash'],
           ['Top tier', 'Max 20x $200/mo', 'Max $168/mo ($117.6 annual)'],
           ['Usage model', 'Multipliers of Pro baseline (5x / 20x)', 'Weekly Credits (10K / 60K / 140K)'],
           ['Annual discount', '~15% on Pro', '30% (quarterly 20%)'],
@@ -140,7 +140,7 @@ export const claudeVsGlm = defineContentPage({
     {
       title: 'Why pick Claude Code',
       cards: [
-        { icon: '🏆', title: 'Frontier quality', description: 'Opus 4.7 remains the strongest coding model overall, with extended thinking and top agentic benchmarks.' },
+        { icon: '🏆', title: 'Frontier quality', description: 'Opus 5 (with Fable 5 above it) remains the strongest coding lineup overall, with extended thinking and top agentic benchmarks.' },
         { icon: '🔁', title: 'Mature ecosystem', description: 'First-party terminal, IDE extensions, Cowork web app and cross-conversation memory.' },
         { icon: '⚡', title: 'Peak-hour priority', description: 'Max tiers include priority access and early feature previews.' },
       ],
@@ -166,7 +166,7 @@ export const claudeVsGlm = defineContentPage({
   ],
   faqs: [
     { question: 'Is GLM Coding Plan cheaper than Claude Code?', answer: 'At every tier, yes: Lite $18 vs Pro $20, Max $168 vs Max 20x $200, and GLM yearly discounts reach 30% versus roughly 15% on Claude Pro.' },
-    { question: 'Is GLM-5.3 as good as Claude Opus 4.7 for coding?', answer: 'GLM-5.3 (released Aug 14) tops Terminal-Bench 3.0 among open models and its predecessor 5.2 ranked #1 open-source and #2 globally on LMArena Code, just behind Claude. Opus 4.7 still leads on complex agentic tasks, but the gap has narrowed considerably for everyday coding.' },
+    { question: 'Is GLM-5.3 as good as Claude Opus 5 for coding?', answer: 'GLM-5.3 (released Aug 14) tops Terminal-Bench 3.0 among open models, and Zhipu says its coding feel approaches Claude Fable 5; the new GLM-5.3-Flash (Aug 26) approaches Opus 4.8. Claude Opus 5 still leads on complex agentic tasks, but the gap has narrowed considerably for everyday coding.' },
     { question: 'Can I use GLM Coding Plan inside Claude Code?', answer: 'Yes — GLM exposes Anthropic-compatible endpoints, so Claude Code and other major tools can connect to a GLM subscription.' },
     { question: 'Which has better usage limits?', answer: 'Claude uses multipliers of the Pro baseline (5x/20x on Max); GLM uses explicit weekly Credits (10K/60K/140K). GLM Credits are easier to budget; Claude multipliers adapt to model mix.' },
   ],

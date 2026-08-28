@@ -176,7 +176,7 @@ export const modelsHub = defineContentPage({
     },
   ],
   faqs: [
-    { question: '为什么没有 Claude Opus 4.7 的模型页？', answer: 'Claude 系模型仅随官方订阅提供（英文站 /en/plans/claude 有详解），不在国产套餐模型池内；本集合聚焦可多套餐获取的模型。' },
+    { question: '为什么没有 Claude Opus 5 的模型页？', answer: 'Claude 系模型仅随官方订阅提供（英文站 /en/plans/claude 有详解），不在国产套餐模型池内；本集合聚焦可多套餐获取的模型。' },
     { question: '模型评测的依据是什么？', answer: '公开榜单（LMArena、SWE-Bench 等）、厂商官方口径与本站实测体验结合；榜单名次会随版本变化，页内标注时点。' },
     { question: '新模型上线后会补页吗？', answer: '会。新旗舰（如下一代 GLM/K/M 系列）上线后按同一模板补页，并同步进 /changelog。' },
   ],
