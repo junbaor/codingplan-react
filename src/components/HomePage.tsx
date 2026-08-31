@@ -97,11 +97,11 @@ export function HomePage({ data }: { data: HomePageData }) {
                   <div className="flex flex-col gap-5 border-t border-border px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
                     <div className="flex flex-wrap gap-2">{platform.features.map((feature) => <span key={feature} className="rounded-lg border border-border bg-surface-raised px-3 py-1 text-xs text-ink-soft">{feature}</span>)}</div>
                     <div className="flex flex-wrap gap-2">
-                      {platform.cta.detailHref && <a aria-label={`${platform.name} ${isEn ? 'details' : '完整详情'}`} href={platform.cta.detailHref} className="focus-ring inline-flex min-h-11 items-center gap-2 rounded-xl border border-border-strong px-4 text-sm font-bold hover:bg-surface-raised">{isEn ? 'Details' : '完整详情'}<ArrowRight size={16} /></a>}
+                      {platform.cta.detailHref && <a aria-label={`${platform.name} ${isEn ? 'Coding Plan details' : 'Coding Plan 详情'}`} href={platform.cta.detailHref} className="focus-ring inline-flex min-h-11 items-center gap-2 rounded-xl border border-border-strong px-4 text-sm font-bold hover:bg-surface-raised">{isEn ? 'View Coding Plan details' : '查看 Coding Plan 详情'}<ArrowRight size={16} /></a>}
                       {platform.cta.contact ? (
                         <ContactPopover label={platform.cta.label} locale={data.locale} />
                       ) : platform.cta.href ? (
-                        <a aria-label={`${platform.name} ${platform.cta.label}`} href={platform.cta.href} target="_blank" rel="noopener noreferrer" aria-disabled={platform.cta.disabled || undefined} className={`focus-ring accent-button inline-flex min-h-11 items-center gap-2 rounded-xl px-5 text-sm font-bold transition ${platform.cta.disabled ? 'cursor-default opacity-60' : ''}`}>{platform.cta.label}<ExternalLink size={16} /></a>
+                        <a aria-label={`${platform.name} ${platform.cta.label}`} href={platform.cta.href} target="_blank" rel={`noopener noreferrer${platform.cta.sponsored ? ' sponsored' : ''}`} aria-disabled={platform.cta.disabled || undefined} className={`focus-ring accent-button inline-flex min-h-11 items-center gap-2 rounded-xl px-5 text-sm font-bold transition ${platform.cta.disabled ? 'cursor-default opacity-60' : ''}`}>{platform.cta.label}<ExternalLink size={16} /></a>
                       ) : null}
                     </div>
                   </div>

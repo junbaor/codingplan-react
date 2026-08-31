@@ -52,7 +52,7 @@ export interface PlatformSummary {
   plans: PlanSummary[]
   tools: string[]
   features: string[]
-  cta: { label: string; href?: string; detailHref?: string; contact?: boolean; disabled?: boolean }
+  cta: { label: string; href?: string; detailHref?: string; contact?: boolean; disabled?: boolean; sponsored?: boolean }
   availability?: Availability
   recommended?: boolean
   specialBadge?: string

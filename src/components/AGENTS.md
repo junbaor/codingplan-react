@@ -8,7 +8,7 @@ AntiPiracyComment.tsx: 服务端组件，在中英文根布局 head 以 script �
 ArticlePage.tsx: 内容矩阵共享模板（deals/changelog/compare/guides/questions），渲染面包屑、hero、多态内容块（段落/卡片/表格/步骤/代码）、FAQ 与相关链接
 ContactPopover.tsx: 客户端岛，桌面 hover 悬浮、移动端点击切换，显示企业微信二维码面板
 FaqList.tsx: 原生 details/summary FAQ 渲染（问题为 h3，answer 支持 [text](url) 链接语法渲染为可点击外链），与 JSON-LD 共用数据
-HomePage.tsx: 服务端首页编排，保持原站中英文 H 标题顺序、对比表整行锚点跳转、推广事件与 ContactPopover 挂载（中文导航含优惠入口）
+HomePage.tsx: 服务端首页编排，保持原站中英文 H 标题顺序、对比表整行锚点跳转、Coding Plan 详情内链锚文本（zh/en）、推广外链 sponsored rel、推广事件与 ContactPopover 挂载（中文导航含优惠入口）
 JsonLd.tsx: 安全序列化 Schema.org 数据的服务端结构化数据组件
 PlanPage.tsx: 中英文共享详情模板，按数据顺序恢复原站 H 层级、locale 文案、强烈推荐标记、详情 CTA 统计选择器、可见面包屑与相关内容内链
 DshHermesIntroPage.tsx: DeepSeek Hermes 框架介绍页中英文共享编排器（按 seo.locale 切换导航/文案/插件库外链语言版本，zh→zh/plugin、en→/plugins，含语言切换入口）

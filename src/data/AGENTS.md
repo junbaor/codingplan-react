@@ -2,7 +2,7 @@
 > L2 | 父级: /src/AGENTS.md
 
 ## 成员清单
-home.ts: 中文 9 平台与英文 6 平台首页数据、SEO 优化标题（zh 57 字符含 5 品牌）、推广参数、FAQ 和 SEO（中文导航含优惠入口）
+home.ts: 中文 9 平台与英文 6 平台首页数据、SEO 优化标题与描述（zh title 宽度 51 含 4 品牌、desc 宽度 147 含 Coding Plan ×2）、推广参数与 sponsored 标记、FAQ 和 SEO（中文导航含优惠入口）
 metadata.ts: 将 SeoData 转换为 Next.js Metadata（含 og:image 大卡与 twitter summary_large_image），并提供全站 Metadata/Viewport
 plans.ts: 九个中文平台详情数据、原站标题顺序、推广参数、套餐、模型、区块、FAQ 与 slug（definePlan 统一注入 zh 侧 hreflang）
 plans-en.ts: 六个英文平台详情数据（Claude/GLM/MiniMax/Kimi/Qwen/OpenCode Go），与中文共用 PlanPage 模板（definePlan 统一注入 en 侧 hreflang）
