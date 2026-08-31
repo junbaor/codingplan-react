@@ -62,7 +62,7 @@ const claude = definePlan({
 
 const glm = definePlan({
   slug: 'glm', accent: 'blue', availability: 'active',
-  seo: { title: 'GLM Coding Plan Guide 2026 - $18/mo from Z.ai, GLM-5.3 & 5.3-Flash', description: 'Zhipu GLM Coding Plan (Z.ai) pricing: Lite $18/mo, Pro $80/mo, Max $168/mo (yearly -30%). GLM-5.3 flagship plus GLM-5.3-Flash (native multimodal, live Aug 26, near Claude Opus 4.8 coding). Dual-window Credits (5h 2K/12K/28K + weekly 10K/60K/140K), 50% off-peak deduction, 4 built-in MCP tools.', canonical: 'https://codingplan.org/en/plans/glm', locale: 'en', ogType: 'article' },
+  seo: { title: 'GLM Coding Plan Pricing 2026: Subscription Cost from $18/mo', description: 'How much does a GLM Coding Plan subscription cost? Lite $18 / Pro $80 / Max $168 monthly from Z.ai, yearly -30%; GLM-5.3 & GLM-5.3-Flash on all tiers, 50% off-peak credits. Tier comparison table and signup entry included.', canonical: 'https://codingplan.org/en/plans/glm', locale: 'en', ogType: 'article' },
   hero: { badge: 'Zhipu AI · Z.ai', title: 'GLM Coding', highlight: 'Plan Guide', description: 'GLM-5.3 (Terminal-Bench 3.0 #1 open-source) and the new GLM-5.3-Flash (native multimodal, live Aug 26, coding near Claude Opus 4.8) are available on all tiers. Credits refresh on a 5-hour + weekly dual window, with 50% off-peak deduction; quarterly 20% and yearly 30% discounts.', stats: [{ value: '$18', label: 'Entry / month' }, { value: '2K-28K', label: 'Credits / 5h' }, { value: '5.3-Flash', label: 'New multimodal' }, { value: '50%', label: 'Off-peak deduction' }] },
   modelsTitle: 'Models', modelsDescription: 'All plans support GLM-5.3 and GLM-5.3-Flash; calls to legacy models are auto-routed to the new versions.',
   models: [
@@ -178,7 +178,7 @@ const kimi = definePlan({
 
 const qwen = definePlan({
   slug: 'qwen', accent: 'orange', availability: 'active',
-  seo: { title: 'Qwen Token Plan Guide 2026 - Qwen3.8-Max GA, Credits from ¥39/mo', description: 'Alibaba Cloud Token Plan (Coding Plan upgraded): personal Lite ¥39/mo, Standard ¥139/mo, Pro ¥499/mo early-bird prices with 7-day Credits windows. Qwen3.8-Max now GA (2.4T, 1M context), new qwen3.8-flash and deepseek-v4-pro-0813, 18 multimodal models share one quota, night 50% off.', canonical: 'https://codingplan.org/en/plans/qwen', locale: 'en', ogType: 'article' },
+  seo: { title: 'Alibaba Coding Plan 2026: Qwen Token Plan from ¥39/mo', description: 'How much is the Alibaba Coding Plan? Now the Qwen Token Plan: early-bird ¥39 / ¥139 / ¥499 monthly, Qwen3.8-Max GA and 18 models sharing one Credits pool, night 50% off. Tier comparison and early-bird entry included.', canonical: 'https://codingplan.org/en/plans/qwen', locale: 'en', ogType: 'article' },
   hero: { badge: 'Alibaba Cloud · Qwen', title: 'Qwen Token', highlight: 'Plan Guide', description: 'The request-based Coding Plan has been fully upgraded to a Credits-based Token Plan: Qwen3.8-Max (2.4T, 1M context) is now generally available, joined by qwen3.8-flash, deepseek-v4-pro-0813 and image/audio models sharing one Credits pool. Personal plans start at ¥39/mo early-bird; night usage (22:00-08:00) is half price.', stats: [{ value: '¥39', label: 'Early-bird entry' }, { value: '40,000', label: 'Pro Credits/week' }, { value: '18', label: 'Models' }, { value: '8', label: 'Agents (Pro)' }] },
   modelsTitle: 'Models', modelsDescription: 'Qwen3.8-Max now GA, plus qwen3.8-flash, deepseek-v4-pro-0813 and the Qwen / DeepSeek / GLM / image / audio families.',
   models: [

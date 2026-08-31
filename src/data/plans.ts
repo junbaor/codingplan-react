@@ -20,7 +20,7 @@ const commonTools = ['Claude Code', 'Cursor', 'Cline', 'Roo Code', 'Kilo Code', 
 
 const zhipu = definePlan({
   slug: 'zhipu', accent: 'blue', availability: 'active',
-  seo: { title: '智谱 GLM Coding Plan 详解 - GLM-5.3-Flash 新上线，连续包月 ¥118 起，每周积分制', description: '智谱 GLM Coding Plan 套餐详解：Lite ¥118/月、Pro ¥538/月、Max ¥1078/月，连续包季 8 折 / 包年 7 折；每周 Credits（Lite 10,000 / Pro 60,000 / Max 140,000）+ 5 小时积分（2,000/12,000/28,000）双窗口；GLM-5.3-Flash（8/26 上线，原生多模态）与 GLM-5.3 全档可用，非高峰时段积分 5 折。', canonical: 'https://codingplan.org/plans/zhipu', locale: 'zh-CN', ogType: 'article' },
+  seo: { title: 'GLM Coding Plan 多少钱？智谱三档价格与非高峰 5 折省钱攻略（2026）', description: '智谱 GLM Coding Plan 多少钱？Lite ¥118 / Pro ¥538 / Max ¥1078 连续包月，包年 7 折低至 ¥94.4/月；GLM-5.3 与 GLM-5.3-Flash 全档可用，非高峰积分 5 折最高再省一半。附三档对比表与官方购买入口，帮你选对档位不浪费。', canonical: 'https://codingplan.org/plans/zhipu', locale: 'zh-CN', ogType: 'article' },
   hero: { badge: '智谱 AI · GLM Coding Plan', title: '智谱 GLM', highlight: 'Coding Plan', description: 'GLM-5.3-Flash（8/26 上线，GLM-5 系首个原生多模态模型，编码/Agent 接近 Claude Opus 4.8）与 GLM-5.3 已推送全量用户。套餐为连续包月价 + 5 小时/每周双窗口积分制，非高峰时段积分 5 折，连包季 8 折、包年 7 折。', stats: [{ value: '3', label: '套餐档位' }, { value: '¥118', label: '起步价/月' }, { value: '140K', label: 'Max 每周积分' }, { value: '5 折', label: '非高峰抵扣' }] },
   modelsTitle: '模型介绍', modelsDescription: '所有套餐均支持 GLM-5.3 与 GLM-5.3-Flash（8/26 新上线）；调用历史模型将自动切换到对应新版。',
   models: [
@@ -101,7 +101,7 @@ const minimax = definePlan({
 
 const kimi = definePlan({
   slug: 'kimi', accent: 'purple', availability: 'active',
-  seo: { title: 'Kimi Code Plan 详解 - 新会员体系即将上线，5 档套餐 ¥49-¥699 全面对比', description: 'Kimi Code Plan 全面解析：Andante/Moderato/Allegretto/Allegro 四档付费套餐（¥49-¥699/月）+ Adagio 免费档详细对比；Kimi K3 旗舰（2.8T 参数，1M 上下文，2026/7/17 发布）与新增的 K3-256K 省额度版，Moderato 起可用；新会员体系即将上线，Kimi 权益与 Kimi Code 权益将拆分，订阅中用户不受影响。', canonical: 'https://codingplan.org/plans/kimi', locale: 'zh-CN', ogType: 'article' },
+  seo: { title: 'Kimi Coding Plan 多少钱？Code Plan 五档价格 ¥49-¥699（2026）', description: 'Kimi Coding Plan（官方名 Code Plan）多少钱？¥49-¥699 五档全对比：K3 旗舰（2.8T 参数）Moderato 起可用，K3-256K 省额度版消耗约省一半；新会员体系上线前购买可锁定合并权益。附价格表与各档购买入口，帮你选到刚好够用的档。', canonical: 'https://codingplan.org/plans/kimi', locale: 'zh-CN', ogType: 'article' },
   hero: { badge: 'Moonshot AI · Kimi Code Plan', title: 'Kimi', highlight: 'Code Plan', description: 'Kimi K3 旗舰（2.8T 参数）已上线并新增 K3-256K 省额度版。官方公告「新会员体系即将上线」：Kimi 权益将与 Kimi Code 权益拆分、按需购买；订阅中用户不受影响，新用户当前为预约订阅。', stats: [{ value: '5', label: '套餐档位' }, { value: '¥49', label: '起步价/月' }, { value: 'K3', label: '旗舰 + 256K 版' }, { value: '4+', label: '会员权益' }] },
   modelsTitle: '模型介绍', modelsDescription: 'Kimi K3 旗舰（2.8T 参数）+ 新增 K3-256K 省额度版 + K2.7 Code（含高速版）。', models: [
     { icon: '🌟', name: 'Kimi K3（k3 / k3-256k）', description: 'Moonshot AI 最新旗舰（2026/7/17 发布），2.8 万亿参数，官方称「全球首个开源的 3 万亿级别模型」，稳定超过 Opus 4.8、GPT 5.5 等主流模型；支持 low/high/max 三档思考强度。新增 k3-256k 版：256K 内效果与 K3 相同但消耗约省一半，适合日常/单文件场景（不支持视频输入）。Moderato 起可用，1M 超长对话最高档解锁。', badge: 'K3 旗舰 · Moderato 起可用' },
@@ -135,7 +135,7 @@ const kimi = definePlan({
 
 const volcengine = definePlan({
   slug: 'volcengine', accent: 'cyan', availability: 'limited',
-  seo: { title: '火山引擎方舟 Coding Plan 详解 - 限时 2.5 折 9.9 元起 · Pro ¥49.9 首购，8+ 款模型自由切换', description: '火山引擎方舟 Coding Plan Lite/Pro 套餐：Lite 刊例 ¥40/Pro ¥200，限时首购 2.5 折（¥9.9/¥49.9，活动至 11/8）；模型池新接入 GLM-5.3、Doubao-Seed-Evolving、DeepSeek-V4-Pro 正式版，Auto 模式智能调度可路由 Kimi-K3，Kimi-K2.7-Code / MiniMax-M3 / DeepSeek-V4-Flash 在列。', canonical: 'https://codingplan.org/plans/volcengine', locale: 'zh-CN', ogType: 'article' },
+  seo: { title: '火山引擎 Coding Plan 多少钱？方舟 2.5 折首购 ¥9.9 起 + 8 款模型（2026）', description: '火山引擎方舟 Coding Plan 多少钱？Lite 首购 ¥9.9 / Pro 首购 ¥49.9（刊例 ¥40/¥200，2.5 折活动至 11/8）；模型池含 GLM-5.3、Doubao-Seed-Evolving、DeepSeek-V4-Pro 等 8+ 款自由切换，Auto 模式智能调度。附首购入口与选档建议，入门一个月不到 10 块钱。', canonical: 'https://codingplan.org/plans/volcengine', locale: 'zh-CN', ogType: 'article' },
   hero: { badge: '火山引擎 · 方舟 Coding Plan', title: '火山引擎方舟', highlight: 'Coding Plan', description: '8+ 款模型自由切换 / Auto 模式智能调度；新接入 GLM-5.3（1M 上下文）、Doubao-Seed-Evolving 与 DeepSeek-V4-Pro 正式版。限时 2.5 折普惠活动至 11/8：Lite 首购 ¥9.9、Pro 首购 ¥49.9。', stats: [{ value: '8+', label: '可用模型' }, { value: '¥9.9', label: 'Lite 首购' }, { value: '¥49.9', label: 'Pro 首购' }, { value: 'Auto', label: '智能调度' }] },
   modelsTitle: '模型阵容', modelsDescription: '模型池 8 月密集更新：新增 GLM-5.3 / Doubao-Seed-Evolving / DeepSeek-V4-Pro 正式版；GLM-5.2 将于 8/31 下线。', models: [
     { icon: '🚀', name: 'Doubao-Seed-2.1-turbo', description: '字节跳动最新高速代码模型（256K 上下文），当前豆包主力档。', badge: '豆包主力' },
@@ -180,7 +180,7 @@ const volcengine = definePlan({
 
 const aliyun = definePlan({
   slug: 'aliyun', accent: 'orange', availability: 'active',
-  seo: { title: '阿里云百炼 Token Plan 详解 - Qwen3.8-Max 正式版，早鸟 ¥39/月起 Credits 制', description: '阿里云百炼 Token Plan（原 Coding Plan 全面升级）：个人版 Lite ¥39/月、Standard ¥139/月、Pro ¥499/月（早鸟价），Credits 按 7 天窗口刷新；Qwen3.8-Max 已转正（2.4T、1M 上下文），新增 qwen3.8-flash、deepseek-v4-pro-0813 与图像/音频模型，18 款模型共享 Credits，夜间 22:00-08:00 五折。', canonical: 'https://codingplan.org/plans/aliyun', locale: 'zh-CN', ogType: 'article' },
+  seo: { title: '阿里云 Qwen Coding Plan 多少钱？百炼 Token Plan 早鸟 ¥39 起（2026）', description: '阿里云 Coding Plan（现已升级为百炼 Token Plan）多少钱？个人版早鸟 ¥39 / ¥139 / ¥499 三档对比，Qwen3.8-Max 与 DeepSeek-V4-Pro 在列、18 款模型共享 Credits，夜间 22:00-08:00 五折。附早鸟购买入口与选档建议，早鸟价先锁一年不吃亏。', canonical: 'https://codingplan.org/plans/aliyun', locale: 'zh-CN', ogType: 'article' },
   hero: { badge: '阿里云百炼 · Token Plan', title: '阿里云百炼', highlight: 'Token Plan', description: 'Coding Plan 已全面升级为 Token Plan：Credits 计量、多模态旗舰共享额度。Qwen3.8-Max 预览版已转正（2.4T、1M 上下文），新增 qwen3.8-flash 与 deepseek-v4-pro-0813；个人版早鸟 ¥39/月起，夜间五折。', stats: [{ value: '¥39', label: '早鸟月付' }, { value: '18', label: '款模型' }, { value: '40,000', label: 'Pro Credits/7天' }, { value: '8', label: 'Agent 并发（Pro）' }] },
   modelsTitle: '模型阵容', modelsDescription: 'Qwen3.8-Max 已转正为正式版，新增 qwen3.8-flash、deepseek-v4-pro-0813 与图像/音频模型；Qwen / DeepSeek / GLM / Wan 多模态共享 Credits。', models: [
     { icon: '☁️', name: 'Qwen3.8-Max（已转正）', description: '阿里 2.4T 参数新一代旗舰，预览版已结束并转正（旧 ID 自动路由）；1M 上下文，官方称可自主编程十数天交付完整项目。', badge: '正式版' },

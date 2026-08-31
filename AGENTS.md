@@ -29,8 +29,9 @@ README.md - 开发命令、App Router 架构与内容维护入口
 - Title、H 标题、keywords 缺失状态、canonical、统计 Key 与推广参数以原站 HTML 为兼容基线。
 - 主题通过语义色 token 和 `data-theme` 切换，不在组件中硬编码颜色。
 
-## 当前数据要点（最近一次更新 2026-08-28）
+## 当前数据要点（最近一次更新 2026-08-31）
 
+- GSC P0 低 CTR 页 Title/Description 改造（2026/8/31，依据 8 月 GSC 数据）：glm coding plan（30,095 曝光/CTR 0.5%/排 7.7）、火山引擎 coding plan（13,542/0.8%/6.4）、智谱 coding plan（7,115/1.2%/6.5）、阿里云 coding plan（2,702/0.5%/8.5）四个已进前 10 但 CTR<2% 的词对应承接页（/plans/zhipu、volcengine、aliyun、kimi）title 按「完整搜索词前置 + 多少钱问句 + 价格数字 +（2026）」模板重写，description 改为「搜索词 + 数字承诺 + 行动指引」结构；两个关键修复：aliyun 页 title 此前只有官方名「Token Plan」完全不含「Coding Plan」（现补入「阿里云 Qwen Coding Plan」前置），kimi 页用官方名「Code Plan」而用户实际搜「coding plan」（现以「Kimi Coding Plan」前置、官方名括注保留）；英文侧同步改造（P1 卡位词）：/en/plans/glm title 补入 subscription（承接 glm subscription 1,729 曝光/排 9.2，改为「GLM Coding Plan Pricing 2026: Subscription Cost from $18/mo」），/en/plans/qwen title 此后无「Alibaba」与「Coding Plan」双缺失（现「Alibaba Coding Plan 2026: Qwen Token Plan from ¥39/mo」前置，承接 alibaba coding plan 1,315/10.4）；首页 title 8/19 刚做过体检优化本轮不动，页面内容与价格事实未变更。
 - 全站渠道大同步（2026/8/28，DATA_UPDATED_AT 8/19→8/28）：六个调研线索（智谱、Kimi、MiniMax、百炼+火山、小米+OpenCode Go、Claude+ChatGPT）当日官网核实后全站更新。
 - 智谱：GLM-5.3-Flash 8/26 上线全档（GLM-5 系首个原生多模态，320B/18B 激活，DeepSWE v1.1 63.4 超 5.2，编码近 Claude Opus 4.8，用量为 5.3 的 3 倍/积分系数更低，权重已 MIT 开源）；历史模型 5.2/5.1 调用自动路由至 5.3、5-Turbo/4.7 路由至 5.3-Flash；积分口径补 5h 档（2,000/12,000/28,000）+ 非高峰（周一至五 14:00-18:00 以外）5 折；GLM-5.3 旗舰权重 8/28 在 HF 放出；ZCode 1.5× 额度至 8/31；价格三档与海外 $18/$80/$168 不变。
 - 火山：Pro 刊例 ¥200/首购 ¥49.9 上线（原「价格查询中」补齐），2.5 折普惠活动期 2026/6/8-11/8（Lite ¥9.9/Pro ¥49.9 前两月）；模型池大改：新增 GLM-5.3（8/14）、Doubao-Seed-Evolving（8/21，统一 ID 周级升级）、DeepSeek-V4-Pro 正式版（8/26），Kimi-K3 改为 Auto 模式路由（夜间 00:00-08:00 路由比例提升），GLM-5.2 将于 8/31 14:00 下线（加量 4 倍活动 8/8 已结束），Doubao-Seed-2.0-Code/Doubao-Seed-Code 已移除；推广链接更换为 activity/codingplan 长链。
