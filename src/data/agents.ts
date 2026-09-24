@@ -13,7 +13,7 @@ export const claudeCodeTool = defineContentPage({
   accent: 'red',
   seo: {
     title: 'Claude Code 用哪个 Coding Plan？2026 价格 / 支持套餐 / 配置入口全解',
-    description: 'Claude Code 支持的 Coding Plan 汇总：官方订阅 Pro $20 起，或接入智谱 GLM（年付 ¥94.4/月）、Kimi（¥49/月）、火山方舟（¥9.9 起）、MiniMax、阿里云、OpenCode Go 等国内套餐。含各平台配置教程入口与选购建议。',
+    description: 'Claude Code 支持的 Coding Plan 汇总：官方订阅 Pro $20 起，或接入智谱 GLM（年付 ¥94.4/月）、Kimi（¥99/月起）、火山方舟（¥9.9 起）、MiniMax、阿里云、OpenCode Go 等国内套餐。含各平台配置教程入口与选购建议。',
     canonical: 'https://codingplan.org/agents/claude-code',
     locale: 'zh-CN',
     ogType: 'article',
@@ -33,7 +33,7 @@ export const claudeCodeTool = defineContentPage({
     {
       title: '两种用法',
       cards: [
-        { icon: '🌍', title: '官方订阅（国际）', description: 'Claude Pro $20/月（年付 $17）含 Claude Code 与 Opus 5 / Fable 5；Max $100/$200 提供 5x/20x 用量与高峰优先。' },
+        { icon: '🌍', title: '官方订阅（国际）', description: 'Claude Pro $20/月（年付 $17）含 Claude Code 与 Opus 5.5 / Sonnet 5；Max $100/$200 提供 5x/20x 用量与高峰优先，Fable 5.1 在 Max 上最多用周额度的 50%（Pro 需额外 Usage credits）。' },
         { icon: '🇨🇳', title: '国内套餐接入', description: '智谱、Kimi、火山、MiniMax、阿里云、小米、OpenCode Go 均官方列明支持 Claude Code，设置两个环境变量即可切换。' },
       ],
     },
@@ -44,13 +44,13 @@ export const claudeCodeTool = defineContentPage({
         columns: ['平台', '入门价', '旗舰模型', '额度口径'],
         featuredColumn: 1,
         rows: [
-          ['火山引擎方舟', '¥9.9/月起', '8+ 款可切换 + Auto', '5h + 周 + 月三重窗口'],
-          ['Kimi Code Plan', '¥49/月', 'K3 / K2.7', '5h + 7 天双窗口'],
+          ['火山引擎方舟', '¥9.9/月起', '6+ 款可切换 + Auto', '5h + 周 + 月三重窗口'],
+          ['Kimi Code Plan', '¥99/月起', 'K3 / K2.8 Preview', '5h 滚动窗口'],
           ['MiniMax Token Plan', '¥49/月', 'M3 / M2.7', '6亿+ token/月'],
-          ['小米 MiMo', '¥39/月', 'MiMo-V2.5-Pro', 'Credits 年度制'],
-          ['OpenCode Go', '$10/月', '24 款开源模型', '5h $12 / 月 $60'],
+          ['小米 MiMo', '¥39/月', 'MiMo-V2.6 系列', 'Credits 年度制'],
+          ['OpenCode Go', '$10/月', '32 款模型', '5h $12 / 月 $60'],
           ['智谱 GLM', '¥118/月', 'GLM-5.3', '10K-140K Credits/周'],
-          ['阿里云百炼', '¥39/月起', 'Qwen3.8-Max', '700-12,000 Credits/5h'],
+          ['阿里云百炼', '¥39/月起', 'Qwen3.8-Max', '11,500-180,000 Credits/月'],
           ['白云智算', '按量 API', '多模型', 'token 后付费'],
         ],
         rowLinks: ['/plans/volcengine', '/plans/kimi', '/plans/minimax', '/plans/xiaomi', '/plans/opencode-go', '/plans/zhipu', '/plans/aliyun', '/plans/baiyunzhisuan'],
@@ -59,11 +59,11 @@ export const claudeCodeTool = defineContentPage({
     {
       title: '怎么选',
       highlights: [
-        '要 Opus 5 / Fable 5 原生体验：官方 Pro $20/月起，年付约 ¥146/月',
+        '要 Opus 5.5 / Fable 5.1 原生体验：官方 Pro $20/月起，年付约 ¥146/月',
         '要最强国产旗舰：智谱 GLM-5.3/5.2（年付 ¥94.4/月），Terminal-Bench / LMArena 代码榜开源第一',
-        '最便宜跑起来：火山 ¥9.9 首购或 Kimi Andante 年付 ¥39/月',
-        '要 1M 上下文：Kimi Moderato ¥99/月起（K3），或 GLM 全系',
-        '多模型轮换：火山方舟一份额度切 8+ 款模型',
+        '最便宜跑起来：火山 ¥9.9 首购或 Kimi Plus 年付 ¥79/月（Kimi 编程需 Plus 起）',
+        '要 1M 上下文：Kimi Pro ¥199/月起（K3），或 GLM 全系',
+        '多模型轮换：火山方舟一份额度切 6+ 款模型',
       ],
     },
     {
@@ -76,12 +76,12 @@ export const claudeCodeTool = defineContentPage({
   faqs: [
     { question: 'Claude Code 本身收费吗？', answer: '工具免费，消耗的是背后订阅额度：官方订阅消耗 Claude 额度，接入国内套餐则消耗对应 Coding Plan 额度。' },
     { question: '国内套餐接 Claude Code 违反条款吗？', answer: '不违反。智谱、Kimi、火山、MiniMax 等均官方列明支持 Claude Code 并提供兼容端点，属于厂商主动兼容。' },
-    { question: '用国产套餐和官方订阅体验差在哪？', answer: '模型不同：官方是 Opus 5 / Fable 5，国产是 GLM-5.3/5.3-Flash/K3/M3 等。工具功能（终端、IDE 插件、MCP）基本一致；官方的 extended thinking 与跨会话记忆部分依赖模型能力。' },
+    { question: '用国产套餐和官方订阅体验差在哪？', answer: '模型不同：官方是 Opus 5.5 / Fable 5.1，国产是 GLM-5.3/5.3-Flash/K3/M3/V2.6 等。工具功能（终端、IDE 插件、MCP）基本一致；官方的 extended thinking 与跨会话记忆部分依赖模型能力。' },
     { question: '可以多个套餐随时切换吗？', answer: '可以，切换只是改环境变量；配合 ccswitch 等工具可一键切换多套配置。' },
   ],
   related: [
     { kind: '教程', title: 'Claude Code 配置智谱 GLM', description: '五分钟接入教程。', href: '/blogs/claude-code-with-glm' },
-    { kind: '教程', title: 'Claude Code 配置 Kimi', description: '免费档即可试用。', href: '/blogs/claude-code-with-kimi' },
+    { kind: '教程', title: 'Claude Code 配置 Kimi', description: '含档位要求与端点配置。', href: '/blogs/claude-code-with-kimi' },
     { kind: '教程', title: 'Claude Code 接入火山方舟', description: '多模型 + Auto 调度。', href: '/blogs/claude-code-with-volcengine' },
     { kind: '对比', title: 'Claude vs GLM（英文）', description: '官方订阅与 GLM 正面对比。', href: '/en/blogs/claude-vs-glm' },
   ],
@@ -127,14 +127,14 @@ export const codexTool = defineContentPage({
     {
       title: 'Codex 的定位',
       paragraphs: [
-        'Codex 与 ChatGPT 订阅深度绑定：Go（$8/月）与 Plus（$20/月）均可使用，模型为 GPT-5.6 系列（Sol 为 Plus/Pro 主推，Luna 为免费版默认）。相比 Claude Code 的终端优先，Codex 同时提供云端任务执行与代码审查工作流。',
+        'Codex 与 ChatGPT 订阅深度绑定：Go（$8/月）与 Plus（$20/月）均可使用，模型为 GPT-6 家族（Astra / Sol 为 Plus/Pro 主推，Luna 面向 Free 与 Go 的桌面端）。相比 Claude Code 的终端优先，Codex 同时提供云端任务执行与代码审查工作流。',
         '国内套餐接入依赖 Codex 的自定义 provider 能力（config.toml 指定 OpenAI 兼容端点与 Key）。MiniMax、阿里云、小米在官方文档中列明支持；其余平台若提供 OpenAI 兼容 API（如火山方舟、OpenCode Go），通常也可手动配置。',
       ],
     },
     {
       title: '怎么选',
       highlights: [
-        '要 GPT-5.6 原生体验：ChatGPT Plus $20/月（Go $8 仅轻量使用）',
+        '要 GPT-6 原生体验：ChatGPT Plus $20/月（Go $8 仅轻量使用，GPT-6 Luna 限桌面端）',
         '国内低成本：小米 MiMo ¥39/月 或 MiniMax ¥49/月（均官方列明支持）',
         '多工具混用：阿里云 Pro（Codex + Claude Code + Cursor 全支持）',
         '注意：各家「支持」含义不同——官方适配 vs 兼容端点自配，购买前查平台文档',
@@ -159,7 +159,7 @@ export const opencodeTool = defineContentPage({
   accent: 'slate',
   seo: {
     title: 'OpenCode 智能体详解 2026 - 免费开源 Agent + Go 订阅 $10/月怎么用',
-    description: 'OpenCode（opencode.ai）开源终端编程智能体详解：免费使用任意模型服务商、官方订阅 OpenCode Go $10/月享 6 倍用量（24 款开源模型）、支持的国内 Coding Plan 清单与配置方式。',
+    description: 'OpenCode（opencode.ai）开源终端编程智能体详解：免费使用任意模型服务商、官方订阅 OpenCode Go $10/月享 6 倍用量（32 款模型）、支持的国内 Coding Plan 清单与配置方式。',
     canonical: 'https://codingplan.org/agents/opencode',
     locale: 'zh-CN',
     ogType: 'article',
@@ -168,11 +168,11 @@ export const opencodeTool = defineContentPage({
     badge: '工具 · OpenCode',
     title: 'OpenCode',
     highlight: '开源编程智能体',
-    description: 'OpenCode 是模型无关的开源终端 Agent：不绑定任何厂商，接谁的 Key 就用谁的模型。它也有自己的订阅 OpenCode Go——$10/月打包 24 款开源模型。',
+    description: 'OpenCode 是模型无关的开源终端 Agent：不绑定任何厂商，接谁的 Key 就用谁的模型。它也有自己的订阅 OpenCode Go——$10/月打包 32 款模型。',
     stats: [
       { value: '免费', label: '工具本体' },
       { value: '$10/月', label: 'Go 订阅' },
-      { value: '24 款', label: 'Go 含模型数' },
+      { value: '32 款', label: 'Go 含模型数' },
     ],
   },
   sections: [
@@ -180,7 +180,7 @@ export const opencodeTool = defineContentPage({
       title: '两种打开方式',
       cards: [
         { icon: '🔑', title: '自带 Key（免费工具）', description: '把任意厂商的 API Key 或 Coding Plan 端点配进 OpenCode，工具本身零成本。' },
-        { icon: '🚀', title: 'OpenCode Go 订阅', description: '$10/月，享 5h $12 / 周 $30 / 月 $60 美元额度（约 6 倍），覆盖 Grok 4.6、GLM-5.3/5.3-Flash、Kimi K3、DeepSeek V4 等 24 款模型。' },
+        { icon: '🚀', title: 'OpenCode Go 订阅', description: '$10/月，享 5h $12 / 周 $30 / 月 $60 美元额度（约 6 倍），覆盖 GPT 6 Luna、GLM-5.3/5.3-Flash、Kimi K3、DeepSeek V4 等 32 款模型。' },
       ],
     },
     {
@@ -204,7 +204,7 @@ export const opencodeTool = defineContentPage({
       title: '为什么选 OpenCode',
       highlights: [
         '不锁定厂商：一套配置多服务商切换，Codex/Claude Code 之外的中立选择',
-        'Go 订阅性价比：$60/月额度只收 $10，DeepSeek V4 Flash 5h 可跑 3 万+ 次请求',
+        'Go 订阅性价比：$60/月额度只收 $10，MiMo-V2.6-Flash 5h 可跑 3 万+ 次请求',
         '移动端延伸：kkcode.app 提供 iOS/Android 客户端，手机上续写任务',
         '隐私友好：多数模型 0 天数据保留、不用于训练',
       ],
@@ -217,7 +217,7 @@ export const opencodeTool = defineContentPage({
     { question: 'Go 的 6 倍用量是什么意思？', answer: '月付 $10 获得 $60 美元计价的月度额度（另有 5h $12 / 周 $30 窗口），额度按模型单价消耗，等效约 6 倍于订阅费的价值。' },
   ],
   related: [
-    { kind: '详情', title: 'OpenCode Go 详解', description: '24 款模型与额度制度全解。', href: '/plans/opencode-go' },
+    { kind: '详情', title: 'OpenCode Go 详解', description: '32 款模型与额度制度全解。', href: '/plans/opencode-go' },
     { kind: '榜单', title: 'Coding Plan 性价比排行榜', description: 'Go 的单位成本排名依据。', href: '/leaderboard' },
     { kind: '优惠', title: '优惠与邀请入口汇总', description: '各平台当前活动价。', href: '/deals' },
   ],
@@ -279,9 +279,9 @@ export const cursorTool = defineContentPage({
       title: '怎么选',
       highlights: [
         'GLM-5.3/5.2 写码主力：智谱 Lite 年付 ¥94.4/月，Cursor + Claude Code 共享额度',
-        '多模型轮换：火山方舟一份额度切 8+ 款模型，¥9.9 起试',
+        '多模型轮换：火山方舟一份额度切 6+ 款模型，¥9.9 起试',
         '全模态补图：MiniMax M3 原生多模态，UI 截图理解',
-        '国际开源模型：OpenCode Go（Grok 4.6 / K3 / GLM-5.3）$10/月',
+        '国际模型：OpenCode Go（GPT 6 Luna / K3 / GLM-5.3）$10/月',
       ],
     },
   ],
@@ -398,7 +398,7 @@ export const rooCodeTool = defineContentPage({
         columns: ['平台', '入门价', '接入方式'],
         featuredColumn: 1,
         rows: [
-          ['Kimi Code Plan', '¥49/月', '工具清单点名支持（Moderato 起）'],
+          ['Kimi Code Plan', '¥99/月起', '工具清单点名支持（Plus 起）'],
           ['MiniMax Token Plan', '¥49/月', '工具清单官方支持'],
           ['OpenCode Go', '$10/月', 'OpenAI/Anthropic 兼容'],
           ['智谱 GLM', '¥118/月', '工具清单官方支持'],
@@ -412,7 +412,7 @@ export const rooCodeTool = defineContentPage({
       title: 'Roo Code 的特色',
       highlights: [
         '多模式切换：Code 执行 / Architect 规划 / Ask 问答，任务分层更清晰',
-        'Kimi 深度适配：Kimi 官方将 Roo Code 列为推荐工具之一（Moderato 起）',
+        'Kimi 深度适配：Kimi 官方将 Roo Code 列为推荐工具之一（Plus 起）',
         '开源透明：与 Cline 同源，配置与快捷习惯可复用',
         'BYOK 成本可控：接 ¥39-49 档套餐即可承担全天候 Agent 任务',
       ],
@@ -420,7 +420,7 @@ export const rooCodeTool = defineContentPage({
     {
       title: '配置要点',
       paragraphs: [
-        '在 Roo Code 的 Provider 设置中选择 OpenAI Compatible 或 Anthropic，填入 Base URL 与 API Key。用 Kimi 时注意：K3 旗舰需 Moderato 及以上档位；额度与 Kimi CLI、Claude Code 共享。',
+        '在 Roo Code 的 Provider 设置中选择 OpenAI Compatible 或 Anthropic，填入 Base URL 与 API Key。用 Kimi 时注意：Kimi Code 需 Plus 及以上档位（K3 从 Plus 起、1M 上下文与 K2.7 Code 高速版需 Pro 起）；额度与 Kimi CLI、Claude Code 共享。',
       ],
     },
     {
@@ -433,7 +433,7 @@ export const rooCodeTool = defineContentPage({
   ],
   faqs: [
     { question: 'Roo Code 和 Cline 选哪个？', answer: '功能相近且同源。Roo Code 多模式工作流更细；Cline 社区更大、迭代稳。都免费，可各装一个试用一周再定。' },
-    { question: '用 Kimi + Roo Code 需要哪个档位？', answer: '官方在工具支持处标注 Kimi CLI / Claude Code / Roo Code 由 Moderato（¥99/月）起支持；Andante 可先用 K2.7 验证工作流。' },
+    { question: '用 Kimi + Roo Code 需要哪个档位？', answer: '官方在工具支持处标注 Kimi CLI / Claude Code / Roo Code 由 Plus（¥99/月）起支持（旧体系对应档位为 Moderato）；Free 与 Go ¥49 档不含编程额度，无法接入。' },
     { question: 'Roo Code 消耗套餐额度快吗？', answer: 'Agent 类工具多轮调用较多，5h 窗口消耗明显；建议把重规划任务交给 Architect 模式一次性输出，减少反复迭代。' },
   ],
   related: [

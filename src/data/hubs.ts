@@ -87,7 +87,7 @@ export const agentsHub = defineContentPage({
   hubLayout: 'cards-lg',
   hubItems: [
     { href: '/agents/claude-code', kind: '终端/IDE Agent', title: 'Claude Code', description: '生态最成熟的编程智能体，7+ 国内套餐可接', mark: 'CC', color: '#D97757' },
-    { href: '/agents/codex', kind: 'OpenAI 官方', title: 'Codex', description: 'ChatGPT 订阅内置的终端智能体，GPT-5.6 系列', mark: 'CD', color: '#10A37F' },
+    { href: '/agents/codex', kind: 'OpenAI 官方', title: 'Codex', description: 'ChatGPT 订阅内置的终端智能体，GPT-6 系列', mark: 'CD', color: '#10A37F' },
     { href: '/agents/opencode', kind: '开源中立', title: 'OpenCode', description: '模型无关的开源 Agent，官方 Go 订阅 $10/月', mark: 'OC', color: '#06B6D4' },
     { href: '/agents/cursor', kind: 'AI IDE', title: 'Cursor', description: '最流行的 AI IDE，BYOK 接入国内套餐', mark: 'CU', color: '#111827' },
     { href: '/agents/cline', kind: 'VS Code 插件', title: 'Cline', description: 'VS Code 开源 Agent，自带 Key 零订阅', mark: 'CL', color: '#F59E0B' },
@@ -162,7 +162,7 @@ export const modelsHub = defineContentPage({
       title: '按能力选模型',
       cards: [
         { icon: '🏆', title: '代码上限', description: 'GLM-5.3（Terminal-Bench 3.0 开源第一）/5.2（LMArena 开源第一）与 Kimi K3（2.8T）。' },
-        { icon: '⚡', title: '速度与成本', description: 'GLM-5-Turbo、Doubao-2.1-turbo、DeepSeek V4 Flash。' },
+        { icon: '⚡', title: '速度与成本', description: 'GLM-5-Turbo、Doubao-2.1-turbo、DeepSeek V4.1 Flash。' },
         { icon: '🎥', title: '多模态', description: 'MiniMax M3（图像/视频输入）、Kimi K3（视觉）。' },
         { icon: '🧠', title: '推理与 Agent', description: 'GLM-5.3、DeepSeek V4 Pro、Kimi K3 长链路任务。' },
       ],
@@ -176,7 +176,7 @@ export const modelsHub = defineContentPage({
     },
   ],
   faqs: [
-    { question: '为什么没有 Claude Opus 5 的模型页？', answer: 'Claude 系模型仅随官方订阅提供（英文站 /en/plans/claude 有详解），不在国产套餐模型池内；本集合聚焦可多套餐获取的模型。' },
+    { question: '为什么没有 Claude Opus 5.5 的模型页？', answer: 'Claude 系模型仅随官方订阅提供（英文站 /en/plans/claude 有详解），不在国产套餐模型池内；本集合聚焦可多套餐获取的模型。' },
     { question: '模型评测的依据是什么？', answer: '公开榜单（LMArena、SWE-Bench 等）、厂商官方口径与本站实测体验结合；榜单名次会随版本变化，页内标注时点。' },
     { question: '新模型上线后会补页吗？', answer: '会。新旗舰（如下一代 GLM/K/M 系列）上线后按同一模板补页，并同步进 /changelog。' },
   ],

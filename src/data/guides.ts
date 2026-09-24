@@ -104,8 +104,8 @@ export const claudeCodeWithKimi = defineContentPage({
   slug: 'claude-code-with-kimi',
   accent: 'purple',
   seo: {
-    title: 'Claude Code 配置 Kimi Code Plan 教程 2026 - 环境变量 / 免费档 / K3 模型',
-    description: 'Claude Code 接入 Kimi Code Plan 完整教程：开通套餐（免费档 Adagio 可试用）、配置 Moonshot Anthropic 兼容端点、K3/K2.7 模型选择、5h+7 天额度口径与常见问题排查。',
+    title: 'Claude Code 配置 Kimi Code Plan 教程 2026 - 环境变量 / 档位要求 / K3 模型',
+    description: 'Claude Code 接入 Kimi Code Plan 完整教程：开通套餐（Kimi Code 需 Plus 及以上档位）、配置 Moonshot Anthropic 兼容端点、K3/K2.8 Preview 模型选择、5 小时滚动窗口额度口径与常见问题排查。',
     canonical: 'https://codingplan.org/blogs/claude-code-with-kimi',
     locale: 'zh-CN',
     ogType: 'article',
@@ -114,11 +114,11 @@ export const claudeCodeWithKimi = defineContentPage({
     badge: '教程 · Claude Code × Kimi',
     title: 'Claude Code',
     highlight: '接入 Kimi Code Plan',
-    description: 'Moonshot 提供 Anthropic 兼容端点，Claude Code 可以直接跑在 Kimi Code Plan 上：免费档即可试用 K2.7，Moderato 起可用 K3 旗舰（2.8T 参数，1M 上下文）。',
+    description: 'Moonshot 提供 Anthropic 兼容端点，Claude Code 可以直接跑在 Kimi Code Plan 上：Kimi Code 需 Plus 及以上档位，可用 K3 旗舰（2.8T 参数，1M 上下文）与 K2.8 Preview。',
     stats: [
-      { value: '¥0 起', label: '免费档试用' },
-      { value: '¥39/月', label: '年付入门价' },
-      { value: '5h+7天', label: '额度口径' },
+      { value: 'Plus 起', label: 'Kimi Code 门槛' },
+      { value: '¥79/月', label: '年付入门价' },
+      { value: '5h 滚动', label: '额度口径' },
     ],
   },
   sections: [
@@ -126,9 +126,9 @@ export const claudeCodeWithKimi = defineContentPage({
       title: '前置准备',
       highlights: [
         '已安装 Node.js 18+ 与 Claude Code CLI',
-        '在 kimi.com/code 订阅任意档位（Adagio 免费档即可完成本教程）',
+        '在 kimi.com/code 订阅 Plus 及以上档位（Free / Go 档不含编程额度，无法完成本教程）',
         '在 Moonshot 开放平台控制台创建 API Key',
-        '注意：K3 仅 Moderato（¥99/月）及以上可用，免费档/Andante 只能用 K2.7',
+        '注意：Kimi Code 需 Plus（¥99/月）及以上档位，K3 旗舰同样从 Plus 起',
       ],
     },
     {
@@ -143,29 +143,29 @@ source ~/.zshrc`,
         },
         {
           name: '启动 Claude Code 并选模型',
-          description: '运行 claude 后用 /model 选择模型：K2.7 稳定主力（全档可用），K3 旗舰需 Moderato 及以上档位。',
+          description: '运行 claude 后用 /model 选择模型：K2.8 Preview 与 K3 旗舰均需 Plus 及以上档位；K3 的 1M 超长上下文与 K2.7 Code 高速版需 Pro 及以上。',
           code: `cd your-project
 claude
 /model`,
         },
         {
           name: '查看剩余额度',
-          description: 'Kimi 采用 5 小时 + 7 天双窗口额度，在 kimi.com 的套餐页查看刷新进度；额度未用完不累积。',
+          description: 'Kimi 新会员采用 5 小时滚动频率窗口（已取消每周额度限制，月度总量仍设上限），在 kimi.com 的套餐页查看用量进度。',
         },
       ],
     },
     {
       title: '额度口径说明',
-      warning: 'Kimi 的额度是「5 小时 token 配额 + 7 天刷新」双窗口，与 GLM 的每周 Credits、按量 API 的 token 计费均不是同一口径，不能直接换算。',
+      warning: 'Kimi 新会员的额度是「5 小时滚动频率窗口 + 月度总量上限」，与 GLM 的每周 Credits、按量 API 的 token 计费均不是同一口径，不能直接换算。',
       paragraphs: [
-        'Andante 参考约 300-1,200 次调用/5h，重度使用建议 Moderato 起步。',
+        'Go 档不含 Kimi Code 编程额度，需要使用编程能力请直接从 Plus 起步；具体用量以官方套餐页的实时进度为准。',
         'Claude Code 与 Kimi CLI / VS Code 插件共享同一套餐额度。',
       ],
     },
     {
       title: '常见报错排查',
       cards: [
-        { icon: '🚫', title: 'K3 提示不可用', description: 'K3 需要 Moderato 及以上档位；免费档与 Andante 只能访问 K2.7/K2。' },
+        { icon: '🚫', title: 'K3 提示不可用', description: 'K3 需要 Plus 及以上档位；Free 与 Go 档不含编程额度，无法通过 Kimi Code 发起请求。' },
         { icon: '🔑', title: '401 鉴权失败', description: '确认使用 Moonshot 开放平台的 API Key，且账号已开通 Code Plan。' },
         { icon: '🐌', title: '限流 429', description: '5h 窗口额度耗尽会触发限流，等待窗口滚动恢复或升级档位。' },
         { icon: '🧭', title: '端点不生效', description: '检查 ANTHROPIC_BASE_URL 是否为 api.moonshot.cn/anthropic，重启终端。' },
@@ -173,13 +173,13 @@ claude
     },
   ],
   faqs: [
-    { question: '免费档能用 Claude Code 吗？', answer: '可以。Adagio 免费档包含 K2.7/K2 访问与 1 个 Agent 任务并行，足以验证链路；日常开发建议 Andante 起步。' },
-    { question: 'K3 什么档位能用？', answer: 'Moderato（¥99/月）及以上。Allegro（¥699/月）独家解锁 1M token 超长上下文。' },
+    { question: '免费档能用 Claude Code 吗？', answer: '不能。Kimi 新体系里 Free 与 Go（¥49）档均不含编程额度，Kimi Code 需 Plus 及以上档位。想先低成本验证链路，可直接选最低的 Plus 档（年付 ¥79/月）。' },
+    { question: 'K3 什么档位能用？', answer: 'Plus（¥99/月）及以上。Pro（¥199/月）及以上解锁 K3 的 1M token 超长上下文与 K2.7 Code 高速版。' },
     { question: 'Kimi 端点地址以哪里为准？', answer: '以 Moonshot 开放平台官方文档为准，本教程写的是 api.moonshot.cn/anthropic；官方若调整请同步更新。' },
-    { question: '额度和 GLM 一样吗？', answer: '不一样。Kimi 是 5h+7 天双窗口 token 配额，GLM 是每周 Credits；两者数值不可直接比较，建议各试一个月。' },
+    { question: '额度和 GLM 一样吗？', answer: '不一样。Kimi 新会员是 5 小时滚动频率窗口（已取消每周额度限制），GLM 是每周 Credits；两者数值不可直接比较，建议各试一个月。' },
   ],
   related: [
-    { kind: '详情', title: 'Kimi Code Plan 详解', description: '五档套餐与 K3 使用规则。', href: '/plans/kimi' },
+    { kind: '详情', title: 'Kimi Code Plan 详解', description: 'Kimi Code 三档套餐与 K3 使用规则。', href: '/plans/kimi' },
     { kind: '对比', title: 'GLM vs Kimi 怎么选', description: '两家价格与额度口径对比。', href: '/blogs/glm-vs-kimi' },
     { kind: '教程', title: 'Claude Code 配置智谱 GLM', description: '另一家热门套餐接入教程。', href: '/blogs/claude-code-with-glm' },
   ],
@@ -190,7 +190,7 @@ export const claudeCodeWithVolcengine = defineContentPage({
   accent: 'cyan',
   seo: {
     title: 'Claude Code 接入火山引擎方舟 Coding Plan 教程 2026 - 多模型切换 / Auto 模式 / ¥9.9 首购',
-    description: 'Claude Code 接入火山引擎方舟 Coding Plan 教程：方舟 Anthropic 兼容端点配置、Doubao/GLM-5.2/Kimi-K3/MiniMax/DeepSeek 多模型切换、Auto 智能调度、Lite/Pro 套餐额度规则与常见问题。',
+    description: 'Claude Code 接入火山引擎方舟 Coding Plan 教程：方舟 Anthropic 兼容端点配置、Doubao/GLM-5.3/Kimi-K3/DeepSeek-V4.1 多模型切换、Auto 智能调度、Lite/Pro 套餐额度规则与常见问题。',
     canonical: 'https://codingplan.org/blogs/claude-code-with-volcengine',
     locale: 'zh-CN',
     ogType: 'article',
@@ -199,10 +199,10 @@ export const claudeCodeWithVolcengine = defineContentPage({
     badge: '教程 · Claude Code × 火山方舟',
     title: 'Claude Code',
     highlight: '接入方舟 Coding Plan',
-    description: '方舟 Coding Plan 一份额度覆盖 8+ 款模型（Doubao-Seed-2.1-turbo、GLM-5.2、Kimi-K3、Kimi-K2.7-Code、MiniMax-M3、Deepseek-V4 等），Claude Code 通过 Anthropic 兼容端点接入后可随时换模型，或交给 Auto 模式自动调度。',
+    description: '方舟 Coding Plan 一份额度覆盖 6+ 款模型（DeepSeek-V4.1-Flash、GLM-5.3 系列、Doubao-Seed-Evolving、Kimi-K3、Kimi-K2.8-Preview 等），Claude Code 通过 Anthropic 兼容端点接入后可随时换模型，或交给 Auto 模式自动调度。',
     stats: [
       { value: '¥9.9', label: '首购起价' },
-      { value: '8+', label: '可用模型' },
+      { value: '6+', label: '可用模型' },
       { value: 'Auto', label: '智能调度' },
     ],
   },
@@ -243,7 +243,7 @@ claude
       title: 'Auto 模式适合谁',
       cards: [
         { icon: '🤖', title: '不想选模型的人', description: 'Auto 按任务类型自动分发到合适模型，日常问答走轻量档、复杂改动走旗舰档。' },
-        { icon: '🧪', title: '模型横向评测', description: '一份额度轮询 8+ 款模型，对比 Doubao/GLM/Kimi/MiniMax/DeepSeek 的出码风格。' },
+        { icon: '🧪', title: '模型横向评测', description: '一份额度轮询 6+ 款模型，对比 Doubao/GLM/Kimi/DeepSeek 的出码风格。' },
         { icon: '💰', title: '成本敏感用户', description: '首购 ¥9.9 体验两个月，Auto 避免旗舰模型浪费在简单任务上。' },
       ],
     },
@@ -261,7 +261,7 @@ claude
     { question: '方舟端点地址以哪里为准？', answer: '以火山引擎方舟官方文档的「Anthropic 兼容」章节为准，本教程写的是 ark.cn-beijing.volces.com/api/anthropic。' },
     { question: '¥9.9 能用多久？', answer: '首购促销价 ¥9.9/月起通常覆盖前两个月（2.5 折），第三个月起恢复刊例价 ¥40/月；以活动页规则为准。' },
     { question: 'Claude Code 里能随时换模型吗？', answer: '可以，/model 即可切换；额度跨模型共享，切换不产生额外费用。' },
-    { question: 'GLM-5.2 还能在方舟用吗？', answer: '方舟侧 GLM-5.2 将于 2026/8/31 14:00 下线，到期未迁移的调用自动路由至 GLM-5.3；此前的限时加量 4 倍活动已于 8/8 结束。' },
+    { question: 'GLM-5.2 还能在方舟用吗？', answer: '方舟侧 GLM-5.2 已于 2026/8/31 下线（此前的限时加量 4 倍活动已于 8/8 结束）；当前模型池为 DeepSeek-V4.1-Flash、GLM-5.3 系列、Doubao-Seed-Evolving、Kimi-K3、Kimi-K2.8-Preview，支持自由切换或 Auto 模式调度。' },
   ],
   related: [
     { kind: '详情', title: '火山引擎方舟 Coding Plan 详解', description: '套餐规则、模型阵容与优惠活动。', href: '/plans/volcengine' },

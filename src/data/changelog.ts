@@ -11,7 +11,7 @@ export const changelogPage = defineContentPage({
   accent: 'cyan',
   seo: {
     title: 'Coding Plan 变更记录 2026 - 涨价 / 上新 / 上下线时间线（持续更新）',
-    description: '国内 AI Coding Plan 变更时间线：GLM-5.3-Flash 上线与权重开源、Kimi 新会员体系预告、百炼 Qwen3.8-Max 转正、火山 Pro 定价公布与 GLM-5.2 下线、OpenCode Go 取消首月 $5、MiniMax Music 停服等事件倒序记录，点击查看对应平台最新套餐。',
+    description: '国内 AI Coding Plan 变更时间线：Kimi 新会员体系上线（取消每周额度限制）、百炼 Token Plan 新增 12 项 Harness 权益与月度 Credits、小米 MiMo-V2.6 系列与团队版、Claude Fable 5.1 / Opus 5.5、OpenAI GPT-6 Sol 与 Luna、DeepSeek-V4.1-Flash、OpenCode Go 扩至 32 款模型等事件倒序记录，点击查看对应平台最新套餐。',
     canonical: 'https://codingplan.org/changelog',
     locale: 'zh-CN',
     ogType: 'article',
@@ -28,6 +28,25 @@ export const changelogPage = defineContentPage({
     ],
   },
   sections: [
+    {
+      title: '2026 年 9 月',
+      table: {
+        columns: ['日期', '平台', '事件'],
+        rows: [
+          ['09-24', 'Kimi', '新会员体系正式上线（定价不变）：Free / Go ¥49 / Plus ¥99 / Pro ¥199 / Max ¥699；新会员取消每周额度限制、仅保留 5 小时滚动频率窗口，K3 与 Kimi Code 均需 Plus 及以上，Go 档不含编程额度；老套餐会员档位名称、额度规则与自动续费维持原样；新增加油包按量兜底'],
+          ['09-24', '阿里云百炼', '个人版新增 12 项 Harness 权益并改为月度 Credits 口径（Lite 11,500 / Standard 45,000 / Pro 180,000 每月），超额调用 88 折；夜间优惠由五折改为 22:00 起限时 4 折（qwen3.8-max 与 qwen3.8-flash）；新增 Token Plan × Qoder 组合购与各类加油包'],
+          ['09-24', '小米 MiMo', 'MiMo-V2.6 系列 3 款新模型上线并推送全档（官方口径：旗舰性能 / 全模态 / 面向专业场景优化）；新增按席位的团队版（与个人版同价 ¥99 / ¥329 / ¥659 每席每月，年付低至 ¥87 / ¥289 / ¥579）；全档明确无周限额、无 5 小时限额'],
+          ['09-24', 'Claude', 'Anthropic 9 月发布 Claude Fable 5.1（$10 / $50 每百万，缓存读取降至 $0.25）与 Claude Opus 5.5（$4 / $20，缓存读取 $0.20，Fast mode $8 / $40）；订阅侧 Fable 5.1 在 Pro 需额外 Usage credits、在 Max 上限为周额度的 50%'],
+          ['09-24', 'DeepSeek', '官方定价页模型收敛为 deepseek-flash（DeepSeek-V4.1-Flash）与 deepseek-v4-pro 两个 ID：V4.1-Flash 支持 1M 上下文与图像理解，空闲 / 高峰双档计价（缓存命中 ¥0.02 / ¥0.04 每百万）；旧模型名 deepseek-v4-flash 等由 V4.1-Flash 承接并按 Flash 价格计费'],
+          ['09-24', 'OpenCode Go', '模型阵容由 24 款扩至 32 款：新增 GPT 6 Luna、DeepSeek V4.1 Flash（限时 4 倍用量）、MiMo-V2.6-Flash、Muse Spark 1.3 Contributor，以及限时匿名模型 Space Bunny Free'],
+          ['09-24', 'ChatGPT', '官方帮助中心公告：ChatGPT Pro $200 档的新购与升级暂停，存量订阅照常续费'],
+          ['09-22', 'ChatGPT', 'OpenAI 发布 GPT-6 Sol 与 GPT-6 Luna（Astra 之后的第二波）：ChatGPT Work 与 Codex 的 Plus / Pro / Business / Enterprise / Edu 用户可用，Free 与 Go 可在桌面端使用 GPT-6 Luna；API 价格较 GPT-5.6 促销价下调 50%（Sol $2 / $10，Luna $0.10 / $0.50 每百万）'],
+          ['09-17', '火山引擎方舟', '限时抵扣系数活动：kimi-k2.8-preview 6 折（至 9/30）；模型池新接入 DeepSeek-V4.1-Flash 与 Kimi-K2.8-Preview，GLM-5.2 已于 8/31 下线'],
+          ['09-15', '火山引擎方舟', '限时抵扣系数活动：deepseek-v4.1-flash 在 Agent / Coding Plan 中 5 折（至 10/30 18:00）'],
+          ['09-03', '智谱 GLM', '「夜间畅用」活动开启（9/3-10/7）：每日 23:00-次日 09:00，ZCode / AutoClaw 端调用 GLM-5.3-Flash 不限量，其他 Agent 额度翻倍；ZCode / AutoClaw 订阅用户专享 150% 额度转为常设权益'],
+        ],
+      },
+    },
     {
       title: '2026 年 8 月',
       table: {
