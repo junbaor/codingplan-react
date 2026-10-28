@@ -29,7 +29,13 @@ README.md - 开发命令、App Router 架构与内容维护入口
 - Title、H 标题、keywords 缺失状态、canonical、统计 Key 与推广参数以原站 HTML 为兼容基线。
 - 主题通过语义色 token 和 `data-theme` 切换，不在组件中硬编码颜色。
 
-## 当前数据要点（最近一次更新 2026-08-31）
+## 当前数据要点（最近一次全站更新 2026-08-31）
+
+- Claude 局部同步（2026/10/28）：首页与英文详情改为 Fable 5.1、Opus / Sonnet / Haiku 5.5，纠正 Pro 使用 Fable 需用量积分；更多历史文章仍待核对。
+
+- OpenAI 局部同步（2026/10/28）：首页与 Codex 工具页改为 GPT-6 系列，区分 Codex / Work 的模型可用性；Pro 档位补充 $500/月。全站其他渠道仍在核对，未更新全站数据日期。
+
+- 2026/10/28 部分同步：Kimi 国内新会员、中英文 MiniMax M Plan、OpenCode Go 双档与小米 V2.6；全站旧文章和其余渠道仍需核对，详见 docs/source-audit-2026-10-28.md，原全站数据更新时间保持不变。
 
 - 首页 On Page SEO 体检修复（2026/8/31，依据体检报告 86 分版，修复全部 ✕/⚠ 项）：zh 首页 title 宽度 62→51「Coding Plan 对比 2026：ChatGPT/Claude/GLM/Kimi 横评」（砍 AI/MiniMax 前缀过 60 宽度线，关键词保持前置，MiniMax 由 description 与 H2 承接）；description 宽度 232→147 且补入 Coding Plan ×2（原关键词命中 0）；修复 platformsDescription 开发腔「类型化数据…多份副本」泄漏到线上可见正文的稀释源；hero/comparison/FAQ 六处文案自然加密（coding plan 全词 ×16→×30，占位密度 1.81%<3% 堆砌线，plan/coding 1 词与 1~5 词密度榜全部出现关键词短语）；卡片内链锚文本「完整详情」升级「查看 Coding Plan 详情」（zh ×7/en ×6 View Coding Plan details，aria-label 同步，GA4 事件名与参数 Key 不变）；带推广参数的 8 条外链（zh 5：aliyun userCode、opencode-go ref、zhipu ic、minimax code、volcengine ac/rc；en 3：glm ic、opencode-go ref、kimi track_id）补 rel sponsored（types.ts cta 新增 sponsored? 字段，纯官网直链不标记）；H1「AI Coding Plan 全面对比」与 2780 词篇幅均保留不动（体检 ✕<h1> 直出经 curl 验证为工具误报）；DATA_UPDATED_AT 8/28→8/31。
 - GSC P0 低 CTR 页 Title/Description 改造（2026/8/31，依据 8 月 GSC 数据）：glm coding plan（30,095 曝光/CTR 0.5%/排 7.7）、火山引擎 coding plan（13,542/0.8%/6.4）、智谱 coding plan（7,115/1.2%/6.5）、阿里云 coding plan（2,702/0.5%/8.5）四个已进前 10 但 CTR<2% 的词对应承接页（/plans/zhipu、volcengine、aliyun、kimi）title 按「完整搜索词前置 + 多少钱问句 + 价格数字 +（2026）」模板重写，description 改为「搜索词 + 数字承诺 + 行动指引」结构；两个关键修复：aliyun 页 title 此前只有官方名「Token Plan」完全不含「Coding Plan」（现补入「阿里云 Qwen Coding Plan」前置），kimi 页用官方名「Code Plan」而用户实际搜「coding plan」（现以「Kimi Coding Plan」前置、官方名括注保留）；英文侧同步改造（P1 卡位词）：/en/plans/glm title 补入 subscription（承接 glm subscription 1,729 曝光/排 9.2，改为「GLM Coding Plan Pricing 2026: Subscription Cost from $18/mo」），/en/plans/qwen title 此后无「Alibaba」与「Coding Plan」双缺失（现「Alibaba Coding Plan 2026: Qwen Token Plan from ¥39/mo」前置，承接 alibaba coding plan 1,315/10.4）；首页 title 8/19 刚做过体检优化本轮不动，页面内容与价格事实未变更。
@@ -52,7 +58,7 @@ README.md - 开发命令、App Router 架构与内容维护入口
 - 移除「全部套餐」集合页 /plans（2026/8/18）：首页已承载平台对比，/plans hub 页删除并在 next.config.ts 301 至 /#platforms，头部导航改为 工具/模型/博客/优惠 四项（SiteChrome defaultHeaderLinks），详情页面包屑与 blogs/tools/models 相关内链、BreadcrumbList JSON-LD 同步改指 /#platforms，sitemap 移除该 URL（49→48）。
 - SEO P0 + 内容矩阵（2026/8/18）：新增 DATA_UPDATED_AT 新鲜度信号（src/data/site-version.ts，贯通 JSON-LD/lastmod/页脚）、og:image 大卡（public/og/default.png）、WebSite/Organization/Article schema、详情页 zh↔en hreflang（src/data/plan-alternates.ts）、可见面包屑与相关内链、robots 放行 AI 爬虫、next/font 自托管字体；内容矩阵 25 篇 + 4 个集合 hub（/blogs、/tools、/models、/en/blogs；套餐集合由首页 #platforms 承接），URL 规范统一为「二级路径=集合列表页 + [slug] 详情页」（plans 仅保留 [slug] 详情页），文章类（对比/教程/问答）三合一进 /blogs，旧 compare/guides/questions/articles 路径 301，站点 19→48 URL。方案依据见 docs/seo-research/09-codingplan-org-seo-plan.md。
 - ChatGPT 渠道模型与定价同步官方最新（2026/8/17）：heading 改 GPT-5.6 Sol（Plus/Pro 主推，2026/8/7），models 由虚构的 GPT-5.3 更新为 ['GPT-5.6', 'o4-mini', 'GPT-4o']；Go 套餐价格 $10→$8（2026/1 全球推广实际价），Go details 由 GPT-5.3 mini 改为 GPT-5.6 Luna（免费版默认，2026/8/6）；Plus details 中 DALL-E 3 替换为 ChatGPT Images 2.0（2026/4 发布，基于 gpt-image-2），note 由过时的"年付 $200"改为"Pro $200/月"。
-- 英文站新增六个渠道详情页（/en/plans/claude|glm|minimax|kimi|qwen|opencode-go），英文首页平台 5→6，OpenCode Go 在中英文首页渠道卡片与快速对比表格行内使用专属特殊推荐标识（specialBadge：性价比之王 / BEST VALUE，渐变绿样式 + 行淡绿高亮，区别于通用"强烈推荐"）。
+- 英文站新增六个渠道详情页（/en/plans/claude|glm|minimax|kimi|qwen|opencode-go），英文首页平台 5→6，OpenCode Go 不再在中英文首页渠道卡片与快速对比表格行内展示「性价比之王 / BEST VALUE」特殊推荐标识（2026/10/28）。
 - 英文站全站顶部提示：订购中国套餐（GLM/MiniMax/Kimi/火山/小米）可邮件 support.codingplan.org。
 - OpenCode Go（2026/8/11 新增）：首月 $5，之后 $10/月，18 款开源模型 6 倍用量（5h $12 / 周 $30 / 月 $60），OpenAI / Anthropic 兼容 API，详情页 /plans/opencode-go 与 /en/plans/opencode-go，推广链接带 ref=JBT5KJRCD4。
 - 智谱 GLM Coding Plan 改版：连续包月价 ¥118/¥538/¥1078（年付 7 折后约 ¥94.4/¥430.4/¥862.4/月），每周 Credits 制度（Lite 10K / Pro 60K / Max 140K），GLM-5.2 LMArena 代码榜开源第一。

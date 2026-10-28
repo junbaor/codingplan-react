@@ -29,6 +29,17 @@ export const changelogPage = defineContentPage({
   },
   sections: [
     {
+      title: '2026 年 10 月',
+      table: { columns: ['日期', '平台', '事件'], rows: [
+        ['10-28', 'Anthropic', '核对 Claude 模型与套餐：Fable 5.1、Opus / Sonnet / Haiku 5.5；Pro 的 Fable 使用额外用量积分。'],
+        ['10-28', 'OpenAI', '核对 Codex 与 ChatGPT Work：Plus 等套餐支持 GPT-6.1 Sol，Free / Go 桌面端 GPT-6 Luna 逐步开放；Pro 提供 $100 / $200 / $500 月付档位。'],
+        ['10-28', 'Kimi', '核对并更新国内新会员套餐：Plus 起支持 Kimi Code，新套餐取消周限额并保留 5 小时限额与月度共享额度。'],
+        ['10-28', 'MiniMax', '核对 M Plan 新档位：国内 Go / Explore / Build 分别为 ¥49 / ¥119 / ¥469，国际版为 $22 / $55 / $132。'],
+        ['10-28', 'OpenCode Go', '核对 Go $10/月与 Go Plus $40/月；额度按模型分别计算。'],
+        ['10-21', '小米 MiMo', 'V2.5 和 V2.5-Pro 下线，Token Plan 官网展示 V2.6 系列。'],
+      ] },
+    },
+    {
       title: '2026 年 8 月',
       table: {
         columns: ['日期', '平台', '事件'],

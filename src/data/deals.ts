@@ -37,7 +37,7 @@ export const dealsPage = defineContentPage({
         featuredColumn: 2,
         rows: [
           ['火山引擎方舟', '首购首两月 2.5 折（Lite ¥9.9 / Pro ¥49.9，活动至 11/8）', '¥9.9/月起', '限时首购 + 邀请'],
-          ['OpenCode Go', '$10/月享 6 倍用量（首月 $5 已取消）', '$10/月', '常态化高性价比'],
+          ['OpenCode Go', '$10/月起，多模型额度因型号而异', '$10/月', '常态化高性价比'],
           ['阿里云百炼', 'Token Plan 早鸟 ¥39/月起（原价 ¥60）', '¥39/月（早鸟）', '限时早鸟折扣'],
           ['小米 MiMo', 'Credits 全档升级 5-8 倍（加量不加价）', '¥39/月', '限时加量'],
           ['MiniMax Token Plan', '受邀 9 折 · 邀请人返 10% 代金券（活动至 8/31）', '¥44.1/月起（受邀价）', '邀请双向福利'],
@@ -53,11 +53,11 @@ export const dealsPage = defineContentPage({
       headingLevel: 3,
       highlights: [
         '试水首选：火山方舟首购 ¥9.9（两月），体验 8+ 款模型轮换与 Auto 调度',
-        '国际模型低价：OpenCode Go $10/月，24 款开源模型 6 倍用量，含 Grok 4.6 / GLM-5.3 / Kimi K3',
+        '国际模型低价：OpenCode Go $10/月起，提供多模型访问，额度因型号而异',
         '重度中文编码：智谱 GLM 连续包年 7 折，Lite 折后约 ¥94.4/月，含 4 类 MCP 工具',
         '全模态需求：MiniMax 受邀 9 折入门 Plus ¥44.1/月，文本/图像/语音/音乐共享额度',
         '阿里云早鸟：百炼 Token Plan Lite ¥39/月（原 ¥60），Qwen3.8-Max 首发尝鲜',
-        '长上下文：Kimi 年付 Andante ¥39/月，Moderato ¥79/月起可用 K3（1M 上下文需 Allegro）',
+        '长上下文：Kimi 新套餐 Plus 年付折合 ¥79/月起可用 K3，Pro 起支持 1M 上下文',
       ],
     },
     {
@@ -84,8 +84,8 @@ export const dealsPage = defineContentPage({
   ],
   faqs: [
     { question: 'Coding Plan 邀请码在哪里获取？', answer: '各平台活动页、官方社群与老用户分享是主要来源。火山方舟、MiniMax、OpenCode Go 支持邀请链接直接享受折扣；本站详情页的「立即购买」入口即包含当前可用的推广参数。' },
-    { question: '首月优惠价后续会涨价吗？', answer: '会。火山首购 2.5 折（Lite ¥9.9 / Pro ¥49.9）仅限前两个月，第三个月起恢复刊例价（¥40 / ¥200/月起）；OpenCode Go 的首月 $5 优惠已于 8/24 取消，现统一 $10/月。订阅前请确认续费价。' },
-    { question: '哪个平台优惠后最便宜？', answer: '短期试水是火山方舟首购 ¥9.9（Lite）/ ¥49.9（Pro）；长期最低月费是 OpenCode Go 的 $10/月（约 ¥72）但包含 6 倍用量；纯中文套餐里小米 MiMo ¥39/月、百炼早鸟 ¥39/月与 Kimi 年付 Andante ¥39/月最低。详见本站「哪家 Coding Plan 最便宜」分析。' },
+    { question: '首月优惠价后续会涨价吗？', answer: '会。火山首购 2.5 折（Lite ¥9.9 / Pro ¥49.9）仅限前两个月，第三个月起恢复刊例价（¥40 / ¥200/月起）；OpenCode Go 的首月 $5 优惠已于 8/24 取消，现提供 Go $10/月与 Go Plus $40/月。订阅前请确认续费价。' },
+    { question: '哪个平台优惠后最便宜？', answer: '短期试水是火山方舟首购 ¥9.9（Lite）/ ¥49.9（Pro）；长期最低月费是 OpenCode Go 的 $10/月（约 ¥72），模型额度各不相同；纯中文套餐里小米 MiMo ¥39/月、百炼早鸟 ¥39/月与 Kimi 新套餐 Go 年付折合 ¥39/月（不含 Kimi Code）最低。详见本站「哪家 Coding Plan 最便宜」分析。' },
     { question: '代金券返利可以和首购价叠加吗？', answer: 'MiniMax 的受邀 9 折与邀请人返利可叠加；火山的首购 2.5 折与受邀 9.5 折能否叠加以活动页规则为准。多数平台代金券在支付时抵扣，不改变订阅档位价格。' },
     { question: '本站的链接是官方渠道吗？', answer: '是。本站所有购买入口均指向各平台官网，部分链接带推广参数（返利归本站，价格不变或更低）。' },
   ],

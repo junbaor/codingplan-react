@@ -2,6 +2,7 @@
 > L2 | 父级: /AGENTS.md
 
 ## 成员清单
+source-audit-2026-10-28.md: 2026-10-28 部分官方信源核对记录，列明已确认差异与待核范围，不代表全站同步完成
 content-update-playbook.md: 内容更新 SOP（套餐/价格/模型同步流程），定义官方信源清单、wmpeng/codingplan 浅 clone 参考流程（用完即删）、落地文件清单与校验步骤，是「更新某平台内容」类需求的执行入口
 CODE_REVIEW.md: 原站代码审查记录
 ANALYTICS_BACKEND.md: 统计后端方案文档

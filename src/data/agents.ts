@@ -33,7 +33,7 @@ export const claudeCodeTool = defineContentPage({
     {
       title: '两种用法',
       cards: [
-        { icon: '🌍', title: '官方订阅（国际）', description: 'Claude Pro $20/月（年付 $17）含 Claude Code 与 Opus 5 / Fable 5；Max $100/$200 提供 5x/20x 用量与高峰优先。' },
+        { icon: '🌍', title: '官方订阅（国际）', description: 'Claude Pro $20/月（年付 $17）含 Claude Code 和 Opus；Fable 在 Pro 需额外用量积分；Max $100/$200 提供 5x/20x 用量与高峰优先。' },
         { icon: '🇨🇳', title: '国内套餐接入', description: '智谱、Kimi、火山、MiniMax、阿里云、小米、OpenCode Go 均官方列明支持 Claude Code，设置两个环境变量即可切换。' },
       ],
     },
@@ -46,8 +46,8 @@ export const claudeCodeTool = defineContentPage({
         rows: [
           ['火山引擎方舟', '¥9.9/月起', '8+ 款可切换 + Auto', '5h + 周 + 月三重窗口'],
           ['Kimi Code Plan', '¥49/月', 'K3 / K2.7', '5h + 7 天双窗口'],
-          ['MiniMax Token Plan', '¥49/月', 'M3 / M2.7', '6亿+ token/月'],
-          ['小米 MiMo', '¥39/月', 'MiMo-V2.5-Pro', 'Credits 年度制'],
+          ['MiniMax M Plan', '¥49/月', 'M3 / M2.7', '6亿+ token/月'],
+          ['小米 MiMo', '¥39/月', 'MiMo-V2.6-Pro', 'Credits 年度制'],
           ['OpenCode Go', '$10/月', '24 款开源模型', '5h $12 / 月 $60'],
           ['智谱 GLM', '¥118/月', 'GLM-5.3', '10K-140K Credits/周'],
           ['阿里云百炼', '¥39/月起', 'Qwen3.8-Max', '700-12,000 Credits/5h'],
@@ -59,7 +59,7 @@ export const claudeCodeTool = defineContentPage({
     {
       title: '怎么选',
       highlights: [
-        '要 Opus 5 / Fable 5 原生体验：官方 Pro $20/月起，年付约 ¥146/月',
+        '要使用 Claude 官方模型：Pro $20/月起；Fable 在 Pro 需额外用量积分',
         '要最强国产旗舰：智谱 GLM-5.3/5.2（年付 ¥94.4/月），Terminal-Bench / LMArena 代码榜开源第一',
         '最便宜跑起来：火山 ¥9.9 首购或 Kimi Andante 年付 ¥39/月',
         '要 1M 上下文：Kimi Moderato ¥99/月起（K3），或 GLM 全系',
@@ -76,7 +76,7 @@ export const claudeCodeTool = defineContentPage({
   faqs: [
     { question: 'Claude Code 本身收费吗？', answer: '工具免费，消耗的是背后订阅额度：官方订阅消耗 Claude 额度，接入国内套餐则消耗对应 Coding Plan 额度。' },
     { question: '国内套餐接 Claude Code 违反条款吗？', answer: '不违反。智谱、Kimi、火山、MiniMax 等均官方列明支持 Claude Code 并提供兼容端点，属于厂商主动兼容。' },
-    { question: '用国产套餐和官方订阅体验差在哪？', answer: '模型不同：官方是 Opus 5 / Fable 5，国产是 GLM-5.3/5.3-Flash/K3/M3 等。工具功能（终端、IDE 插件、MCP）基本一致；官方的 extended thinking 与跨会话记忆部分依赖模型能力。' },
+    { question: '用国产套餐和官方订阅体验差在哪？', answer: '模型不同：官方提供 Opus 5.5 等模型，国产套餐通常提供 GLM-5.3/5.3-Flash/K3/M3 等。工具功能（终端、IDE 插件、MCP）基本一致；官方的 extended thinking 与跨会话记忆部分依赖模型能力。' },
     { question: '可以多个套餐随时切换吗？', answer: '可以，切换只是改环境变量；配合 ccswitch 等工具可一键切换多套配置。' },
   ],
   related: [
@@ -103,7 +103,7 @@ export const codexTool = defineContentPage({
     highlight: '配哪个 Coding Plan？',
     description: 'Codex 是 OpenAI 的终端/IDE 编程智能体（前身为开源 Codex CLI），ChatGPT 订阅内置；同时支持自定义模型服务商，国内已有多个 Coding Plan 官方列明支持。',
     stats: [
-      { value: '$20', label: 'ChatGPT Plus 起' },
+      { value: '$8', label: 'ChatGPT Go 起' },
       { value: '4+', label: '国内可接套餐' },
       { value: 'OSS', label: 'CLI 开源' },
     ],
@@ -116,7 +116,7 @@ export const codexTool = defineContentPage({
         columns: ['平台', '入门价', '支持说明'],
         featuredColumn: 1,
         rows: [
-          ['MiniMax Token Plan', '¥49/月', '工具清单含 Codex CLI'],
+          ['MiniMax M Plan', '¥49/月', '工具清单含 Codex CLI'],
           ['阿里云百炼', '¥39/月起', '工具清单含 Codex'],
           ['小米 MiMo', '¥39/月', '工具清单含 Codex'],
           ['ChatGPT（官方）', '$8-20/月', 'Go $8 / Plus $20 内置 Codex'],
@@ -127,14 +127,14 @@ export const codexTool = defineContentPage({
     {
       title: 'Codex 的定位',
       paragraphs: [
-        'Codex 与 ChatGPT 订阅深度绑定：Go（$8/月）与 Plus（$20/月）均可使用，模型为 GPT-5.6 系列（Sol 为 Plus/Pro 主推，Luna 为免费版默认）。相比 Claude Code 的终端优先，Codex 同时提供云端任务执行与代码审查工作流。',
+        'Codex 与 ChatGPT 订阅深度绑定：Go（$8/月）与 Plus（$20/月）均可使用，Codex 桌面端的 Free 和 Go 可使用 GPT-6 Luna（逐步开放），Plus 等套餐可使用 GPT-6.1 Sol，实际可用性取决于客户端和账号。相比 Claude Code 的终端优先，Codex 同时提供云端任务执行与代码审查工作流。',
         '国内套餐接入依赖 Codex 的自定义 provider 能力（config.toml 指定 OpenAI 兼容端点与 Key）。MiniMax、阿里云、小米在官方文档中列明支持；其余平台若提供 OpenAI 兼容 API（如火山方舟、OpenCode Go），通常也可手动配置。',
       ],
     },
     {
       title: '怎么选',
       highlights: [
-        '要 GPT-5.6 原生体验：ChatGPT Plus $20/月（Go $8 仅轻量使用）',
+        '要使用 GPT-6.1 Sol 编程：ChatGPT Plus $20/月起，具体以账号和客户端可用情况为准',
         '国内低成本：小米 MiMo ¥39/月 或 MiniMax ¥49/月（均官方列明支持）',
         '多工具混用：阿里云 Pro（Codex + Claude Code + Cursor 全支持）',
         '注意：各家「支持」含义不同——官方适配 vs 兼容端点自配，购买前查平台文档',
@@ -148,7 +148,7 @@ export const codexTool = defineContentPage({
     { question: 'ChatGPT Go 套餐能用 Codex 吗？', answer: 'Go（$8/月）可以使用 Codex，但用量窗口远小于 Plus；重度使用建议 Plus $20/月。' },
   ],
   related: [
-    { kind: '详情', title: 'MiniMax Token Plan 详解', description: '官方支持 Codex CLI 的最低价套餐。', href: '/plans/minimax' },
+    { kind: '详情', title: 'MiniMax M Plan 详解', description: '官方支持 Codex CLI 的最低价套餐。', href: '/plans/minimax' },
     { kind: '详情', title: '阿里云百炼详解', description: 'Codex + Claude Code 双支持。', href: '/plans/aliyun' },
     { kind: '百科', title: 'Coding Plan 是什么？', description: '订阅制与按量 API 的区别。', href: '/blogs/what-is-coding-plan' },
   ],
@@ -193,7 +193,7 @@ export const opencodeTool = defineContentPage({
           ['智谱 GLM', '¥118/月', 'OpenAI 兼容端点 + API Key'],
           ['阿里云百炼', '¥39/月起', '工具清单官方支持'],
           ['火山引擎方舟', '¥9.9/月起', '工具清单官方支持'],
-          ['MiniMax Token Plan', '¥49/月', '工具清单官方支持'],
+          ['MiniMax M Plan', '¥49/月', '工具清单官方支持'],
           ['小米 MiMo', '¥39/月', '工具清单官方支持'],
           ['白云智算', '按量 API', '任意兼容端点'],
         ],
@@ -254,7 +254,7 @@ export const cursorTool = defineContentPage({
           ['火山引擎方舟', '¥9.9/月起', 'OpenAI 兼容 API Key'],
           ['智谱 GLM', '¥118/月', '工具清单官方支持'],
           ['阿里云百炼', '¥39/月起', '工具清单官方支持'],
-          ['MiniMax Token Plan', '¥49/月', '工具清单官方支持'],
+          ['MiniMax M Plan', '¥49/月', '工具清单官方支持'],
           ['OpenCode Go', '$10/月', 'OpenAI 兼容 API'],
           ['小米 MiMo', '按平台清单', '部分档位支持'],
         ],
@@ -327,7 +327,7 @@ export const clineTool = defineContentPage({
         rows: [
           ['火山引擎方舟', '¥9.9/月起', 'OpenAI 兼容端点'],
           ['小米 MiMo', '¥39/月', '工具清单官方支持'],
-          ['MiniMax Token Plan', '¥49/月', '工具清单官方支持'],
+          ['MiniMax M Plan', '¥49/月', '工具清单官方支持'],
           ['OpenCode Go', '$10/月', 'OpenAI/Anthropic 兼容'],
           ['智谱 GLM', '¥118/月', '工具清单官方支持'],
           ['阿里云百炼', '¥39/月起', '工具清单官方支持'],
@@ -399,7 +399,7 @@ export const rooCodeTool = defineContentPage({
         featuredColumn: 1,
         rows: [
           ['Kimi Code Plan', '¥49/月', '工具清单点名支持（Moderato 起）'],
-          ['MiniMax Token Plan', '¥49/月', '工具清单官方支持'],
+          ['MiniMax M Plan', '¥49/月', '工具清单官方支持'],
           ['OpenCode Go', '$10/月', 'OpenAI/Anthropic 兼容'],
           ['智谱 GLM', '¥118/月', '工具清单官方支持'],
           ['阿里云百炼', '¥39/月起', '工具清单官方支持'],
